@@ -37,14 +37,18 @@ public class ContentSelectionServiceImpl
 extends ServiceBase
 implements ContentSelectionService,
 ContentSelectionChangeListener {
+    public static int START_EVENT_ID = -1601830656;
+    private static final long PRESET_SETUP_DURATION;
+    private int ev_skipSelection_timer = START_EVENT_ID++;
+    private boolean skipSelectionTimerActive = false;
     private ContentSelection display1ContentSelection;
     private ContentSelection display2ContentSelection;
     private final ContentSelectionDSIListenerImpl dsiListener;
     private final ContentSelectionDebounce display1SelectionUpdater = new ContentSelectionDebounce(this, 1);
     private final ContentSelectionDebounce display2SelectionUpdater = new ContentSelectionDebounce(this, 2);
     private boolean oldState = false;
-    private static final int[] DSI_NOTIFICATION_IDS = new int[]{92, 85};
-    private static final int[] ASL_EVENT_IDS = new int[]{1192034368};
+    private static final int[] DSI_NOTIFICATION_IDS;
+    private static final int[] ASL_EVENT_IDS;
 
     public ContentSelectionServiceImpl(CarFPKSetupAPI carFPKSetupAPI) {
         super(carFPKSetupAPI);
@@ -73,9 +77,26 @@ ContentSelectionChangeListener {
     }
 
     @Override
+    public void skipAndDelaySelectionEvents() {
+        AppLogger.trace(this, new StringBuffer().append(".skipAndDelaySelectionEvents (timer_active=").append(this.skipSelectionTimerActive).append(")").toString());
+        this.skipSelectionTimerActive = true;
+        this.retriggerOrStartTimer(this.ev_skipSelection_timer, (long)0, false);
+    }
+
+    @Override
     public void gotEvent(EventGeneric eventGeneric) {
         AppLogger.trace(this, new StringBuffer().append(".gotEvent (").append(eventGeneric).append(")").toString());
+        if (eventGeneric.getReceiverEventId() == this.ev_skipSelection_timer) {
+            AppLogger.trace(this, ".gotEvent (stopped SKIP_TIMER)");
+            this.skipSelectionTimerActive = false;
+            return;
+        }
         if (null == this.getCarFPKSetupAPI() || null == this.getCarFPKSetupAPI().getPresetsService() || this.getCarFPKSetupAPI().getPresetsService().isPredefinedPresetSelected()) {
+            super.gotEvent(eventGeneric);
+            return;
+        }
+        if (this.skipSelectionTimerActive) {
+            AppLogger.trace(this, new StringBuffer().append(".gotEvent (").append(eventGeneric).append(") SKIP_TIMER active").toString());
             super.gotEvent(eventGeneric);
             return;
         }
@@ -115,6 +136,10 @@ ContentSelectionChangeListener {
 
     @Override
     public void selectElement(int n, int n2, int n3) {
+        if (!this.oldState) {
+            AppLogger.trace(this, new StringBuffer().append(".selectElement( displayId = ").append(n).append(", elementIndex = ").append(n2).append(" ) - SKIPPED").toString());
+            return;
+        }
         AppLogger.trace(this, new StringBuffer().append(".selectElement( displayId = ").append(n).append(", elementIndex = ").append(n2).append(" )").toString());
         int n4 = this.getCarFPKSetupAPI().getDisplaySetupService().getDisplayElements(n).getElementIdForIndex(n2);
         ContentSelection contentSelection = this.getSelectedElement(n);
@@ -136,6 +161,53 @@ ContentSelectionChangeListener {
         }
         ASGArrayList aSGArrayList = this.dsiListener.getList();
         aSGArrayList.modifyArrayElement(contentSelectionBAPElement, 1);
+    }
+
+    @Override
+    public void validateCurrentContentAndSetToModel(int n) {
+        if (AppLogger.isTraceEnabled()) {
+            AppLogger.trace(this, new StringBuffer().append(".validateCurrentContentAndSetToModel(..), DISPLAY = ").append(n).append(", DISPLAY1 = ").append(this.display1ContentSelection).append(", DISPLAY2 = ").append(this.display2ContentSelection).toString());
+        }
+        ASLListManager aSLListManager = this.getAslListManager();
+        DisplayElements displayElements = this.getCarFPKSetupAPI().getDisplaySetupService().getDisplayElements(n);
+        if (null == displayElements) {
+            return;
+        }
+        if (1 == n) {
+            CarFPKCurrentElementContentSelectionDisplay1_1Collector carFPKCurrentElementContentSelectionDisplay1_1Collector = new CarFPKCurrentElementContentSelectionDisplay1_1Collector();
+            if (this.display1ContentSelection == null) {
+                carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_id_display1__1 = (int)DisplayElements.getElementAslId(displayElements.getElementIdForIndex(0));
+                carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_index_display1__1 = 0;
+                if (AppLogger.isTraceEnabled()) {
+                    AppLogger.trace(this, new StringBuffer().append(".validateCurrentContentAndSetToModel(..), initSelection = ").append(carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_id_display1__1).toString());
+                }
+            } else {
+                carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_id_display1__1 = (int)DisplayElements.getElementAslId(this.display1ContentSelection.getElementContent());
+                carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_index_display1__1 = displayElements.getIndexOfElementContent(this.display1ContentSelection.getElementContent());
+                if (AppLogger.isTraceEnabled()) {
+                    AppLogger.trace(this, new StringBuffer().append(".validateCurrentContentAndSetToModel(..), updateSelection Index=").append(carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_index_display1__1).append(", ID=").append(carFPKCurrentElementContentSelectionDisplay1_1Collector.car_fpk_current_element_content_selection_id_display1__1).toString());
+                }
+            }
+            GenericASLList genericASLList = aSLListManager.getGenericASLList(10885);
+            genericASLList.updateList(new CarFPKCurrentElementContentSelectionDisplay1_1Collector[]{carFPKCurrentElementContentSelectionDisplay1_1Collector});
+        } else if (2 == n) {
+            CarFPKCurrentElementContentSelectionDisplay2_1Collector carFPKCurrentElementContentSelectionDisplay2_1Collector = new CarFPKCurrentElementContentSelectionDisplay2_1Collector();
+            if (this.display2ContentSelection == null) {
+                carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_id_display2__1 = (int)DisplayElements.getElementAslId(displayElements.getElementIdForIndex(0));
+                carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_index_display2__1 = 0;
+                if (AppLogger.isTraceEnabled()) {
+                    AppLogger.trace(this, new StringBuffer().append(".validateCurrentContentAndSetToModel(..), initSelection = ").append(carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_id_display2__1).toString());
+                }
+            } else {
+                carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_id_display2__1 = (int)DisplayElements.getElementAslId(this.display2ContentSelection.getElementContent());
+                carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_index_display2__1 = displayElements.getIndexOfElementContent(this.display2ContentSelection.getElementContent());
+                if (AppLogger.isTraceEnabled()) {
+                    AppLogger.trace(this, new StringBuffer().append(".validateCurrentContentAndSetToModel(..), updateSelection Index=").append(carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_index_display2__1).append(", ID=").append(carFPKCurrentElementContentSelectionDisplay2_1Collector.car_fpk_current_element_content_selection_id_display2__1).toString());
+                }
+            }
+            GenericASLList genericASLList = aSLListManager.getGenericASLList(10886);
+            genericASLList.updateList(new CarFPKCurrentElementContentSelectionDisplay2_1Collector[]{carFPKCurrentElementContentSelectionDisplay2_1Collector});
+        }
     }
 
     @Override
@@ -193,6 +265,11 @@ ContentSelectionChangeListener {
     public void onSelectionUpdated(ContentSelection[] contentSelectionArray) {
         int n;
         AppLogger.trace(this, new StringBuffer().append(".onSelectionUpdated(..), ").append(this.toString(contentSelectionArray)).toString());
+        if (this.skipSelectionTimerActive) {
+            AppLogger.trace(this, ".onSelectionUpdated(..), stopped SKIP_TIMER");
+            this.skipSelectionTimerActive = false;
+            this.stopTimer(this.ev_skipSelection_timer);
+        }
         for (n = 0; n < contentSelectionArray.length; ++n) {
             if (contentSelectionArray[n].getDisplay() == 1) {
                 this.display1ContentSelection = contentSelectionArray[n];
@@ -251,6 +328,11 @@ ContentSelectionChangeListener {
             objectArrayList.add(contentSelectionArray[i2]);
         }
         return objectArrayList.toString();
+    }
+
+    static {
+        DSI_NOTIFICATION_IDS = new int[]{92, 85};
+        ASL_EVENT_IDS = new int[]{1192034368};
     }
 }
 

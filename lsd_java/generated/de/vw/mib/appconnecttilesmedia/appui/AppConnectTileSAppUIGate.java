@@ -92,7 +92,7 @@ extends AbstractHmiAppUIGate {
 
     static {
         VIEWNAME_2_SCREENAREAS_MAP = new HashMap();
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{550};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{549};
     }
 }
 

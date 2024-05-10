@@ -50,19 +50,19 @@ extends StatemachineActivityBase {
         switch (n - this.IT_OFFSET) {
             case 1: {
                 if (CarStatusTileSActivity.evIntegerValueValue() == 0) {
-                    this.setInteger(1947795712, 0);
+                    this.setInteger(2031681792, 0);
                 }
-                if (CarStatusTileSActivity.evIntegerValueValue() == 1 && this.getBoolean(-961150976)) {
-                    this.setInteger(1947795712, 1);
+                if (CarStatusTileSActivity.evIntegerValueValue() == 1 && this.getBoolean(-927596544)) {
+                    this.setInteger(2031681792, 1);
                 }
-                if (CarStatusTileSActivity.evIntegerValueValue() == 1 && !this.getBoolean(-961150976)) {
-                    this.setInteger(1947795712, 2);
+                if (CarStatusTileSActivity.evIntegerValueValue() == 1 && !this.getBoolean(-927596544)) {
+                    this.setInteger(2031681792, 2);
                 }
-                if (CarStatusTileSActivity.evIntegerValueValue() == 2 && this.getBoolean(-961150976)) {
-                    this.setInteger(1947795712, 2);
+                if (CarStatusTileSActivity.evIntegerValueValue() == 2 && this.getBoolean(-927596544)) {
+                    this.setInteger(2031681792, 2);
                 }
                 ModelApiDownEvent modelApiDownEvent = this.createModelApiDownEvent(7);
-                modelApiDownEvent.setInt(0, this.getInteger(1947795712));
+                modelApiDownEvent.setInt(0, this.getInteger(2031681792));
                 this.fireModelApiDownEvent(modelApiDownEvent);
                 break;
             }
@@ -73,7 +73,7 @@ extends StatemachineActivityBase {
     public boolean evalUntriggeredTransitionGuard(int n) {
         switch (n - this.UT_OFFSET) {
             case 1: {
-                return this.getInteger(1307770880) == 1;
+                return this.getInteger(1374879744) == 1;
             }
         }
         return true;

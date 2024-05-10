@@ -44,6 +44,7 @@ extends AbstractHsmState {
         }
         block0 : switch (eventGeneric.getReceiverEventId()) {
             case 2: {
+                ServiceManager.logger.info(256).append("StateDabTop - Entry").log();
                 DabRadioSlsApi.start(this.mTarget.getMainObject(), ASLRadioTargetIds.ASL_RADIO_HSMTARGET_DAB_SLS, this.mTarget.getTaskId());
                 this.mTarget.registerObservers();
                 DabDsiApi.start(this.mTarget.getMainObject(), ASLRadioTargetIds.ASL_RADIO_HSMTARGET_DAB_DSI, this.mTarget.getTaskId());
@@ -51,15 +52,14 @@ extends AbstractHsmState {
                 RadioData.getDabDatabase().mRadioTextSetupState.set(0);
                 HmiDabListViewApi.create(this.mTarget.getMainObject(), ASLRadioTargetIds.ASL_RADIO_HSMTARGET_DAB_LIST, this.mTarget.getTaskId());
                 GuiApiDab.makeSoftLinkingButtonVisible();
-                this.mTarget.initFromPersistence();
+                this.mTarget.setDabTargetReady(true);
+                this.mTarget.initFromPersistenceAfterStartUp();
                 this.mTarget.setNotification();
                 FactoryResetService factoryResetService = ASLSystemFactory.getSystemApi().getFactoryResetService();
                 factoryResetService.addParticipant(this.dabFactoryResetParticipant, FactoryResetComponents.RADIO);
                 break;
             }
             case 3: {
-                this.mTarget.send(ServiceManager.mGenericEventFactory.newEvent(this.mTarget.getTargetId(), ASLRadioTargetIds.ASL_RADIO_MANAGER, -1836646144));
-                RadioData.getDabDatabase().setDabTunerIsInitialized(true);
                 this.trans(this.mTarget.stateDabNotLoaded);
                 break;
             }

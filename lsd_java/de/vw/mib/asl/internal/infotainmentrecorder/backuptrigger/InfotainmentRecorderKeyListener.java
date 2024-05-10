@@ -32,7 +32,7 @@ extends KeyAdapter {
     }
 
     private boolean isTestModeAvailable() {
-        return this.configurationManager.isFeatureFlagSet(400);
+        return this.configurationManager.isFeatureFlagSet(401);
     }
 }
 

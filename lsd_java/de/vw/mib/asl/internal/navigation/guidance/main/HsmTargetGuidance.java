@@ -260,7 +260,7 @@ implements PowerStateListener {
     }
 
     public void setIsFFNavRouteCalcAdjustRoute() {
-        this.isFFNavRouteCalcAdjustRoute = ServiceManager.configManagerDiag.isFeatureFlagSet(149);
+        this.isFFNavRouteCalcAdjustRoute = ServiceManager.configManagerDiag.isFeatureFlagSet(150);
     }
 
     public boolean isFFNavRouteCalcAdjustRoute() {

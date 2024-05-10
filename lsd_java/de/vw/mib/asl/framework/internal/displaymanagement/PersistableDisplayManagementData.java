@@ -63,7 +63,7 @@ implements DisplayManagementPersistence {
 
     @Override
     public void clearUnknownValues(short s) {
-        if (s == SUPPORTED_VERSIONS[0] && ServiceManager.configManagerDiag.isFeatureFlagSet(425)) {
+        if (s == SUPPORTED_VERSIONS[0] && ServiceManager.configManagerDiag.isFeatureFlagSet(426)) {
             this.displayableBrightnessForTV = 0;
             this.displayableContrastForTV = 0;
             this.displayableSaturationForTV = 0;
@@ -85,7 +85,7 @@ implements DisplayManagementPersistence {
         this.displayableContrastForRVC = 50;
         this.displayableColorForRVC = 50;
         this.screenshotCounter = 1;
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             this.displayableBrightnessForVideo_Digital_1 = 0;
             this.displayableContrastForVideo_Digital_1 = 0;
             this.displayableSaturationForVideo_Digital_1 = 0;
@@ -104,7 +104,7 @@ implements DisplayManagementPersistence {
         this.displayableContrastForRVC = persistenceInputStream.readByte();
         this.displayableColorForRVC = persistenceInputStream.readByte();
         this.screenshotCounter = persistenceInputStream.readInt();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             this.displayableBrightnessForVideo_Digital_1 = persistenceInputStream.readByte();
             this.displayableContrastForVideo_Digital_1 = persistenceInputStream.readByte();
             this.displayableSaturationForVideo_Digital_1 = persistenceInputStream.readByte();
@@ -114,7 +114,7 @@ implements DisplayManagementPersistence {
             this.clearUnknownValues(s);
             return;
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(425)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(426)) {
             this.displayableBrightnessForTV = persistenceInputStream.readByte();
             this.displayableContrastForTV = persistenceInputStream.readByte();
             this.displayableSaturationForTV = persistenceInputStream.readByte();
@@ -136,13 +136,13 @@ implements DisplayManagementPersistence {
         persistenceOutputStream.writeByte(this.displayableContrastForRVC);
         persistenceOutputStream.writeByte(this.displayableColorForRVC);
         persistenceOutputStream.writeInt(this.screenshotCounter);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             persistenceOutputStream.writeByte(this.displayableBrightnessForVideo_Digital_1);
             persistenceOutputStream.writeByte(this.displayableContrastForVideo_Digital_1);
             persistenceOutputStream.writeByte(this.displayableSaturationForVideo_Digital_1);
             persistenceOutputStream.writeByte(this.displayableTintForVideo_Digital_1);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(425)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(426)) {
             persistenceOutputStream.writeByte(this.displayableBrightnessForTV);
             persistenceOutputStream.writeByte(this.displayableContrastForTV);
             persistenceOutputStream.writeByte(this.displayableSaturationForTV);

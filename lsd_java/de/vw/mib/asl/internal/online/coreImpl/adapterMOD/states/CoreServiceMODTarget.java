@@ -202,6 +202,10 @@ implements DSIServiceStateListener {
                 CoreServiceMODFactory.getNotifier().checkServiceStatusResponse(!Util.isNullOrEmpty(string) ? string : "", n);
                 break;
             }
+            case 100003: {
+                CoreServiceMODFactory.getController(this).precheckOnlineServiceRequest("");
+                break;
+            }
         }
     }
 

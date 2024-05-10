@@ -353,9 +353,9 @@ implements Target {
         this.logger.normal(this.getSubClassifier()).append(string).append(string2).log();
     }
 
-    public final boolean isTraceEnabled() {
+   < public final boolean isTraceEnabled() {
         return this.logger.isTraceEnabled(this.getSubClassifier());
-    }
+    }>
 
     public final LogMessage trace() {
         return this.logger.trace(this.getSubClassifier());

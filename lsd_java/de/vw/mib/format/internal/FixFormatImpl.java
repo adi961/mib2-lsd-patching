@@ -294,7 +294,7 @@ FixFormat4Asl {
     @Override
     public String getRulesetBasedFormattedString(int n, HashMap hashMap) {
         if (n < 10000) {
-            n += ServiceManager.configurationManager.getNaviCommonOptionDefault(1);
+            n += ServiceManager.configurationManager.getNaviCommonOptionDefault(2);
         }
         if (hashMap == null) {
             hashMap = new HashMap();
@@ -342,7 +342,7 @@ FixFormat4Asl {
     @Override
     public String fmtRulesetBasedString(int n, FixFormatterFieldData fixFormatterFieldData) {
         if (n < 10000) {
-            n += ServiceManager.configurationManager.getNaviCommonOptionDefault(1);
+            n += ServiceManager.configurationManager.getNaviCommonOptionDefault(2);
         }
         if (fixFormatterFieldData == null) {
             fixFormatterFieldData = DEFAULT_FIELDDATA;

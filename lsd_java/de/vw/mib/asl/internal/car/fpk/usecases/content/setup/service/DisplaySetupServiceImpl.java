@@ -55,12 +55,13 @@ implements DisplaySetupService {
     }
 
     private void onDisplayElementsChanged(int n, DisplayElements displayElements) {
+        ContentSelectionService contentSelectionService = this.getCarFPKSetupAPI().getContentSelectionService();
         if (null == displayElements) {
             GenericASLList genericASLList = this.getAslListManager().getGenericASLList(10883);
             GenericASLList genericASLList2 = this.getAslListManager().getGenericASLList(10884);
             genericASLList.updateList(this.createDefaultElements(1));
             genericASLList2.updateList(this.createDefaultElements(2));
-            ContentSelectionService contentSelectionService = this.getCarFPKSetupAPI().getContentSelectionService();
+            contentSelectionService.skipAndDelaySelectionEvents();
             contentSelectionService.setElementContentToModel(1, 0, 0);
             contentSelectionService.setElementContentToModel(2, 0, 0);
         } else {
@@ -69,7 +70,9 @@ implements DisplaySetupService {
             }
             int n2 = n == 1 ? 10883 : 10884;
             GenericASLList genericASLList = this.getAslListManager().getGenericASLList(n2);
+            contentSelectionService.skipAndDelaySelectionEvents();
             genericASLList.updateList(displayElements.getElements());
+            contentSelectionService.validateCurrentContentAndSetToModel(n);
         }
     }
 

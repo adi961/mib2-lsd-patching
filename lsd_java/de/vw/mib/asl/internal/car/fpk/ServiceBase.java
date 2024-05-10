@@ -73,7 +73,7 @@ implements ServiceState {
                 break;
             }
             default: {
-                AppLogger.warn(this, new StringBuffer().append(".gotEvent( event = ").append(eventGeneric.toString()).append(" ) unhandle event").toString());
+                AppLogger.warn(this, new StringBuffer().append(".gotEvent( event = ").append(eventGeneric.toString()).append(" ) unhandled/skipped event").toString());
             }
         }
     }

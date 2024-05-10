@@ -220,7 +220,7 @@ implements ReloadPersistedDataListener {
             boolean bl3 = this.datapool.isTrafficShowIncidents();
             this.notifierModel.notifyShowTrafficIncidents(bl3);
             this.notifierDSI.setTrafficShowIncidents(bl3);
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
                 this.notifierModel.notifySpeedAndFlowRoadClass(this.datapool.getSpeedAndFlowRoadClass());
                 this.notifierDSI.setSpeedAndFlowRoadClass(this.datapool.getSpeedAndFlowRoadClassDSI());
             }
@@ -234,11 +234,11 @@ implements ReloadPersistedDataListener {
     }
 
     protected static boolean isSDARSFeatureSet() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(238);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(239);
     }
 
     protected static boolean isJP() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(75);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(76);
     }
 
     protected static boolean isCHN() {

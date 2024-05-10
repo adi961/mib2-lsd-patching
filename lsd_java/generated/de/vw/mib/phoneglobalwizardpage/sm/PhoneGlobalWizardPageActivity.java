@@ -42,10 +42,10 @@ extends StatemachineActivityBase {
     public boolean evalInternalTransitionGuard(int n) {
         switch (n - this.IT_OFFSET) {
             case 0: {
-                return this.getInteger(1695809792) == 5 && this.getInteger(-878772224) == 2;
+                return this.getInteger(1762918656) == 5 && this.getInteger(-845217792) == 2;
             }
             case 1: {
-                return this.getInteger(1695809792) == 5 && this.getInteger(-878772224) == 2;
+                return this.getInteger(1762918656) == 5 && this.getInteger(-845217792) == 2;
             }
         }
         return true;

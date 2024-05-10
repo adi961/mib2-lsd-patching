@@ -224,9 +224,13 @@ class AudioHandler {
             this.handleNewAudioFocusState(3, true);
             this.releaseEntertainmentVolumeLock();
         }
-        if (!bl && this.properties.isUserMuteStarted() && this.properties.getLastAudioFocusState() == 1 && this.properties.getEntertainmentState() == 5 && this.target.isTraceEnabled()) {
-            this.target.trace(new StringBuffer().append("properties.getLastAudioFocusState() = ").append(this.properties.getLastAudioFocusState()).toString());
-            this.target.trace(new StringBuffer().append("properties.getEntertainmentState() = ").append(this.properties.getEntertainmentState()).toString());
+        if (!bl && this.properties.isUserMuteStarted() && this.properties.getLastAudioFocusState() == 1 && this.properties.getEntertainmentState() == 5) {
+            this.target.getDSIAndroidAuto2().postButtonEvent(126, 0);
+            this.target.getDSIAndroidAuto2().postButtonEvent(126, 1);
+            if (this.target.isTraceEnabled()) {
+                this.target.trace(new StringBuffer().append("properties.getLastAudioFocusState() = ").append(this.properties.getLastAudioFocusState()).toString());
+                this.target.trace(new StringBuffer().append("properties.getEntertainmentState() = ").append(this.properties.getEntertainmentState()).toString());
+            }
         }
         this.properties.setUserMuteStarted(bl);
         this.properties.setUserMuteActive(bl2);

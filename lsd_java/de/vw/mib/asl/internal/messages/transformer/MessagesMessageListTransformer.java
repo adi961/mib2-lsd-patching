@@ -102,7 +102,7 @@ extends AbstractMessagesMessageListTransformer {
     }
 
     private boolean messageReadable(MessageListItem messageListItem) {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(83) ? messageListItem.listEntry.getMessageListEntry().getType() != 4 : messageListItem.listEntry.getMessageListEntry().getType() == 1;
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(84) ? messageListItem.listEntry.getMessageListEntry().getType() != 4 : messageListItem.listEntry.getMessageListEntry().getType() == 1;
     }
 
     @Override

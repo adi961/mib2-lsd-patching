@@ -41,7 +41,7 @@ implements BAPFunctionControlUnitExt {
 
     private NavSDBindingFactory getBindingFactory() {
         if (this._navSdBindingFactory == null) {
-            this._navSdBindingFactory = this.isArabic() ? new NavSDBindingFactoryArabic() : (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(2) && !ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(367) ? new NavSDBindingFactoryNarNoNavi() : new NavSDBindingFactoryAll());
+            this._navSdBindingFactory = this.isArabic() ? new NavSDBindingFactoryArabic() : (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(2) && !ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(368) ? new NavSDBindingFactoryNarNoNavi() : new NavSDBindingFactoryAll());
         }
         return this._navSdBindingFactory;
     }

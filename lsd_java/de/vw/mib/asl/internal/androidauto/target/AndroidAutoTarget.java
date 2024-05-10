@@ -10,6 +10,7 @@ import de.vw.mib.asl.api.navigation.ASLNavigationFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationServices;
 import de.vw.mib.asl.framework.api.displaymanagement.ASLDisplaymanagementFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.displayable.DisplayableService;
+import de.vw.mib.asl.framework.api.dsiproxy.DSIProxy;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxyFactory;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIServiceStateListener;
 import de.vw.mib.asl.framework.internal.framework.AbstractASLTarget;
@@ -388,13 +389,13 @@ implements DSIServiceStateListener {
         }
     }
 
-    static /* synthetic */ Class class$(String string) {
+ /*   static *//* synthetic *//* Class class$(String string) {
         try {
             return Class.forName(string);
         }
         catch (ClassNotFoundException classNotFoundException) {
             throw new NoClassDefFoundError().initCause(classNotFoundException);
         }
-    }
+    }*/
 }
 

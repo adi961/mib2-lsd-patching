@@ -499,7 +499,7 @@ IPersistedGuidanceSetup {
     }
 
     public static int setDefaultTimeFormat() {
-        return ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
+        return ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
     }
 
     public static boolean isPersistenceRestoredDefault() {

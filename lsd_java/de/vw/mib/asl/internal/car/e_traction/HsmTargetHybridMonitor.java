@@ -242,7 +242,7 @@ DSIServiceStateListener {
 
     private void checkingEngine() {
         this.dsiCarFpa.setNotification(12, this.dsiCarFpaListener);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(394)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(395)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(10359, true);
             this.dsiCarKombi.setNotification(4, this.dsiCarKombiListener);
             this.setIsBev(true);
@@ -553,7 +553,7 @@ DSIServiceStateListener {
 
     public void dsiCarHybridUpdateHybridRecoveredEnergy(int n, int n2) {
         if (this.isCarMoving) {
-            this.sumValuesStatistic = ServiceManager.configManagerDiag.isFeatureFlagSet(394) ? (this.sumValuesStatistic += n / 5) : (this.sumValuesStatistic += n / 10);
+            this.sumValuesStatistic = ServiceManager.configManagerDiag.isFeatureFlagSet(395) ? (this.sumValuesStatistic += n / 5) : (this.sumValuesStatistic += n / 10);
         }
         ServiceManager.aslPropertyManager.valueChangedInteger(10355, this.sumValuesStatistic);
     }

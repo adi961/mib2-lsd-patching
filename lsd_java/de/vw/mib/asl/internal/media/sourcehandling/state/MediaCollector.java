@@ -198,7 +198,7 @@ public final class MediaCollector {
     }
 
     public boolean hasPlaymodeSupportInBrowser() {
-        return !this.isBT() && !this.isIPod() && (!this.isWLAN() || ServiceManager.configManagerDiag.isFeatureFlagSet(378));
+        return !this.isBT() && !this.isIPod() && (!this.isWLAN() || ServiceManager.configManagerDiag.isFeatureFlagSet(379));
     }
 
     public boolean isRawModeReadyToUse(boolean bl) {

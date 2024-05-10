@@ -86,7 +86,7 @@ DSIServiceStateListener {
                     ServiceManager.dsiServiceLocator.addServiceStateListener(class$org$dsi$ifc$navigation$DSINavigation == null ? (class$org$dsi$ifc$navigation$DSINavigation = TargetTourView.class$("org.dsi.ifc.navigation.DSINavigation")) : class$org$dsi$ifc$navigation$DSINavigation, this);
                 }
                 this.addObservers(OBSERVER);
-                int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(3);
+                int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(0);
                 int n2 = n - 1;
                 ServiceManager.aslPropertyManager.valueChangedInteger(1458573312, n2);
                 break;

@@ -245,7 +245,7 @@ DeviceManagerListener {
                     this.myRDKViewOptionsData.setTirePressureDisplay(this.myRDKViewOptions.getTireDisplay());
                 }
                 if (this.getTireInfo() < 2) break;
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
                     this.myRDKViewOptionsData.setTireType(new CarViewOption(2, 0));
                     break;
                 }
@@ -260,8 +260,8 @@ DeviceManagerListener {
     }
 
     private void evaluateRDKPartFullLoadViewOptions(RDKViewOptionsCollector rDKViewOptionsCollector) {
-        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(105) || this.myRDKViewOptions.getConfiguration().getSystem() != 2) {
-            if (this.myRDKViewOptions.configuration.pressureLevel2 || this.myRDKViewOptions.configuration.pressureLevel3 || ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(106) || this.myRDKViewOptions.getConfiguration().getSystem() != 2) {
+            if (this.myRDKViewOptions.configuration.pressureLevel2 || this.myRDKViewOptions.configuration.pressureLevel3 || ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
                 rDKViewOptionsCollector.setTirePressureLevel(this.myRDKViewOptions.getTireDisplay());
             } else {
                 rDKViewOptionsCollector.setTirePressureLevel(NOT_EXISTING_VIEWOPTION);

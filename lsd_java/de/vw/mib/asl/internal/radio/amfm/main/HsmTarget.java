@@ -822,7 +822,7 @@ implements DSIServiceStateListener {
         if (ServiceManager.logger.isTraceEnabled(128)) {
             ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("HsmTarget - registered()").log();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && string.intern() == RuntimeGeneratedConstants.SERVICE_TS_NS[84]) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && string.intern() == RuntimeGeneratedConstants.SERVICE_TS_NS[84]) {
             if (ServiceManager.logger.isTraceEnabled(128)) {
                 ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("HsmTarget - registered() - dsiNavServicesAPIListener").log();
             }

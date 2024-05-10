@@ -65,7 +65,7 @@ public class DiagModeSourceSwitchGeneric {
                 break;
             }
             case 17: {
-                if (!this.configurationManager.isFeatureFlagSet(425)) break;
+                if (!this.configurationManager.isFeatureFlagSet(426)) break;
                 bl = true;
                 this.enterTVTuner();
                 break;

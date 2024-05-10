@@ -13,7 +13,7 @@ extends AbstractNavigationMemoryContactAddressSlotListTransformer {
     @Override
     public String getString(int n, Object object) {
         if (n == 0) {
-            int n2 = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+            int n2 = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
             return ServiceManager.fixFormat4Asl.fmtRulesetBasedString(10 + n2, ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData((AddressData)object, null, null));
         }
         throw new UnsupportedOperationException();

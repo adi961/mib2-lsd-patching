@@ -24,7 +24,7 @@ public class RCAlternativeRouteDetailsModelNotifier {
             this.routeDetailsCollectors[n] = new CalculatedRouteDetailsCollector();
         }
         ListManager.getGenericASLList(822).updateList(this.routeDetailsCollectors);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(107)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(108)) {
             this.alternativeRouteIconsCollector = new AlternativeRouteIconsCollector[4];
             this.alternativeRouteIconsCollector[0] = new AlternativeRouteIconsCollector();
             for (n = 0; n < this.alternativeRouteIconsCollector[0].icons.length; ++n) {
@@ -158,7 +158,7 @@ public class RCAlternativeRouteDetailsModelNotifier {
         int n2 = RouteOptionServices.ROUTE_OPTIONS_PROVIDER.getNumberOfAlternativeRoutes();
         int[] nArray = new int[n2];
         int n3 = 0;
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(107)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(108)) {
             this.alternativeRouteIconsCollector[0].icons[n] = calculatedRouteListElement.getTollLength() > 0L ? 2 : 3;
             this.alternativeRouteIconsCollector[1].icons[n] = calculatedRouteListElement.motorwayLength > 0L ? 8 : 9;
             this.alternativeRouteIconsCollector[2].icons[n] = calculatedRouteListElement.hasTunnel ? 6 : 7;

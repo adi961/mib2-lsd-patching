@@ -237,13 +237,13 @@ public abstract class PersistableRouteOptionsAccessor {
     public void setTrailerMode(PersistableRouteOptionsSetup persistableRouteOptionsSetup, boolean bl) {
         this.trace("setTrailerMode()");
         RouteOptions routeOptions = persistableRouteOptionsSetup.dsiRouteOptions.getRouteOptions();
-        routeOptions.trailer = ServiceManager.configManagerDiag.isFeatureFlagSet(70) ? (bl ? 1 : 2) : (bl ? 2 : 1);
+        routeOptions.trailer = ServiceManager.configManagerDiag.isFeatureFlagSet(71) ? (bl ? 1 : 2) : (bl ? 2 : 1);
         persistableRouteOptionsSetup.dsiRouteOptions.setRouteOptions(routeOptions);
     }
 
     public boolean getTrailerMode(PersistableRouteOptionsSetup persistableRouteOptionsSetup) {
         this.trace("getTrailerMode()");
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             return persistableRouteOptionsSetup.dsiRouteOptions.getRouteOptions().trailer == 1;
         }
         return persistableRouteOptionsSetup.dsiRouteOptions.getRouteOptions().trailer == 2;

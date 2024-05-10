@@ -26,11 +26,11 @@ implements RtMethodListener {
     @Override
     public void onRtMethodValueChanged(String string) {
         if ("ASL.Configuration.isSdsCoding".equals(string)) {
-            boolean bl = this.val$internalConfigurationManager.isFeatureFlagSet(241);
+            boolean bl = this.val$internalConfigurationManager.isFeatureFlagSet(242);
             this.val$internalSystemEarly.setLastValueFeatureFlagSdsCoding(bl);
             this.val$internalPropertyManager.valueChangedBoolean(781260800, bl);
         } else if ("ASL.Configuration.isSdsSwAP".equals(string)) {
-            boolean bl = this.val$internalConfigurationManager.isFeatureFlagSet(307);
+            boolean bl = this.val$internalConfigurationManager.isFeatureFlagSet(308);
             this.val$internalSystemEarly.setLastValueFeatureFlagSdsSwap(bl);
             this.val$internalPropertyManager.valueChangedBoolean(764483584, bl);
         }

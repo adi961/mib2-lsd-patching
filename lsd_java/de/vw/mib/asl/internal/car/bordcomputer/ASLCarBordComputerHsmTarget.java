@@ -485,7 +485,7 @@ BordComputerService {
     private void persistOffroadSetup(EventGeneric eventGeneric) {
         int n = eventGeneric.getInt(0);
         int n2 = eventGeneric.getInt(1);
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(360) && !ServiceManager.configManagerDiag.isFeatureFlagSet(441);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(361) && !ServiceManager.configManagerDiag.isFeatureFlagSet(442);
         CarOffroad carOffroad = CarPersistenceServiceImpl.getInstance().loadCar().getCarOffroad();
         switch (n) {
             case 0: {

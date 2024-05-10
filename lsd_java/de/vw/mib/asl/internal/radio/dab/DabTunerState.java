@@ -219,7 +219,7 @@ public class DabTunerState {
             RadioDataApi.requestRadioDabStationLogos(serviceInfoArray, 7);
             this.mServiceList = new ServiceInfo[treeSet.size()];
             this.mServiceList = (ServiceInfo[])treeSet.toArray(this.mServiceList);
-            if (!(ServiceManager.configManagerDiag.isFeatureFlagSet(348) && RadioDataApi.isSouthSideStationLogoDbActive() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
+            if (!(ServiceManager.configManagerDiag.isFeatureFlagSet(349) && RadioDataApi.isSouthSideStationLogoDbActive() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
                 RadioServiceManager.getServiceManager().getAdapterAslSpeech().updateDabServiceListToSpeech();
             }
             try {

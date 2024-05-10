@@ -93,7 +93,7 @@ extends AbstractSystemTarget {
     }
 
     private void registerRTMethodListener() {
-        this.configurationManagerDiag.addFeatureFlagValueChangeReceiver(new SpaceGestureManager$1(this), 465);
+        this.configurationManagerDiag.addFeatureFlagValueChangeReceiver(new SpaceGestureManager$1(this), 467);
     }
 
     private void setupFactoryResetParticipant() {
@@ -105,7 +105,7 @@ extends AbstractSystemTarget {
     }
 
     private void updateSpaceGestureActivation() {
-        boolean bl = this.configurationManagerDiag.isFeatureFlagSet(465);
+        boolean bl = this.configurationManagerDiag.isFeatureFlagSet(467);
         boolean bl2 = this.systemCommon.isGestureActive() && bl;
         this.propertyManager.valueChangedBoolean(1664229376, bl2);
         this.gestureService.applyCurrentSpaceGestureValue(bl2);

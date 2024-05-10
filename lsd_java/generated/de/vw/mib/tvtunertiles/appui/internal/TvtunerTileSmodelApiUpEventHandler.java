@@ -23,7 +23,7 @@ implements ModelApiUpEventHandler {
         int n = modelApiUpEvent.getActionId();
         switch (n) {
             case 0: {
-                this.modelDatapool.setInteger(-36110336, modelApiUpEvent.getInt(0));
+                this.modelDatapool.setInteger(31064064, modelApiUpEvent.getInt(0));
                 break;
             }
             case 1: {
@@ -35,11 +35,11 @@ implements ModelApiUpEventHandler {
                 break;
             }
             case 3: {
-                this.modelDatapool.setBoolean(-219217920, modelApiUpEvent.getBoolean(0));
+                this.modelDatapool.setBoolean(-152109056, modelApiUpEvent.getBoolean(0));
                 break;
             }
             case 4: {
-                this.modelDatapool.setBoolean(-622395392, modelApiUpEvent.getBoolean(0));
+                this.modelDatapool.setBoolean(-555286528, modelApiUpEvent.getBoolean(0));
                 break;
             }
             case 5: {

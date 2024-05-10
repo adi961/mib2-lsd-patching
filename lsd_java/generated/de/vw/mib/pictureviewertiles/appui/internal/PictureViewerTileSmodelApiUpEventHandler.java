@@ -24,7 +24,7 @@ implements ModelApiUpEventHandler {
         int n = modelApiUpEvent.getActionId();
         switch (n) {
             case 0: {
-                this.modelDatapool.setResourceLocator(-1259601920, (ResourceLocator)modelApiUpEvent.getObject(0));
+                this.modelDatapool.setResourceLocator(-1192493056, (ResourceLocator)modelApiUpEvent.getObject(0));
                 break;
             }
             default: {

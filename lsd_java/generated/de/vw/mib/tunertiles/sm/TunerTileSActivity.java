@@ -41,9 +41,9 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                this.setInteger(-1038417664, TunerTileSActivity.evIntegerValueValue());
+                this.setInteger(-954531584, TunerTileSActivity.evIntegerValueValue());
                 EventGeneric eventGeneric = TunerTileSActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(-1038417664));
+                eventGeneric.setInt(0, this.getInteger(-954531584));
                 this.triggerObserver(362751040, eventGeneric);
                 break;
             }

@@ -39,10 +39,10 @@ implements ConfigurationManagerGenerated {
     private static final int DEFAULTDISPLAYCONTEXTID_INDEX;
     private static final int DEFAULTRVCDISPLAYCONTEXTID_INDEX;
     private static final int NUMBERODFDISPLAYCONTEXTS_INDEX;
-    protected int[][] aft2lfts = new int[][]{{398, 644}, {70, 459, 460, 460, 461, 461, 462, 462, 463, 469, 476, 478, 505, 521, 522}, {309, 537, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602}, {313, 587}, {334, 607}, {51, 506}, {173, 484, 486, 498, 499, 510, 652}, {307, 533, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 582, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 640}, {323, 597}, {316, 590}, {392, 474, 649, 650, 651}, {255, 549}, {263, 637}, {350, 640}, {241, 533, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 640}, {66, 447, 448, 449}, {286, 564}, {262, 636}, {304, 639}, {296, 580}, {261, 629}, {162, 485, 529}, {192, 475, 508}, {0, 502}, {264, 630}, {320, 594}, {432, 464, 465}, {4, 451}, {354, 457}, {108, 467}, {424, 572, 575, 577}, {249, 623}, {187, 450, 458}, {329, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620}, {104, 469}, {273, 552, 553, 554, 555, 556, 557, 558, 559, 560, 635}, {288, 566}, {437, 461, 462, 479}, {48, 517}, {85, 460, 461, 462}, {327, 601}, {363, 658, 659}, {294, 579}, {310, 584}, {445, 656}, {89, 530}, {322, 596}, {443, 654}, {427, 526}, {26, 459, 509, 525, 526, 621, 660}, {275, 554}, {303, 495}, {370, 489}, {434, 480}, {58, 459}, {125, 484, 486, 498, 499, 510, 528}, {25, 451}, {326, 600}, {315, 589}, {57, 521, 523, 528}, {71, 519}, {186, 475}, {355, 643, 644}, {161, 485, 529}, {184, 474}, {345, 617}, {138, 484, 486, 498, 499, 510}, {435, 461, 462, 479}, {278, 559}, {330, 603}, {436, 461, 462, 479}, {353, 460, 460, 461, 461, 462, 462, 464, 488, 489, 490, 491, 492, 493, 494, 496, 497, 512, 516, 657}, {106, 648}, {181, 452}, {168, 484, 486, 498, 499, 510}, {280, 560}, {232, 470}, {198, 473}, {281, 557}, {236, 461, 532}, {27, 650}, {289, 567}, {111, 484, 486, 498, 499, 510}, {151, 471}, {332, 605}, {276, 555}, {399, 647}, {183, 452}, {318, 592}, {340, 612}, {1, 487, 501, 503, 570, 571}, {242, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 640}, {385, 450}, {328, 602}, {2, 570, 571, 573, 574, 575}, {336, 609}, {259, 627}, {321, 595}, {245, 542}, {87, 581}, {308, 583}, {65, 447, 448}, {258, 626}, {358, 643, 645}, {319, 593}, {253, 625}, {23, 451}, {324, 598}, {277, 558}, {342, 614}, {311, 585}, {191, 473}, {63, 481, 482, 483, 486}, {302, 495}, {53, 518, 519}, {314, 588}, {270, 539}, {290, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577}, {335, 608}, {352, 642}, {285, 563}, {271, 634}, {267, 633}, {295, 580}, {55, 521, 522, 524, 525, 526, 527}, {397, 643, 643, 645, 646}, {73, 481, 482, 483, 486}, {59, 621, 651}, {266, 632}, {325, 599}, {107, 466}, {444, 655}, {282, 635}, {356, 643, 646}, {112, 468}, {351, 641}, {269, 538}, {247, 544}, {393, 650, 651}, {291, 577}, {60, 483}, {56, 523, 528}, {284, 562}, {341, 613}, {260, 628}, {274, 553}, {312, 586}, {343, 615}, {248, 545, 546, 547, 623, 624, 625}, {239, 495, 533, 534, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 640}, {279, 556}, {41, 457}, {369, 498, 499, 514, 660}, {193, 475, 630}, {442, 653}, {256, 538, 539, 550, 621, 622, 626, 627, 628, 629, 630, 631, 632, 633, 634, 636, 637, 638}, {268, 638}, {344, 616}, {360, 454, 455, 456, 464, 465, 513, 516, 660}, {283, 561}, {238, 487, 493, 494, 500, 501, 511, 515, 576}, {244, 541}, {77, 477}, {94, 520}, {69, 460, 461, 462, 465, 480, 650, 651}, {347, 619}, {408, 652}, {254, 548}, {68, 460, 461, 462, 465, 480}, {272, 551}, {49, 487, 488, 490, 491, 492, 496, 497, 500, 501, 504, 515, 572}, {339, 611}, {246, 543}, {252, 547}, {99, 451}, {265, 631}, {317, 591}, {337, 610}, {251, 546}, {349, 620}, {346, 618}, {97, 520}, {250, 624}, {297, 581}, {292, 578}, {190, 650, 651}, {20, 456}, {123, 484, 486, 498, 499, 510}, {84, 531}, {174, 657}, {287, 565}, {75, 472, 526, 622}, {331, 604}, {24, 451}, {105, 453, 476, 478, 491, 497, 507, 621}, {185, 649}, {243, 540}, {333, 606}};
-    protected int[] onlineServiceFeatureFlags = new int[]{183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200};
+    protected int[][] aft2lfts = new int[][]{{409, 654}, {286, 565}, {252, 548}, {346, 619}, {351, 642}, {265, 632}, {113, 470}, {63, 483, 484, 485, 488}, {106, 454, 478, 480, 493, 499, 509, 623}, {278, 560}, {259, 628}, {283, 637}, {243, 538, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 642}, {314, 589}, {342, 615}, {194, 477, 632}, {296, 582}, {437, 462, 463, 481}, {4, 452}, {264, 639}, {85, 533}, {108, 468}, {310, 539, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604}, {315, 590}, {249, 547, 548, 549, 625, 626, 627}, {328, 603}, {246, 544}, {298, 583}, {23, 452}, {295, 581}, {1, 489, 503, 505, 572, 573}, {277, 557}, {2, 572, 573, 575, 576, 577}, {253, 549}, {239, 489, 495, 496, 502, 503, 513, 517, 578}, {291, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579}, {260, 629}, {175, 659}, {237, 462, 534}, {281, 562}, {139, 486, 488, 500, 501, 512}, {348, 621}, {274, 554, 555, 556, 557, 558, 559, 560, 561, 562, 637}, {316, 591}, {324, 599}, {443, 655}, {321, 596}, {267, 634}, {288, 567}, {352, 643}, {262, 631}, {445, 657}, {48, 519}, {188, 451, 459}, {112, 486, 488, 500, 501, 512}, {356, 645, 646}, {359, 645, 647}, {65, 448, 449}, {317, 592}, {268, 635}, {446, 658}, {269, 640}, {353, 644}, {308, 535, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 584, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 642}, {184, 453}, {329, 604}, {98, 522}, {20, 457}, {185, 476}, {95, 522}, {393, 476, 651, 652, 653}, {67, 448, 449, 450}, {435, 482}, {355, 458, 466}, {279, 561}, {271, 541}, {254, 627}, {27, 652}, {41, 458}, {244, 542}, {57, 523, 525, 530}, {78, 479}, {289, 568}, {276, 556}, {49, 489, 490, 492, 493, 494, 498, 499, 502, 503, 506, 517, 574}, {333, 607}, {240, 497, 535, 536, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 642}, {311, 586}, {330, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622}, {263, 638}, {284, 563}, {86, 461, 462, 463}, {280, 558}, {400, 649}, {303, 497}, {199, 475}, {162, 487, 531}, {319, 594}, {70, 461, 462, 463, 467, 482, 652, 653}, {370, 500, 501, 516, 662}, {270, 540}, {25, 452}, {58, 460}, {182, 453}, {285, 564}, {293, 580}, {399, 646}, {273, 553}, {327, 602}, {344, 617}, {305, 641}, {428, 528}, {336, 610}, {272, 636}, {444, 656}, {169, 486, 488, 500, 501, 512}, {74, 483, 484, 485, 488}, {322, 597}, {76, 474, 528, 624}, {357, 645, 648}, {371, 491}, {323, 598}, {53, 520, 521}, {245, 543}, {398, 645, 645, 647, 648}, {266, 633}, {100, 452}, {354, 461, 461, 462, 462, 463, 463, 465, 490, 491, 492, 493, 494, 495, 496, 498, 499, 514, 518, 659}, {320, 595}, {347, 620}, {233, 472}, {51, 508}, {345, 618}, {248, 546}, {292, 579}, {364, 660, 661}, {257, 540, 541, 552, 623, 624, 628, 629, 630, 631, 632, 633, 634, 635, 636, 638, 639, 640}, {186, 651}, {425, 574, 577, 579}, {350, 622}, {331, 605}, {394, 652, 653}, {247, 545}, {318, 593}, {109, 469}, {124, 486, 488, 500, 501, 512}, {69, 461, 462, 463, 467, 482}, {242, 535, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 642}, {325, 600}, {26, 460, 511, 527, 528, 623, 662}, {174, 486, 488, 500, 501, 512, 654}, {250, 625}, {55, 523, 524, 526, 527, 528, 529}, {191, 652, 653}, {60, 485}, {386, 451}, {90, 532}, {193, 477, 510}, {326, 601}, {337, 611}, {256, 551}, {340, 613}, {343, 616}, {290, 569}, {438, 462, 463, 481}, {251, 626}, {436, 462, 463, 481}, {312, 587}, {163, 487, 531}, {304, 497}, {107, 650}, {313, 588}, {255, 550}, {433, 465, 467}, {152, 473}, {287, 566}, {261, 630}, {71, 460, 461, 461, 462, 462, 463, 463, 464, 471, 478, 480, 507, 523, 524}, {334, 608}, {297, 582}, {192, 475}, {59, 623, 653}, {341, 614}, {338, 612}, {187, 477}, {56, 525, 530}, {24, 452}, {275, 555}, {361, 455, 456, 457, 465, 467, 515, 518, 662}, {105, 471}, {0, 504}, {309, 585}, {88, 583}, {126, 486, 488, 500, 501, 512, 530}, {72, 521}, {335, 609}, {282, 559}, {332, 606}};
+    protected int[] onlineServiceFeatureFlags = new int[]{184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201};
     private int[] packedFeatureFlagValues;
-    protected String[][] allConstantNames = new String[][]{{"BAPFsgFcVersion"}, {"AdaptationMetaDataPath"}, {"AM_SSEonMMX"}, {"BAPTUNERDABDoubleTuner"}, {"BAPTunerEnablePresetListInIC"}, {"CarSportBoolean"}, {"CodingMetaDataPath"}, {"CommonSkinId"}, {"CopyrightFilePath"}, {"CopyrightIndexFilePath"}, {"DefaultSkinMode"}, {"DiagClassName"}, {"EventQueueSize"}, {"FwDefaultVisiblePoiCategories"}, {"GpsAvailable"}, {"GraphicsFontCacheSizeMiB"}, {"GraphicsImageCacheSizeMiB"}, {"GraphicsVideoRAMSizeMiB"}, {"MediaImportNumberOfAvailableSources"}, {"MediaImportPositionCDDVD"}, {"MediaImportPositionSDCard1"}, {"MediaImportPositionSDCard2"}, {"MediaImportPositionUSB"}, {"MediaVideoNumberOfAvailableSources"}, {"MediaVideoPositionCDDVD"}, {"MediaVideoPositionCDDVDChanger"}, {"NaviInfotileDefaultContentGuidance"}, {"NaviInfotileDefaultContentNoGuidance"}, {"NumberOfSDSlots"}, {"OffClockMapType"}, {"PhoneMaxPhoneNumberCharacters"}, {"PhoneMaxPhoneNumberCharactersSds"}, {"PhoneNumberOfAddressbookEntries"}, {"PhoneDefaultContactNameRepresentation"}, {"RelativeAlphabetPath"}, {"RelativeOpsPath"}, {"ScreenshotDirectories"}, {"SDSNavTTSAvailable"}, {"SDSisUpdateGrammarStateSupported"}, {"SDSMediaCountLimitedGlobally"}, {"SDSMediaMaxItems"}, {"SystemDayNightModeDefault"}, {"SystemDefaultDateFormat"}, {"SystemDisplayBrightnessDefault"}, {"SystemKeyPanelInstance"}, {"SystemPersonalisationProfilesCount"}, {"SystemProximityOnDefaultBoolean"}, {"SystemShowOffClockActiveDefaultBoolean"}, {"SystemSpecialHandlingPowerstateOFFDuringSWDL"}, {"SystemSpellerLayoutDefault"}, {"SystemSummertimeOnDefaultBoolean"}, {"SystemTimeMasterDefault"}, {"SystemTranslationHash"}, {"TimerReadoutListTimeoutPromptFinished"}, {"TimerReadoutListTimeoutPromptStarted"}, {"TimerReadoutListUserInteraction"}, {"TUNERDABsupportsJumpLmBoolean"}, {"TUNERDABsupportsScanBoolean"}, {"TunerDabUserPresetLogoHeight"}, {"TunerDabUserPresetLogoWidth"}, {"TUNERFirstItemPresetBank2"}, {"TUNERFirstItemPresetBank3"}, {"TUNERNumberOfPresets"}, {"VehicleProductId"}, {"ViewHandlerCacheSize"}, {"ClusterInstrumentType.MLB511", "ClusterInstrumentType.Top", "ClusterInstrumentType.MQB"}, {"DisplayDefault.ResolutionWidth", "DisplayDefault.ResolutionHeight"}, {"EventPoolSize.PropertyUpdate", "EventPoolSize.SystemEvent", "EventPoolSize.ListItem", "EventPoolSize.ViewChange", "EventPoolSize.Touch", "EventPoolSize.Invocation", "EventPoolSize.SdFeatureCollection", "EventPoolSize.ListReadout", "EventPoolSize.BooleanValue", "EventPoolSize.ReadoutListSelection", "EventPoolSize.SpeechCommand", "EventPoolSize.Startup", "EventPoolSize.PopupView", "EventPoolSize.Point", "EventPoolSize.IntegerValue", "EventPoolSize.LsChange", "EventPoolSize.PopupStackChange", "EventPoolSize.HMI", "EventPoolSize.ContextChange", "EventPoolSize.PowerState", "EventPoolSize.Repaint", "EventPoolSize.State", "EventPoolSize.DynamicState", "EventPoolSize.SpellerValue", "EventPoolSize.Rotation", "EventPoolSize.Speech"}, {"NaviCommonOptionDefault.SwitchToResultListThreshold", "NaviCommonOptionDefault.FormattingRuleOffset", "NaviCommonOptionDefault.TimeDisplayFormat", "NaviCommonOptionDefault.MaxNumberOfTourDestinations"}, {"NaviCommonOptionDefaultBoolean.TouchApproachInMapFeatureAvailable", "NaviCommonOptionDefaultBoolean.ThreePlusOneBoxFeatureAvailable", "NaviCommonOptionDefaultBoolean.CrosshairModeFeatureAvailable", "NaviCommonOptionDefaultBoolean.ShowEnhancedCityModelAllViewtypes", "NaviCommonOptionDefaultBoolean.GoogleEarthCalculateZoomIndexOfZoomLevel", "NaviCommonOptionDefaultBoolean.Landmarks3DAlwaysVisible", "NaviCommonOptionDefaultBoolean.CountryOverviewAvailable", "NaviCommonOptionDefaultBoolean.GoogleStreetViewAvailable", "NaviCommonOptionDefaultBoolean.SecondDsiMapViewerControlInstanceAvailable", "NaviCommonOptionDefaultBoolean.AllowDisplayGeoCoordinates", "NaviCommonOptionDefaultBoolean.GoogleEarthAvailable", "NaviCommonOptionDefaultBoolean.DieselFuelWarningAvailable"}, {"NaviCountryOverviewLocationOptionDefault.LongitudeDeciSeconds", "NaviCountryOverviewLocationOptionDefault.LongitudeMinutes", "NaviCountryOverviewLocationOptionDefault.LongitudeDegrees", "NaviCountryOverviewLocationOptionDefault.LatitudeDegrees", "NaviCountryOverviewLocationOptionDefault.LatitudeMinutes", "NaviCountryOverviewLocationOptionDefault.LatitudeDeciSeconds"}, {"NaviDestInputDefault.ListWindowSize", "NaviDestInputDefault.ListAutoSize"}, {"NaviDualScreenOptionDefault.MapVisibility"}, {"NaviLocationOptionDefault.LongitudeMinutes", "NaviLocationOptionDefault.LongitudeDegrees", "NaviLocationOptionDefault.LatitudeDegrees", "NaviLocationOptionDefault.LatitudeMinutes", "NaviLocationOptionDefault.LongitudeSeconds", "NaviLocationOptionDefault.LatitudeSeconds"}, {"NaviLocationOptionDefaultBoolean.LatitudeSign", "NaviLocationOptionDefaultBoolean.LocationInputChinaFeaturesEnabled", "NaviLocationOptionDefaultBoolean.LocationInputEnabled", "NaviLocationOptionDefaultBoolean.LocationInputNarFeaturesEnabled", "NaviLocationOptionDefaultBoolean.LongitudeSign"}, {"NaviPoiSortOrderBoolean.CategoryClassesNatural", "NaviPoiSortOrderBoolean.TopCategoriesNatural", "NaviPoiSortOrderBoolean.PreferredBrandsNatural", "NaviPoiSortOrderBoolean.CategoryGroupsNatural"}, {"NaviRMLOptionBoolean.ExtendedItems"}, {"NaviRouteOptionDefault.RouteProfile", "NaviRouteOptionDefault.Weighting", "NaviRouteOptionDefault.CityMaut", "NaviRouteOptionDefault.HovCarPoolsLane", "NaviRouteOptionDefault.HybridMode", "NaviRouteOptionDefault.RouteType", "NaviRouteOptionDefault.Unpaved", "NaviRouteOptionDefault.DynamicTrafficPatternRecorded", "NaviRouteOptionDefault.SlopesMaxFactor", "NaviRouteOptionDefault.TimeDomain", "NaviRouteOptionDefault.ResidentialAreaHandling", "NaviRouteOptionDefault.Slopes", "NaviRouteOptionDefault.LeftRightTurn", "NaviRouteOptionDefault.DynamicTrafficPattern", "NaviRouteOptionDefault.Vignette", "NaviRouteOptionDefault.Border", "NaviRouteOptionDefault.Ferries", "NaviRouteOptionDefault.Trailer", "NaviRouteOptionDefault.EconomicTurns", "NaviRouteOptionDefault.Tollroads", "NaviRouteOptionDefault.Tunnels", "NaviRouteOptionDefault.Trail", "NaviRouteOptionDefault.Motorways", "NaviRouteOptionDefault.DynamicSpeedFlow", "NaviRouteOptionDefault.InProgressData", "NaviRouteOptionDefault.TollroadsCostPenalty", "NaviRouteOptionDefault.DynamicTrafficPatternOnline", "NaviRouteOptionDefault.Dynamic", "NaviRouteOptionDefault.Cartrain", "NaviRouteOptionDefault.NumberOfAlternativeRoutes", "NaviRouteOptionDefault.WaypointMode", "NaviRouteOptionDefault.SeasonalTimeDomain"}, {"NaviRouteOptionDefaultBoolean.AlternativeRouteCalculation"}, {"NaviSplitScreenOptionDefaultBoolean.SplitScreenNoGuidanceEnabled", "NaviSplitScreenOptionDefaultBoolean.SplitScreenGuidanceEnabled"}, {"NaviSplitScreenOptionDefaultInteger.SplitScreenNoGuidanceContent", "NaviSplitScreenOptionDefaultInteger.SplitScreenGuidanceContent", "NaviSplitScreenOptionDefaultInteger.SplitScreenSecondDisplayablePositionY", "NaviSplitScreenOptionDefaultInteger.SplitScreenSecondDisplayablePositionX", "NaviSplitScreenOptionDefaultInteger.SplitScreenEvPositionY", "NaviSplitScreenOptionDefaultInteger.SplitScreenEvPositionX", "NaviSplitScreenOptionDefaultInteger.SplitScreenKdkPositionY", "NaviSplitScreenOptionDefaultInteger.SplitScreenKdkPositionX"}, {"WidgetPoolSize.Default", "WidgetPoolSize.ControllerDefault"}};
+    protected String[][] allConstantNames = new String[][]{{"BAPFsgFcVersion"}, {"AdaptationMetaDataPath"}, {"AM_SSEonMMX"}, {"BAPTUNERDABDoubleTuner"}, {"BAPTunerEnablePresetListInIC"}, {"CarSportBoolean"}, {"CodingMetaDataPath"}, {"CommonSkinId"}, {"CopyrightFilePath"}, {"CopyrightIndexFilePath"}, {"DefaultSkinMode"}, {"DiagClassName"}, {"EventQueueSize"}, {"FwDefaultVisiblePoiCategories"}, {"GpsAvailable"}, {"GraphicsFontCacheSizeMiB"}, {"GraphicsImageCacheSizeMiB"}, {"GraphicsVideoRAMSizeMiB"}, {"MediaImportNumberOfAvailableSources"}, {"MediaImportPositionCDDVD"}, {"MediaImportPositionSDCard1"}, {"MediaImportPositionSDCard2"}, {"MediaImportPositionUSB"}, {"MediaVideoNumberOfAvailableSources"}, {"MediaVideoPositionCDDVD"}, {"MediaVideoPositionCDDVDChanger"}, {"NaviInfotileDefaultContentGuidance"}, {"NaviInfotileDefaultContentNoGuidance"}, {"NumberOfSDSlots"}, {"OffClockMapType"}, {"PhoneMaxPhoneNumberCharacters"}, {"PhoneMaxPhoneNumberCharactersSds"}, {"PhoneNumberOfAddressbookEntries"}, {"PhoneDefaultContactNameRepresentation"}, {"RelativeAlphabetPath"}, {"RelativeOpsPath"}, {"ScreenshotDirectories"}, {"SDSNavTTSAvailable"}, {"SDSisUpdateGrammarStateSupported"}, {"SDSMediaCountLimitedGlobally"}, {"SDSMediaMaxItems"}, {"SystemDayNightModeDefault"}, {"SystemDefaultDateFormat"}, {"SystemDisplayBrightnessDefault"}, {"SystemKeyPanelInstance"}, {"SystemPersonalisationProfilesCount"}, {"SystemProximityOnDefaultBoolean"}, {"SystemShowOffClockActiveDefaultBoolean"}, {"SystemSpecialHandlingPowerstateOFFDuringSWDL"}, {"SystemSpellerLayoutDefault"}, {"SystemSummertimeOnDefaultBoolean"}, {"SystemTimeMasterDefault"}, {"SystemTranslationHash"}, {"TimerReadoutListTimeoutPromptFinished"}, {"TimerReadoutListTimeoutPromptStarted"}, {"TimerReadoutListUserInteraction"}, {"TUNERDABsupportsJumpLmBoolean"}, {"TUNERDABsupportsScanBoolean"}, {"TunerDabUserPresetLogoHeight"}, {"TunerDabUserPresetLogoWidth"}, {"TUNERFirstItemPresetBank2"}, {"TUNERFirstItemPresetBank3"}, {"TUNERNumberOfPresets"}, {"VehicleProductId"}, {"ViewHandlerCacheSize"}, {"ClusterInstrumentType.MLB511", "ClusterInstrumentType.Top", "ClusterInstrumentType.MQB"}, {"DisplayDefault.ResolutionWidth", "DisplayDefault.ResolutionHeight"}, {"EventPoolSize.ViewChange", "EventPoolSize.Invocation", "EventPoolSize.Touch", "EventPoolSize.BooleanValue", "EventPoolSize.SdFeatureCollection", "EventPoolSize.Repaint", "EventPoolSize.PowerState", "EventPoolSize.SpeechCommand", "EventPoolSize.HMI", "EventPoolSize.ContextChange", "EventPoolSize.IntegerValue", "EventPoolSize.PopupView", "EventPoolSize.Point", "EventPoolSize.PopupStackChange", "EventPoolSize.Rotation", "EventPoolSize.SystemEvent", "EventPoolSize.PropertyUpdate", "EventPoolSize.ReadoutListSelection", "EventPoolSize.ListReadout", "EventPoolSize.LsChange", "EventPoolSize.State", "EventPoolSize.DynamicState", "EventPoolSize.Speech", "EventPoolSize.SpellerValue", "EventPoolSize.ListItem", "EventPoolSize.Startup"}, {"NaviCommonOptionDefault.MaxNumberOfTourDestinations", "NaviCommonOptionDefault.TimeDisplayFormat", "NaviCommonOptionDefault.FormattingRuleOffset", "NaviCommonOptionDefault.SwitchToResultListThreshold"}, {"NaviCommonOptionDefaultBoolean.CountryOverviewAvailable", "NaviCommonOptionDefaultBoolean.GoogleEarthAvailable", "NaviCommonOptionDefaultBoolean.CrosshairModeFeatureAvailable", "NaviCommonOptionDefaultBoolean.ShowEnhancedCityModelAllViewtypes", "NaviCommonOptionDefaultBoolean.DieselFuelWarningAvailable", "NaviCommonOptionDefaultBoolean.TouchApproachInMapFeatureAvailable", "NaviCommonOptionDefaultBoolean.GoogleStreetViewAvailable", "NaviCommonOptionDefaultBoolean.Landmarks3DAlwaysVisible", "NaviCommonOptionDefaultBoolean.GoogleEarthCalculateZoomIndexOfZoomLevel", "NaviCommonOptionDefaultBoolean.SecondDsiMapViewerControlInstanceAvailable", "NaviCommonOptionDefaultBoolean.AllowDisplayGeoCoordinates", "NaviCommonOptionDefaultBoolean.ThreePlusOneBoxFeatureAvailable"}, {"NaviCountryOverviewLocationOptionDefault.LatitudeDegrees", "NaviCountryOverviewLocationOptionDefault.LongitudeMinutes", "NaviCountryOverviewLocationOptionDefault.LatitudeDeciSeconds", "NaviCountryOverviewLocationOptionDefault.LatitudeMinutes", "NaviCountryOverviewLocationOptionDefault.LongitudeDegrees", "NaviCountryOverviewLocationOptionDefault.LongitudeDeciSeconds"}, {"NaviDestInputDefault.ListWindowSize", "NaviDestInputDefault.ListAutoSize"}, {"NaviDualScreenOptionDefault.MapVisibility"}, {"NaviLocationOptionDefault.LatitudeSeconds", "NaviLocationOptionDefault.LatitudeDegrees", "NaviLocationOptionDefault.LongitudeMinutes", "NaviLocationOptionDefault.LongitudeSeconds", "NaviLocationOptionDefault.LatitudeMinutes", "NaviLocationOptionDefault.LongitudeDegrees"}, {"NaviLocationOptionDefaultBoolean.LongitudeSign", "NaviLocationOptionDefaultBoolean.LatitudeSign", "NaviLocationOptionDefaultBoolean.LocationInputNarFeaturesEnabled", "NaviLocationOptionDefaultBoolean.LocationInputChinaFeaturesEnabled", "NaviLocationOptionDefaultBoolean.LocationInputEnabled"}, {"NaviPoiSortOrderBoolean.PreferredBrandsNatural", "NaviPoiSortOrderBoolean.TopCategoriesNatural", "NaviPoiSortOrderBoolean.CategoryClassesNatural", "NaviPoiSortOrderBoolean.CategoryGroupsNatural"}, {"NaviRMLOptionBoolean.ExtendedItems"}, {"NaviRouteOptionDefault.Slopes", "NaviRouteOptionDefault.RouteProfile", "NaviRouteOptionDefault.CityMaut", "NaviRouteOptionDefault.Dynamic", "NaviRouteOptionDefault.HovCarPoolsLane", "NaviRouteOptionDefault.ResidentialAreaHandling", "NaviRouteOptionDefault.InProgressData", "NaviRouteOptionDefault.TollroadsCostPenalty", "NaviRouteOptionDefault.Motorways", "NaviRouteOptionDefault.Vignette", "NaviRouteOptionDefault.Trailer", "NaviRouteOptionDefault.Ferries", "NaviRouteOptionDefault.HybridMode", "NaviRouteOptionDefault.NumberOfAlternativeRoutes", "NaviRouteOptionDefault.Unpaved", "NaviRouteOptionDefault.LeftRightTurn", "NaviRouteOptionDefault.SeasonalTimeDomain", "NaviRouteOptionDefault.Cartrain", "NaviRouteOptionDefault.Tunnels", "NaviRouteOptionDefault.WaypointMode", "NaviRouteOptionDefault.Tollroads", "NaviRouteOptionDefault.DynamicTrafficPatternRecorded", "NaviRouteOptionDefault.TimeDomain", "NaviRouteOptionDefault.SlopesMaxFactor", "NaviRouteOptionDefault.DynamicTrafficPatternOnline", "NaviRouteOptionDefault.RouteType", "NaviRouteOptionDefault.Trail", "NaviRouteOptionDefault.Weighting", "NaviRouteOptionDefault.DynamicSpeedFlow", "NaviRouteOptionDefault.DynamicTrafficPattern", "NaviRouteOptionDefault.Border", "NaviRouteOptionDefault.EconomicTurns"}, {"NaviRouteOptionDefaultBoolean.AlternativeRouteCalculation"}, {"NaviSplitScreenOptionDefaultBoolean.SplitScreenGuidanceEnabled", "NaviSplitScreenOptionDefaultBoolean.SplitScreenNoGuidanceEnabled"}, {"NaviSplitScreenOptionDefaultInteger.SplitScreenGuidanceContent", "NaviSplitScreenOptionDefaultInteger.SplitScreenNoGuidanceContent", "NaviSplitScreenOptionDefaultInteger.SplitScreenSecondDisplayablePositionY", "NaviSplitScreenOptionDefaultInteger.SplitScreenSecondDisplayablePositionX", "NaviSplitScreenOptionDefaultInteger.SplitScreenEvPositionY", "NaviSplitScreenOptionDefaultInteger.SplitScreenKdkPositionX", "NaviSplitScreenOptionDefaultInteger.SplitScreenEvPositionX", "NaviSplitScreenOptionDefaultInteger.SplitScreenKdkPositionY"}, {"WidgetPoolSize.ControllerDefault", "WidgetPoolSize.Default"}};
     protected String[][] allConstValueTypesAsString = new String[][]{{"int"}, {"String"}, {"boolean"}, {"boolean"}, {"boolean"}, {"boolean"}, {"String"}, {"int"}, {"String"}, {"String"}, {"int"}, {"String"}, {"int"}, {"String"}, {"boolean"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"String"}, {"String"}, {"String"}, {"boolean"}, {"boolean"}, {"boolean"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"boolean"}, {"boolean"}, {"boolean"}, {"int"}, {"boolean"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"boolean"}, {"boolean"}, {"int"}, {"int"}, {"int"}, {"int"}, {"int"}, {"String"}, {"int"}, {"boolean", "boolean", "boolean"}, {"int", "int"}, {"int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int"}, {"int", "int", "int", "int"}, {"boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean", "boolean"}, {"int", "int", "int", "int", "int", "int"}, {"int", "int"}, {"int"}, {"int", "int", "int", "int", "int", "int"}, {"boolean", "boolean", "boolean", "boolean", "boolean"}, {"boolean", "boolean", "boolean", "boolean"}, {"boolean"}, {"int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int", "int"}, {"boolean"}, {"boolean", "boolean"}, {"int", "int", "int", "int", "int", "int", "int", "int"}, {"int", "int"}};
     protected byte[][] allConstValueTypes = new byte[][]{{1}, {2}, {0}, {0}, {0}, {0}, {2}, {1}, {2}, {2}, {1}, {2}, {1}, {2}, {0}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {1}, {2}, {2}, {2}, {0}, {0}, {0}, {1}, {1}, {1}, {1}, {1}, {1}, {0}, {0}, {0}, {1}, {0}, {1}, {1}, {1}, {1}, {1}, {0}, {0}, {1}, {1}, {1}, {1}, {1}, {2}, {1}, {0, 0, 0}, {1, 1}, {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, {1, 1, 1, 1}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {1, 1, 1, 1, 1, 1}, {1, 1}, {1}, {1, 1, 1, 1, 1, 1}, {0, 0, 0, 0, 0}, {0, 0, 0, 0}, {0}, {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, {0}, {0, 0}, {1, 1, 1, 1, 1, 1, 1, 1}, {1, 1}};
     private int[] packedBooleanValues;
@@ -104,7 +104,7 @@ implements ConfigurationManagerGenerated {
 
     private boolean isRuntimeFlag(int n) {
         this.checkArrayIndex(n, FeatureFlags.getAllFeatureFlagNames().length - 1);
-        if (n < 447) {
+        if (n < 448) {
             return (this.packedFeatureFlagValues[this.packedFeatureFlagValues.length / 2 + (n >> 5)] & 1 << (n & 0x1F)) != 0;
         }
         int[] nArray = null;
@@ -119,7 +119,7 @@ implements ConfigurationManagerGenerated {
     }
 
     public void setFeatureFlagValue(int n, boolean bl) {
-        this.checkArrayIndex(n, 446);
+        this.checkArrayIndex(n, 447);
         if (this.isRuntimeFlag(n)) {
             int n2;
             int n3 = -1;
@@ -164,651 +164,654 @@ implements ConfigurationManagerGenerated {
     @Override
     public boolean isFeatureFlagSet(int n) {
         this.checkArrayIndex(n, FeatureFlags.getAllFeatureFlagNames().length - 1);
-        if (n < 447) {
+        if (n < 448) {
             return (this.packedFeatureFlagValues[n >> 5] & 1 << (n & 0x1F)) != 0;
         }
         switch (n) {
-            case 447: {
-                return this.isFeatureFlagSet(66) || this.isFeatureFlagSet(65);
-            }
             case 448: {
-                return !this.isFeatureFlagSet(447);
+                return this.isFeatureFlagSet(67) || this.isFeatureFlagSet(65);
             }
             case 449: {
-                return !this.isFeatureFlagSet(66);
+                return !this.isFeatureFlagSet(448);
             }
             case 450: {
-                return this.isFeatureFlagSet(385) || this.isFeatureFlagSet(458);
+                return !this.isFeatureFlagSet(67);
             }
             case 451: {
-                return this.isFeatureFlagSet(25) || this.isFeatureFlagSet(4) || this.isFeatureFlagSet(99) || this.isFeatureFlagSet(23) || this.isFeatureFlagSet(24);
+                return this.isFeatureFlagSet(386) || this.isFeatureFlagSet(459);
             }
             case 452: {
-                return this.isFeatureFlagSet(183) || this.isFeatureFlagSet(181);
+                return this.isFeatureFlagSet(25) || this.isFeatureFlagSet(4) || this.isFeatureFlagSet(100) || this.isFeatureFlagSet(23) || this.isFeatureFlagSet(24);
             }
             case 453: {
-                return this.isFeatureFlagSet(105);
+                return this.isFeatureFlagSet(184) || this.isFeatureFlagSet(182);
             }
             case 454: {
-                return this.isFeatureFlagSet(360);
-            }
-            case 455: {
-                return this.isFeatureFlagSet(360);
-            }
-            case 456: {
-                return this.isFeatureFlagSet(20) && !this.isFeatureFlagSet(360);
-            }
-            case 457: {
-                return this.isFeatureFlagSet(41) || this.isFeatureFlagSet(354);
-            }
-            case 458: {
-                return this.isFeatureFlagSet(187);
-            }
-            case 459: {
-                return this.isFeatureFlagSet(58) && (!this.isFeatureFlagSet(70) || !this.isFeatureFlagSet(26));
-            }
-            case 460: {
-                return this.isFeatureFlagSet(85) && (!this.isFeatureFlagSet(70) && !this.isFeatureFlagSet(353) || this.isFeatureFlagSet(70) && this.isFeatureFlagSet(353) || this.isFeatureFlagSet(68) || this.isFeatureFlagSet(69));
-            }
-            case 461: {
-                return this.isFeatureFlagSet(236) && this.isFeatureFlagSet(479) && this.isFeatureFlagSet(460);
-            }
-            case 462: {
-                return this.isFeatureFlagSet(460) && this.isFeatureFlagSet(479);
-            }
-            case 463: {
-                return this.isFeatureFlagSet(70);
-            }
-            case 464: {
-                return this.isFeatureFlagSet(432) || this.isFeatureFlagSet(353) || this.isFeatureFlagSet(360);
-            }
-            case 465: {
-                return !(!this.isFeatureFlagSet(68) && !this.isFeatureFlagSet(69) || !this.isFeatureFlagSet(432) && !this.isFeatureFlagSet(360));
-            }
-            case 466: {
-                return !this.isFeatureFlagSet(107);
-            }
-            case 467: {
-                return !this.isFeatureFlagSet(108);
-            }
-            case 468: {
-                return !this.isFeatureFlagSet(112);
-            }
-            case 469: {
-                return this.isFeatureFlagSet(70) && this.isFeatureFlagSet(104);
-            }
-            case 470: {
-                return !this.isFeatureFlagSet(232);
-            }
-            case 471: {
-                return !this.isFeatureFlagSet(151);
-            }
-            case 472: {
-                return this.isFeatureFlagSet(75);
-            }
-            case 473: {
-                return this.isFeatureFlagSet(198) || this.isFeatureFlagSet(191);
-            }
-            case 474: {
-                return this.isFeatureFlagSet(184) || this.isFeatureFlagSet(392);
-            }
-            case 475: {
-                return this.isFeatureFlagSet(192) || this.isFeatureFlagSet(186) || this.isFeatureFlagSet(193);
-            }
-            case 476: {
-                return !this.isFeatureFlagSet(70) || !this.isFeatureFlagSet(105);
-            }
-            case 477: {
-                return !this.isFeatureFlagSet(77);
-            }
-            case 478: {
-                return !this.isFeatureFlagSet(70) || !this.isFeatureFlagSet(105);
-            }
-            case 479: {
-                return this.isFeatureFlagSet(435) && (this.isFeatureFlagSet(436) || this.isFeatureFlagSet(437));
-            }
-            case 480: {
-                return this.isFeatureFlagSet(434) && (this.isFeatureFlagSet(68) || this.isFeatureFlagSet(69));
-            }
-            case 481: {
-                return this.isFeatureFlagSet(73) && this.isFeatureFlagSet(63);
-            }
-            case 482: {
-                return this.isFeatureFlagSet(73) || this.isFeatureFlagSet(63);
-            }
-            case 483: {
-                return this.isFeatureFlagSet(482) || this.isFeatureFlagSet(60);
-            }
-            case 484: {
-                return this.isFeatureFlagSet(173) && (this.isFeatureFlagSet(123) || this.isFeatureFlagSet(125) || this.isFeatureFlagSet(111) || this.isFeatureFlagSet(138) || this.isFeatureFlagSet(168));
-            }
-            case 485: {
-                return this.isFeatureFlagSet(161) || this.isFeatureFlagSet(162);
-            }
-            case 486: {
-                return this.isFeatureFlagSet(484) || this.isFeatureFlagSet(73) || this.isFeatureFlagSet(63);
-            }
-            case 487: {
-                return this.isFeatureFlagSet(238) || this.isFeatureFlagSet(49) || this.isFeatureFlagSet(1);
-            }
-            case 488: {
-                return this.isFeatureFlagSet(353) || this.isFeatureFlagSet(49);
-            }
-            case 489: {
-                return this.isFeatureFlagSet(353) && this.isFeatureFlagSet(370);
-            }
-            case 490: {
-                return this.isFeatureFlagSet(512) || this.isFeatureFlagSet(49);
-            }
-            case 491: {
-                return this.isFeatureFlagSet(490) && this.isFeatureFlagSet(507);
-            }
-            case 492: {
-                return !this.isFeatureFlagSet(353) && !this.isFeatureFlagSet(49);
-            }
-            case 493: {
-                return !this.isFeatureFlagSet(353) && !this.isFeatureFlagSet(238);
-            }
-            case 494: {
-                return this.isFeatureFlagSet(353) || this.isFeatureFlagSet(238);
-            }
-            case 495: {
-                return this.isFeatureFlagSet(239) && this.isFeatureFlagSet(302) && this.isFeatureFlagSet(303);
-            }
-            case 496: {
-                return this.isFeatureFlagSet(353) && this.isFeatureFlagSet(504);
-            }
-            case 497: {
-                return this.isFeatureFlagSet(496) && this.isFeatureFlagSet(507);
-            }
-            case 498: {
-                return this.isFeatureFlagSet(369) && this.isFeatureFlagSet(484);
-            }
-            case 499: {
-                return this.isFeatureFlagSet(369) && this.isFeatureFlagSet(510);
-            }
-            case 500: {
-                return !this.isFeatureFlagSet(238) && !this.isFeatureFlagSet(49);
-            }
-            case 501: {
-                return !this.isFeatureFlagSet(238) && !this.isFeatureFlagSet(49) && !this.isFeatureFlagSet(1);
-            }
-            case 502: {
-                return !this.isFeatureFlagSet(0);
-            }
-            case 503: {
-                return !this.isFeatureFlagSet(1);
-            }
-            case 504: {
-                return !this.isFeatureFlagSet(49);
-            }
-            case 505: {
-                return !this.isFeatureFlagSet(70);
-            }
-            case 506: {
-                return !this.isFeatureFlagSet(51);
-            }
-            case 507: {
-                return !this.isFeatureFlagSet(105);
-            }
-            case 508: {
-                return !this.isFeatureFlagSet(192);
-            }
-            case 509: {
-                return !this.isFeatureFlagSet(26);
-            }
-            case 510: {
-                return !this.isFeatureFlagSet(484);
-            }
-            case 511: {
-                return !this.isFeatureFlagSet(238);
-            }
-            case 512: {
-                return !this.isFeatureFlagSet(353);
-            }
-            case 513: {
-                return !this.isFeatureFlagSet(360);
-            }
-            case 514: {
-                return !this.isFeatureFlagSet(369);
-            }
-            case 515: {
-                return (this.isFeatureFlagSet(238) ? 1 : 0) + (this.isFeatureFlagSet(49) ? 1 : 0) == 1;
-            }
-            case 516: {
-                return (this.isFeatureFlagSet(360) ? 1 : 0) + (this.isFeatureFlagSet(353) ? 1 : 0) == 1;
-            }
-            case 517: {
-                return !this.isFeatureFlagSet(48);
-            }
-            case 518: {
-                return !this.isFeatureFlagSet(53);
-            }
-            case 519: {
-                return this.isFeatureFlagSet(53) || this.isFeatureFlagSet(71);
-            }
-            case 520: {
-                return this.isFeatureFlagSet(94) || this.isFeatureFlagSet(97);
-            }
-            case 521: {
-                return this.isFeatureFlagSet(70) && (this.isFeatureFlagSet(55) || this.isFeatureFlagSet(57));
-            }
-            case 522: {
-                return this.isFeatureFlagSet(70) && this.isFeatureFlagSet(55);
-            }
-            case 523: {
-                return this.isFeatureFlagSet(56) || this.isFeatureFlagSet(57);
-            }
-            case 524: {
-                return this.isFeatureFlagSet(55);
-            }
-            case 525: {
-                return this.isFeatureFlagSet(55) && !this.isFeatureFlagSet(26);
-            }
-            case 526: {
-                return this.isFeatureFlagSet(55) && !this.isFeatureFlagSet(26) && !this.isFeatureFlagSet(75) && !this.isFeatureFlagSet(427);
-            }
-            case 527: {
-                return this.isFeatureFlagSet(55);
-            }
-            case 528: {
-                return (this.isFeatureFlagSet(56) || this.isFeatureFlagSet(57)) && !this.isFeatureFlagSet(125);
-            }
-            case 529: {
-                return !this.isFeatureFlagSet(161) && !this.isFeatureFlagSet(162);
-            }
-            case 530: {
-                return !this.isFeatureFlagSet(89);
-            }
-            case 531: {
-                return !this.isFeatureFlagSet(84);
-            }
-            case 532: {
-                return this.isFeatureFlagSet(236);
-            }
-            case 533: {
-                return this.isFeatureFlagSet(307) && this.isFeatureFlagSet(241) && this.isFeatureFlagSet(534);
-            }
-            case 534: {
-                return this.isFeatureFlagSet(239);
-            }
-            case 535: {
-                return this.isFeatureFlagSet(241);
-            }
-            case 536: {
-                return this.isFeatureFlagSet(533) && this.isFeatureFlagSet(242);
-            }
-            case 537: {
-                return this.isFeatureFlagSet(533) && this.isFeatureFlagSet(309);
-            }
-            case 538: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(269);
-            }
-            case 539: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(270);
-            }
-            case 540: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(243);
-            }
-            case 541: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(244);
-            }
-            case 542: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(245);
-            }
-            case 543: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(246);
-            }
-            case 544: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(247);
-            }
-            case 545: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(248);
-            }
-            case 546: {
-                return this.isFeatureFlagSet(545) && this.isFeatureFlagSet(251);
-            }
-            case 547: {
-                return this.isFeatureFlagSet(545) && this.isFeatureFlagSet(252);
-            }
-            case 548: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(254);
-            }
-            case 549: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(255);
-            }
-            case 550: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(256);
-            }
-            case 551: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(272);
-            }
-            case 552: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(273);
-            }
-            case 553: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(274);
-            }
-            case 554: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(275);
-            }
-            case 555: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(276);
-            }
-            case 556: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(279);
-            }
-            case 557: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(281);
-            }
-            case 558: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(277);
-            }
-            case 559: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(278);
-            }
-            case 560: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(280);
-            }
-            case 561: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(283);
-            }
-            case 562: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(284);
-            }
-            case 563: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(285);
-            }
-            case 564: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(286);
-            }
-            case 565: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(287);
-            }
-            case 566: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(288);
-            }
-            case 567: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(289);
-            }
-            case 568: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(290);
-            }
-            case 569: {
-                return this.isFeatureFlagSet(568);
-            }
-            case 570: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(1) && !this.isFeatureFlagSet(2);
-            }
-            case 571: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(1) && this.isFeatureFlagSet(2);
-            }
-            case 572: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(49) && !this.isFeatureFlagSet(424);
-            }
-            case 573: {
-                return this.isFeatureFlagSet(568) && !this.isFeatureFlagSet(2);
-            }
-            case 574: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(2);
-            }
-            case 575: {
-                return this.isFeatureFlagSet(568) && !this.isFeatureFlagSet(2) && !this.isFeatureFlagSet(424);
-            }
-            case 576: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(238);
-            }
-            case 577: {
-                return this.isFeatureFlagSet(568) && this.isFeatureFlagSet(291) && this.isFeatureFlagSet(424);
-            }
-            case 578: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(292);
-            }
-            case 579: {
-                return this.isFeatureFlagSet(239) && this.isFeatureFlagSet(294);
-            }
-            case 580: {
-                return this.isFeatureFlagSet(239) && this.isFeatureFlagSet(295) && this.isFeatureFlagSet(296);
-            }
-            case 581: {
-                return this.isFeatureFlagSet(87) && this.isFeatureFlagSet(297);
-            }
-            case 582: {
-                return this.isFeatureFlagSet(307);
-            }
-            case 583: {
-                return this.isFeatureFlagSet(239) && this.isFeatureFlagSet(308);
-            }
-            case 584: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(310);
-            }
-            case 585: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(311);
-            }
-            case 586: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(312);
-            }
-            case 587: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(313);
-            }
-            case 588: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(314);
-            }
-            case 589: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(315);
-            }
-            case 590: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(316);
-            }
-            case 591: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(317);
-            }
-            case 592: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(318);
-            }
-            case 593: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(319);
-            }
-            case 594: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(320);
-            }
-            case 595: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(321);
-            }
-            case 596: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(322);
-            }
-            case 597: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(323);
-            }
-            case 598: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(324);
-            }
-            case 599: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(325);
-            }
-            case 600: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(326);
-            }
-            case 601: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(327);
-            }
-            case 602: {
-                return this.isFeatureFlagSet(537) && this.isFeatureFlagSet(328);
-            }
-            case 603: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(330);
-            }
-            case 604: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(331);
-            }
-            case 605: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(332);
-            }
-            case 606: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(333);
-            }
-            case 607: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(334);
-            }
-            case 608: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(335);
-            }
-            case 609: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(336);
-            }
-            case 610: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(337);
-            }
-            case 611: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(339);
-            }
-            case 612: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(340);
-            }
-            case 613: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(341);
-            }
-            case 614: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(342);
-            }
-            case 615: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(343);
-            }
-            case 616: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(344);
-            }
-            case 617: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(345);
-            }
-            case 618: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(346);
-            }
-            case 619: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(347);
-            }
-            case 620: {
-                return this.isFeatureFlagSet(329) && this.isFeatureFlagSet(349);
-            }
-            case 621: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(256) && (this.isFeatureFlagSet(59) || this.isFeatureFlagSet(105) || this.isFeatureFlagSet(26));
-            }
-            case 622: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(256) && this.isFeatureFlagSet(75);
-            }
-            case 623: {
-                return this.isFeatureFlagSet(545) && this.isFeatureFlagSet(249);
-            }
-            case 624: {
-                return this.isFeatureFlagSet(545) && this.isFeatureFlagSet(250);
-            }
-            case 625: {
-                return this.isFeatureFlagSet(545) && this.isFeatureFlagSet(253);
-            }
-            case 626: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(258);
-            }
-            case 627: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(259);
-            }
-            case 628: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(260);
-            }
-            case 629: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(261);
-            }
-            case 630: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(264) && this.isFeatureFlagSet(193);
-            }
-            case 631: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(265);
-            }
-            case 632: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(266);
-            }
-            case 633: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(267);
-            }
-            case 634: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(271);
-            }
-            case 635: {
-                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(282);
-            }
-            case 636: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(262);
-            }
-            case 637: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(263);
-            }
-            case 638: {
-                return this.isFeatureFlagSet(550) && this.isFeatureFlagSet(268);
-            }
-            case 639: {
-                return this.isFeatureFlagSet(304);
-            }
-            case 640: {
-                return this.isFeatureFlagSet(536) && this.isFeatureFlagSet(350);
-            }
-            case 641: {
-                return this.isFeatureFlagSet(351);
-            }
-            case 642: {
-                return this.isFeatureFlagSet(352);
-            }
-            case 643: {
-                return this.isFeatureFlagSet(397) && !this.isFeatureFlagSet(355) && !this.isFeatureFlagSet(356) && !this.isFeatureFlagSet(645);
-            }
-            case 644: {
-                return this.isFeatureFlagSet(398) && this.isFeatureFlagSet(355);
-            }
-            case 645: {
-                return this.isFeatureFlagSet(397) && this.isFeatureFlagSet(358);
-            }
-            case 646: {
-                return this.isFeatureFlagSet(397) && this.isFeatureFlagSet(356);
-            }
-            case 647: {
-                return this.isFeatureFlagSet(399);
-            }
-            case 648: {
                 return this.isFeatureFlagSet(106);
             }
+            case 455: {
+                return this.isFeatureFlagSet(361);
+            }
+            case 456: {
+                return this.isFeatureFlagSet(361);
+            }
+            case 457: {
+                return this.isFeatureFlagSet(20) && !this.isFeatureFlagSet(361);
+            }
+            case 458: {
+                return this.isFeatureFlagSet(41) || this.isFeatureFlagSet(355);
+            }
+            case 459: {
+                return this.isFeatureFlagSet(188);
+            }
+            case 460: {
+                return this.isFeatureFlagSet(58) && (!this.isFeatureFlagSet(71) || !this.isFeatureFlagSet(26));
+            }
+            case 461: {
+                return this.isFeatureFlagSet(86) && (!this.isFeatureFlagSet(71) && !this.isFeatureFlagSet(354) || this.isFeatureFlagSet(71) && this.isFeatureFlagSet(354) || this.isFeatureFlagSet(69) || this.isFeatureFlagSet(70));
+            }
+            case 462: {
+                return this.isFeatureFlagSet(237) && this.isFeatureFlagSet(481) && this.isFeatureFlagSet(461);
+            }
+            case 463: {
+                return this.isFeatureFlagSet(461) && this.isFeatureFlagSet(481);
+            }
+            case 464: {
+                return this.isFeatureFlagSet(71);
+            }
+            case 465: {
+                return this.isFeatureFlagSet(433) || this.isFeatureFlagSet(354) || this.isFeatureFlagSet(361);
+            }
+            case 466: {
+                return !this.isFeatureFlagSet(355);
+            }
+            case 467: {
+                return !(!this.isFeatureFlagSet(69) && !this.isFeatureFlagSet(70) || !this.isFeatureFlagSet(433) && !this.isFeatureFlagSet(361));
+            }
+            case 468: {
+                return !this.isFeatureFlagSet(108);
+            }
+            case 469: {
+                return !this.isFeatureFlagSet(109);
+            }
+            case 470: {
+                return !this.isFeatureFlagSet(113);
+            }
+            case 471: {
+                return this.isFeatureFlagSet(71) && this.isFeatureFlagSet(105);
+            }
+            case 472: {
+                return !this.isFeatureFlagSet(233);
+            }
+            case 473: {
+                return !this.isFeatureFlagSet(152);
+            }
+            case 474: {
+                return this.isFeatureFlagSet(76);
+            }
+            case 475: {
+                return this.isFeatureFlagSet(199) || this.isFeatureFlagSet(192);
+            }
+            case 476: {
+                return this.isFeatureFlagSet(185) || this.isFeatureFlagSet(393);
+            }
+            case 477: {
+                return this.isFeatureFlagSet(193) || this.isFeatureFlagSet(187) || this.isFeatureFlagSet(194);
+            }
+            case 478: {
+                return !this.isFeatureFlagSet(71) || !this.isFeatureFlagSet(106);
+            }
+            case 479: {
+                return !this.isFeatureFlagSet(78);
+            }
+            case 480: {
+                return !this.isFeatureFlagSet(71) || !this.isFeatureFlagSet(106);
+            }
+            case 481: {
+                return this.isFeatureFlagSet(436) && (this.isFeatureFlagSet(437) || this.isFeatureFlagSet(438));
+            }
+            case 482: {
+                return this.isFeatureFlagSet(435) && (this.isFeatureFlagSet(69) || this.isFeatureFlagSet(70));
+            }
+            case 483: {
+                return this.isFeatureFlagSet(74) && this.isFeatureFlagSet(63);
+            }
+            case 484: {
+                return this.isFeatureFlagSet(74) || this.isFeatureFlagSet(63);
+            }
+            case 485: {
+                return this.isFeatureFlagSet(484) || this.isFeatureFlagSet(60);
+            }
+            case 486: {
+                return this.isFeatureFlagSet(174) && (this.isFeatureFlagSet(124) || this.isFeatureFlagSet(126) || this.isFeatureFlagSet(112) || this.isFeatureFlagSet(139) || this.isFeatureFlagSet(169));
+            }
+            case 487: {
+                return this.isFeatureFlagSet(162) || this.isFeatureFlagSet(163);
+            }
+            case 488: {
+                return this.isFeatureFlagSet(486) || this.isFeatureFlagSet(74) || this.isFeatureFlagSet(63);
+            }
+            case 489: {
+                return this.isFeatureFlagSet(239) || this.isFeatureFlagSet(49) || this.isFeatureFlagSet(1);
+            }
+            case 490: {
+                return this.isFeatureFlagSet(354) || this.isFeatureFlagSet(49);
+            }
+            case 491: {
+                return this.isFeatureFlagSet(354) && this.isFeatureFlagSet(371);
+            }
+            case 492: {
+                return this.isFeatureFlagSet(514) || this.isFeatureFlagSet(49);
+            }
+            case 493: {
+                return this.isFeatureFlagSet(492) && this.isFeatureFlagSet(509);
+            }
+            case 494: {
+                return !this.isFeatureFlagSet(354) && !this.isFeatureFlagSet(49);
+            }
+            case 495: {
+                return !this.isFeatureFlagSet(354) && !this.isFeatureFlagSet(239);
+            }
+            case 496: {
+                return this.isFeatureFlagSet(354) || this.isFeatureFlagSet(239);
+            }
+            case 497: {
+                return this.isFeatureFlagSet(240) && this.isFeatureFlagSet(303) && this.isFeatureFlagSet(304);
+            }
+            case 498: {
+                return this.isFeatureFlagSet(354) && this.isFeatureFlagSet(506);
+            }
+            case 499: {
+                return this.isFeatureFlagSet(498) && this.isFeatureFlagSet(509);
+            }
+            case 500: {
+                return this.isFeatureFlagSet(370) && this.isFeatureFlagSet(486);
+            }
+            case 501: {
+                return this.isFeatureFlagSet(370) && this.isFeatureFlagSet(512);
+            }
+            case 502: {
+                return !this.isFeatureFlagSet(239) && !this.isFeatureFlagSet(49);
+            }
+            case 503: {
+                return !this.isFeatureFlagSet(239) && !this.isFeatureFlagSet(49) && !this.isFeatureFlagSet(1);
+            }
+            case 504: {
+                return !this.isFeatureFlagSet(0);
+            }
+            case 505: {
+                return !this.isFeatureFlagSet(1);
+            }
+            case 506: {
+                return !this.isFeatureFlagSet(49);
+            }
+            case 507: {
+                return !this.isFeatureFlagSet(71);
+            }
+            case 508: {
+                return !this.isFeatureFlagSet(51);
+            }
+            case 509: {
+                return !this.isFeatureFlagSet(106);
+            }
+            case 510: {
+                return !this.isFeatureFlagSet(193);
+            }
+            case 511: {
+                return !this.isFeatureFlagSet(26);
+            }
+            case 512: {
+                return !this.isFeatureFlagSet(486);
+            }
+            case 513: {
+                return !this.isFeatureFlagSet(239);
+            }
+            case 514: {
+                return !this.isFeatureFlagSet(354);
+            }
+            case 515: {
+                return !this.isFeatureFlagSet(361);
+            }
+            case 516: {
+                return !this.isFeatureFlagSet(370);
+            }
+            case 517: {
+                return (this.isFeatureFlagSet(239) ? 1 : 0) + (this.isFeatureFlagSet(49) ? 1 : 0) == 1;
+            }
+            case 518: {
+                return (this.isFeatureFlagSet(361) ? 1 : 0) + (this.isFeatureFlagSet(354) ? 1 : 0) == 1;
+            }
+            case 519: {
+                return !this.isFeatureFlagSet(48);
+            }
+            case 520: {
+                return !this.isFeatureFlagSet(53);
+            }
+            case 521: {
+                return this.isFeatureFlagSet(53) || this.isFeatureFlagSet(72);
+            }
+            case 522: {
+                return this.isFeatureFlagSet(95) || this.isFeatureFlagSet(98);
+            }
+            case 523: {
+                return this.isFeatureFlagSet(71) && (this.isFeatureFlagSet(55) || this.isFeatureFlagSet(57));
+            }
+            case 524: {
+                return this.isFeatureFlagSet(71) && this.isFeatureFlagSet(55);
+            }
+            case 525: {
+                return this.isFeatureFlagSet(56) || this.isFeatureFlagSet(57);
+            }
+            case 526: {
+                return this.isFeatureFlagSet(55);
+            }
+            case 527: {
+                return this.isFeatureFlagSet(55) && !this.isFeatureFlagSet(26);
+            }
+            case 528: {
+                return this.isFeatureFlagSet(55) && !this.isFeatureFlagSet(26) && !this.isFeatureFlagSet(76) && !this.isFeatureFlagSet(428);
+            }
+            case 529: {
+                return this.isFeatureFlagSet(55);
+            }
+            case 530: {
+                return (this.isFeatureFlagSet(56) || this.isFeatureFlagSet(57)) && !this.isFeatureFlagSet(126);
+            }
+            case 531: {
+                return !this.isFeatureFlagSet(162) && !this.isFeatureFlagSet(163);
+            }
+            case 532: {
+                return !this.isFeatureFlagSet(90);
+            }
+            case 533: {
+                return !this.isFeatureFlagSet(85);
+            }
+            case 534: {
+                return this.isFeatureFlagSet(237);
+            }
+            case 535: {
+                return this.isFeatureFlagSet(308) && this.isFeatureFlagSet(242) && this.isFeatureFlagSet(536);
+            }
+            case 536: {
+                return this.isFeatureFlagSet(240);
+            }
+            case 537: {
+                return this.isFeatureFlagSet(242);
+            }
+            case 538: {
+                return this.isFeatureFlagSet(535) && this.isFeatureFlagSet(243);
+            }
+            case 539: {
+                return this.isFeatureFlagSet(535) && this.isFeatureFlagSet(310);
+            }
+            case 540: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(270);
+            }
+            case 541: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(271);
+            }
+            case 542: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(244);
+            }
+            case 543: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(245);
+            }
+            case 544: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(246);
+            }
+            case 545: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(247);
+            }
+            case 546: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(248);
+            }
+            case 547: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(249);
+            }
+            case 548: {
+                return this.isFeatureFlagSet(547) && this.isFeatureFlagSet(252);
+            }
+            case 549: {
+                return this.isFeatureFlagSet(547) && this.isFeatureFlagSet(253);
+            }
+            case 550: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(255);
+            }
+            case 551: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(256);
+            }
+            case 552: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(257);
+            }
+            case 553: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(273);
+            }
+            case 554: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(274);
+            }
+            case 555: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(275);
+            }
+            case 556: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(276);
+            }
+            case 557: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(277);
+            }
+            case 558: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(280);
+            }
+            case 559: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(282);
+            }
+            case 560: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(278);
+            }
+            case 561: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(279);
+            }
+            case 562: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(281);
+            }
+            case 563: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(284);
+            }
+            case 564: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(285);
+            }
+            case 565: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(286);
+            }
+            case 566: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(287);
+            }
+            case 567: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(288);
+            }
+            case 568: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(289);
+            }
+            case 569: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(290);
+            }
+            case 570: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(291);
+            }
+            case 571: {
+                return this.isFeatureFlagSet(570);
+            }
+            case 572: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(1) && !this.isFeatureFlagSet(2);
+            }
+            case 573: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(1) && this.isFeatureFlagSet(2);
+            }
+            case 574: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(49) && !this.isFeatureFlagSet(425);
+            }
+            case 575: {
+                return this.isFeatureFlagSet(570) && !this.isFeatureFlagSet(2);
+            }
+            case 576: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(2);
+            }
+            case 577: {
+                return this.isFeatureFlagSet(570) && !this.isFeatureFlagSet(2) && !this.isFeatureFlagSet(425);
+            }
+            case 578: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(239);
+            }
+            case 579: {
+                return this.isFeatureFlagSet(570) && this.isFeatureFlagSet(292) && this.isFeatureFlagSet(425);
+            }
+            case 580: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(293);
+            }
+            case 581: {
+                return this.isFeatureFlagSet(240) && this.isFeatureFlagSet(295);
+            }
+            case 582: {
+                return this.isFeatureFlagSet(240) && this.isFeatureFlagSet(296) && this.isFeatureFlagSet(297);
+            }
+            case 583: {
+                return this.isFeatureFlagSet(88) && this.isFeatureFlagSet(298);
+            }
+            case 584: {
+                return this.isFeatureFlagSet(308);
+            }
+            case 585: {
+                return this.isFeatureFlagSet(240) && this.isFeatureFlagSet(309);
+            }
+            case 586: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(311);
+            }
+            case 587: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(312);
+            }
+            case 588: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(313);
+            }
+            case 589: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(314);
+            }
+            case 590: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(315);
+            }
+            case 591: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(316);
+            }
+            case 592: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(317);
+            }
+            case 593: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(318);
+            }
+            case 594: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(319);
+            }
+            case 595: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(320);
+            }
+            case 596: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(321);
+            }
+            case 597: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(322);
+            }
+            case 598: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(323);
+            }
+            case 599: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(324);
+            }
+            case 600: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(325);
+            }
+            case 601: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(326);
+            }
+            case 602: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(327);
+            }
+            case 603: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(328);
+            }
+            case 604: {
+                return this.isFeatureFlagSet(539) && this.isFeatureFlagSet(329);
+            }
+            case 605: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(331);
+            }
+            case 606: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(332);
+            }
+            case 607: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(333);
+            }
+            case 608: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(334);
+            }
+            case 609: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(335);
+            }
+            case 610: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(336);
+            }
+            case 611: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(337);
+            }
+            case 612: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(338);
+            }
+            case 613: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(340);
+            }
+            case 614: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(341);
+            }
+            case 615: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(342);
+            }
+            case 616: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(343);
+            }
+            case 617: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(344);
+            }
+            case 618: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(345);
+            }
+            case 619: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(346);
+            }
+            case 620: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(347);
+            }
+            case 621: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(348);
+            }
+            case 622: {
+                return this.isFeatureFlagSet(330) && this.isFeatureFlagSet(350);
+            }
+            case 623: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(257) && (this.isFeatureFlagSet(59) || this.isFeatureFlagSet(106) || this.isFeatureFlagSet(26));
+            }
+            case 624: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(257) && this.isFeatureFlagSet(76);
+            }
+            case 625: {
+                return this.isFeatureFlagSet(547) && this.isFeatureFlagSet(250);
+            }
+            case 626: {
+                return this.isFeatureFlagSet(547) && this.isFeatureFlagSet(251);
+            }
+            case 627: {
+                return this.isFeatureFlagSet(547) && this.isFeatureFlagSet(254);
+            }
+            case 628: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(259);
+            }
+            case 629: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(260);
+            }
+            case 630: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(261);
+            }
+            case 631: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(262);
+            }
+            case 632: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(265) && this.isFeatureFlagSet(194);
+            }
+            case 633: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(266);
+            }
+            case 634: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(267);
+            }
+            case 635: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(268);
+            }
+            case 636: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(272);
+            }
+            case 637: {
+                return this.isFeatureFlagSet(554) && this.isFeatureFlagSet(283);
+            }
+            case 638: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(263);
+            }
+            case 639: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(264);
+            }
+            case 640: {
+                return this.isFeatureFlagSet(552) && this.isFeatureFlagSet(269);
+            }
+            case 641: {
+                return this.isFeatureFlagSet(305);
+            }
+            case 642: {
+                return this.isFeatureFlagSet(538) && this.isFeatureFlagSet(351);
+            }
+            case 643: {
+                return this.isFeatureFlagSet(352);
+            }
+            case 644: {
+                return this.isFeatureFlagSet(353);
+            }
+            case 645: {
+                return this.isFeatureFlagSet(398) && !this.isFeatureFlagSet(356) && !this.isFeatureFlagSet(357) && !this.isFeatureFlagSet(647);
+            }
+            case 646: {
+                return this.isFeatureFlagSet(399) && this.isFeatureFlagSet(356);
+            }
+            case 647: {
+                return this.isFeatureFlagSet(398) && this.isFeatureFlagSet(359);
+            }
+            case 648: {
+                return this.isFeatureFlagSet(398) && this.isFeatureFlagSet(357);
+            }
             case 649: {
-                return this.isFeatureFlagSet(185) || this.isFeatureFlagSet(392);
+                return this.isFeatureFlagSet(400);
             }
             case 650: {
-                return this.isFeatureFlagSet(190) && !this.isFeatureFlagSet(392) && !this.isFeatureFlagSet(393) && this.isFeatureFlagSet(27) && this.isFeatureFlagSet(69);
+                return this.isFeatureFlagSet(107);
             }
             case 651: {
-                return this.isFeatureFlagSet(190) && !this.isFeatureFlagSet(392) && !this.isFeatureFlagSet(393) && this.isFeatureFlagSet(59) && this.isFeatureFlagSet(69);
+                return this.isFeatureFlagSet(186) || this.isFeatureFlagSet(393);
             }
             case 652: {
-                return this.isFeatureFlagSet(173) && this.isFeatureFlagSet(408);
+                return this.isFeatureFlagSet(191) && !this.isFeatureFlagSet(393) && !this.isFeatureFlagSet(394) && this.isFeatureFlagSet(27) && this.isFeatureFlagSet(70);
             }
             case 653: {
-                return !this.isFeatureFlagSet(442);
+                return this.isFeatureFlagSet(191) && !this.isFeatureFlagSet(393) && !this.isFeatureFlagSet(394) && this.isFeatureFlagSet(59) && this.isFeatureFlagSet(70);
             }
             case 654: {
-                return !this.isFeatureFlagSet(443);
+                return this.isFeatureFlagSet(174) && this.isFeatureFlagSet(409);
             }
             case 655: {
-                return !this.isFeatureFlagSet(444);
+                return !this.isFeatureFlagSet(443);
             }
             case 656: {
-                return !this.isFeatureFlagSet(445);
+                return !this.isFeatureFlagSet(444);
             }
             case 657: {
-                return this.isFeatureFlagSet(174) && this.isFeatureFlagSet(512);
+                return !this.isFeatureFlagSet(445);
             }
             case 658: {
-                return this.isFeatureFlagSet(363);
+                return !this.isFeatureFlagSet(446);
             }
             case 659: {
-                return !this.isFeatureFlagSet(658);
+                return this.isFeatureFlagSet(175) && this.isFeatureFlagSet(514);
             }
             case 660: {
-                return this.isFeatureFlagSet(360) && this.isFeatureFlagSet(26) && this.isFeatureFlagSet(369);
+                return this.isFeatureFlagSet(364);
+            }
+            case 661: {
+                return !this.isFeatureFlagSet(660);
+            }
+            case 662: {
+                return this.isFeatureFlagSet(361) && this.isFeatureFlagSet(26) && this.isFeatureFlagSet(370);
             }
         }
         this.logger.error(2).append(new Exception(new StringBuffer().append("isFeatureFlagSet(").append(n).append("): Something went very very wrong!!!").toString())).log();
@@ -1206,8 +1209,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getEventPoolSize(int n) {
-        int[] nArray = new int[]{56, 66, 49, 68, 67, 48, 60, 50, 43, 57, 62, 64, 54, 52, 47, 51, 53, 46, 44, 55, 58, 65, 45, 63, 59, 61};
-        int[] nArray2 = new int[]{20, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
+        int[] nArray = new int[]{68, 48, 67, 43, 60, 58, 55, 62, 46, 44, 47, 54, 52, 53, 59, 66, 56, 57, 50, 51, 65, 45, 61, 63, 49, 64};
+        int[] nArray2 = new int[]{20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
         this.checkArrayIndex(n, 25);
         if (this.intValues == null) {
             return nArray2[n];
@@ -1217,8 +1220,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getNaviCommonOptionDefault(int n) {
-        int[] nArray = new int[]{72, 70, 69, 71};
-        int[] nArray2 = new int[]{6, 0, 0, 20};
+        int[] nArray = new int[]{71, 69, 70, 72};
+        int[] nArray2 = new int[]{20, 0, 0, 6};
         this.checkArrayIndex(n, 3);
         if (this.intValues == null) {
             return nArray2[n];
@@ -1228,8 +1231,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public boolean getNaviCommonOptionDefaultBoolean(int n) {
-        int[] nArray = new int[]{28, 27, 19, 26, 22, 24, 18, 23, 25, 17, 21, 20};
-        boolean[] blArray = new boolean[]{true, false, false, false, false, false, false, false, false, true, false, false};
+        int[] nArray = new int[]{18, 21, 19, 26, 20, 28, 23, 24, 22, 25, 17, 27};
+        boolean[] blArray = new boolean[]{false, false, false, false, false, true, false, false, false, false, true, false};
         this.checkArrayIndex(n, 11);
         if (this.packedBooleanValues == null) {
             return blArray[n];
@@ -1240,7 +1243,7 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getNaviCountryOverviewLocationOptionDefault(int n) {
-        int[] nArray = new int[]{78, 77, 76, 73, 74, 75};
+        int[] nArray = new int[]{73, 77, 75, 74, 76, 78};
         int[] nArray2 = new int[]{0, 0, 0, 0, 0, 0};
         this.checkArrayIndex(n, 5);
         if (this.intValues == null) {
@@ -1273,8 +1276,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getNaviLocationOptionDefault(int n) {
-        int[] nArray = new int[]{86, 85, 82, 83, 87, 84};
-        int[] nArray2 = new int[]{47, 10, 52, 26, 50, 0};
+        int[] nArray = new int[]{84, 82, 86, 87, 83, 85};
+        int[] nArray2 = new int[]{0, 52, 47, 50, 26, 10};
         this.checkArrayIndex(n, 5);
         if (this.intValues == null) {
             return nArray2[n];
@@ -1284,8 +1287,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public boolean getNaviLocationOptionDefaultBoolean(int n) {
-        int[] nArray = new int[]{29, 30, 31, 32, 33};
-        boolean[] blArray = new boolean[]{false, false, true, false, false};
+        int[] nArray = new int[]{33, 29, 32, 30, 31};
+        boolean[] blArray = new boolean[]{false, false, false, false, true};
         this.checkArrayIndex(n, 4);
         if (this.packedBooleanValues == null) {
             return blArray[n];
@@ -1296,8 +1299,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public boolean getNaviPoiSortOrderBoolean(int n) {
-        int[] nArray = new int[]{34, 37, 36, 35};
-        boolean[] blArray = new boolean[]{true, false, false, false};
+        int[] nArray = new int[]{36, 37, 34, 35};
+        boolean[] blArray = new boolean[]{false, false, true, false};
         this.checkArrayIndex(n, 3);
         if (this.packedBooleanValues == null) {
             return blArray[n];
@@ -1320,8 +1323,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getNaviRouteOptionDefault(int n) {
-        int[] nArray = new int[]{105, 119, 90, 98, 99, 106, 116, 95, 109, 110, 104, 108, 101, 93, 117, 88, 97, 114, 96, 111, 115, 113, 102, 92, 100, 112, 94, 91, 89, 103, 118, 107};
-        int[] nArray2 = new int[]{0, 50, 1, 0, 7, 0, 1, 7, 0, 5, 1, 1, 7, 1, 1, 1, 1, 1, 7, 1, 1, 0, 1, 7, 1, 0, 7, 6, 1, 3, 2, 5};
+        int[] nArray = new int[]{108, 105, 90, 91, 98, 104, 100, 112, 102, 117, 114, 97, 99, 103, 116, 101, 107, 89, 115, 118, 111, 95, 110, 109, 94, 106, 113, 119, 92, 93, 88, 96};
+        int[] nArray2 = new int[]{1, 0, 1, 6, 0, 1, 1, 0, 1, 1, 1, 1, 7, 3, 1, 7, 5, 1, 1, 2, 1, 7, 5, 0, 7, 0, 0, 50, 7, 1, 1, 7};
         this.checkArrayIndex(n, 31);
         if (this.intValues == null) {
             return nArray2[n];
@@ -1343,7 +1346,7 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public boolean getNaviSplitScreenOptionDefaultBoolean(int n) {
-        int[] nArray = new int[]{41, 40};
+        int[] nArray = new int[]{40, 41};
         boolean[] blArray = new boolean[]{true, true};
         this.checkArrayIndex(n, 1);
         if (this.packedBooleanValues == null) {
@@ -1355,8 +1358,8 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getNaviSplitScreenOptionDefaultInteger(int n) {
-        int[] nArray = new int[]{125, 122, 127, 126, 121, 120, 124, 123};
-        int[] nArray2 = new int[]{1, 5, 65, 24, 71, 30, 71, 30};
+        int[] nArray = new int[]{122, 125, 127, 126, 121, 123, 120, 124};
+        int[] nArray2 = new int[]{5, 1, 65, 24, 71, 30, 30, 71};
         this.checkArrayIndex(n, 7);
         if (this.intValues == null) {
             return nArray2[n];
@@ -1366,7 +1369,7 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public int getWidgetPoolSize(int n) {
-        int[] nArray = new int[]{129, 128};
+        int[] nArray = new int[]{128, 129};
         int[] nArray2 = new int[]{10, 10};
         this.checkArrayIndex(n, 1);
         if (this.intValues == null) {
@@ -1817,7 +1820,7 @@ implements ConfigurationManagerGenerated {
 
     @Override
     public String getHmiSoftwareBaseVersion() {
-        return "H29.319.29-201707121419";
+        return "H29.319.75-201804191425";
     }
 
     @Override

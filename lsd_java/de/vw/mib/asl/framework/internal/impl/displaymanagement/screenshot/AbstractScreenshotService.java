@@ -60,7 +60,7 @@ implements ScreenshotService {
 
     @Override
     public void takeScreenshot(String string) {
-        boolean bl = this.configurationManager.isFeatureFlagSet(400);
+        boolean bl = this.configurationManager.isFeatureFlagSet(401);
         if (bl) {
             this.doTakeScreenshot(string);
             this.createBeep();
@@ -119,7 +119,7 @@ implements ScreenshotService {
     }
 
     private void appendGpsInfo(StringBuffer stringBuffer) {
-        if (this.isGpsAvailable && this.navigation.isGatwayInstance()) {
+        if (this.isGpsAvailable && this.navigation.isGatwayInstance() && !this.configurationManager.isFeatureFlagSet(66)) {
             String string;
             String string2;
             INavigationPosPosition iNavigationPosPosition = this.navigation.getPositionInfo();

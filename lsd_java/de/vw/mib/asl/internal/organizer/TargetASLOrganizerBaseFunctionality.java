@@ -100,7 +100,7 @@ extends AbstractTarget {
     public void dsiAdbSetupUpdateAdbState(int n, int n2) {
         if (n == 1) {
             this.dsiAdbInit.setAutoProfileAllocation(true);
-            this.dsiAdbInit.setOnlineDestinationEnabled(ServiceManager.configManagerDiag.isFeatureFlagSet(649));
+            this.dsiAdbInit.setOnlineDestinationEnabled(ServiceManager.configManagerDiag.isFeatureFlagSet(651));
             this.dsiAdbInit.setNumericalSpellerEnabled(true);
             this.dsiAdbInit.setMaxSpeedDialEntries(15);
             this.dsiAdbInit.setDefaultPublicProfileVisibility(false);

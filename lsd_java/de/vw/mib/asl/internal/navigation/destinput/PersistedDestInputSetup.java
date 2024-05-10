@@ -44,7 +44,7 @@ implements IPersistedDestInputSetup {
 
     @Override
     public int getLastInputMode() {
-        int n = ServiceManager.configManagerDiag.isFeatureFlagSet(75) ? 1 : 0;
+        int n = ServiceManager.configManagerDiag.isFeatureFlagSet(76) ? 1 : 0;
         if (ASLNavigationUtilFactory.getNavigationUtilApi().getDebugFlags().getASLDebugFlag("NEW_NAV_PERSISTENCE")) {
             n = ASLNavigationUtilFactory.getNavigationUtilApi().getNavigationDp().getPersonalNaviPersistence().getLastModeDestinationInput();
         }

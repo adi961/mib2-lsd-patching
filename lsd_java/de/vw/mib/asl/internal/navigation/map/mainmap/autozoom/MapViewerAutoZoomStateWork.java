@@ -88,7 +88,7 @@ extends AbstractHsmState {
                 break;
             }
             case 1073744564: {
-                if (this.target.datapool.isContinuousZoomActive() || !this.target.datapool.isMapLocatedInKombi() || !ServiceManager.configManagerDiag.isFeatureFlagSet(369)) break;
+                if (this.target.datapool.isContinuousZoomActive() || !this.target.datapool.isMapLocatedInKombi() || !ServiceManager.configManagerDiag.isFeatureFlagSet(370)) break;
                 int n = eventGeneric.getInt(0);
                 switch (n) {
                     case 0: {
@@ -248,7 +248,7 @@ extends AbstractHsmState {
             return;
         }
         int n2 = this.target.datapool.getAutoZoomRecommendedZoomLast();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(369) && this.target.datapool.isMapLocatedInKombi()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(370) && this.target.datapool.isMapLocatedInKombi()) {
             this.updateMapScaleInBAP(MapViewerUtils.calculateZoomLevelNormalized(n2));
         }
         this.target.datapool.setMainMapZoomLevel(n2);

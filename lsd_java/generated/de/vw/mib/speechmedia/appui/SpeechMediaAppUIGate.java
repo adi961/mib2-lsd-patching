@@ -96,7 +96,7 @@ extends AbstractHmiAppUIGate {
         VIEWNAME_2_SCREENAREAS_MAP.put("Smnv", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Smps", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Smss", new String[]{"ScreenAreaHeadline"});
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{596, 623, 624};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{595, 622, 623};
     }
 }
 

@@ -187,11 +187,11 @@ implements DSIServiceStateListener {
         object = ASLFrameworkFactory.getASLFrameworkAPI().getServices();
         AsyncServiceFactory asyncServiceFactory = object.getASLAsyncServiceFactory();
         object.getBundleContext().registerService((class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = CarlifeHSMTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler).getName(), asyncServiceFactory.create(this.popuphandler, new Class[]{class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = CarlifeHSMTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler}), null);
-        if (object.getConfigurationManagerDiag().isFeatureFlagSet(432)) {
+        if (object.getConfigurationManagerDiag().isFeatureFlagSet(433)) {
             this.properties.setOemIconTitle("Volkswagen");
-        } else if (object.getConfigurationManagerDiag().isFeatureFlagSet(353)) {
+        } else if (object.getConfigurationManagerDiag().isFeatureFlagSet(354)) {
             this.properties.setOemIconTitle("SEAT");
-        } else if (object.getConfigurationManagerDiag().isFeatureFlagSet(360)) {
+        } else if (object.getConfigurationManagerDiag().isFeatureFlagSet(361)) {
             this.properties.setOemIconTitle("SKODA");
         } else {
             this.properties.setOemIconTitle("HMI");

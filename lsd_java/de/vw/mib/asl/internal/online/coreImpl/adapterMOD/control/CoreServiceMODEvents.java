@@ -8,5 +8,8 @@ public interface CoreServiceMODEvents {
     public static final int EV_ONLINE_CORE_SERVICE_PRECHECK;
     public static final int ONLINE_CORE_SERVICE_PRECHECK_SERVICE_P0_STRING;
     public static final int ONLINE_CORE_SERVICE_PRECHECK_RESULT_P1_INT;
+    public static final int EV_CORE_SERVICE_PRECHECK_TIMER;
+    public static final int PRECHECK_TIMER;
+    public static final int ONLINE_CORE_SERVICE_PRECHECK_P0_SERVICEID;
 }
 

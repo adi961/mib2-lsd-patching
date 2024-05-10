@@ -47,7 +47,7 @@ extends AbstractHsmState {
             }
             case 101001: {
                 this.myTarget.traceState(this, "NAVI_TARGET_GO_ON");
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
                     this.myTarget.disableManeuverViewGeneration(false);
                 }
                 this.registerAslNavInternalServices();
@@ -72,14 +72,14 @@ extends AbstractHsmState {
 
     private void setDefaultLocation() {
         this.myTarget.traceState(this, "setDefaultLocation");
-        boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(0);
-        int n = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(2);
-        int n2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(3);
-        int n3 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(5);
-        boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(4);
-        int n4 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(1);
-        int n5 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(0);
-        int n6 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(4);
+        boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
+        int n = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(1);
+        int n2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(4);
+        int n3 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(0);
+        boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(0);
+        int n4 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(5);
+        int n5 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(2);
+        int n6 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(3);
         int n7 = ASLNavigationUtilFactory.getNavigationUtilApi().getNaviHelper().degMinSecToDsi(new double[]{n, n2, n3}, bl);
         int n8 = ASLNavigationUtilFactory.getNavigationUtilApi().getNaviHelper().degMinSecToDsi(new double[]{n4, n5, n6}, bl2);
         ILocationWrapper iLocationWrapper = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper(n7, n8);

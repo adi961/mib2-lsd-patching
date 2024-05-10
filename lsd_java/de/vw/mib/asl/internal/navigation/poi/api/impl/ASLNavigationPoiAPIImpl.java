@@ -37,7 +37,7 @@ public class ASLNavigationPoiAPIImpl
 implements ASLNavigationPoiAPI,
 ASLNavigationContainer {
     static IntObjectOptHashMap dynPoiServiceIds = new IntObjectOptHashMap();
-    private boolean isNavMultiLevelPoi4Map = ServiceManager.configManagerDiag.isFeatureFlagSet(152);
+    private boolean isNavMultiLevelPoi4Map = ServiceManager.configManagerDiag.isFeatureFlagSet(153);
     private OnlinePoiTarget onlinePoiTarget;
     private PoiHsmTarget poiTarget;
     private PPoiHsmTarget personalPoiTarget;

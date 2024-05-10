@@ -61,6 +61,10 @@ public final class AppLogger {
         }
     }
 
+    public static boolean isTraceEnabled() {
+        return AppLogger.getLogger().isTraceEnabled(8192);
+    }
+
     public static void trace(Object object, String string) {
         AppLogger.trace(new StringBuffer().append(AppLogger.getSimpleName(object)).append(string).toString());
     }

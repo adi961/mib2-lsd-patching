@@ -67,7 +67,7 @@ public class RadioHASUpdater {
         } else if (n == ASLRadioTargetIds.ASL_RADIO_HSMTARGET_DAB) {
             RadioHASUpdater.tunerAvailable[1] = ServiceManager.configManagerDiag.isFeatureFlagSet(49);
         } else if (n == ASLRadioTargetIds.ASL_SDARS_MAIN_TARGET) {
-            RadioHASUpdater.tunerAvailable[2] = ServiceManager.configManagerDiag.isFeatureFlagSet(238);
+            RadioHASUpdater.tunerAvailable[2] = ServiceManager.configManagerDiag.isFeatureFlagSet(239);
         }
         ArrayList arrayList = new ArrayList();
         if (tunerAvailable[0]) {

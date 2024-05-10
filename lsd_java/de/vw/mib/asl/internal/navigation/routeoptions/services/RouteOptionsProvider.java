@@ -26,7 +26,7 @@ public class RouteOptionsProvider {
     }
 
     private void createRouteOptionsAccessor() {
-        this.routeOptionsAccessor = ServiceManager.configManagerDiag.isFeatureFlagSet(107) ? (ServiceManager.configManagerDiag.isFeatureFlagSet(75) ? new PersistableRouteOptionsAccessorJPNImpl() : new PersistableRouteOptionsAccessorCHNImpl()) : new PersistableRouteOptionsAccessorImpl();
+        this.routeOptionsAccessor = ServiceManager.configManagerDiag.isFeatureFlagSet(108) ? (ServiceManager.configManagerDiag.isFeatureFlagSet(76) ? new PersistableRouteOptionsAccessorJPNImpl() : new PersistableRouteOptionsAccessorCHNImpl()) : new PersistableRouteOptionsAccessorImpl();
     }
 
     public RouteOptions[] getSingleRouteOptions() {
@@ -38,7 +38,7 @@ public class RouteOptionsProvider {
     }
 
     public int getNumberOfAlternativeRoutes() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(107)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(108)) {
             return 5;
         }
         return 3;

@@ -271,7 +271,7 @@ public final class RadioServiceManager {
                     object2 = object;
                 }
             }
-            if ((null == object2 || ((String)object2).length() < 1) && amFmStation.getName().length() < 1 && ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+            if ((null == object2 || ((String)object2).length() < 1) && amFmStation.getName().length() < 1 && ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                 object2 = ((StationNameFreqList)object).getStationName(amFmStation.getFrequency());
                 if (ServiceManager.logger.isTraceEnabled(128)) {
                     ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM).append("RadioServiceManager - getCorrectFmStationName() - ").append("Name from NAV database: ").append((String)object2).log();

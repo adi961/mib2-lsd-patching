@@ -148,7 +148,7 @@ implements TargetForResetNavigation {
         if (n == 0) {
             this.target.notifierDSI.setMetricSystem(2);
         } else if (n == 1) {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(155)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(156)) {
                 this.target.notifierDSI.setMetricSystem(3);
             } else {
                 this.target.notifierDSI.setMetricSystem(4);
@@ -276,7 +276,7 @@ implements TargetForResetNavigation {
     public void handleNavigationSettingsReset() {
         this.logger.trace("handleResetNavigationSettings()");
         this.target.setPerspective3D();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
             this.target.notifierDSI.setSpeedAndFlowRoadClass(3);
         }
         this.navigationResetParticipant.notifyResetDone();

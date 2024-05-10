@@ -71,7 +71,7 @@ CioExecutor {
         this.updateEtrakAvailableStatus(this.etrakAvailableStatus);
         this.updateAvailableStatusTripGeneral(this.tripGeneralAvailableStatus);
         this.updateAvailableStatusTripAverageConsumption(this.tripAbgConsumptionAvailableStatus);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(394)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(395)) {
             this.getCarDrivingDataModelApiCallback()._update_getMode(true);
         } else if (ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV()) {
             this.getCarDrivingDataModelApiCallback()._update_getMode(true);

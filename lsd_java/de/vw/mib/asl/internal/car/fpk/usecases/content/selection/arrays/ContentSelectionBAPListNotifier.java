@@ -52,9 +52,11 @@ implements ASGArrayListChangeNotifier {
     }
 
     private void onModelChanged(ASGArrayList aSGArrayList) {
+        AppLogger.trace(this, ".onModelChanged( .. )");
         ContentSelection[] contentSelectionArray = new ContentSelection[aSGArrayList.getBapArrayListSize()];
         for (int i2 = 0; i2 < aSGArrayList.getBapArrayListSize(); ++i2) {
             ContentSelectionBAPElement contentSelectionBAPElement = (ContentSelectionBAPElement)aSGArrayList.get(i2);
+            AppLogger.trace(this, new StringBuffer().append(".onModelChanged( .. ) selection=").append(i2).append(", display=").append(contentSelectionBAPElement.getDisplay()).append(", content=").append(contentSelectionBAPElement.getElementContent()).toString());
             contentSelectionArray[i2] = contentSelectionBAPElement;
         }
         this.contentSelectionNotifier.onSelectionUpdated(contentSelectionArray);

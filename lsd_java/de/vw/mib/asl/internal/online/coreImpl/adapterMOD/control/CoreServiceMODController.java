@@ -37,6 +37,9 @@ public class CoreServiceMODController {
     private boolean _privacyMode;
     private int _serviceListState = 1;
     private int _serviceListStatus = 0;
+    private boolean _pendingPrecheck;
+    private boolean _startup = true;
+    private String _pendingServiceID;
 
     public CoreServiceMODController(CoreServiceMODTarget coreServiceMODTarget) {
         this._target = coreServiceMODTarget;
@@ -162,7 +165,38 @@ public class CoreServiceMODController {
         }
     }
 
+    public void precheckRequestPreanalysis(String string) {
+        if (this._target.isTraceEnabled()) {
+            this._target.trace().append(this._classname).append(".precheckRequestPreanalysis(").append(Util.isNullOrEmpty(string) ? "EMPTY" : string).append(" )").log();
+        }
+        if (!Util.isNullOrEmpty(string)) {
+            if (string.equalsIgnoreCase("incar_enrollment_v1")) {
+                int n;
+                int n2 = n = this.getPrecheckResult().containsKey(string) ? this.getPrecheckResult().get(string) : 59;
+                if (!Util.isBitSet(1, this._serviceState) || n != 0) {
+                    this._pendingPrecheck = true;
+                    this._pendingServiceID = string;
+                    this._target.startTimer(-1551499008, (long)0, false);
+                    this._target.info().append(this._classname).append(".precheckRequestPreanalysis()--> TIMER STARTED.").log();
+                    return;
+                }
+            }
+            this.precheckOnlineServiceRequest(string);
+        } else {
+            this._target.warn().append(this._classname).append(".precheckRequestPreanalysis()--> ServiceID Invalid.").log();
+        }
+    }
+
     public void precheckOnlineServiceRequest(String string) {
+        if (this._pendingPrecheck) {
+            string = new String(this._pendingServiceID);
+            this._pendingServiceID = "";
+            this._pendingPrecheck = false;
+        }
+        if (this._target.isTraceEnabled()) {
+            this._target.trace().append(this._classname).append(".precheckOnlineServiceRequest(").append(Util.isNullOrEmpty(string) ? "EMPTY" : string).append(" )").log();
+        }
+        this._pendingPrecheck = false;
         if (!Util.isNullOrEmpty(string)) {
             int n = this.getPrecheckResult().containsKey(string) ? this.getPrecheckResult().get(string) : 59;
             EventGeneric eventGeneric = ServiceManager.mGenericEventFactory.newEvent(-1568276224);
@@ -207,7 +241,7 @@ public class CoreServiceMODController {
 
     public void updateServiceState(int n) {
         if (this._target.isTraceEnabled()) {
-            this._target.trace().append(this._classname).append(new StringBuffer().append(".updateServiceState(").append(n).append(")").toString()).log();
+            this._target.trace().append(this._classname).append(new StringBuffer().append(".updateServiceState(").append(Integer.toHexString(n)).append(")").toString()).log();
         }
         if (this._serviceState == 0) {
             this._modDevice = this.getTransformer().transformToDevice(null, this._modDevice);
@@ -290,8 +324,19 @@ public class CoreServiceMODController {
     }
 
     public void updateServices(OSRNotifyPropertiesSL[] oSRNotifyPropertiesSLArray) {
-        this.setPrivacyMode(this.getTransformer().checkForPrivacyModeActiveStatus(oSRNotifyPropertiesSLArray));
+        this.setPrivacyMode(this.getTransformer().checkForPrivacyModeActiveStatus(oSRNotifyPropertiesSLArray), true);
         this._precheckResult = this.getTransformer().updateServicesReasonResult(oSRNotifyPropertiesSLArray, this.getPrecheckResult());
+        if (this._pendingPrecheck) {
+            int n;
+            int n2 = n = this.getPrecheckResult().containsKey("incar_enrollment_v1") ? this.getPrecheckResult().get("incar_enrollment_v1") : 59;
+            if (Util.isBitSet(1, this._serviceState) && n == 0) {
+                if (this._target.getTimerServer().isTimerActive(this._target.getDefaultTargetId(), -1551499008)) {
+                    this._target.stopTimer(-1551499008);
+                }
+                this._pendingPrecheck = false;
+                this.precheckOnlineServiceRequest("incar_enrollment_v1");
+            }
+        }
         if (!Util.isNullOrEmpty(this._modServiceList) && !this._roamingPending) {
             this._modServiceList = this.getTransformer().updateServices(oSRNotifyPropertiesSLArray, this._modServiceList, this._serviceState, this.getRoamingEnabled());
             this.fireUpdates(oSRNotifyPropertiesSLArray);
@@ -329,11 +374,18 @@ public class CoreServiceMODController {
         return this._privacyMode;
     }
 
-    public void setPrivacyMode(boolean bl) {
-        if (this._privacyMode != bl) {
+    public void setPrivacyMode(boolean bl, boolean bl2) {
+        if (this._privacyMode != bl || this.checkForStartupCondition(bl, bl2)) {
+            this._startup = false;
             this._privacyMode = bl;
-            CoreServiceMODFactory.getNotifier().updatePrivacyModeStatus(this.isPrivacyMode(), this._target.getDeviceID());
+            if (bl2) {
+                CoreServiceMODFactory.getNotifier().updatePrivacyModeStatus(this.isPrivacyMode(), this._target.getDeviceID());
+            }
         }
+    }
+
+    private boolean checkForStartupCondition(boolean bl, boolean bl2) {
+        return bl2 && this._startup && this._privacyMode == bl;
     }
 
     public void asyncException(int n, int n2) {

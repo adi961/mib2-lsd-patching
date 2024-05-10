@@ -79,7 +79,7 @@ extends TripleMobileEquipment {
 
     @Override
     protected int[] getMobileEquipmentNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return new int[]{5, 3, 30, 34, 36};
         }
         return ASLPhoneData.EMPTY_NOTIFICATION;
@@ -87,7 +87,7 @@ extends TripleMobileEquipment {
 
     @Override
     protected int[] getMobileEquipmentHfpOnlyNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return ASLPhoneData.EMPTY_NOTIFICATION;
         }
         return new int[]{36};

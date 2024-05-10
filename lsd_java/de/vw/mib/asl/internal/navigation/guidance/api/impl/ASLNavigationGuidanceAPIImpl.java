@@ -83,7 +83,7 @@ ASLNavigationContainer {
         this.targetTourMemory = new TargetTourMemory(genericEvents, -2075454464, string);
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, this.targetTourMemory);
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableAslTargetDelegator(new TargetTourView(genericEvents, -2092231680, string), string));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(109)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(110)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableAslTargetDelegator(new HsmTargetBorderChange(genericEvents, 2135626752, string), string));
         } else if (NavigationDefinitions.NAVI_LOGGER.isTraceEnabled(16384)) {
             LogMessage logMessage = NavigationDefinitions.NAVI_LOGGER.trace(16384);
@@ -98,14 +98,14 @@ ASLNavigationContainer {
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new HsmTargetInfo(genericEvents, 1682641920, string));
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new HsmTargetVZA(genericEvents, 1766528000, string));
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableTargetDelegator(new TargetAdjustPosition(genericEvents, -1924459520, string), string));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(148) || ServiceManager.configManagerDiag.isFeatureFlagSet(158)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(149) || ServiceManager.configManagerDiag.isFeatureFlagSet(159)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableAslTargetDelegator(new TargetPPOIApproach(genericEvents, -968158208, string), string));
         }
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new HsmTargetCongestionAhead(genericEvents, -2008345600, string));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(144)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(145)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new TargetPredictiveNavigationSplitscreen(genericEvents, -934603776, string));
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(159) || ServiceManager.configManagerDiag.isFeatureFlagSet(166)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(160) || ServiceManager.configManagerDiag.isFeatureFlagSet(167)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new JPNWarningSetupHsmTarget(genericEvents, -733277184, string));
         }
         this.updateCalculationState(new ASLCalculationState[]{new ASLCalculationState()});
@@ -270,7 +270,7 @@ ASLNavigationContainer {
                         ServiceManager.aslPropertyManager.valueChangedInteger(1542459392, this.getSourceContext(n));
                         ServiceManager.aslPropertyManager.valueChangedBoolean(895, false);
                         ServiceManager.aslPropertyManager.valueChangedBoolean(896, false);
-                        int n3 = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+                        int n3 = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
                         String string = ServiceManager.fixFormat4Asl.fmtRulesetBasedString(10 + n3, ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(iLocationWrapper));
                         ServiceManager.aslPropertyManager.valueChangedString(887, string);
                         ASLNavigationMemoryFactory.getNavigationMemoryApi().setDestinationDetails(iLocationWrapper, string);
@@ -453,7 +453,7 @@ ASLNavigationContainer {
     @Override
     public int getMaxNumberOfDestinations() {
         this.getLOGGER().trace("getMaxNumberOfDestinations()");
-        return ServiceManager.configManagerDiag.getNaviCommonOptionDefault(3);
+        return ServiceManager.configManagerDiag.getNaviCommonOptionDefault(0);
     }
 
     @Override

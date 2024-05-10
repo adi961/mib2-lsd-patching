@@ -32,6 +32,7 @@ ReloadPersistedDataListener {
     TurnListElement[] currentTurnListElements = null;
     private FactoryResetParticipantWithCallback navigationResetParticipant;
     private boolean isMotorwayInfoDisplayable = false;
+    private boolean isUpdateModelDisplaySkipped;
 
     public OverlaysStateWork(OverlaysTargetHSM overlaysTargetHSM, String string, HsmState hsmState) {
         super(overlaysTargetHSM.getHsm(), string, hsmState);
@@ -81,6 +82,7 @@ ReloadPersistedDataListener {
                 break;
             }
             case 1074841833: {
+                this.isUpdateModelDisplaySkipped = false;
                 this.toggleOverlay();
                 break;
             }
@@ -117,9 +119,8 @@ ReloadPersistedDataListener {
         this.logger.trace("toggleOverlay: ");
         ++this.currentOverlayIndex;
         if (this.currentOverlayIndex >= 3) {
-            this.logger.trace("Reset: ");
             this.currentOverlayIndex = this.restoreSplScr() ? 0 : 1;
-            this.logger.trace(new StringBuffer("Restart List -- Overlay Index Model: ").append(this.currentOverlayIndexModel).toString());
+            this.logger.trace(new StringBuffer("Reset: ").append("currentOverlayIndexModel: ").append(this.currentOverlayIndexModel).append(", currentOverlayIndex: ").append(this.currentOverlayIndex).toString());
         }
         switch (this.availableOverlays[this.currentOverlayIndex]) {
             case -10000: {
@@ -448,23 +449,31 @@ ReloadPersistedDataListener {
     }
 
     private void updateModelDisplay() {
-        this.logger.trace("updateModelDisplay()");
-        this.updateModelDisplayCommon();
-        this.target.overlaysTurnListHandler.notifyOverlayDisplayed(this.availableOverlays[this.currentOverlayIndex]);
-        this.target.notifierModel.notifyOverlayDisplayed(this.availableOverlays[this.currentOverlayIndex]);
-        this.target.notifierOverlaysInternalAPI.notifyOverlayContentUpdate(this.availableOverlays[this.currentOverlayIndex]);
-        this.target.notifierModel.notifyHeadlineIconVisibility(this.target.datapool.isRGActive() && this.availableOverlays[this.currentOverlayIndex] == 3);
-        this.traceCurrentOverlayStatus();
+        if (this.isUpdateModelDisplaySkipped) {
+            this.logger.trace("updateModelDisplay() skipped while processing updateManoeuvreViewsAvailable message");
+        } else {
+            this.logger.trace("updateModelDisplay()");
+            this.updateModelDisplayCommon();
+            this.target.overlaysTurnListHandler.notifyOverlayDisplayed(this.availableOverlays[this.currentOverlayIndex]);
+            this.target.notifierModel.notifyOverlayDisplayed(this.availableOverlays[this.currentOverlayIndex]);
+            this.target.notifierOverlaysInternalAPI.notifyOverlayContentUpdate(this.availableOverlays[this.currentOverlayIndex]);
+            this.target.notifierModel.notifyHeadlineIconVisibility(this.target.datapool.isRGActive() && this.availableOverlays[this.currentOverlayIndex] == 3);
+            this.traceCurrentOverlayStatus();
+        }
     }
 
     private void updateModelDisplay(int n) {
-        this.logger.trace("updateModelDisplay( activeASLView )");
-        this.updateModelDisplayCommon();
-        this.target.overlaysTurnListHandler.notifyOverlayDisplayed(n);
-        this.target.notifierModel.notifyOverlayDisplayed(n);
-        this.target.notifierOverlaysInternalAPI.notifyOverlayContentUpdate(n);
-        this.target.notifierModel.notifyHeadlineIconVisibility(this.target.datapool.isRGActive() && n == 3);
-        this.traceCurrentOverlayStatus();
+        if (this.isUpdateModelDisplaySkipped) {
+            this.logger.trace(new StringBuffer().append("updateModelDisplay( ").append(n).append(" ) skipped while processing updateManoeuvreViewsAvailable message").toString());
+        } else {
+            this.logger.trace(new StringBuffer().append("updateModelDisplay( ").append(n).append(" )").toString());
+            this.updateModelDisplayCommon();
+            this.target.overlaysTurnListHandler.notifyOverlayDisplayed(n);
+            this.target.notifierModel.notifyOverlayDisplayed(n);
+            this.target.notifierOverlaysInternalAPI.notifyOverlayContentUpdate(n);
+            this.target.notifierModel.notifyHeadlineIconVisibility(this.target.datapool.isRGActive() && n == 3);
+            this.traceCurrentOverlayStatus();
+        }
     }
 
     private void updateModelDisplayCommon() {
@@ -524,7 +533,13 @@ ReloadPersistedDataListener {
     }
 
     public void dsiMapViewerManeuverViewUpdateManoeuvreViewsAvailable(short[] sArray, int n) {
+        int n2;
         this.logger.trace("dsiMapViewerManeuverViewUpdateManeuverViewsAvailable");
+        this.isUpdateModelDisplaySkipped = false;
+        for (n2 = 0; n2 < sArray.length; ++n2) {
+            if (sArray[n2] != 3 && sArray[n2] != 4 && sArray[n2] != 6) continue;
+            this.isUpdateModelDisplaySkipped = true;
+        }
         if (this.target.datapool.isMapExternalConfigured()) {
             this.logger.trace("dsiMapViewerManeuverViewUpdateManeuverViewsAvailable ignored because map is external configured");
             return;
@@ -532,7 +547,7 @@ ReloadPersistedDataListener {
         if (sArray != null && sArray.length > 0 && n == 1) {
             this.availableOverlaysCnt = 0;
             this.useableOverlaysCnt = 0;
-            int n2 = 1;
+            n2 = 1;
             for (int i2 = 0; i2 < 3; ++i2) {
                 this.availableOverlays[i2] = -10000;
             }
@@ -623,7 +638,6 @@ ReloadPersistedDataListener {
             default: {
                 this.displayEnd();
                 this.updateModelDisplayCommon();
-                this.toggleOverlay();
                 this.logger.trace("MANOEUVRETYPE_INVALID_MANOEUVRE or UNSUPPORTED MANOEUVRETYPE_*");
             }
         }
@@ -631,6 +645,7 @@ ReloadPersistedDataListener {
 
     public void dsiMapViewerManeuverViewUpdateManoeuvreViewActive(int n, int n2) {
         this.logger.trace("dsiMapViewerManeuverViewUpdateManoeuvreViewActive");
+        this.isUpdateModelDisplaySkipped = false;
         if (n2 == 1) {
             StringBuffer stringBuffer = new StringBuffer("Active Manoeuvre View: ").append(n);
             this.logger.trace(stringBuffer.toString());
@@ -662,6 +677,7 @@ ReloadPersistedDataListener {
             }
             case 255: {
                 this.logger.trace("MANOEUVRETYPE_INVALID_MANOEUVRE returned by: DSIMapViewerManeuverViewListener.updateManoeuvreViewActive(int activeDSIView, int validFlag)");
+                this.updateModelDisplay();
                 break;
             }
         }

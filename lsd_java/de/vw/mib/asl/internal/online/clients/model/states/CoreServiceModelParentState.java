@@ -112,7 +112,7 @@ extends AbstractHsmState {
                 if (this.getTarget().isTraceEnabled()) {
                     this.getTarget().trace().append(this._classname).append(".handle(CoreServiceModelEvents.EV_CORE_SERVICE_PRIMARYUSER_POPUP_ACTIVATION)").log();
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) break;
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) break;
                 this.getTarget().sendHMIEvent(1308431104);
                 break;
             }

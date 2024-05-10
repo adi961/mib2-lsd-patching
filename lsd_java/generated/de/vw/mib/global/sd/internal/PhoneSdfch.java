@@ -71,7 +71,7 @@ extends SdFeatureCollectionHandlerBase {
         switch (n) {
             case 0: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(201);
-                genericTargetFeature.setEvent(2003, this.createEvent(-77558455));
+                genericTargetFeature.setEvent(2003, this.createEvent(-94335671));
                 return genericTargetFeature;
             }
         }

@@ -23,7 +23,6 @@ implements BAPEntity {
     private static final int MIN_SIZE_OF_STRING_MAX_SIZE_VALUE;
     private static final int MAX_TRANSMITTED_BYTE_STRING_LENGTH;
     private static final String STRING_ENCODING_TYPE;
-    private static final String STRING_ENCODING_TYPE_RAW;
     private static final int BAP_NULL_STRING_BYTE_SIZE;
     private static final String BAP_NULL_STRING_PAYLOAD;
     private String content = "";
@@ -62,7 +61,7 @@ implements BAPEntity {
                 byte[] byArray = bitStream.popFrontBytes(n);
                 try {
                     if (this.typeOfStringEncoding == 1) {
-                        string = new String(byArray, "ISO8859_1");
+                        string = new String(BAPString.bytesToCharacters(byArray));
                         break block5;
                     }
                     string = new String(byArray, "UTF-8");
@@ -204,25 +203,27 @@ implements BAPEntity {
         return string2;
     }
 
-    public void setContent(String string) {
+    public BAPString setContent(String string) {
         if (string == null || string.length() == 0) {
             this._setContent("");
         } else {
             this._setContent(this.transformContent(string));
         }
+        return this;
     }
 
     private void _setContent(String string) {
         this.content = string;
     }
 
-    public void setContent(BAPString bAPString) {
+    public BAPString setContent(BAPString bAPString) {
         this.typeOfStringEncoding = bAPString.typeOfStringEncoding;
         if (bAPString.isNullString()) {
             this.setNullString();
         } else {
             this.setContent(bAPString.content);
         }
+        return this;
     }
 
     public void setRawContent() {
@@ -252,6 +253,15 @@ implements BAPEntity {
             byArray[i2] = (byte)cArray[i2];
         }
         return byArray;
+    }
+
+    private static char[] bytesToCharacters(byte[] byArray) {
+        int n = byArray.length;
+        char[] cArray = new char[n];
+        for (int i2 = 0; i2 < n; ++i2) {
+            cArray[i2] = (char)byArray[i2];
+        }
+        return cArray;
     }
 
     private byte[] getEncodedBytes() {

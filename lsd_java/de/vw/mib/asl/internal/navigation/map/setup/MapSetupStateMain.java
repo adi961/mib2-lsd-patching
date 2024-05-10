@@ -383,7 +383,7 @@ TargetForResetNavigation {
         if (n2 == 0) {
             n = 2;
         } else if (n2 == 1) {
-            n = ServiceManager.configManagerDiag.isFeatureFlagSet(155) ? 3 : 4;
+            n = ServiceManager.configManagerDiag.isFeatureFlagSet(156) ? 3 : 4;
         } else {
             this.logger.error("handleSetDsiDistanceUnit() invalid distance unit");
             return;

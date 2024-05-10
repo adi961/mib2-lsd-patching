@@ -10,6 +10,7 @@ import de.vw.mib.asl.api.media.services.sources.SourceId;
 import de.vw.mib.asl.framework.api.entertainmentmanager.core.EntertainmentManagerCoreService;
 import de.vw.mib.asl.framework.api.entertainmentmanager.participant.EntertainmentManagerParticipant;
 import de.vw.mib.asl.framework.api.framework.ASLFrameworkFactory;
+import de.vw.mib.asl.framework.api.framework.component.ASLComponentRegistry;
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.internal.media.common.AbstractMediaTarget;
 import de.vw.mib.asl.internal.media.common.ResponseHandler;
@@ -91,8 +92,9 @@ EntertainmentManagerParticipant {
             case 106: {
                 this.addObservers(OBSERVER_MEDIA_BASE);
                 this.mediaContextController.reset();
-                ASLFrameworkFactory.getASLFrameworkAPI().getServices().getASLComponentRegistry().requestAPI(class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService == null ? (class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService = MediaInternalSourceHandlingTarget.class$("de.vw.mib.asl.framework.api.entertainmentmanager.participant.EntertainmentManagerParticipantService")) : class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService, new MediaInternalSourceHandlingTarget$1(this));
-                ASLFrameworkFactory.getASLFrameworkAPI().getServices().getASLComponentRegistry().requestAPI(class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService == null ? (class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService = MediaInternalSourceHandlingTarget.class$("de.vw.mib.asl.framework.api.entertainmentmanager.core.EntertainmentManagerCoreService")) : class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService, new MediaInternalSourceHandlingTarget$2(this));
+                ASLComponentRegistry aSLComponentRegistry = ASLFrameworkFactory.getASLFrameworkAPI().getServices().getASLComponentRegistry();
+                aSLComponentRegistry.requestAPI(class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService == null ? (class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService = MediaInternalSourceHandlingTarget.class$("de.vw.mib.asl.framework.api.entertainmentmanager.participant.EntertainmentManagerParticipantService")) : class$de$vw$mib$asl$framework$api$entertainmentmanager$participant$EntertainmentManagerParticipantService, new MediaInternalSourceHandlingTarget$1(this));
+                aSLComponentRegistry.requestAPI(class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService == null ? (class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService = MediaInternalSourceHandlingTarget.class$("de.vw.mib.asl.framework.api.entertainmentmanager.core.EntertainmentManagerCoreService")) : class$de$vw$mib$asl$framework$api$entertainmentmanager$core$EntertainmentManagerCoreService, new MediaInternalSourceHandlingTarget$2(this));
                 break;
             }
             case 107: {
@@ -343,12 +345,12 @@ EntertainmentManagerParticipant {
         }
     }
 
-    static /* synthetic */ void access$000(MediaInternalSourceHandlingTarget mediaInternalSourceHandlingTarget, boolean bl, int n) {
-        mediaInternalSourceHandlingTarget.handleActivateStartup(bl, n);
+    static /* synthetic */ MediaDevices access$000(MediaInternalSourceHandlingTarget mediaInternalSourceHandlingTarget) {
+        return mediaInternalSourceHandlingTarget.mediaDevices;
     }
 
-    static /* synthetic */ MediaDevices access$100(MediaInternalSourceHandlingTarget mediaInternalSourceHandlingTarget) {
-        return mediaInternalSourceHandlingTarget.mediaDevices;
+    static /* synthetic */ void access$100(MediaInternalSourceHandlingTarget mediaInternalSourceHandlingTarget, boolean bl, int n) {
+        mediaInternalSourceHandlingTarget.handleActivateStartup(bl, n);
     }
 
     static /* synthetic */ void access$200(MediaInternalSourceHandlingTarget mediaInternalSourceHandlingTarget, MediaCollector mediaCollector) {

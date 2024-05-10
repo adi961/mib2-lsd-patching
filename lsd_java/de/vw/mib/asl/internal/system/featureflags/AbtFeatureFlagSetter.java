@@ -33,8 +33,8 @@ public class AbtFeatureFlagSetter {
     private void updateFeatureFlagProximitySensorAvailable() {
         boolean bl;
         boolean bl2 = bl = this.abtFeatureService.getProximitySensor() != 0;
-        if (this.configurationManager.isFeatureFlagSet(390)) {
-            bl = this.configurationManager.isFeatureFlagSet(389);
+        if (this.configurationManager.isFeatureFlagSet(391)) {
+            bl = this.configurationManager.isFeatureFlagSet(390);
         }
         this.systemLogger.trace(new Object[]{"updateFeatureFlagProximitySensorAvailable called! isProximitySensorAvailable = ", new Boolean(bl)});
         this.propertyManager.valueChangedBoolean(1133582336, bl);

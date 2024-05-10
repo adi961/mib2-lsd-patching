@@ -359,7 +359,7 @@ extends AbstractASLTarget {
 
     void dsiUpdateDateFormat(int n) {
         this.systemLogger.trace(new Object[]{"updateDateFormat called. dateFormat = ", new Integer(n)});
-        boolean bl = this.configurationManager.isFeatureFlagSet(401);
+        boolean bl = this.configurationManager.isFeatureFlagSet(402);
         if (bl) {
             int n2 = this.transformDsiDateFormatToAslDateFormat(n);
             this.updateDateFormat(n2);
@@ -660,7 +660,7 @@ extends AbstractASLTarget {
         this.configurationManager = this.systemServices.getConfigManagerDiag();
         this.dateTimeService = this.systemServices.getDateTimeService();
         this.registerFactoryResetParticipant();
-        boolean bl = this.configurationManager.isFeatureFlagSet(401);
+        boolean bl = this.configurationManager.isFeatureFlagSet(402);
         if (!bl) {
             this.installDefaultDateFormat();
         }

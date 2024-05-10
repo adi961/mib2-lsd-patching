@@ -371,7 +371,7 @@ ReloadPersistedDataListener {
                 break;
             }
             case 1: {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(155)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(156)) {
                     n2 = 3;
                     break;
                 }
@@ -409,11 +409,11 @@ ReloadPersistedDataListener {
     }
 
     public boolean isCHNSpeedCameraWarning() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(158);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(159);
     }
 
     public boolean isPPOIAWFeature() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(148);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(149);
     }
 
     public void deleteMemoryWaypointMemory() {
@@ -524,7 +524,7 @@ ReloadPersistedDataListener {
     }
 
     public static int getLastModeDestinationInputDefault() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(125);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(126);
         return bl ? 1 : 0;
     }
 
@@ -593,7 +593,7 @@ ReloadPersistedDataListener {
     }
 
     private void reinitDsiMapViewerManeuverViewSettings() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             this.disableManeuverViewGeneration(false);
         }
     }

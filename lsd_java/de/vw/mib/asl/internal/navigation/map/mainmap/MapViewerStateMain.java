@@ -143,7 +143,7 @@ extends AbstractHsmState {
             }
             case 1073744564: {
                 int n = eventGeneric.getInt(0);
-                if (!this.target.datapool.isMapLocatedInKombi() || !ServiceManager.configManagerDiag.isFeatureFlagSet(369)) break;
+                if (!this.target.datapool.isMapLocatedInKombi() || !ServiceManager.configManagerDiag.isFeatureFlagSet(370)) break;
                 switch (n) {
                     case -128: {
                         this.target.transStateMapScaleContinuousIn();
@@ -205,7 +205,7 @@ extends AbstractHsmState {
         if (this.logger.isTraceEnabled()) {
             this.logger.makeTrace().append("handleASLNavigationMapViewSetHotPointPosition(hotPoint=").append(point.toString()).append(")").log();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139) && this.target.datapool.isMapLocatedInKombi() && !this.target.datapool.isMapFPKSwitchRunning()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140) && this.target.datapool.isMapLocatedInKombi() && !this.target.datapool.isMapFPKSwitchRunning()) {
             this.logger.makeTrace().append("setHotPointPosition() will be ignored because map is in FPK").log();
             return;
         }
@@ -326,10 +326,10 @@ extends AbstractHsmState {
             this.target.notifierModel.notifyZoomListIndexMinimumReachedFalse();
             this.target.notifierModel.notifyZoomListIndexMaximumReachedTrue();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(369)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(370)) {
             this.updateMapScaleInBAP(n3, bl);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(470)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
             this.target.notifierModel.notifyZoomListIndexChanged(this.target.datapool.getZoomListIndexMax() - n);
         } else {
             this.target.notifierModel.notifyZoomListIndexChanged(n);

@@ -219,7 +219,7 @@ implements BAPArrayList$BAPArrayElementComparator {
     }
 
     protected void addAdditionalVideoSources(BAPArrayList bAPArrayList) {
-        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(425)) {
+        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(426)) {
             SourceList_Data sourceList_Data = new SourceList_Data(null);
             sourceList_Data.sourceType = 9;
             sourceList_Data.instance_Id = 0;
@@ -515,7 +515,7 @@ implements BAPArrayList$BAPArrayElementComparator {
     }
 
     protected void nextAudioComponentFromMedia() {
-        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(425)) {
+        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(426)) {
             ASLSound.activateTvSource();
         } else {
             ASLSound.activateRadioSource();

@@ -135,7 +135,7 @@ implements DSIServiceStateListener {
                 if (this.isTraceEnabled()) {
                     this.trace().append("TrafficMiniMapTarget").append(".gotEvent(POWER_ON)").log();
                 }
-                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(196)) break;
+                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(197)) break;
                 this.startup();
                 break;
             }

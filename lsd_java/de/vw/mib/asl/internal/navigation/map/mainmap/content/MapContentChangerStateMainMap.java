@@ -77,7 +77,7 @@ extends AbstractHsmState {
             this.logger.makeTrace().append("handleSetContent(content=").append(n).append(")").log();
         }
         this.target.datapool.setMainMapContent(n);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139) && this.target.datapool.isMapLocatedInKombi() && !this.target.datapool.isMapFPKSwitchRunning()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140) && this.target.datapool.isMapLocatedInKombi() && !this.target.datapool.isMapFPKSwitchRunning()) {
             this.logger.trace("SetContent will be ignored because map is in FPK");
             return null;
         }
@@ -107,7 +107,7 @@ extends AbstractHsmState {
         this.target.datapool.setChMapInputDetailViewZoomSet(false);
         this.target.datapool.getStoredZoomAreas().clear();
         Rect rect = this.target.datapool.getZoomArea();
-        boolean bl2 = bl = ServiceManager.configManagerDiag.isFeatureFlagSet(369) && this.target.datapool.isMapLocatedInKombi();
+        boolean bl2 = bl = ServiceManager.configManagerDiag.isFeatureFlagSet(370) && this.target.datapool.isMapLocatedInKombi();
         if (!this.target.isPerspectiveOverviewType() && !bl) {
             MapViewerUtils.updateMainMapPersistedZoomLevel(this.target.datapool.getZoomLevelMainMapBackup());
         }
@@ -117,7 +117,7 @@ extends AbstractHsmState {
             this.target.notifierDSI.setNightMode();
         }
         this.target.notifierDSI.viewFreeze(false);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(408)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(409)) {
             this.target.notifierDSI.resetLayers();
         }
         this.target.notifierDSI.setRouteVisibility(this.target.datapool.isPnavRouteVisibility());

@@ -122,8 +122,12 @@ PresetsChangeListener {
     @Override
     public void selectPresetById(int n) {
         Preset preset;
-        PresetsBAPElement presetsBAPElement = this.getPresetById(n);
-        if (presetsBAPElement != null && presetsBAPElement.getModel().getType() == 3) {
+        PresetsBAPElement presetsBAPElement;
+        if (null != this.getCarFPKSetupAPI().getContentSelectionService()) {
+            AppLogger.trace(this, new StringBuffer().append(".selectPresetById( ").append(n).append("), invoking 'startSkipTimer'").toString());
+            this.getCarFPKSetupAPI().getContentSelectionService().skipAndDelaySelectionEvents();
+        }
+        if ((presetsBAPElement = this.getPresetById(n)) != null && presetsBAPElement.getModel().getType() == 3) {
             this.toggleDrivingProfileDependency();
         }
         if ((preset = this.getSelectedPreset()) != null && preset.getModel().getType() == 3) {
@@ -136,7 +140,7 @@ PresetsChangeListener {
     public void selectPresetByIndex(int n) {
         PresetsBAPElement presetsBAPElement = this.getPresetByIndex(n);
         if (presetsBAPElement != null) {
-            this.dsiCarKombi.setDCActiveDisplayPreset(presetsBAPElement.getPos());
+            this.selectPresetById(presetsBAPElement.getPos());
         }
     }
 

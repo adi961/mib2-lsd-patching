@@ -188,7 +188,7 @@ implements DSIServiceStateListener {
             this.createTargets();
             this.registerServiceListeners();
             this.mTargetsAndListenersReady = true;
-        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(378)) {
+        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(379)) {
             if (n == 0) {
                 ServiceManager.aslPropertyManager.valueChangedInteger(1680, 0);
                 ServiceManager.aslPropertyManager.valueChangedInteger(-43883008, 0);

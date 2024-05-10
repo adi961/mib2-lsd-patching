@@ -39,7 +39,7 @@ ASLNavigationContainer {
         LogMessage logMessage;
         GenericEvents genericEvents = ServiceManager.eventMain;
         String string = "hsmtask";
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(162)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(163)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableAslTargetDelegator(new Target10Plus0Box(genericEvents, -1706355712, string), string));
         } else if (NavigationConfiguration.THREEPLUS1BOX_FEATURE_AVAILABLE) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(4, new NaviResettableAslTargetDelegator(new Target3Plus1Box(genericEvents, -2025122816, string), string));

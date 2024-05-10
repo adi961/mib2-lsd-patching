@@ -27,11 +27,11 @@ implements ModelApiUpEventHandler {
                 break;
             }
             case 1: {
-                this.modelDatapool.setString(380829696, modelApiUpEvent.getString(0));
+                this.modelDatapool.setString(414384128, modelApiUpEvent.getString(0));
                 break;
             }
             case 2: {
-                this.modelDatapool.setBoolean(278396928, modelApiUpEvent.getBoolean(0));
+                this.modelDatapool.setBoolean(295174144, modelApiUpEvent.getBoolean(0));
                 break;
             }
             default: {

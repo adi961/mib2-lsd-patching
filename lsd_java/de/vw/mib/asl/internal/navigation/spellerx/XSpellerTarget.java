@@ -119,7 +119,7 @@ extends AbstractReflectionHsmTarget {
     public SpellerField phoneNumberField;
     public SpellerField activeField;
     private DefaultSpellerHandler defaultHandler = new DefaultSpellerHandler();
-    public boolean LOCATIONINPUT_ENABLE_NAR_FEATURES = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
+    public boolean LOCATIONINPUT_ENABLE_NAR_FEATURES = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(2);
     static IExtLogger logger;
     static WeakIdentityHashSet listeners;
     static NavLocation extCurrentLocation;
@@ -178,7 +178,7 @@ extends AbstractReflectionHsmTarget {
     }
 
     private void initLists() {
-        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             this.modelMapcodeList = new ModelListHandler(this, logger, "mapcode", 3066, 142, 3063, false, false);
         }
         this.modelCountryList = new ModelListHandler(this, logger, "country", 3027, 1, 3024, false, false);
@@ -192,7 +192,7 @@ extends AbstractReflectionHsmTarget {
         this.modelCrossingList = new ModelListHandler(this, logger, "crossing", 3073, 4, 3069, false, false);
         this.modelHousenumberList = new ModelListHandler(this, logger, "houseNumber", 3079, 136, 3076, false, false);
         this.modelPhoneNumberList = new ModelListHandler(this, logger, "phoneNumber", -839905280, 8, -957345792, false, true);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             this.modelMapcodeList = new ModelListHandler(this, logger, "mapcode", 3066, 142, 3063, false, false);
         }
     }

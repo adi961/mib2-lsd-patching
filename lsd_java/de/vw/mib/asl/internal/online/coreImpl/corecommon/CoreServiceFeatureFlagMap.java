@@ -13,33 +13,33 @@ public final class CoreServiceFeatureFlagMap {
 
     private void initialize() {
         this._serviceIDToFeatureFlag = new ObjectIntOptHashMap();
-        this._serviceIDToFeatureFlag.put("owner_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(184) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("traffic-online_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(195) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("personalpoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(191) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("gasstations_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(186) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("parkinfo_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(186) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("fpi_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(186) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("poi_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(192) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("poivoice_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(193) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("poi-echarge", ServiceManager.configManagerDiag.isFeatureFlagSet(186) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("zieleinspeisung_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(185) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("travelguide_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(197) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("menu_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(183) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("satellitemaps_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(187) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("streetview_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(188) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("owner_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(185) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("traffic-online_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(196) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("personalpoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(192) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("gasstations_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(187) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("parkinfo_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(187) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("fpi_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(187) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("poi_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(193) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("poivoice_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(194) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("poi-echarge", ServiceManager.configManagerDiag.isFeatureFlagSet(187) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("zieleinspeisung_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(186) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("travelguide_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(198) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("menu_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(184) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("satellitemaps_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(188) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("streetview_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(189) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("traffic_minimap", ServiceManager.configManagerDiag.isFeatureFlagSet(197) ? 1 : 0);
         this._serviceIDToFeatureFlag.put("traffic_minimap", ServiceManager.configManagerDiag.isFeatureFlagSet(196) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("traffic_minimap", ServiceManager.configManagerDiag.isFeatureFlagSet(195) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("tourimport_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(194) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("vehiclehealth_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(199) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("cc_breakdown_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(190) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("ccpoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(190) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("news_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(183) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("weather_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(183) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("gracenote_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(86) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("otacusession_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(198) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("otacupromotion_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(198) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("otacunav_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(198) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("otacuppoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(191) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("tourimport_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(195) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("vehiclehealth_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(200) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("cc_breakdown_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(191) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("ccpoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(191) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("news_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(184) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("weather_v2", ServiceManager.configManagerDiag.isFeatureFlagSet(184) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("gracenote_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(87) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("otacusession_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(199) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("otacupromotion_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(199) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("otacunav_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(199) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("otacuppoi_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(192) ? 1 : 0);
         this._serviceIDToFeatureFlag.put("musicstreaming_v2", 1);
         this._serviceIDToFeatureFlag.put("dealerappoint_v1", 1);
         this._serviceIDToFeatureFlag.put("dwap", 1);
@@ -65,10 +65,10 @@ public final class CoreServiceFeatureFlagMap {
         this._serviceIDToFeatureFlag.put("communicationConf_v1", 1);
         this._serviceIDToFeatureFlag.put("download-srv", 1);
         this._serviceIDToFeatureFlag.put("carfinder_v1", 1);
-        this._serviceIDToFeatureFlag.put("ecall_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(393) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("onlineradiodata_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(200) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("hybridradiodata_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(189) ? 1 : 0);
-        this._serviceIDToFeatureFlag.put("hybridradiorange_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(189) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("ecall_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(394) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("onlineradiodata_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(201) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("hybridradiodata_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(190) ? 1 : 0);
+        this._serviceIDToFeatureFlag.put("hybridradiorange_v1", ServiceManager.configManagerDiag.isFeatureFlagSet(190) ? 1 : 0);
     }
 
     private ObjectIntOptHashMap getMap() {

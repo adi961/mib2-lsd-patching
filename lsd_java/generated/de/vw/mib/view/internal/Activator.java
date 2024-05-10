@@ -70,7 +70,7 @@ ServiceListener {
     static /* synthetic */ Class class$de$vw$mib$view$internal$GlobalViewHandlerRegister;
 
     public Activator() {
-        this.HMI_CHECKSUM = -819427125;
+        this.HMI_CHECKSUM = 1422520327;
     }
 
     @Override
@@ -128,9 +128,9 @@ ServiceListener {
     }
 
     private void preloadSetup() {
-        this.popupInformationTable = new PopupInformationTableImpl(-819427125, this.loggerFactory);
+        this.popupInformationTable = new PopupInformationTableImpl(1422520327, this.loggerFactory);
         this.view2ViewAnimations = new View2ViewAnimations(this.loggerFactory);
-        View2ViewAnimationsUpdaterImpl view2ViewAnimationsUpdaterImpl = new View2ViewAnimationsUpdaterImpl(this.view2ViewAnimations, -819427125, this.configurationManager, this.fileManager, this.perfService, this.loggerFactory);
+        View2ViewAnimationsUpdaterImpl view2ViewAnimationsUpdaterImpl = new View2ViewAnimationsUpdaterImpl(this.view2ViewAnimations, 1422520327, this.configurationManager, this.fileManager, this.perfService, this.loggerFactory);
         this.skinResourceUpdaterRegister.add(view2ViewAnimationsUpdaterImpl);
         this.skinAnimationUpdater = new SkinAnimationUpdaterImpl();
         ListControlCache listControlCache = new ListControlCache();

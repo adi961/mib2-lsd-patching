@@ -219,7 +219,7 @@ extends AbstractHsmState {
         boolean bl = this.mapDataPool.isShowSpeedAndFlowFreeFlow();
         boolean bl2 = this.mapDataPool.isShowSpeedAndFlowCongestions();
         this.target.notifierDSI.showSpeedAndFlow(bl, bl2);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
             this.target.notifierDSI.setSpeedAndFlowRoadClass(this.mapDataPool.getSpeedAndFlowRoadClass());
         }
     }

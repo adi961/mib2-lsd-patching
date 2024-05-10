@@ -74,7 +74,7 @@ implements ReloadPersistedDataListener {
     }
 
     private void initIsHIGH() {
-        this.target.datapool.setIsHIGH(ServiceManager.configManagerDiag.isFeatureFlagSet(70));
+        this.target.datapool.setIsHIGH(ServiceManager.configManagerDiag.isFeatureFlagSet(71));
     }
 
     void initMotorwayInfo() {

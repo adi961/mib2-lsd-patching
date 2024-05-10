@@ -193,8 +193,8 @@ public class MatchTextSubjectUtil {
             hnrFlagsImpl.setHousenumberNone(true);
         } else if (cmdAbstractSpeller.liValueList_lispValueListCount == 1L && !this.isFirstValueListElementEmpty(cmdAbstractSpeller.liValueList_lispValueList)) {
             boolean bl = StringUtil.equalsIgnoreCase(cmdAbstractSpeller.lispUpdateSpellerResult_lispCurrentInput, cmdAbstractSpeller.liValueList_lispValueList.getList()[0].data);
-            boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
-            boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(427);
+            boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
+            boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(428);
             boolean bl4 = NavigationConfiguration.LOCATIONINPUT_CHN_FEATURES_AVAILABLE;
             if (bl4 || bl2 || bl3) {
                 bl = true;

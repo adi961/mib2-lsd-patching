@@ -94,7 +94,7 @@ public final class TourList {
             this.myTour.add(this.myIndexToAdd, this.myLocationToAddBackup);
         }
         this.myIndexToAdd = this.myTour.size();
-        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
         if (this.myTour.size() > 1) {
             FixFormatterFieldData fixFormatterFieldData = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper((NavLocation)this.myTour.getFirst()));
             String string = ServiceManager.fixFormat4Asl.fmtRulesetBasedString(10 + n, fixFormatterFieldData);

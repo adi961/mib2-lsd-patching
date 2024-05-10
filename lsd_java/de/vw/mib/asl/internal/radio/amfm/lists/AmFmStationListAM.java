@@ -35,7 +35,7 @@ extends AmFmStationList {
             StationNameFreqList stationNameFreqList;
             if (stationArray[i2].waveband != 3) continue;
             AmFmStation amFmStation = new AmFmStation(stationArray[i2]);
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList()) && (string = stationNameFreqList.getStationName(amFmStation.getFrequency())).length() > 0) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList()) && (string = stationNameFreqList.getStationName(amFmStation.getFrequency())).length() > 0) {
                 amFmStation.setName(string);
             }
             this.stationList.add(amFmStation);

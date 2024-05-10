@@ -262,6 +262,7 @@ extends MultipleMethodAccessibleObject {
     }
 
     private Object f0(int n, Object object, Object[] objectArray) {
+        System.out.println("AADEBUG event " + n);
         switch (n) {
             case 0: {
                 ((AndroidAutoTarget)object).shutdown();

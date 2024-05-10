@@ -23,9 +23,9 @@ extends NavigationTrafficListenerAdapter {
         try {
             StationNameFreqList stationNameFreqList;
             if (null != ServiceManager.logger && ServiceManager.logger.isTraceEnabled(128)) {
-                ServiceManager.logger.trace(128).append("AmFmNavigationService - updateReceivableStations() - FEAT_IS_TUNER_STATION_NAME_FROM_NAV_DB = ").append(ServiceManager.configManagerDiag.isFeatureFlagSet(423)).append(", flag = ").append(bl).log();
+                ServiceManager.logger.trace(128).append("AmFmNavigationService - updateReceivableStations() - FEAT_IS_TUNER_STATION_NAME_FROM_NAV_DB = ").append(ServiceManager.configManagerDiag.isFeatureFlagSet(424)).append(", flag = ").append(bl).log();
             }
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != iNavigationTunerDataArray && bl && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != iNavigationTunerDataArray && bl && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                 AmFmFactory.getAslAmfmModelController().updateCurrentStationInfo(RadioData.getAmfmDatabase().getCurrentStation());
                 RadioData.getAmfmDatabase().getSettingsPersistable().setCurrentFmStation(RadioData.getAmfmDatabase().getCurrentFMStation());
                 if (null != AmFmStationListFM.currentFmStationList && !RadioData.getAmfmDatabase().getStationListViewIsOpen()) {
@@ -40,7 +40,7 @@ extends NavigationTrafficListenerAdapter {
 
     public void requestNavigationStationData() {
         try {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(423)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(424)) {
                 NavigationTrafficService navigationTrafficService;
                 if (ServiceManager.logger.isTraceEnabled(128)) {
                     ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("AmFmNavigationService - requestNavigationStationData() - FEAT_IS_TUNER_STATION_NAME_FROM_NAV_DB == true").log();

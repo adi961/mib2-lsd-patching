@@ -333,11 +333,11 @@ implements FeatureFlagValueChangeReceiver {
                 LogMessage logMessage = ServiceManager.logger2.trace(16384);
                 logMessage.append(this._classname).append(".handleOnlineServicesStatus()").log();
             }
-            this._onlineServicesStatus = ServiceManager.configManagerDiag.isFeatureFlagSet(392) ? -1 : (ServiceManager.configManagerDiag.isFeatureFlagSet(184) ? 0 : 1);
-            ServiceManager.configManagerDiag.removeFeatureFlagValueChangeReceiver(this, 184);
-            ServiceManager.configManagerDiag.removeFeatureFlagValueChangeReceiver(this, 392);
-            ServiceManager.configManagerDiag.addFeatureFlagValueChangeReceiver(this, 184);
-            ServiceManager.configManagerDiag.addFeatureFlagValueChangeReceiver(this, 392);
+            this._onlineServicesStatus = ServiceManager.configManagerDiag.isFeatureFlagSet(393) ? -1 : (ServiceManager.configManagerDiag.isFeatureFlagSet(185) ? 0 : 1);
+            ServiceManager.configManagerDiag.removeFeatureFlagValueChangeReceiver(this, 185);
+            ServiceManager.configManagerDiag.removeFeatureFlagValueChangeReceiver(this, 393);
+            ServiceManager.configManagerDiag.addFeatureFlagValueChangeReceiver(this, 185);
+            ServiceManager.configManagerDiag.addFeatureFlagValueChangeReceiver(this, 393);
             this._afterStartup = true;
         }
     }
@@ -349,13 +349,13 @@ implements FeatureFlagValueChangeReceiver {
             object = ServiceManager.logger2.trace(16384);
             object.append(this._classname).append(new StringBuffer().append(".receiveFeatureFlagValue( featureFlag = ").append(n).append(", status = ").append(bl).append(")").toString()).log();
         }
-        if (n == 184 || n == 392) {
-            if (n == 392) {
+        if (n == 185 || n == 393) {
+            if (n == 393) {
                 this._onlineServicesStatus = bl ? -1 : 1;
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(184)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(185)) {
                     this._onlineServicesStatus = 0;
                 }
-            } else if (n == 184) {
+            } else if (n == 185) {
                 this._onlineServicesStatus = bl ? 0 : 1;
             }
             if (!this.getListeners().isEmpty()) {

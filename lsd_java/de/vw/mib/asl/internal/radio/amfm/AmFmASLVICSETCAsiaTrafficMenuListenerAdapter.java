@@ -20,8 +20,8 @@ extends ASLVICSETCAsiaTrafficMenuListenerAdapter {
     public void updateReceivableStations(ITunerData[] iTunerDataArray, boolean bl) {
         try {
             StationNameFreqList stationNameFreqList;
-            ServiceManager.logger.info(128).append("AmFmNavigationService - updateReceivableStations() - FEAT_IS_TUNER_STATION_NAME_FROM_NAV_DB = ").append(ServiceManager.configManagerDiag.isFeatureFlagSet(423)).append(", flag = ").append(bl).log();
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != iTunerDataArray && bl && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+            ServiceManager.logger.info(128).append("AmFmNavigationService - updateReceivableStations() - FEAT_IS_TUNER_STATION_NAME_FROM_NAV_DB = ").append(ServiceManager.configManagerDiag.isFeatureFlagSet(424)).append(", flag = ").append(bl).log();
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != iTunerDataArray && bl && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                 stationNameFreqList.add(iTunerDataArray);
                 AmFmFactory.getAslAmfmModelController().updateCurrentStationInfo(RadioData.getAmfmDatabase().getCurrentStation());
                 RadioData.getAmfmDatabase().getSettingsPersistable().setCurrentFmStation(RadioData.getAmfmDatabase().getCurrentFMStation());

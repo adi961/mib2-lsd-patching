@@ -42,7 +42,7 @@ public final class DabOptionLinking {
     }
 
     public void setSoftLinking(boolean bl) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(416) && (this.getDabServiceFollowing() || this.getFmLinking())) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(417) && (this.getDabServiceFollowing() || this.getFmLinking())) {
             if (ServiceManager.logger.isTraceEnabled(256)) {
                 ServiceManager.logger.trace(256).append("setSoftLinking : ").append(bl).log();
             }
@@ -70,7 +70,7 @@ public final class DabOptionLinking {
     }
 
     public boolean getSoftLinking() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(416)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(417)) {
             return RadioData.getDabDatabase().mPersistable.getSoftLinking();
         }
         return false;

@@ -115,8 +115,8 @@ extends AbstractHsmState {
     }
 
     private void initListValues() {
-        Object[] objectArray = ServiceManager.configManagerDiag.isFeatureFlagSet(75) ? new PoiPitStopItemCollector[5] : new PoiPitStopItemCollector[]{new PoiPitStopItemCollector(null, ""), new PoiPitStopItemCollector(null, ""), new PoiPitStopItemCollector(null, "")};
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        Object[] objectArray = ServiceManager.configManagerDiag.isFeatureFlagSet(76) ? new PoiPitStopItemCollector[5] : new PoiPitStopItemCollector[]{new PoiPitStopItemCollector(null, ""), new PoiPitStopItemCollector(null, ""), new PoiPitStopItemCollector(null, "")};
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             objectArray[3] = new PoiPitStopItemCollector(null, "");
             objectArray[4] = new PoiPitStopItemCollector(null, "");
         }
@@ -135,7 +135,7 @@ extends AbstractHsmState {
     }
 
     private void initPropertyValues() {
-        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
         this.myTarget.trace("TargetNavigation.StateWork: Set FixFormatter naming rule variant offset to ", n);
         ServiceManager.aslPropertyManager.valueChangedInteger(3963, n);
         ServiceManager.aslPropertyManager.valueChangedBoolean(-235991040, NavigationConfiguration.LOCATIONINPUT_FEATURE_AVAILABLE);

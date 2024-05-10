@@ -151,7 +151,7 @@ implements AmFmUIStationList {
                 if (amFmStation2.equalsByFreq(amFmStation)) {
                     this.currentIndex = n;
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                     amFmStation2.setName(stationNameFreqList.getStationName(amFmStation2.getFrequency()));
                 }
                 this.stationInfoCollector[n] = new AMStationInfoCollector(amFmStation2);

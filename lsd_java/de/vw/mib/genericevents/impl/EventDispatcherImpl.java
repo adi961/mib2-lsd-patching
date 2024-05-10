@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
-final class EventDispatcherImpl
+final class     EventDispatcherImpl
 implements EventDispatcherHSM,
 HMIDumpInformationProvider {
     private static Logger logger = ServiceManager.loggerFactory.getLogger(128);

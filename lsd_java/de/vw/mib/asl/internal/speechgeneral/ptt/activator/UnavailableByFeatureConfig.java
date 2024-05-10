@@ -29,7 +29,7 @@ extends AbstractDialogActivator {
 
     @Override
     public void onSingleReleased(int n) {
-        if (!this.configManager.isFeatureFlagSet(582) && this.configManager.isFeatureFlagSet(535)) {
+        if (!this.configManager.isFeatureFlagSet(584) && this.configManager.isFeatureFlagSet(537)) {
             this.logger.info().append("show popup: Speech-Unavailable-By-SWaP. ").log();
             this.systemEventDispatcher.createAndSubmitHMIEvent(687550464);
             if (!this.beepPlayer.playErrorBeep()) {

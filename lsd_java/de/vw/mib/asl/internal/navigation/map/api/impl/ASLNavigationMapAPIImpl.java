@@ -103,26 +103,26 @@ ASLNavigationContainer {
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, DSIMapViewerStreetViewCtrlFactoryVW.getGoolgeStreetViewStatusTarget());
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, DSIMapViewerGoogleCtrlFactoryVW.getGoogleEarthViewStatusTarget());
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, DSIMapViewerControlFactoryVW.getTargetMapViewerSwitchMain());
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(187)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(188)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new GoogleEarthLicenseTargetHSM(genericEvents, -1639246848, string));
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new GoogleEarthSetupTargetHSM(genericEvents, -1370811392, string));
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(188)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(189)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MapViewerStreetviewTargetHSM(genericEvents, -1622469632, string));
         }
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MapViewerKombiTargetHSM(ServiceManager.eventMain, -1555360768, "hsmtask"));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MapViewerMapSwitchTargetHSM(genericEvents, -800386048, string));
         }
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new GPSInputTargetHSM(genericEvents, -1874127872, string));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(163)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(164)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MapInMapViewerTargetHsm(genericEvents, -2041900032, string));
         }
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MobilityHorizonSetupHsmTarget(genericEvents, 1414206464, string));
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new RubberBandHsmTarget(genericEvents, -1354034176, string));
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new MapViewerHKNavTargetHSM(genericEvents, -1169484800, string));
         ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new TrafficMapSetupHsmTarget(genericEvents, 1447760896, string));
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(121) || ServiceManager.configManagerDiag.isFeatureFlagSet(153)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(122) || ServiceManager.configManagerDiag.isFeatureFlagSet(154)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(3, new DualListViewHsmTarget(genericEvents, -1588915200, string));
         }
         if (NavigationConfiguration.TOUCH_APPROACH_IN_MAP_FEATURE_AVAILABLE) {

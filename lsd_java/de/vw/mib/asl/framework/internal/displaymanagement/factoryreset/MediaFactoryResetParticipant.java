@@ -56,7 +56,7 @@ extends AbstractFactoryResetParticipant {
         if (this.flagAmiAvailable) {
             this.writer.applyDefaultVideoOrTvDisplayableData(27);
         }
-        if (this.configurationManager.isFeatureFlagSet(70)) {
+        if (this.configurationManager.isFeatureFlagSet(71)) {
             this.writer.applyDefaultVideoOrTvDisplayableData(43);
         }
     }

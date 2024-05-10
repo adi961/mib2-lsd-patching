@@ -29,7 +29,7 @@ extends AbstractHsmState {
             }
             case 101001: {
                 this.target.traceState(this, "NAVI_TARGET_GO_ON");
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(524)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(526)) {
                     this.trans(this.target.stateWork);
                     break;
                 }

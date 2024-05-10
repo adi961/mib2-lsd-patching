@@ -215,7 +215,7 @@ MessageResponse {
             return 3;
         }
         if (message.getMessageType() == 5) {
-            if (this.connections.configurationManager().isFeatureFlagSet(463)) {
+            if (this.connections.configurationManager().isFeatureFlagSet(464)) {
                 this.connections.aslPropertyManager().valueChangedString(-1565967616, message.getBody());
                 if (message.getBody().length() == 0) {
                     if (this.logger.isTraceEnabled()) {

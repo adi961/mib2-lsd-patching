@@ -139,7 +139,7 @@ extends DefaultDSIMobileEquipmentListener {
         }
         ASLPhoneData.getInstance().nadMode = n;
         boolean bl = n == 2;
-        AbstractASLTarget.writeBooleanToDatapool(4033, ServiceManager.configManagerDiag.isFeatureFlagSet(73) && bl);
+        AbstractASLTarget.writeBooleanToDatapool(4033, ServiceManager.configManagerDiag.isFeatureFlagSet(74) && bl);
         AbstractASLTarget.writeBooleanToDatapool(1949565696, !bl);
         if (HsmPhonePhoneAvailability.access$2100(this.this$0) != null) {
             this.checkLockStateAndNadMode(HsmPhonePhoneAvailability.access$2100(this.this$0), n);

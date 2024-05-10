@@ -54,7 +54,7 @@ public class AbtFeatureUpdater {
         AsyncServiceFactory asyncServiceFactory = systemServices.getAsyncServiceFactory();
         ConfigurationManagerDiag configurationManagerDiag = systemServices.getConfigManagerDiag();
         configurationManagerDiag.addRtMethodListener(this.createRunTimeMethodListener(asyncServiceFactory, this.abtFeatures));
-        if (configurationManagerDiag.isFeatureFlagSet(391)) {
+        if (configurationManagerDiag.isFeatureFlagSet(392)) {
             this.connectToDsi(systemServices.getDsiProxy(), configurationManagerDiag);
         }
         systemServices.getFactoryResetService().addParticipant(this.createFactoryResetParticipant(), FactoryResetComponents.SYSTEM);

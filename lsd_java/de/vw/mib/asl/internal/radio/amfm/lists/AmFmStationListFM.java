@@ -80,7 +80,7 @@ extends AmFmStationList {
             bl = false;
             AmFmPresetApi.updateGuiList(1);
         }
-        if (!(RadioData.getAmfmDatabase().getStationListViewIsOpen() || !RadioCurrentWaveband.isFm() || ServiceManager.configManagerDiag.isFeatureFlagSet(348) && RadioDataApi.isSouthSideStationLogoDbActive() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
+        if (!(RadioData.getAmfmDatabase().getStationListViewIsOpen() || !RadioCurrentWaveband.isFm() || ServiceManager.configManagerDiag.isFeatureFlagSet(349) && RadioDataApi.isSouthSideStationLogoDbActive() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
             RadioServiceManager.getServiceManager().getAdapterAslSpeech().updateFmListToSpeech(this.getListCopyAsArray());
         }
     }
@@ -111,7 +111,7 @@ extends AmFmStationList {
                         return;
                     }
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                     String string2 = ((StationNameFreqList)object).getStationName(amFmStation.getFrequency());
                     if (ServiceManager.logger.isTraceEnabled(128)) {
                         ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM).append("AmFmStationListFM - setFmStationName() - ").append("Name from NAV database: ").append(string2).log();

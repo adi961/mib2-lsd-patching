@@ -61,11 +61,11 @@ public interface IPersistenceDefaults {
     public static final long HMI_LAST_TIME_STAMP_BEFORE_HMI_OFF_DEFAULT;
 
     static {
-        HMI_GUIDANCE_TIME_FORMAT_DEFAULT = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
-        HMI_SPLIT_SCREEN_GUIDANCE_VISIBILITY_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultBoolean(1);
-        HMI_SPLIT_SCREEN_NO_GUIDANCE_VISIBILITY_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultBoolean(0);
-        HMI_SPLIT_SCREEN_GUIDANCE_CONTENT_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultInteger(1);
-        HMI_SPLIT_SCREEN_NO_GUIDANCE_CONTENT_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultInteger(0);
+        HMI_GUIDANCE_TIME_FORMAT_DEFAULT = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+        HMI_SPLIT_SCREEN_GUIDANCE_VISIBILITY_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultBoolean(0);
+        HMI_SPLIT_SCREEN_NO_GUIDANCE_VISIBILITY_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultBoolean(1);
+        HMI_SPLIT_SCREEN_GUIDANCE_CONTENT_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultInteger(0);
+        HMI_SPLIT_SCREEN_NO_GUIDANCE_CONTENT_DEFAULT = ServiceManager.configManagerDiag.getNaviSplitScreenOptionDefaultInteger(1);
     }
 }
 

@@ -2057,7 +2057,7 @@ public class ClimateMainController {
     }
 
     public boolean isTwoZonesMLB() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(101) && (this.currentZoneConfiguration == 2 || this.currentZoneConfiguration == 3);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(102) && (this.currentZoneConfiguration == 2 || this.currentZoneConfiguration == 3);
     }
 
     static /* synthetic */ Class class$(String string) {

@@ -482,19 +482,19 @@ public final class SoundUtil {
     }
 
     public static boolean isHigh() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(378);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(379);
     }
 
     public static boolean isSeat() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(353);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(354);
     }
 
     public static boolean isSkoda() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(360);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(361);
     }
 
     public static boolean isVW() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(432);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(433);
     }
 
     public static boolean isICCAvailable() {

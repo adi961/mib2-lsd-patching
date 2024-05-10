@@ -542,7 +542,7 @@ public final class AmFmPresetApi {
 
     public static void syncFmName(AmFmStation amFmStation) {
         try {
-            if (null != mModel && null != amFmStation && !ServiceManager.configManagerDiag.isFeatureFlagSet(423)) {
+            if (null != mModel && null != amFmStation && !ServiceManager.configManagerDiag.isFeatureFlagSet(424)) {
                 mModel.syncFmName(amFmStation);
             }
         }

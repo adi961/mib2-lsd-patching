@@ -3,9 +3,11 @@
  */
 package de.vw.mib.log4mib.internal;
 
+import de.vw.mib.log4mib.LogMessage;
 import de.vw.mib.log4mib.Settings;
 import de.vw.mib.log4mib.internal.LogClassifierNames;
 import de.vw.mib.log4mib.internal.LogWriterAdapter;
+import de.vw.mib.log4mib.internal.LogWriterManager$EmptyPrintStream;
 import de.vw.mib.log4mib.internal.MessageFactory;
 import de.vw.mib.log4mib.internal.PooledBinaryMessage;
 import de.vw.mib.log4mib.internal.PooledLogMessage;
@@ -13,6 +15,7 @@ import de.vw.mib.log4mib.internal.TextualHeaderAppender;
 import de.vw.mib.log4mib.writer.ConsoleLogWriter;
 import de.vw.mib.log4mib.writer.LogMessageHeaderAppender;
 import edu.emory.mathcs.backport.java.util.ArrayDeque;
+import java.io.PrintStream;
 
 final class LogWriterManager {
     private static final boolean TEXTUAL_CLASSIFIERS = Boolean.getBoolean("de.vw.mib.log4mib.console.textual.classifiers.enabled");
@@ -24,6 +27,7 @@ final class LogWriterManager {
     private final MessageFactory factory;
     private ArrayDeque messageCache;
     private final int messageCacheSize;
+    private boolean loggingDisabled;
 
     LogWriterManager(Settings settings, MessageFactory messageFactory) {
         this.factory = messageFactory;
@@ -38,6 +42,19 @@ final class LogWriterManager {
         this.messageCache = new ArrayDeque(this.messageCacheSize);
     }
 
+    public void disableLogging() {
+        Object object;
+        if (this.consoleLogWriterEnabled) {
+            object = (PooledLogMessage)this.factory.createLogMessage(8, 512, 1).append("Disable all logging functions!");
+            ((PooledLogMessage)object).log();
+            this.consoleLogWriter.write((LogMessage)object);
+        }
+        object = new LogWriterManager$EmptyPrintStream();
+        System.setOut((PrintStream)object);
+        System.setErr((PrintStream)object);
+        this.loggingDisabled = true;
+    }
+
     void clearMessageCache() {
         ArrayDeque arrayDeque = this.messageCache;
         this.messageCache = new ArrayDeque(this.messageCache);
@@ -45,6 +62,10 @@ final class LogWriterManager {
     }
 
     void dispatch(PooledBinaryMessage pooledBinaryMessage) {
+        if (this.loggingDisabled) {
+            this.factory.releaseObject(pooledBinaryMessage);
+            return;
+        }
         if (this.logWriterRegistered) {
             this.logWriter.writeMessage(pooledBinaryMessage);
         }
@@ -52,6 +73,10 @@ final class LogWriterManager {
     }
 
     void dispatch(PooledLogMessage pooledLogMessage) {
+        if (this.loggingDisabled) {
+            this.factory.releaseObject(pooledLogMessage);
+            return;
+        }
         if (this.consoleLogWriterEnabled) {
             this.consoleLogWriter.write(pooledLogMessage);
         }

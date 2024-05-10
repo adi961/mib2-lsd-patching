@@ -89,7 +89,7 @@ extends AbstractHmiAppUIGate {
     static {
         VIEWNAME_2_SCREENAREAS_MAP = new HashMap();
         VIEWNAME_2_SCREENAREAS_MAP.put("Sdl_7DD2", new String[]{"ScreenAreaDisplayOffClock", "ScreenAreaParking", "ScreenAreaParticleBackground", "ScreenAreaPopup", "ScreenAreaSpaceGesture", "ScreenAreaSpeech", "ScreenAreaStage"});
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{590};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{589};
     }
 }
 

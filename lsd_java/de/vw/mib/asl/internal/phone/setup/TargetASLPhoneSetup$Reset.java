@@ -23,7 +23,7 @@ extends AbstractFactoryResetParticipant {
     @Override
     public void reset(FactoryResetCallback factoryResetCallback, int n) {
         if (!ASLPhoneFactory.getPhoneApi().isCallsActive()) {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(378)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(379)) {
                 DSIMobileEquipment[] dSIMobileEquipmentArray = this.this$0.usedDsiMobileEquipments();
                 for (int i2 = 0; i2 < dSIMobileEquipmentArray.length; ++i2) {
                     dSIMobileEquipmentArray[i2].restoreFactorySettings();

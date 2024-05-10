@@ -34,7 +34,7 @@ extends AbstractHsmState {
             case 2: {
                 this.myTarget.traceState(this, "HSM_ENTRY");
                 this.myTarget.navigationDp = ASLNavigationUtilFactory.getNavigationUtilApi().getNavigationDp();
-                this.myTarget.isFeatHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+                this.myTarget.isFeatHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
                 this.myTarget.setIsFFNavRouteCalcAdjustRoute();
                 boolean bl = Boolean.valueOf(System.getProperty("de.vw.mib.asl.navigation.wpm.clusterManeuver", "true"));
                 ASLNavigationUtilFactory.getNavigationUtilApi().getNavigationDp().setWpmClusterShowmaneuver(bl);

@@ -99,6 +99,8 @@ implements Settings {
         int n3 = this.getSubClassifier(n2, string.substring(n + 1));
         int n4 = this.subClassifierMasks.get(n2) + n3;
         this.subClassifierMasks.put(n2, n4);
+
+        System.out.println("AADEBUG: activateTrace: " + string + " Classifier: " + n2 + " SubClassifier: " + n3);
     }
 
     private int getClassifier(String string) {
@@ -120,7 +122,7 @@ implements Settings {
         return -1;
     }
 
-    static /* synthetic */ Class class$(String string) {
+    static /* synthetic */ Class class$(String string) throws Throwable {
         try {
             return Class.forName(string);
         }
@@ -130,7 +132,11 @@ implements Settings {
     }
 
     static {
-        $assertionsDisabled = !(class$de$vw$mib$log4mib$internal$LoggingProperties == null ? (class$de$vw$mib$log4mib$internal$LoggingProperties = LoggingProperties.class$("de.vw.mib.log4mib.internal.LoggingProperties")) : class$de$vw$mib$log4mib$internal$LoggingProperties).desiredAssertionStatus();
+        try {
+            $assertionsDisabled = !(class$de$vw$mib$log4mib$internal$LoggingProperties == null ? (class$de$vw$mib$log4mib$internal$LoggingProperties = LoggingProperties.class$("de.vw.mib.log4mib.internal.LoggingProperties")) : class$de$vw$mib$log4mib$internal$LoggingProperties).desiredAssertionStatus();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

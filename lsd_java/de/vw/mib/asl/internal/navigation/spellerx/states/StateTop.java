@@ -52,7 +52,7 @@ import org.dsi.ifc.search.SearchResult;
 public class StateTop
 extends NavReflectionState
 implements CacheClient {
-    private static boolean IS_HIGH_JP = ServiceManager.configManagerDiag.isFeatureFlagSet(75) & ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+    private static boolean IS_HIGH_JP = ServiceManager.configManagerDiag.isFeatureFlagSet(76) & ServiceManager.configManagerDiag.isFeatureFlagSet(71);
     private XSpellerTarget target;
     private boolean stripEventReceived = false;
     private DSISearch dsiSearch;
@@ -999,7 +999,7 @@ implements CacheClient {
 
     private void setSearchResultInSHIELDHistory(SpellerContext spellerContext) {
         Object object;
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
         if (this.dsiSearch == null) {
             object = DSIProxyFactory.getDSIProxyAPI().getDSIProxy();
             this.dsiSearch = (DSISearch)object.getService(spellerContext.getTarget(), class$org$dsi$ifc$search$DSISearch == null ? (class$org$dsi$ifc$search$DSISearch = StateTop.class$("org.dsi.ifc.search.DSISearch")) : class$org$dsi$ifc$search$DSISearch);

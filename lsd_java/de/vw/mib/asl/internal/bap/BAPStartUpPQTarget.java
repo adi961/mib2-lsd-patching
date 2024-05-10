@@ -167,7 +167,7 @@ implements ServiceListener {
     private void createBAPHandlerForMqbPq() {
         this.bapLogicalControlUnits = new ArrayList();
         this.createAudioSDControlUnitPq();
-        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(367) || ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(2)) {
+        if (ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(368) || ServiceManager.serviceManager.configurationManager.isFeatureFlagSet(2)) {
             this.createNavSDControlUnitPq();
         }
     }

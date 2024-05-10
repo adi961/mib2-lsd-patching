@@ -17,7 +17,13 @@ extends ServiceState {
     default public void setElementContentToModel(int n, int n2, int n3) {
     }
 
+    default public void validateCurrentContentAndSetToModel(int n) {
+    }
+
     default public boolean validateAndUpdatePredefinedPresetContent() {
+    }
+
+    default public void skipAndDelaySelectionEvents() {
     }
 }
 

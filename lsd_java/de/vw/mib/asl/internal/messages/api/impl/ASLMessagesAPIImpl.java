@@ -17,7 +17,7 @@ implements ASLMessagesAPI {
     }
 
     static {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(97) || ServiceManager.configManagerDiag.isFeatureFlagSet(94)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(98) || ServiceManager.configManagerDiag.isFeatureFlagSet(95)) {
             PreRegisteredIds.addServiceOrObserverToArray(2, 5273, 1694564416);
             PreRegisteredIds.addServiceOrObserverToArray(2, 5273, 1711341632);
             PreRegisteredIds.addServiceOrObserverToArray(2, 5273, 1744896064);

@@ -142,7 +142,7 @@ extends AbstractCommand {
                     this.commandCompleted("track already active: playback was toggled");
                     return;
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(400) && (n2 = this.mFileEntry.getFilename().toLowerCase().indexOf("autoskip_az")) > 0) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(401) && (n2 = this.mFileEntry.getFilename().toLowerCase().indexOf("autoskip_az")) > 0) {
                     int n3;
                     if (autoskipEvent != null) {
                         MediaObjectAccessor.mMediaController.stopTimer(705298496);

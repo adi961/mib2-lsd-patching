@@ -58,11 +58,11 @@ implements ASLNavInfoTileAPI {
     }
 
     private boolean isTenPlusZero() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(162);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(163);
     }
 
     private boolean isManeuverView() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(161);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(162);
     }
 
     @Override

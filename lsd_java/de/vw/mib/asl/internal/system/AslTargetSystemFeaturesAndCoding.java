@@ -618,7 +618,7 @@ SystemFeaturesAndCodingConstants {
 
     private void updateAppConnectAvailability() {
         boolean bl;
-        this.factorySettingsFlags[14] = bl = this.services.getConfigManagerDiag().isFeatureFlagSet(451);
+        this.factorySettingsFlags[14] = bl = this.services.getConfigManagerDiag().isFeatureFlagSet(452);
         AslTargetSystemFeaturesAndCoding.writeFlagVectorToDatapool(1664, this.factorySettingsFlags);
     }
 
@@ -683,8 +683,8 @@ SystemFeaturesAndCodingConstants {
         this.systemLogger.trace("processDiagCarFunctionsAdaptations");
         if (carFuncAdap != null) {
             this.isTableCarFunctionsAdaptationAlreadyRead = true;
-            boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(402);
-            boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(401);
+            boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(403);
+            boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(402);
             this.clockDisplayActivated = carFuncAdap.getBoolean(290) && bl2;
             this.unitMasterDisplayActivated = carFuncAdap.getBoolean(305) && bl;
             SystemAccessor.getUnitsTarget().updateUnitsMenuAvailability();

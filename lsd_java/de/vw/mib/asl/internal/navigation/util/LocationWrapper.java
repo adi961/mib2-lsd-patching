@@ -509,9 +509,9 @@ implements ILocationWrapper {
 
     @Override
     public String getURLAddress() {
-        boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
-        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
-        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+        boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
+        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
+        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
         if (bl && bl3 && !bl2) {
             return "";
         }

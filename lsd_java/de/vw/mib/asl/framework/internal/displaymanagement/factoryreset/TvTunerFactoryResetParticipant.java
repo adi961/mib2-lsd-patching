@@ -45,7 +45,7 @@ extends AbstractFactoryResetParticipant {
     }
 
     private void revertTvSettings() {
-        if (this.configurationManager.isFeatureFlagSet(425)) {
+        if (this.configurationManager.isFeatureFlagSet(426)) {
             if (this.isTraceEnabled()) {
                 this.trace("revertTvSettings");
             }

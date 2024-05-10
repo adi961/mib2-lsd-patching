@@ -17,17 +17,17 @@ extends StatemachineActivityBase {
     public void performStateEntryAction(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 5: {
-                this.setBoolean(-1431306240, true);
+                this.setBoolean(-1397751808, true);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 this.showView("Sgaffm", bl, this.getIncludeDdpGroupId());
                 break;
             }
             case 6: {
-                this.setBoolean(-1431306240, true);
+                this.setBoolean(-1397751808, true);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 this.showView("Sgasfm", bl, this.getIncludeDdpGroupId());
                 break;
@@ -37,9 +37,9 @@ extends StatemachineActivityBase {
                 break;
             }
             case 8: {
-                this.setBoolean(-1431306240, true);
+                this.setBoolean(-1397751808, true);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 this.showView("Suaffm", bl, this.getIncludeDdpGroupId());
                 break;
@@ -52,17 +52,17 @@ extends StatemachineActivityBase {
         switch (n - this.S_OFFSET) {
             case 5: {
                 this.hideView("Sgaffm");
-                this.setBoolean(-1431306240, false);
+                this.setBoolean(-1397751808, false);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 break;
             }
             case 6: {
                 this.hideView("Sgasfm");
-                this.setBoolean(-1431306240, false);
+                this.setBoolean(-1397751808, false);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 break;
             }
@@ -72,9 +72,9 @@ extends StatemachineActivityBase {
             }
             case 8: {
                 this.hideView("Suaffm");
-                this.setBoolean(-1431306240, false);
+                this.setBoolean(-1397751808, false);
                 EventGeneric eventGeneric = SpellerAppActivity.newEvent();
-                eventGeneric.setBoolean(0, this.getBoolean(-1431306240));
+                eventGeneric.setBoolean(0, this.getBoolean(-1397751808));
                 this.triggerObserver(1459945536, eventGeneric);
                 break;
             }
@@ -89,43 +89,43 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                this.setBoolean(1225720064, true);
-                SpellerAppActivity.fireHMIEvent(ANY, BROADCAST, -1201107639);
+                this.setBoolean(1292828928, true);
+                SpellerAppActivity.fireHMIEvent(ANY, BROADCAST, -1217884855);
                 break;
             }
             case 2: {
                 this.setInteger(30292, 0);
                 this.setInteger(16591, 1);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
             case 3: {
                 this.setInteger(30292, 1);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
             case 4: {
                 this.setInteger(30292, 1);
                 this.setInteger(16591, 0);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
             case 5: {
                 this.setInteger(30292, 0);
                 this.setInteger(16591, 0);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
             case 6: {
                 this.setInteger(30292, 2);
                 this.setInteger(16591, 1);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
             case 7: {
                 this.setInteger(30292, 2);
                 this.setInteger(16591, 0);
-                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1570271927);
+                SpellerAppActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1587049143);
                 break;
             }
         }

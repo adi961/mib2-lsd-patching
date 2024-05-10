@@ -128,7 +128,7 @@ implements DSIServiceStateListener {
                     LogMessage logMessage = this.trace();
                     logMessage.append(this._classname).append(".gotEvent(POWER_ON)").log();
                 }
-                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(452)) break;
+                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(453)) break;
                 this.startup();
                 break;
             }

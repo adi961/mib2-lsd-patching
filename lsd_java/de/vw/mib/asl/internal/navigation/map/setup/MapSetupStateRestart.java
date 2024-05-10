@@ -16,7 +16,7 @@ public class MapSetupStateRestart
 extends AbstractHsmState {
     private final IExtLogger logger;
     private final MapSetupTargetHSM target;
-    private boolean splitScreenFeatureActive = ServiceManager.configManagerDiag.isFeatureFlagSet(163);
+    private boolean splitScreenFeatureActive = ServiceManager.configManagerDiag.isFeatureFlagSet(164);
 
     public MapSetupStateRestart(MapSetupTargetHSM mapSetupTargetHSM, Hsm hsm, String string, HsmState hsmState) {
         super(hsm, string, hsmState);

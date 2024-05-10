@@ -639,7 +639,7 @@ DSIServiceStateListener {
                 this.traceState("createManeuverListElement() - update name for Address destination using NavLocation fields");
                 if (!Target3Plus1Box.isNullOrEmpty(navLocation.street)) {
                     if (!Target3Plus1Box.isNullOrEmpty(navLocation.housenumber)) {
-                        maneuverViewDataCollector.name = ServiceManager.configManagerDiag.isFeatureFlagSet(140) ? new StringBuffer().append(navLocation.housenumber).append(" ").append(navLocation.street).toString() : new StringBuffer().append(navLocation.street).append(" ").append(navLocation.housenumber).toString();
+                        maneuverViewDataCollector.name = ServiceManager.configManagerDiag.isFeatureFlagSet(141) ? new StringBuffer().append(navLocation.housenumber).append(" ").append(navLocation.street).toString() : new StringBuffer().append(navLocation.street).append(" ").append(navLocation.housenumber).toString();
                         this.traceState("createManeuverListElement() - street and housenumber available");
                     } else {
                         maneuverViewDataCollector.name = navLocation.street;
@@ -651,7 +651,7 @@ DSIServiceStateListener {
                 } else if (navLocation.latitude != 0 && navLocation.longitude != 0) {
                     ILocationWrapper iLocationWrapper = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper(navLocation.latitude, navLocation.longitude);
                     object = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(iLocationWrapper);
-                    n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+                    n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
                     maneuverViewDataCollector.name = ServiceManager.fixFormat4Asl.fmtRulesetBasedString(10 + n, (FixFormatterFieldData)object);
                     this.traceState("createManeuverListElement() - no city or street available, provide orientation in current system language");
                 }

@@ -266,7 +266,7 @@ public final class GuiApiDab {
     }
 
     public static void makeSoftLinkingButtonVisible() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(416)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(417)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(700851200, true);
             RadioDabTraceUtil.DataPoolTraceDab("makeSoftLinkingButtonVisible : ", String.valueOf(true));
         } else {
@@ -276,14 +276,14 @@ public final class GuiApiDab {
     }
 
     public static void enableSoftLinkingButton(boolean bl) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(416)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(417)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(767960064, bl);
             RadioDabTraceUtil.DataPoolTraceDab("enableSoftLinkingButton : ", String.valueOf(bl));
         }
     }
 
     public static void updateOptionSoftLinking(boolean bl) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(416)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(417)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(717628416, bl);
             RadioDabTraceUtil.DataPoolTraceDab("updateOptionSoftLinking : ", String.valueOf(bl));
         }

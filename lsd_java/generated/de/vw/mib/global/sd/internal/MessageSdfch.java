@@ -88,7 +88,7 @@ extends SdFeatureCollectionHandlerBase {
             case 0: {
                 ComplexInitialPromptsFeature complexInitialPromptsFeature = this.createInitialPromptsFeature();
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(MessageSdfch.createPrompt(this.getInteger(-1346502656)));
+                arrayList.add(MessageSdfch.createPrompt(this.getInteger(-1312948224)));
                 Object[] objectArray = new Prompt[arrayList.size()];
                 arrayList.toArray(objectArray);
                 complexInitialPromptsFeature.setInitialPrompts((Prompt[])objectArray);
@@ -127,7 +127,7 @@ extends SdFeatureCollectionHandlerBase {
         switch (n) {
             case 0: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(201);
-                genericTargetFeature.setEvent(2003, this.createEvent(-94335671));
+                genericTargetFeature.setEvent(2003, this.createEvent(-111112887));
                 return genericTargetFeature;
             }
         }

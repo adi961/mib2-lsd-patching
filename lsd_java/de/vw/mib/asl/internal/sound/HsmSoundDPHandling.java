@@ -82,7 +82,7 @@ extends AbstractASLHsmSoundTarget {
     }
 
     boolean checkDynAudio() {
-        return !this.isInternalAmp && ServiceManager.configManagerDiag.isFeatureFlagSet(432) && !ServiceManager.configManagerDiag.isFeatureFlagSet(105);
+        return !this.isInternalAmp && ServiceManager.configManagerDiag.isFeatureFlagSet(433) && !ServiceManager.configManagerDiag.isFeatureFlagSet(106);
     }
 
     void checkDynAudioFunctionsAvailable() {

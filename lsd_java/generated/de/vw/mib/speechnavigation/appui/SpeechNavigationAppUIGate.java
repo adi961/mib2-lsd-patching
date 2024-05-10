@@ -123,7 +123,7 @@ extends AbstractHmiAppUIGate {
         VIEWNAME_2_SCREENAREAS_MAP.put("Snopsd_7E65", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Snopsr", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Snsn", new String[]{"ScreenAreaHeadline"});
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{597, 625, 626};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{596, 624, 625};
     }
 }
 

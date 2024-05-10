@@ -443,7 +443,7 @@ DSIDisplayManagementListener {
                     this.trace().append("[ASLDisplayManagementTarget] ").append("ASLSystemServiceIds.GATEWAY_COMPONENT_LIST received").log();
                 }
                 this.flagTvAvailable = true;
-                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(425)) break;
+                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(426)) break;
                 if (this.persistedDataAvailable) {
                     this.sendPersistedVideoOrTvDisplayableData(26);
                     this.sendPersistedVideoOrTvDisplayableData(29);
@@ -1366,11 +1366,11 @@ DSIDisplayManagementListener {
         } else if (this.isTraceEnabled()) {
             this.trace().append("[ASLDisplayManagementTarget] ").append("flagAmiAvailable not yet set, call sendPersistedAMIDisplayableData later if coded").log();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             this.sendPersistedVideoOrTvDisplayableData(43);
         }
         if (this.flagTvAvailable) {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(425)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(426)) {
                 this.sendPersistedVideoOrTvDisplayableData(26);
                 this.sendPersistedVideoOrTvDisplayableData(29);
             }

@@ -47,36 +47,36 @@ public class StartupConfiguration {
     }
 
     static {
-        featureFlagDependencyLookupTableNextGen.put(0x51BC1600 | FEATURE_BIT_ASL, new int[]{104});
-        featureFlagDependencyLookupTableNextGen.put(0x52BC1600 | FEATURE_BIT_ASL, new int[]{385});
-        featureFlagDependencyLookupTableNextGen.put(0x53BC1600 | FEATURE_BIT_ASL, new int[]{385});
-        featureFlagDependencyLookupTableNextGen.put(0x50BC1600 | FEATURE_BIT_ASL, new int[]{385});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[53], 385);
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[54], 104);
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[55], 385);
-        featureFlagDependencyLookupTableNextGen.put(0x700A1700 | FEATURE_BIT_ASL, new int[]{393});
-        featureFlagDependencyLookupTableNextGen.put(0x710A1700 | FEATURE_BIT_ASL, new int[]{392});
-        featureFlagDependencyLookupTableNextGen.put(0x71991400 | FEATURE_BIT_ASL, new int[]{434});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[154], 434);
-        featureFlagDependencyLookupTableNextGen.put(0xC2CD1700 | FEATURE_BIT_ASL, new int[]{196});
-        featureFlagDependencyLookupTableNextGen.put(0x386E1600 | FEATURE_BIT_ASL, new int[]{473});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[150], 473);
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[97], 475);
-        featureFlagDependencyLookupTableNextGen.put(0x316E1600 | FEATURE_BIT_ASL, new int[]{185});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[88], 185);
-        featureFlagDependencyLookupTableNextGen.put(0x376E1600 | FEATURE_BIT_ASL, new int[]{194});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[93], 194);
-        featureFlagDependencyLookupTableNextGen.put(0x336E1600 | FEATURE_BIT_ASL, new int[]{190});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[96], 190);
-        featureFlagDependencyLookupTableNextGen.put(0x326E1600 | FEATURE_BIT_ASL, new int[]{473});
-        featureFlagDependencyLookupTableNextGen.put(0xF0601300 | FEATURE_BIT_ASL, new int[]{183});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[11], 183);
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[13], 183);
-        featureFlagDependencyLookupTableNextGen.put(0x356E1600 | FEATURE_BIT_ASL, new int[]{184});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[92], 184);
-        featureFlagDependencyLookupTableNextGen.put(0x366E1600 | FEATURE_BIT_ASL, new int[]{392});
-        featureFlagDependencyLookupTableNextGen.put(0x396E1600 | FEATURE_BIT_ASL, new int[]{474});
-        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[113], 144);
+        featureFlagDependencyLookupTableNextGen.put(0x51BC1600 | FEATURE_BIT_ASL, new int[]{105});
+        featureFlagDependencyLookupTableNextGen.put(0x52BC1600 | FEATURE_BIT_ASL, new int[]{386});
+        featureFlagDependencyLookupTableNextGen.put(0x53BC1600 | FEATURE_BIT_ASL, new int[]{386});
+        featureFlagDependencyLookupTableNextGen.put(0x50BC1600 | FEATURE_BIT_ASL, new int[]{386});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[53], 386);
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[54], 105);
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[55], 386);
+        featureFlagDependencyLookupTableNextGen.put(0x700A1700 | FEATURE_BIT_ASL, new int[]{394});
+        featureFlagDependencyLookupTableNextGen.put(0x710A1700 | FEATURE_BIT_ASL, new int[]{393});
+        featureFlagDependencyLookupTableNextGen.put(0x71991400 | FEATURE_BIT_ASL, new int[]{435});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[154], 435);
+        featureFlagDependencyLookupTableNextGen.put(0xC2CD1700 | FEATURE_BIT_ASL, new int[]{197});
+        featureFlagDependencyLookupTableNextGen.put(0x386E1600 | FEATURE_BIT_ASL, new int[]{475});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[150], 475);
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[97], 477);
+        featureFlagDependencyLookupTableNextGen.put(0x316E1600 | FEATURE_BIT_ASL, new int[]{186});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[88], 186);
+        featureFlagDependencyLookupTableNextGen.put(0x376E1600 | FEATURE_BIT_ASL, new int[]{195});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[93], 195);
+        featureFlagDependencyLookupTableNextGen.put(0x336E1600 | FEATURE_BIT_ASL, new int[]{191});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[96], 191);
+        featureFlagDependencyLookupTableNextGen.put(0x326E1600 | FEATURE_BIT_ASL, new int[]{475});
+        featureFlagDependencyLookupTableNextGen.put(0xF0601300 | FEATURE_BIT_ASL, new int[]{184});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[11], 184);
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[13], 184);
+        featureFlagDependencyLookupTableNextGen.put(0x356E1600 | FEATURE_BIT_ASL, new int[]{185});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[92], 185);
+        featureFlagDependencyLookupTableNextGen.put(0x366E1600 | FEATURE_BIT_ASL, new int[]{393});
+        featureFlagDependencyLookupTableNextGen.put(0x396E1600 | FEATURE_BIT_ASL, new int[]{476});
+        featureFlagDsiDependencyLookupTable.put(RuntimeGeneratedConstants.SERVICE_TS_NS[113], 145);
     }
 }
 

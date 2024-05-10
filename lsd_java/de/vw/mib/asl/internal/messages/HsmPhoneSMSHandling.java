@@ -161,7 +161,7 @@ ASLNavigationServicesListener {
             object.addResponseListener(this, class$org$dsi$ifc$messaging$DSIMessagingServiceConfigurationListener == null ? (class$org$dsi$ifc$messaging$DSIMessagingServiceConfigurationListener = HsmPhoneSMSHandling.class$("org.dsi.ifc.messaging.DSIMessagingServiceConfigurationListener")) : class$org$dsi$ifc$messaging$DSIMessagingServiceConfigurationListener, this.dsiMessagingServiceConfigurationListener);
             object.addResponseListener(this, class$org$dsi$ifc$organizer$DSIAdbDataResolutionListener == null ? (class$org$dsi$ifc$organizer$DSIAdbDataResolutionListener = HsmPhoneSMSHandling.class$("org.dsi.ifc.organizer.DSIAdbDataResolutionListener")) : class$org$dsi$ifc$organizer$DSIAdbDataResolutionListener, this.dsiAdbDataResolutionListener);
             object.addResponseListener(this, class$org$dsi$ifc$organizer$DSIAdbVCardExchangeListener == null ? (class$org$dsi$ifc$organizer$DSIAdbVCardExchangeListener = HsmPhoneSMSHandling.class$("org.dsi.ifc.organizer.DSIAdbVCardExchangeListener")) : class$org$dsi$ifc$organizer$DSIAdbVCardExchangeListener, this.dsiAdbVCardExchangeListener);
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(173)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(174)) {
                 this.aslNavigationServices = ASLNavigationFactory.getNavigationApi().getASLNavigationServices(this);
                 if (this.aslNavigationServices.isServiceAvailable()) {
                     this.updateGuidanceActive(this.aslNavigationServices.isGuidanceActive());

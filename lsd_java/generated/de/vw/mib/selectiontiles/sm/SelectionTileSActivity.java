@@ -41,9 +41,9 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                this.setInteger(1038548992, SelectionTileSActivity.evListItemActionIndex());
+                this.setInteger(1105657856, SelectionTileSActivity.evListItemActionIndex());
                 EventGeneric eventGeneric = SelectionTileSActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(1038548992));
+                eventGeneric.setInt(0, this.getInteger(1105657856));
                 this.triggerObserver(-1067101632, eventGeneric);
                 break;
             }

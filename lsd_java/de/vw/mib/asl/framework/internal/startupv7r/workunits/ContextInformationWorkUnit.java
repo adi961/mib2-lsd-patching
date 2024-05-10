@@ -291,13 +291,13 @@ extends AbstractStartupWorkUnitController {
             this.internalWorkStates = new int[]{0};
             return true;
         }
-        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 1) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(400)) {
+        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 1) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(401)) {
             this.thisWorkUnitWasStartedCompletely = true;
             this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: not coded").toString());
             this.trace("Testmode skipped, cause not coded");
             this.internalWorkStates = new int[]{0};
         }
-        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 8) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(184)) {
+        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 8) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(185)) {
             this.thisWorkUnitWasStartedCompletely = true;
             this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append("(OnlineService), Cause: not coded").toString());
             this.trace("OnlineServices skipped, cause not coded");
@@ -321,7 +321,7 @@ extends AbstractStartupWorkUnitController {
             this.internalWorkStates = new int[]{0};
         }
         if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x40) != 0) {
-            if (!(ASLSystemFactory.getSystemApi().getFeatureFlagValueBEV() || ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV() || this.configurationManagerDiag.isFeatureFlagSet(394))) {
+            if (!(ASLSystemFactory.getSystemApi().getFeatureFlagValueBEV() || ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV() || this.configurationManagerDiag.isFeatureFlagSet(395))) {
                 this.thisWorkUnitWasStartedCompletely = true;
                 this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: no BEV/PHEV detected").toString());
                 this.trace(new StringBuffer().append("BEV/PHEV skipped, cause not detected (Combustion only): ").append(this.model.getName()).toString());
@@ -330,7 +330,7 @@ extends AbstractStartupWorkUnitController {
                 this.startupSummarizer.logAdditionalMessage(this.getModel(), "BEV/PHEV was detected");
             }
         }
-        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x100) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(425)) {
+        if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x100) != 0 && !this.configurationManagerDiag.isFeatureFlagSet(426)) {
             this.thisWorkUnitWasStartedCompletely = true;
             this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: no TV_TUNER coded").toString());
             this.trace(new StringBuffer().append("TV_TUNER skipped, cause not coded: ").append(this.model.getName()).toString());
@@ -346,13 +346,13 @@ extends AbstractStartupWorkUnitController {
             this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: KOMO/FPK coded").toString());
             this.internalWorkStates = new int[]{0};
         }
-        if (!((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x400) == 0 || this.configurationManagerDiag.isFeatureFlagSet(191) && this.configurationManagerDiag.isFeatureFlagSet(432))) {
+        if (!((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x400) == 0 || this.configurationManagerDiag.isFeatureFlagSet(192) && this.configurationManagerDiag.isFeatureFlagSet(433))) {
             this.thisWorkUnitWasStartedCompletely = true;
             this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: Online Personal POIs not allowed").toString());
             this.internalWorkStates = new int[]{0};
         }
         if ((this.model.getBitmaskToCheckForSpecialEntryConditions() & 0x800) != 0) {
-            int n2 = n = !this.configurationManagerDiag.isFeatureFlagSet(184) ? 1 : 0;
+            int n2 = n = !this.configurationManagerDiag.isFeatureFlagSet(185) ? 1 : 0;
             if (n != 0) {
                 this.thisWorkUnitWasStartedCompletely = true;
                 this.startupSummarizer.logAdditionalMessage(this.getModel(), new StringBuffer().append("skipped: ").append(this.model.getName()).append(", Cause: Online Core Services not allowed").toString());

@@ -49,9 +49,9 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 0: {
-                this.setInteger(-475922432, DrivingDataTileSActivity.evIntegerValueValue());
+                this.setInteger(-442368000, DrivingDataTileSActivity.evIntegerValueValue());
                 ModelApiDownEvent modelApiDownEvent = this.createModelApiDownEvent(12);
-                modelApiDownEvent.setInt(0, this.getInteger(-475922432));
+                modelApiDownEvent.setInt(0, this.getInteger(-442368000));
                 this.fireModelApiDownEvent(modelApiDownEvent);
                 break;
             }
@@ -62,7 +62,7 @@ extends StatemachineActivityBase {
     public boolean evalUntriggeredTransitionGuard(int n) {
         switch (n - this.UT_OFFSET) {
             case 1: {
-                return this.getInteger(1307770880) == 1;
+                return this.getInteger(1374879744) == 1;
             }
         }
         return true;

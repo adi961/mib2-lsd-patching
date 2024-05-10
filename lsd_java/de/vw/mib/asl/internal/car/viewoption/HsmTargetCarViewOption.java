@@ -127,7 +127,7 @@ extends AbstractASLHsmTarget {
     @Override
     protected HsmState getDefaultState() {
         if (this.stateWork == null) {
-            this.stateWork = ServiceManager.configManagerDiag.isFeatureFlagSet(101) ? new StateWorkMLB(this, this.hsm, "stateMainMLB", this.getWorkStateParent()) : new StateWork(this, this.hsm, "stateMain", this.getWorkStateParent());
+            this.stateWork = ServiceManager.configManagerDiag.isFeatureFlagSet(102) ? new StateWorkMLB(this, this.hsm, "stateMainMLB", this.getWorkStateParent()) : new StateWork(this, this.hsm, "stateMain", this.getWorkStateParent());
         }
         return this.stateWork;
     }
@@ -549,7 +549,7 @@ extends AbstractASLHsmTarget {
             ASLCarContainer.collector[n2] = ASLCarContainer.collector[n];
         }
         this.parentChildRelation(FunctionIds.CHILD_FACTORY_SETTINGS, 19, ASLCarContainer.collector, ASLCarContainer.functionExistent);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
             ASLCarContainer.functionExistent[n2] = false;
             ASLCarContainer.functionExistent[112] = true;
             ASLCarContainer.collector[112] = new CarFunctionCollector(true, 0);

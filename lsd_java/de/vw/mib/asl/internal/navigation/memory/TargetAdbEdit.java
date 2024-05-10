@@ -584,7 +584,7 @@ implements DSIServiceStateListener {
                 this.trace().append("TargetAdbEdit: Location to save: ").append(this.locationToSave.toString()).log();
             }
             FixFormatterFieldData fixFormatterFieldData = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper(this.locationToSave));
-            int n = 10 + ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+            int n = 10 + ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
             String string = ServiceManager.fixFormat4Asl.fmtRulesetBasedString(n, fixFormatterFieldData);
             if (string.length() > 40) {
                 string = string.substring(0, 40);

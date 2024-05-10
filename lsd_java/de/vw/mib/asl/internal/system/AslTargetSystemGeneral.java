@@ -501,7 +501,7 @@ implements DSIServiceStateListener {
                 this.systemLogger.trace("Received PING from Navigation target, send value of nightDesign.");
                 this.naviTargetReady = true;
                 SystemAccessor.getUnitsTarget().triggerDistanceUnitChanged();
-                if (!this.configManagerDiag.isFeatureFlagSet(400)) break;
+                if (!this.configManagerDiag.isFeatureFlagSet(401)) break;
                 this.triggerObserver(463290624, null);
                 break;
             }

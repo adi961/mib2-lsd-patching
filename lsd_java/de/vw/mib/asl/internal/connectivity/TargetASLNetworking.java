@@ -598,7 +598,7 @@ implements InternetConnectionUserBlockedService {
             if (connectionStateInformationStruct.getConnectionState() == 22) {
                 eventGeneric.setBoolean(0, true);
                 if (this.nadLockState == 2) {
-                    if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+                    if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
                         eventGeneric2.setInt(0, 1);
                     } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(30)) {
                         eventGeneric2.setInt(0, 2);
@@ -637,7 +637,7 @@ implements InternetConnectionUserBlockedService {
         if ((this.wlanRole == 2 || this.wlanRole == 3) && aSLConnectivityAPI.isWLANActivated()) {
             this.connectionMode = 3;
         } else if (this.nadLockState != 0) {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
                 aSLConnectivityAPI.setSimOrSurfstickInserted(true);
                 this.connectionMode = 1;
             } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(30)) {

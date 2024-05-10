@@ -1,4 +1,4 @@
-Summary for /home/misiek/dev/mib2-lsd-patching/lsd.jar
+Summary for /home/db-adrian/private/repos/mib2-lsd-patching/lsd.jar
 Decompiled with CFR 0.152
 
 

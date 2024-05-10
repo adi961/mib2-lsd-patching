@@ -43,7 +43,7 @@ implements CacheClient {
     public PoiStateRequestTopCategories(PoiHsmTarget poiHsmTarget, Hsm hsm, String string, HsmState hsmState) {
         super(hsm, string, hsmState);
         this.myTarget = poiHsmTarget;
-        this.TOP_POI_MAX_RESULT_ENTRIES = ServiceManager.configManagerDiag.isFeatureFlagSet(75) ? 5 : 3;
+        this.TOP_POI_MAX_RESULT_ENTRIES = ServiceManager.configManagerDiag.isFeatureFlagSet(76) ? 5 : 3;
         this.topCategoryUids = new int[0];
     }
 

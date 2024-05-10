@@ -55,9 +55,9 @@ extends PoiAbstractElementCommon {
     }
 
     private void setSelectionCriteriaForCurrentVariant() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
-        boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
-        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
+        boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
+        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
         this.alongTheRouteSelCritDes = bl && (bl2 || bl3) ? 0x11800000 : 0xB800000;
     }
 
@@ -541,7 +541,7 @@ extends PoiAbstractElementCommon {
         }
         if (ASLSystemFactory.getSystemApi().getFeatureFlagValueBEV() && n == 134) {
             this.selectChargingStations();
-        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(70) && ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV() && n == 134) {
+        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(71) && ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV() && n == 134) {
             this.myTarget.myTrace(this, new StringBuffer().append("CmdSelectByCategoryUid changed to PHEV from: ").append(n).append(" to: ").append(133).toString());
             this.myTarget.myTrace(this, "CmdSetLiValueListWindowSize = -1");
             this.myTarget.setLiValueListWindowSize(this, -1, false);

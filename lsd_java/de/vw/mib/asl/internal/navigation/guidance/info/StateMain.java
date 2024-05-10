@@ -430,7 +430,7 @@ implements CacheClient {
         this.updateGuidanceInfoAddress(this.target.currentRoute);
         this.updateRouteCost();
         this.updateRouteInfoLocation();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71)) {
             this.target.traceState(this, "FEAT_IS_HIGH -> update time and distance!");
             this.updateDistance();
             this.updateTime();

@@ -134,7 +134,7 @@ ServiceListener {
 
     private void preloadSetup() {
         this.setupDatapoolServiceManager(ServiceManagerCommon.loggerFactory, ServiceManagerCommon.datapoolEventDispatcher, ServiceManagerCommon.timerManager);
-        ServiceManagerCommon.hmiChecksum = -819427125;
+        ServiceManagerCommon.hmiChecksum = 1422520327;
         ServiceManagerCommon.i18nTableDecoder = new I18nTableDecoderImpl(-1350234209, ServiceManagerCommon.fileManager, ServiceManagerCommon.loggerFactory, ServiceManagerCommon.perfService);
         ServiceManagerCommon.i18nDatapool = new I18nDatapoolImpl(ServiceManagerCommon.loggerFactory);
         ScaledI18nDatapoolImpl scaledI18nDatapoolImpl = new ScaledI18nDatapoolImpl(ServiceManagerCommon.i18nDatapool, ServiceManagerCommon.loggerFactory);
@@ -156,7 +156,7 @@ ServiceListener {
         this.skinResourceUpdaterRegisterImpl = new SkinResourceUpdaterRegisterImpl();
         SkinImagePoolUpdaterImpl skinImagePoolUpdaterImpl = new SkinImagePoolUpdaterImpl((SkinImagePoolImpl)ServiceManagerCommon.skinImagePool, ServiceManagerCommon.configurationManager, ServiceManagerCommon.fileManager, ServiceManagerCommon.perfService, ServiceManagerCommon.loggerFactory);
         this.skinResourceUpdaterRegisterImpl.add(skinImagePoolUpdaterImpl);
-        SkinAnimationPoolUpdaterImpl skinAnimationPoolUpdaterImpl = new SkinAnimationPoolUpdaterImpl((SkinAnimationPoolImpl)ServiceManagerCommon.skinAnimationPool, -819427125, ServiceManagerCommon.configurationManager, ServiceManagerCommon.fileManager, ServiceManagerCommon.perfService, ServiceManagerCommon.loggerFactory);
+        SkinAnimationPoolUpdaterImpl skinAnimationPoolUpdaterImpl = new SkinAnimationPoolUpdaterImpl((SkinAnimationPoolImpl)ServiceManagerCommon.skinAnimationPool, 1422520327, ServiceManagerCommon.configurationManager, ServiceManagerCommon.fileManager, ServiceManagerCommon.perfService, ServiceManagerCommon.loggerFactory);
         this.skinResourceUpdaterRegisterImpl.add(skinAnimationPoolUpdaterImpl);
         ServiceManagerCommon.globalExpressionEvaluator = new GlobalExpressionEvaluatorImpl();
         ServiceManagerCommon.hmiThreadInvoker = ServiceManagerCommon.datapoolEventDispatcher;

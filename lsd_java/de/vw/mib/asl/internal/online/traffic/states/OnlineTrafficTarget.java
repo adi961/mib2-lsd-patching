@@ -32,7 +32,7 @@ implements DSIServiceStateListener {
     public void gotEvent(EventGeneric eventGeneric) {
         switch (eventGeneric.getReceiverEventId()) {
             case 106: {
-                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(195)) break;
+                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(196)) break;
                 this.startup();
                 break;
             }

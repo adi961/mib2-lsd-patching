@@ -254,7 +254,7 @@ DSIServiceStateListener {
     }
 
     private void registerOnCarDrivingCharacteristics() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
             this.dsiCarDrivingCharacteristics = (DSICarDrivingCharacteristics)ASLCarContainer.getInstance().getDSIProxy().getService(this, class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristics == null ? (class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristics = HsmTargetCarService.class$("org.dsi.ifc.cardrivingcharacteristics.DSICarDrivingCharacteristics")) : class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristics);
             this.dsiCarDrivingCharacteristicsListener = (DSICarDrivingCharacteristicsListener)ASLCarContainer.getInstance().getAdapterFactory().createDSIListenerMethodAdapter(this, class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristicsListener == null ? (class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristicsListener = HsmTargetCarService.class$("org.dsi.ifc.cardrivingcharacteristics.DSICarDrivingCharacteristicsListener")) : class$org$dsi$ifc$cardrivingcharacteristics$DSICarDrivingCharacteristicsListener);
             this.dsiCarDrivingCharacteristics.setNotification(new int[]{2, 3, 1}, (DSIListener)this.dsiCarDrivingCharacteristicsListener);
@@ -1081,16 +1081,14 @@ DSIServiceStateListener {
     }
 
     public void dsiCarVehicleStatesUpdateOilLevelData(OilLevelData oilLevelData, int n) {
-        if (this.oilLevelViewOptionState == 2) {
-            this.oilLevel = oilLevelData.getLevel();
-            HsmTargetCarService.writeIntegerToDatapool(10256, this.oilLevel);
-            this.getVehicleServiceListener().updateOilLevel(this.oilLevel);
-            this.writeOilWarning(oilLevelData.getWarnings(), this.oilLevel);
-            this.oilRefillQuantity = oilLevelData.getRefillVolume().getValue() * 125;
-            HsmTargetCarService.writeIntegerToDatapool(10258, this.oilRefillQuantity);
-            this.getVehicleServiceListener().updateOilRefillQuantity(this.oilRefillQuantity);
-            this.writeOilRefillUnit(oilLevelData.getRefillVolume().getUnit());
-        }
+        this.oilLevel = oilLevelData.getLevel();
+        HsmTargetCarService.writeIntegerToDatapool(10256, this.oilLevel);
+        this.getVehicleServiceListener().updateOilLevel(this.oilLevel);
+        this.writeOilWarning(oilLevelData.getWarnings(), this.oilLevel);
+        this.oilRefillQuantity = oilLevelData.getRefillVolume().getValue() * 125;
+        HsmTargetCarService.writeIntegerToDatapool(10258, this.oilRefillQuantity);
+        this.getVehicleServiceListener().updateOilRefillQuantity(this.oilRefillQuantity);
+        this.writeOilRefillUnit(oilLevelData.getRefillVolume().getUnit());
     }
 
     public void dsiCarVehicleStatesUpdateOilLevelViewOption(CarViewOption carViewOption, int n) {
@@ -1129,6 +1127,7 @@ DSIServiceStateListener {
 
     private void writeOilWarning(int n, int n2) {
         int n3 = 0;
+        boolean bl = false;
         switch (n) {
             case 0: {
                 HsmTargetCarService.writeIntegerToDatapool(10257, 0);
@@ -1188,14 +1187,17 @@ DSIServiceStateListener {
                 this.oilWarning = 8;
                 this.getVehicleServiceListener().updateOilWarning(this.oilWarning);
                 n3 = 5;
-                this.oilLevelAvailability = 5;
+                bl = true;
                 break;
             }
             case 11: {
                 n3 = 4;
-                this.oilLevelAvailability = 4;
+                bl = true;
                 break;
             }
+        }
+        if (!bl || this.oilLevelAvailability != 0) {
+            n3 = this.oilLevelAvailability;
         }
         HsmTargetCarService.writeIntegerToDatapool(10588, n3);
         this.getVehicleServiceListener().updateOilLevelAvailability(n3);
@@ -1552,8 +1554,8 @@ DSIServiceStateListener {
         this.getRDKServiceListener().updateRDKSystem(this.rdkSystemModelValue);
         CarPersistenceServiceImpl.getInstance().loadCar().setRDKSystem(this.rdkSystemModelValue);
         this.currentRDKTireDisplay = new CarViewOption(rDKViewOptions.getTireDisplay().getState(), rDKViewOptions.getTireDisplay().getReason());
-        if (!(ServiceManager.configManagerDiag.isFeatureFlagSet(105) && rDKViewOptions.getConfiguration().getSystem() == 2 || rDKViewOptions.getTireDisplay().getState() != 2)) {
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (!(ServiceManager.configManagerDiag.isFeatureFlagSet(106) && rDKViewOptions.getConfiguration().getSystem() == 2 || rDKViewOptions.getTireDisplay().getState() != 2)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
                 boolean[] blArray = ASLCarServicePropertyManager.RDKS_LOAD_CHANGE_OPTIONS_STATE__DEFAULT_VALUE;
                 blArray[0] = true;
                 blArray[2] = true;

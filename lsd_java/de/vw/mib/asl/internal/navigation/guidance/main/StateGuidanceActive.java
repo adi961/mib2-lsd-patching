@@ -102,7 +102,7 @@ extends AbstractHsmState {
     }
 
     private boolean isHIGH() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(71);
     }
 
     private boolean isFinalDestinationRadiusReached() {
@@ -161,7 +161,7 @@ extends AbstractHsmState {
 
     public void dsiSwdlSelectionUpdateUserSwdl(boolean bl, int n) {
         this.myTarget.traceState(this, "dsiSwdlSelectionUpdateUserSwdl()");
-        if (n == 1 && bl && !ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        if (n == 1 && bl && !ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             this.myTarget.traceState(this, "SWDL is active -> stop guidance!");
             this.myTarget.getMainObject().getServiceRegister().triggerObserver(0x24020040);
         }

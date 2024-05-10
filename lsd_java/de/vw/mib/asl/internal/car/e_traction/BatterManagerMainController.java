@@ -872,7 +872,7 @@ EtrakService {
     }
 
     private void toggleNightRateOnMlb(BatteryControlProfileCollector batteryControlProfileCollector) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
             BatteryControlPowerProviderCollector batteryControlPowerProviderCollector = batteryControlProfileCollector.getPowerProvider();
             if (batteryControlPowerProviderCollector == null) {
                 this.linkProfileWithPowerProvider(batteryControlProfileCollector);
@@ -909,7 +909,7 @@ EtrakService {
 
     private void toggleStateOfNightRate(int n) {
         BatteryControlProfileCollector batteryControlProfileCollector = this.getCurrentEditingProfileData(n);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(101)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(102)) {
             this.toggleNightRateOnMlb(batteryControlProfileCollector);
         } else if (batteryControlProfileCollector.isNightRate()) {
             batteryControlProfileCollector.setPowerProvider(null);
@@ -1294,7 +1294,7 @@ EtrakService {
 
     private void linkProfileWithPowerProvider(BatteryControlProfileCollector batteryControlProfileCollector) {
         int n = PowerProviderListController.INDEX_NOT_FOUND;
-        n = ServiceManager.configManagerDiag.isFeatureFlagSet(101) ? this.getPowerProviderListController().getIndexOfProvider(batteryControlProfileCollector.posId) : this.getPowerProviderListController().getIndexOfProvider(batteryControlProfileCollector.getPowerProviderId());
+        n = ServiceManager.configManagerDiag.isFeatureFlagSet(102) ? this.getPowerProviderListController().getIndexOfProvider(batteryControlProfileCollector.posId) : this.getPowerProviderListController().getIndexOfProvider(batteryControlProfileCollector.getPowerProviderId());
         if (n != PowerProviderListController.INDEX_NOT_FOUND) {
             batteryControlProfileCollector.setPowerProvider(this.getPowerProviderListController().getPowerProviderElement(n));
         } else {

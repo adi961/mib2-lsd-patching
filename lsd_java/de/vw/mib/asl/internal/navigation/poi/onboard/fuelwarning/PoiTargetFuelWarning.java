@@ -169,7 +169,7 @@ TargetForResetNavigation {
 
     public void dsiGeneralVehicleStatesUpdateTankInfo(TankInfo tankInfo, int n) {
         this.traceState("dsiGeneralVehicleStatesUpdateTankInfo");
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(523) && PersistedPoiSetup.getInstance().getFuelOptionsFuelWarning() && n == 1 && tankInfo != null && (tankInfo.fuelWarning || tankInfo.fuelWarningSecondary)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(525) && PersistedPoiSetup.getInstance().getFuelOptionsFuelWarning() && n == 1 && tankInfo != null && (tankInfo.fuelWarning || tankInfo.fuelWarningSecondary)) {
             this.showFuelWarningPopup(tankInfo.fuelWarning, tankInfo.fuelWarningSecondary);
         }
     }

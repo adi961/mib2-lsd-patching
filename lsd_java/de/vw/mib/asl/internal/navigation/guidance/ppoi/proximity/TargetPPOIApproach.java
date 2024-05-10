@@ -138,7 +138,7 @@ implements DSIServiceStateListener {
     }
 
     private boolean isSpeedCameraWarning() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(158);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(159);
     }
 
     private void playPPOIAWTone() {

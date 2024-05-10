@@ -119,7 +119,7 @@ implements ASLOnlineServiceListener {
             boolean bl3 = this.target.datapool.isTrafficShowIncidents();
             this.target.notifierDSI.setTrafficShowIncidents(bl3);
             this.target.notifierModel.notifyShowTrafficIncidents(bl3);
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
                 this.target.notifierModel.notifySpeedAndFlowRoadClass(this.target.datapool.getSpeedAndFlowRoadClass());
                 this.target.notifierDSI.setSpeedAndFlowRoadClass(this.target.datapool.getSpeedAndFlowRoadClassDSI());
             }

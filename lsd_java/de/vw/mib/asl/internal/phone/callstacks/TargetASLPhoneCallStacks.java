@@ -83,7 +83,7 @@ implements CallstackService {
 
     @Override
     protected int[] getMobileEquipmentNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return new int[]{47, 48, 49, 51, 46};
         }
         return ASLPhoneData.EMPTY_NOTIFICATION;
@@ -91,7 +91,7 @@ implements CallstackService {
 
     @Override
     protected int[] getMobileEquipmentHfpOnlyNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return ASLPhoneData.EMPTY_NOTIFICATION;
         }
         return new int[]{47, 48, 49, 51, 46};

@@ -207,7 +207,7 @@ implements FactoryResetListener {
                 this.myTarget.registerOnModelEvents();
                 this.myTarget.registerServices(new int[]{621486080, 604708864, 655040512, 688594944, 0x2B0B2000, 822812672, 638263296, 0x220B2000}, true);
                 this.initClockTimeMasterViewOptions();
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(394)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(395)) {
                     EventGeneric eventGeneric2 = ServiceManager.mGenericEventFactory.newEvent();
                     this.myTarget.triggerObserver(0x220B2000, eventGeneric2);
                 }
@@ -310,7 +310,7 @@ implements FactoryResetListener {
     }
 
     private void readCarOffroadPersistence() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(360) && !ServiceManager.configManagerDiag.isFeatureFlagSet(441);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(361) && !ServiceManager.configManagerDiag.isFeatureFlagSet(442);
         CarOffroad carOffroad = CarPersistenceServiceImpl.getInstance().loadCar().getCarOffroad();
         ServiceManager.aslPropertyManager.valueChangedInteger(10555, bl ? carOffroad.getOffroadLeftTubeNonNav() : carOffroad.getOffroadLeftTubeNav());
         ServiceManager.aslPropertyManager.valueChangedInteger(10556, bl ? carOffroad.getOffroadMiddleTubeNonNav() : carOffroad.getOffroadMiddleTubeNav());
@@ -593,7 +593,7 @@ implements FactoryResetListener {
         this.myTarget.dsiCarAirCondition.setAirconSetFactoryDefaultRow(2);
         this.myTarget.dsiCarEco.setEASetFactoryDefault();
         this.myTarget.dsiCarKombi.setHUDSetFactoryDefault();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(360)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(361)) {
             this.resetOffroadHMI();
         }
         this.resetParticipant.resetDone();
@@ -1509,11 +1509,11 @@ implements FactoryResetListener {
     }
 
     private void evaluateRDKPartFullLoadViewOptions(RDKViewOptions rDKViewOptions) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(105) && rDKViewOptions.getConfiguration().getSystem() == 2) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(106) && rDKViewOptions.getConfiguration().getSystem() == 2) {
             this.evaluateViewOptions(0, 110, 1);
         } else {
             this.evaluateViewOptions(rDKViewOptions.getTireDisplay().getState(), 110, rDKViewOptions.getTireDisplay().getReason());
-            if (!(rDKViewOptions.getTireDisplay().getState() != 2 || rDKViewOptions.configuration.pressureLevel2 || rDKViewOptions.configuration.pressureLevel3 || ServiceManager.configManagerDiag.isFeatureFlagSet(101))) {
+            if (!(rDKViewOptions.getTireDisplay().getState() != 2 || rDKViewOptions.configuration.pressureLevel2 || rDKViewOptions.configuration.pressureLevel3 || ServiceManager.configManagerDiag.isFeatureFlagSet(102))) {
                 this.evaluateViewOptions(0, 110, 1);
             }
         }
@@ -1685,7 +1685,7 @@ implements FactoryResetListener {
     }
 
     private void evaluateEngine() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(394)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(395)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(10359, true);
         } else if (ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV()) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(10359, true);

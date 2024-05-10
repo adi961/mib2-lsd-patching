@@ -33,7 +33,7 @@ implements DSIMapViewerControlVW {
     private final MapViewerDatapoolShared datapoolShared;
     private int instanceId;
     private final CityModelService cityModelService;
-    private final boolean isHIGH = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+    private final boolean isHIGH = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
 
     public DSIMapViewerControlVWImpl(MapDataPool mapDataPool) {
         this.mapDataPool = mapDataPool;

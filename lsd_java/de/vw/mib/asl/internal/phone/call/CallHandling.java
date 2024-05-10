@@ -412,7 +412,7 @@ implements CallService {
 
     @Override
     protected int[] getMobileEquipmentNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return new int[]{8, 9, 12, 25, 2, 26, 28, 38, 15, 4, 18};
         }
         return ASLPhoneData.EMPTY_NOTIFICATION;
@@ -420,7 +420,7 @@ implements CallService {
 
     @Override
     protected int[] getMobileEquipmentHfpOnlyNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return ASLPhoneData.EMPTY_NOTIFICATION;
         }
         return new int[]{8, 9, 12, 25, 2, 26, 38, 15, 4, 18};

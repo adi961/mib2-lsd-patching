@@ -239,7 +239,7 @@ extends AbstractHsmState {
         if (this.logger.isTraceEnabled(128)) {
             this.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("StateAmFmTrafficInformationJapan - update availability: ").append(n).append("  validflag: ").append(n2).log();
         }
-        if (!closePopUp && ServiceManager.configManagerDiag.isFeatureFlagSet(418) && 2 == n) {
+        if (!closePopUp && ServiceManager.configManagerDiag.isFeatureFlagSet(419) && 2 == n) {
             AudioConnectionUtils.requestAudioConnection(15, this.mTarget, 2022113536);
         }
     }

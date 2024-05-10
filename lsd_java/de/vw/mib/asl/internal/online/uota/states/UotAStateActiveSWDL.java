@@ -3,6 +3,7 @@
  */
 package de.vw.mib.asl.internal.online.uota.states;
 
+import de.vw.mib.asl.api.online.ASLOnlineFactory;
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.internal.online.uota.UotAFactory;
 import de.vw.mib.asl.internal.online.uota.common.UotAUtils;
@@ -125,7 +126,8 @@ extends AbstractHsmState {
                     case 0: {
                         this.getTarget().getPropertyManager().setPacketCategory(0);
                         try {
-                            if (this.getTarget().getPropertyManager().isUotAServiceReady()) {
+                            boolean bl = ASLOnlineFactory.getOnlineCoreServices().isServiceInUsableState(ASLOnlineFactory.getOnlineCoreServices().getServiceIDWithNumericServiceID(19));
+                            if (bl && this.getTarget().getPropertyManager().isUotAServiceReady()) {
                                 if (UotAFactory.getNavigationGuidanceService(this._target).isRgActive() && !this._target.getPropertyManager().isNaviDestinationsSetForLater() && !this._target.getPropertyManager().isNaviDestinationsTillNextRevision()) {
                                     this.getPacketController().requestForCurrentDestinationPackets();
                                 }

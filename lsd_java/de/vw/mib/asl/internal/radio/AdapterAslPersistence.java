@@ -598,11 +598,13 @@ public final class AdapterAslPersistence {
     public DabPreset createDabPresetHmi(DabPresetPersistence dabPresetPersistence) {
         try {
             if (null == dabPresetPersistence) {
+                ServiceManager.logger.info(256).append("dabPresetPersistence is null").log();
                 return null;
             }
             ServicePersistence servicePersistence = dabPresetPersistence.getService();
             EnsemblePersistence ensemblePersistence = dabPresetPersistence.getEnsemble();
             if (null == servicePersistence || servicePersistence.getServiceId() <= -1L || null == ensemblePersistence || ensemblePersistence.getEnsId() <= -1) {
+                ServiceManager.logger.info(256).append("createDabPresetHmi invalid service/ensemble ID").log();
                 return null;
             }
             ServiceInfo serviceInfo = this.createServiceHmi(servicePersistence);
@@ -763,6 +765,15 @@ public final class AdapterAslPersistence {
 
     public void setDabPersistence(DabPersistence dabPersistence) {
         this.dabPersistence = dabPersistence;
+        if (null != dabPersistence) {
+            HsmTarget hsmTarget = RadioServiceManager.getServiceManager().getRadioDabTarget();
+            if (null != hsmTarget) {
+                hsmTarget.initFromPersistenceAfterStartUp();
+            }
+            ServiceManager.logger.info(128).append("AdapterAslPersistence - setDabPersistence() - notNull ").append(dabPersistence.toString()).log();
+        } else {
+            ServiceManager.logger.info(128).append("AdapterAslPersistence - setDabPersistence() - dabPersistence is null").log();
+        }
     }
 
     public SatPersistence getSatPersistence() {

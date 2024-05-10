@@ -354,21 +354,21 @@ extends ConfigurationManagerImpl {
 
     @Override
     public int getEventPoolSize(int n) {
-        int[] nArray = new int[]{20, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
+        int[] nArray = new int[]{20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 100, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20};
         this.checkArrayIndex(n, 25);
         return nArray[n];
     }
 
     @Override
     public int getNaviCommonOptionDefault(int n) {
-        int[] nArray = new int[]{6, 0, 0, 20};
+        int[] nArray = new int[]{20, 0, 0, 6};
         this.checkArrayIndex(n, 3);
         return nArray[n];
     }
 
     @Override
     public boolean getNaviCommonOptionDefaultBoolean(int n) {
-        boolean[] blArray = new boolean[]{true, false, false, false, false, false, false, false, false, true, false, false};
+        boolean[] blArray = new boolean[]{false, false, false, false, false, true, false, false, false, false, true, false};
         this.checkArrayIndex(n, 11);
         return blArray[n];
     }
@@ -396,21 +396,21 @@ extends ConfigurationManagerImpl {
 
     @Override
     public int getNaviLocationOptionDefault(int n) {
-        int[] nArray = new int[]{47, 10, 52, 26, 50, 0};
+        int[] nArray = new int[]{0, 52, 47, 50, 26, 10};
         this.checkArrayIndex(n, 5);
         return nArray[n];
     }
 
     @Override
     public boolean getNaviLocationOptionDefaultBoolean(int n) {
-        boolean[] blArray = new boolean[]{false, false, true, false, false};
+        boolean[] blArray = new boolean[]{false, false, false, false, true};
         this.checkArrayIndex(n, 4);
         return blArray[n];
     }
 
     @Override
     public boolean getNaviPoiSortOrderBoolean(int n) {
-        boolean[] blArray = new boolean[]{true, false, false, false};
+        boolean[] blArray = new boolean[]{false, false, true, false};
         this.checkArrayIndex(n, 3);
         return blArray[n];
     }
@@ -424,7 +424,7 @@ extends ConfigurationManagerImpl {
 
     @Override
     public int getNaviRouteOptionDefault(int n) {
-        int[] nArray = new int[]{0, 50, 1, 0, 7, 0, 1, 7, 0, 5, 1, 1, 7, 1, 1, 1, 1, 1, 7, 1, 1, 0, 1, 7, 1, 0, 7, 6, 1, 3, 2, 5};
+        int[] nArray = new int[]{1, 0, 1, 6, 0, 1, 1, 0, 1, 1, 1, 1, 7, 3, 1, 7, 5, 1, 1, 2, 1, 7, 5, 0, 7, 0, 0, 50, 7, 1, 1, 7};
         this.checkArrayIndex(n, 31);
         return nArray[n];
     }
@@ -445,7 +445,7 @@ extends ConfigurationManagerImpl {
 
     @Override
     public int getNaviSplitScreenOptionDefaultInteger(int n) {
-        int[] nArray = new int[]{1, 5, 65, 24, 71, 30, 71, 30};
+        int[] nArray = new int[]{5, 1, 65, 24, 71, 30, 30, 71};
         this.checkArrayIndex(n, 7);
         return nArray[n];
     }

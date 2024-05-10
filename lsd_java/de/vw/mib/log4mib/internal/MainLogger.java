@@ -301,6 +301,10 @@ LogManagerDiag {
         return this.restartCount < MAX_LOGGING_THREAD_RESTARTS;
     }
 
+    public void disableLogging() {
+        this.logWriterManager.disableLogging();
+    }
+
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);

@@ -19,7 +19,7 @@ extends StatemachineActivityBase {
     @Override
     public void performStateEntryAction(int n, boolean bl) {
         switch (this.subStatemachineId) {
-            case 304: {
+            case 303: {
                 this.performStateEntryAction_SubPopupPoDisclaimerClimatesetupNotAvailableDynState(n, bl);
                 break;
             }
@@ -36,7 +36,7 @@ extends StatemachineActivityBase {
     @Override
     public void performStateExitAction(int n) {
         switch (this.subStatemachineId) {
-            case 304: {
+            case 303: {
                 this.performStateExitAction_SubPopupPoDisclaimerClimatesetupNotAvailableDynState(n);
                 break;
             }
@@ -120,7 +120,7 @@ extends StatemachineActivityBase {
     private void performStateEntryAction_SubPopupPoDisclaimerClimatesetupNotAvailableDynState(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 3: {
-                this.enterPopupView("Pdcna", 304, 3);
+                this.enterPopupView("Pdcna", 303, 3);
                 break;
             }
         }
@@ -209,7 +209,7 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction_SubHapticClimatesetupDynState00(int n) {
         switch (n - this.IT_OFFSET) {
             case 0: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 1: {
@@ -217,7 +217,7 @@ extends StatemachineActivityBase {
                 break;
             }
             case 2: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 3: {
@@ -225,7 +225,7 @@ extends StatemachineActivityBase {
                 break;
             }
             case 4: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 5: {
@@ -233,7 +233,7 @@ extends StatemachineActivityBase {
                 break;
             }
             case 6: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 7: {
@@ -241,7 +241,7 @@ extends StatemachineActivityBase {
                 break;
             }
             case 8: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 9: {
@@ -249,11 +249,11 @@ extends StatemachineActivityBase {
                 break;
             }
             case 10: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 11: {
-                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 811240777);
+                ClimateSetupActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 794463561);
                 break;
             }
             case 12: {

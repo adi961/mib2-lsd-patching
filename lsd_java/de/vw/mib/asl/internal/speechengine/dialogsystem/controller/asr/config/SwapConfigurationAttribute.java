@@ -13,7 +13,7 @@ implements SwapHandler {
 
     public SwapConfigurationAttribute(ConfigurationManagerDiag configurationManagerDiag) {
         this.configManager = configurationManagerDiag;
-        this.isSwapEnabled = this.configManager.isFeatureFlagSet(582);
+        this.isSwapEnabled = this.configManager.isFeatureFlagSet(584);
     }
 
     private void writeFeatureFlag(boolean bl) {

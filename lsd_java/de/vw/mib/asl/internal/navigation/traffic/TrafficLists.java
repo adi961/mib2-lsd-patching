@@ -112,7 +112,7 @@ public class TrafficLists {
         boolean bl3 = tmcMessage.directionOfRoad2 != null && tmcMessage.directionOfRoad2.length() > 0;
         boolean bl4 = tmcMessage.startLocation != null && tmcMessage.startLocation.length() > 0;
         boolean bl5 = bl = tmcMessage.endLocation != null && tmcMessage.endLocation.length() > 0;
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(105)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(106)) {
             return tmcMessage.isArea || !tmcMessage.isArea && !bl3 && bl4 ^ bl;
         }
         return tmcMessage.isArea || !tmcMessage.isArea && !bl2 && !bl3 && bl4 && !bl;

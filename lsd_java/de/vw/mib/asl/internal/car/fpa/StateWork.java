@@ -88,7 +88,7 @@ implements FPAStateWorkServices {
                     this.myTarget.cancelPopup(this.myTarget.displayContent, 1);
                     break;
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(360) && this.currentActiveProfile == 4) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(361) && this.currentActiveProfile == 4) {
                     this.myTarget.sendHMIEvent(10013);
                     this.isOffroadRequested = false;
                     break;
@@ -97,7 +97,7 @@ implements FPAStateWorkServices {
                 break;
             }
             case 1073745144: {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(360) && (this.myTarget.displayContent == -1 || this.myTarget.displayContent == 0)) break;
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(361) && (this.myTarget.displayContent == -1 || this.myTarget.displayContent == 0)) break;
                 this.myTarget.showCharismaPopup(this.myTarget.displayContent, 0);
                 break;
             }
@@ -3502,7 +3502,7 @@ implements FPAStateWorkServices {
 
     public void dsiPowerManagementUpdateClampSignal(ClampSignal clampSignal, int n) {
         this.isClamp15 = clampSignal.isClamp15();
-        if (this.isOffroadRequested && !this.isClamp15 && ServiceManager.configManagerDiag.isFeatureFlagSet(360)) {
+        if (this.isOffroadRequested && !this.isClamp15 && ServiceManager.configManagerDiag.isFeatureFlagSet(361)) {
             this.myTarget.sendHMIEvent(10013);
         }
     }
@@ -3528,7 +3528,7 @@ implements FPAStateWorkServices {
                 this.myTarget.error("FPA: HMI will cancel popup, because is not ready!");
                 this.myTarget.showCharismaPopup(0, 1);
             } else {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(360) && this.isOffroadRequested) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(361) && this.isOffroadRequested) {
                     this.myTarget.sendHMIEvent(10013);
                     this.isOffroadRequested = false;
                 }
@@ -3562,7 +3562,7 @@ implements FPAStateWorkServices {
                     case 6: {
                         ServiceManager.aslPropertyManager.valueChangedInteger(10276, 3);
                         this.myTarget.displayContent = n;
-                        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(360)) {
+                        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(361)) {
                             this.myTarget.sendHMIEvent(10012);
                         }
                         this.myTarget.sendHMIEvent(10028);
@@ -3665,7 +3665,7 @@ implements FPAStateWorkServices {
             this.myTarget.error("CAR FPA: ignore acknowledge charisma popup sending wrong information");
             this.isPopupRequested = false;
             this.myTarget.cancelByHmi = false;
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(360)) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(361)) {
                 this.myTarget.displayContent = n;
             }
         } else {
@@ -3685,7 +3685,7 @@ implements FPAStateWorkServices {
                     break;
                 }
             }
-            if (ServiceManager.configManagerDiag.isFeatureFlagSet(360) && this.isOffroadRequested) {
+            if (ServiceManager.configManagerDiag.isFeatureFlagSet(361) && this.isOffroadRequested) {
                 this.myTarget.sendHMIEvent(10028);
             }
         }
@@ -3743,7 +3743,7 @@ implements FPAStateWorkServices {
         blArray[3] = charismaViewOptions.getConfiguration().getProfilesAvailable().isDynamic();
         if (this.myTarget.isOffraodFpa) {
             blArray[4] = false;
-            blArray[9] = ServiceManager.configManagerDiag.isFeatureFlagSet(360) ? charismaViewOptions.getConfiguration().getProfilesAvailable().isOffroadlevel2() : false;
+            blArray[9] = ServiceManager.configManagerDiag.isFeatureFlagSet(361) ? charismaViewOptions.getConfiguration().getProfilesAvailable().isOffroadlevel2() : false;
             blArray[10] = charismaViewOptions.getConfiguration().getProfilesAvailable().isOffroadallroad();
         } else {
             blArray[4] = charismaViewOptions.getConfiguration().getProfilesAvailable().isOffroadallroad();
@@ -3790,7 +3790,7 @@ implements FPAStateWorkServices {
             this.myTarget.activeProfile(this.currentActiveProfile);
         }
         this.updateActiveProfile(this.currentActiveProfile);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(360) && this.isClamp15 && this.myTarget.isOffraodFpa) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(361) && this.isClamp15 && this.myTarget.isOffraodFpa) {
             if (n == 4) {
                 if (this.isPopupRequested) {
                     this.myTarget.sendHMIEvent(10013);

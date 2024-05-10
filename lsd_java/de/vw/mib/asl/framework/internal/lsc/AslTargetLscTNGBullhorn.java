@@ -229,7 +229,7 @@ implements AslLscBullhorn {
                 case 5: {
                     string4 = (String)intObjectMap.get(n);
                     String string5 = string4 = string4.equals("NO_LANGUAGE") ? "" : string4;
-                    if (!this.configManagerDiag.isFeatureFlagSet(367)) {
+                    if (!this.configManagerDiag.isFeatureFlagSet(368)) {
                         if (!((String)objectArray[3]).equals("") && !((String)objectArray[3]).equals(string4)) break;
                         objectArray[3] = string4.equals("NO_LANGUAGE") ? "" : string4;
                         break;
@@ -240,7 +240,7 @@ implements AslLscBullhorn {
                 case 4: {
                     string3 = (String)intObjectMap.get(n);
                     String string6 = string3 = string3.equals("NO_LANGUAGE") ? "" : string3;
-                    if (this.configManagerDiag.isFeatureFlagSet(367)) {
+                    if (this.configManagerDiag.isFeatureFlagSet(368)) {
                         objectArray[2] = string3.equals("NO_LANGUAGE") ? "" : string3;
                         break;
                     }
@@ -250,7 +250,7 @@ implements AslLscBullhorn {
             }
         }
         ListManager.getGenericASLList(3616).updateList(objectArray);
-        if (!this.configManagerDiag.isFeatureFlagSet(367) && string4.equals(string) && !string3.equals(string4)) {
+        if (!this.configManagerDiag.isFeatureFlagSet(368) && string4.equals(string) && !string3.equals(string4)) {
             string4 = string3;
         }
         this.systemApi.updateSystemCurrentLanguageConfiguration(0, string, string2, string3, string4);

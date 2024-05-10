@@ -15,7 +15,6 @@ import generated.de.vw.mib.asl.internal.car.fpk.transformer.CarFPKCurrentElement
 import generated.de.vw.mib.asl.internal.car.fpk.transformer.CarFPKCurrentElementContentSelectionDisplay2_1Collector;
 
 public class ContentSelectionDebounce {
-    private static int START_EVENT_ID = -1601830656;
     private static final long SETUP_TIMER_DURATION;
     private static final long RESPONSE_TIMER_DURATION;
     private final int ev_setup_timer;
@@ -32,8 +31,8 @@ public class ContentSelectionDebounce {
         this.contentSelectionService = contentSelectionServiceImpl;
         this.debounceForDisplayId = n;
         this.pendingElementContentId = -1;
-        this.ev_setup_timer = START_EVENT_ID++;
-        this.ev_response_timer = START_EVENT_ID++;
+        this.ev_setup_timer = ContentSelectionServiceImpl.START_EVENT_ID++;
+        this.ev_response_timer = ContentSelectionServiceImpl.START_EVENT_ID++;
     }
 
     public boolean isManaged(EventGeneric eventGeneric) {

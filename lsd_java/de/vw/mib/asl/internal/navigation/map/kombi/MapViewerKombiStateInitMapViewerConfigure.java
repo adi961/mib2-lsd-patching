@@ -95,10 +95,10 @@ extends AbstractHsmState {
         this.target.notifierDSI.set3DLandmarksVisible();
         this.target.notifierDSI.setModePositionMap();
         this.target.notifierDSI.setEnableSoftZoom();
-        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(238)) {
+        if (!ServiceManager.configManagerDiag.isFeatureFlagSet(239)) {
             this.target.notifierDSI.showTMCMessages(this.target.datapool.isTrafficShowIncidents());
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
             this.target.notifierDSI.setSpeedAndFlowRoadClass(this.target.datapool.getSpeedAndFlowRoadClassDSI());
         }
         this.target.notifierDSI.setMetricSystem(this.target.datapool.getMetricSystem());
@@ -109,7 +109,7 @@ extends AbstractHsmState {
             this.target.notifierDSI.setDayView();
         }
         this.target.notifierDSI.setRouteColoringPolicyRouteoption();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(70) && DSIMapViewerControlFactoryVW.getMapDatapoolMain().isGeneralPOIVisibility()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(71) && DSIMapViewerControlFactoryVW.getMapDatapoolMain().isGeneralPOIVisibility()) {
             this.target.notifierDSI.setGeneralPoiVisibilityTrue();
         } else {
             this.target.notifierDSI.setGeneralPoiVisibilityFalse();

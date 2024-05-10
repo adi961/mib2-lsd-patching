@@ -67,7 +67,7 @@ extends AbstractHsmState {
             NavLastDest[] navLastDestArray = new NavLastDest[route.routelist.length];
             for (int i2 = 0; i2 < route.routelist.length; ++i2) {
                 FixFormatterFieldData fixFormatterFieldData = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper(route.routelist[i2].routeLocation));
-                int n = 10 + ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+                int n = 10 + ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
                 navLastDestArray[i2] = new NavLastDest(ServiceManager.fixFormat4Asl.fmtRulesetBasedString(n, fixFormatterFieldData), route.routelist[i2].routeLocation, null);
             }
             this.myTarget.getDsiNavigation().dmLastDestinationsAddList(navLastDestArray);

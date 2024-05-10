@@ -18,7 +18,7 @@ extends StatemachineActivityBase {
     @Override
     public void performStateEntryAction(int n, boolean bl) {
         switch (this.subStatemachineId) {
-            case 452: {
+            case 451: {
                 this.performStateEntryAction_SubPopupPoInfoTunerautostoreglobalwizardpageInitialAutostoreDynState(n, bl);
                 break;
             }
@@ -35,7 +35,7 @@ extends StatemachineActivityBase {
     @Override
     public void performStateExitAction(int n) {
         switch (this.subStatemachineId) {
-            case 452: {
+            case 451: {
                 this.performStateExitAction_SubPopupPoInfoTunerautostoreglobalwizardpageInitialAutostoreDynState(n);
                 break;
             }
@@ -74,7 +74,7 @@ extends StatemachineActivityBase {
     @Override
     public void performInternalTransitionAction(int n) {
         switch (this.subStatemachineId) {
-            case 452: {
+            case 451: {
                 this.performInternalTransitionAction_SubPopupPoInfoTunerautostoreglobalwizardpageInitialAutostoreDynState(n);
                 break;
             }
@@ -121,7 +121,7 @@ extends StatemachineActivityBase {
     private void performStateEntryAction_SubPopupPoInfoTunerautostoreglobalwizardpageInitialAutostoreDynState(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 2: {
-                this.enterPopupView("Ptia", 452, 2);
+                this.enterPopupView("Ptia", 451, 2);
                 break;
             }
         }

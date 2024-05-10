@@ -39,55 +39,55 @@ public final class ASLOnlineServicesUtil {
         boolean bl;
         switch (n) {
             case 0: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(184);
-                break;
-            }
-            case 1: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(195);
-                break;
-            }
-            case 2: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(191);
-                break;
-            }
-            case 13: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(186);
-                break;
-            }
-            case 14: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(186);
-                break;
-            }
-            case 4: {
                 bl = ServiceManager.configManagerDiag.isFeatureFlagSet(185);
                 break;
             }
-            case 15: {
+            case 1: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(196);
+                break;
+            }
+            case 2: {
                 bl = ServiceManager.configManagerDiag.isFeatureFlagSet(192);
                 break;
             }
-            case 5: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(197);
-                break;
-            }
-            case 6: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(183);
-                break;
-            }
-            case 7: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(193);
-                break;
-            }
-            case 8: {
+            case 13: {
                 bl = ServiceManager.configManagerDiag.isFeatureFlagSet(187);
                 break;
             }
-            case 9: {
+            case 14: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(187);
+                break;
+            }
+            case 4: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(186);
+                break;
+            }
+            case 15: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(193);
+                break;
+            }
+            case 5: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(198);
+                break;
+            }
+            case 6: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(184);
+                break;
+            }
+            case 7: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(194);
+                break;
+            }
+            case 8: {
                 bl = ServiceManager.configManagerDiag.isFeatureFlagSet(188);
                 break;
             }
+            case 9: {
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(189);
+                break;
+            }
             case 10: {
-                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(196);
+                bl = ServiceManager.configManagerDiag.isFeatureFlagSet(197);
                 break;
             }
             default: {

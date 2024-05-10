@@ -77,7 +77,7 @@ extends SdFeatureCollectionHandlerBase {
             }
             case 13: {
                 this.conditions = new boolean[11];
-                this.dpProperties = new int[]{10059, 0x7A00000, 16664};
+                this.dpProperties = new int[]{10059, 0x9A00000, 16664};
                 this.featureData = new int[]{1, 3};
                 this.featuresToUpdate = new boolean[2];
                 break;
@@ -824,7 +824,7 @@ extends SdFeatureCollectionHandlerBase {
             case 0: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(124226889));
+                genericTargetFeature.setEvent(3010, this.createEvent(107449673));
                 return genericTargetFeature;
             }
             case 1: {
@@ -887,7 +887,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(141004105));
+                genericTargetFeature.setEvent(3010, this.createEvent(124226889));
                 return genericTargetFeature;
             }
             case 2: {
@@ -920,7 +920,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(157781321));
+                genericTargetFeature.setEvent(3010, this.createEvent(141004105));
                 return genericTargetFeature;
             }
             case 2: {
@@ -987,7 +987,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(174558537));
+                genericTargetFeature.setEvent(3010, this.createEvent(157781321));
                 return genericTargetFeature;
             }
             case 2: {
@@ -1056,7 +1056,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(157781321));
+                genericTargetFeature.setEvent(3010, this.createEvent(141004105));
                 return genericTargetFeature;
             }
             case 2: {
@@ -1123,7 +1123,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(174558537));
+                genericTargetFeature.setEvent(3010, this.createEvent(157781321));
                 return genericTargetFeature;
             }
             case 2: {
@@ -1189,7 +1189,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(191335753));
+                genericTargetFeature.setEvent(3010, this.createEvent(174558537));
                 return genericTargetFeature;
             }
             case 2: {
@@ -1248,7 +1248,7 @@ extends SdFeatureCollectionHandlerBase {
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(301);
                 genericTargetFeature.setBoolean(3011, true);
-                genericTargetFeature.setEvent(3010, this.createEvent(191335753));
+                genericTargetFeature.setEvent(3010, this.createEvent(174558537));
                 return genericTargetFeature;
             }
             case 2: {
@@ -1299,9 +1299,9 @@ extends SdFeatureCollectionHandlerBase {
             }
             case 1: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(201);
-                genericTargetFeature.setEvent(2001, this.createEvent(828411209));
-                genericTargetFeature.setEvent(2006, this.createEvent(208112969));
-                genericTargetFeature.setEvent(2007, this.createEvent(224890185));
+                genericTargetFeature.setEvent(2001, this.createEvent(811633993));
+                genericTargetFeature.setEvent(2006, this.createEvent(191335753));
+                genericTargetFeature.setEvent(2007, this.createEvent(208112969));
                 return genericTargetFeature;
             }
         }
@@ -1354,7 +1354,7 @@ extends SdFeatureCollectionHandlerBase {
             }
             case 5: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(105);
-                genericTargetFeature.setEvent(1041, this.createEvent(845188425));
+                genericTargetFeature.setEvent(1041, this.createEvent(828411209));
                 genericTargetFeature.setInt(1040, 59);
                 genericTargetFeature.setOrderedPrompts(1042, this.createOrderedPrompts(new int[]{500}, 0));
                 return genericTargetFeature;
@@ -1492,31 +1492,31 @@ extends SdFeatureCollectionHandlerBase {
     private boolean evaluateCondition_SSGDMM_11(int n) {
         switch (n) {
             case 0: {
-                return !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 1: {
-                return !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && this.getBoolean(0x7A00000) && this.getBoolean(10059) && this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && this.getBoolean(0x9A00000) && this.getBoolean(10059) && this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 2: {
-                return !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059));
+                return !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059));
             }
             case 3: {
-                return !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 4: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 5: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059));
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059)) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059));
             }
             case 6: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059) && !(this.getBoolean(0x7A00000) && this.getBoolean(10059));
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059) && !(this.getBoolean(0x9A00000) && this.getBoolean(10059));
             }
             case 7: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059) && this.getBoolean(0x7A00000) && this.getBoolean(10059) && this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059) && this.getBoolean(0x9A00000) && this.getBoolean(10059) && this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 8: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
             case 9: {
                 return this.getInteger(16664) == 0;
@@ -2086,7 +2086,7 @@ extends SdFeatureCollectionHandlerBase {
             case 10059: {
                 return SSGDMM_11_AFFECTED_CONDITIONS_FOR_PROPERTY_ASL_CONFIGURATION_IS_SDS_CODING;
             }
-            case 40967: {
+            case 40969: {
                 return SSGDMM_11_AFFECTED_CONDITIONS_FOR_PROPERTY_ASL_CONFIGURATION_IS_SDS_SW_AP;
             }
             case 16664: {

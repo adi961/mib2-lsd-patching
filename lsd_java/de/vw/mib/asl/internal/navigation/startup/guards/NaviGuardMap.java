@@ -20,7 +20,7 @@ implements Guard {
     }
 
     private boolean mapGroupGuard(KnowledgeBase knowledgeBase) {
-        return knowledgeBase.isMainMapReady() && (knowledgeBase.isMapInMapReady() || !ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(8)) && knowledgeBase.getNavStateOfOperation() == 5 && knowledgeBase.getNavDomainState() == 4 && knowledgeBase.isGreen(1) && knowledgeBase.isGreen(0) && knowledgeBase.isGreen(2);
+        return knowledgeBase.isMainMapReady() && (knowledgeBase.isMapInMapReady() || !ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(9)) && knowledgeBase.getNavStateOfOperation() == 5 && knowledgeBase.getNavDomainState() == 4 && knowledgeBase.isGreen(1) && knowledgeBase.isGreen(0) && knowledgeBase.isGreen(2);
     }
 
     @Override

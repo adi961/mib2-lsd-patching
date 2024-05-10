@@ -38,7 +38,7 @@ extends AbstractAVDCAudioBrowserBrowserInfoList_1Transformer {
                 return extendedListEntry.getSelectionState();
             }
             case 8: {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(83) && extendedListEntry.getContentType() == 6 && !extendedListEntry.sourceMedia.isRawModeReadyToUse(true)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(84) && extendedListEntry.getContentType() == 6 && !extendedListEntry.sourceMedia.isRawModeReadyToUse(true)) {
                     return 0;
                 }
                 return extendedListEntry.getFileType();

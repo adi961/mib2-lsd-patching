@@ -87,17 +87,17 @@ RtMethodListener {
 
     @Override
     public boolean isTvFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(425);
+        return this.configurationManager.isFeatureFlagSet(426);
     }
 
     @Override
     public boolean isWLANFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(479);
+        return this.configurationManager.isFeatureFlagSet(481);
     }
 
     @Override
     public boolean isJapanVariantSelected() {
-        return this.configurationManager.isFeatureFlagSet(75);
+        return this.configurationManager.isFeatureFlagSet(76);
     }
 
     @Override
@@ -112,32 +112,32 @@ RtMethodListener {
 
     @Override
     public boolean isNavigationFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(367);
-    }
-
-    @Override
-    public boolean isSpeechStartupFeatureSelected() {
         return this.configurationManager.isFeatureFlagSet(368);
     }
 
     @Override
+    public boolean isSpeechStartupFeatureSelected() {
+        return this.configurationManager.isFeatureFlagSet(369);
+    }
+
+    @Override
     public boolean isSpeechFeatureBuiltIn() {
-        return this.configurationManager.isFeatureFlagSet(534);
+        return this.configurationManager.isFeatureFlagSet(536);
     }
 
     @Override
     public boolean isSpeechCoded() {
-        return this.configurationManager.isFeatureFlagSet(535);
+        return this.configurationManager.isFeatureFlagSet(537);
     }
 
     @Override
     public boolean isSpeechFeatureSWAPSelected() {
-        return this.configurationManager.isFeatureFlagSet(582);
+        return this.configurationManager.isFeatureFlagSet(584);
     }
 
     @Override
     public boolean isSpeechFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(533);
+        return this.configurationManager.isFeatureFlagSet(535);
     }
 
     @Override
@@ -167,12 +167,12 @@ RtMethodListener {
 
     @Override
     public boolean isMapSwitchingFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(139);
+        return this.configurationManager.isFeatureFlagSet(140);
     }
 
     @Override
     public boolean isAppConnectFeatureSelected() {
-        return this.configurationManager.isFeatureFlagSet(451);
+        return this.configurationManager.isFeatureFlagSet(452);
     }
 
     @Override
@@ -287,7 +287,7 @@ RtMethodListener {
 
     @Override
     public boolean isHighVariant() {
-        return this.configurationManager.isFeatureFlagSet(70);
+        return this.configurationManager.isFeatureFlagSet(71);
     }
 
     static /* synthetic */ Class class$(String string) {

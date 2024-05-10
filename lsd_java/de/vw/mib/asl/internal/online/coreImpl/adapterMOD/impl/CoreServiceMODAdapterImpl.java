@@ -135,7 +135,7 @@ implements CoreServiceAdapter {
         this._target.info().append(this._classname).append(".checkServiceStatus( Service ID : ").append(Util.isNullOrEmpty(string) ? "" : string).append("  )").log();
         if (coreServiceAdapterListener != null) {
             CoreServiceMODFactory.getNotifier().getEventQueue().put(5, new CoreServiceCollector(CoreServiceMODFactory.getNotifier().generateUniqueID(5), string, null, coreServiceAdapterListener));
-            CoreServiceMODFactory.getController(this._target).precheckOnlineServiceRequest(string);
+            CoreServiceMODFactory.getController(this._target).precheckRequestPreanalysis(string);
         } else {
             this._target.info().append(this._classname).append(".checkAuthentication()").append("-->CoreServiceAdapterListener is NULL").log();
         }

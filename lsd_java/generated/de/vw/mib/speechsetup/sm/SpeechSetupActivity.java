@@ -20,7 +20,7 @@ extends StatemachineActivityBase {
                 break;
             }
             case 11: {
-                SpeechSetupActivity.fireHMIEvent(ANY, BROADCAST, 1264684361);
+                SpeechSetupActivity.fireHMIEvent(ANY, BROADCAST, 1247907145);
                 break;
             }
         }

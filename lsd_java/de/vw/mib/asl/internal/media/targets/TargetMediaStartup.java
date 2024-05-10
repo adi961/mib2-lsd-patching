@@ -108,7 +108,7 @@ implements DSIServiceStateListener {
                 long l = eventGeneric.getLong(3);
                 if (eventGeneric.getResult() != 0 || n != -536825343 || l != 0) break;
                 Adaptation adaptation = (Adaptation)eventGeneric.getObject(1);
-                this.mOnlineGraceNoteAvailable = ServiceManager.configManagerDiag.isFeatureFlagSet(86) && adaptation.contains(143) && adaptation.contains(144) && adaptation.getBoolean(143) && adaptation.getBoolean(144);
+                this.mOnlineGraceNoteAvailable = ServiceManager.configManagerDiag.isFeatureFlagSet(87) && adaptation.contains(143) && adaptation.contains(144) && adaptation.getBoolean(143) && adaptation.getBoolean(144);
                 this.info(new StringBuffer().append("MEDIA TARGETS ~ OnlineGracenote: ").append(this.mOnlineGraceNoteAvailable).toString());
                 if (!this.powerOnCalled || this.registerDSICalled) break;
                 this.registerDSICalled = true;
@@ -151,14 +151,14 @@ implements DSIServiceStateListener {
         new MediaSettings(genericEvents, "hsmtask");
         new MediaMainBrowser(genericEvents, "hsmtask", 0);
         new MediaSpeechBrowser(genericEvents, "hsmtask", 2);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(386)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(387)) {
             new MediaBapBrowser(genericEvents, "hsmtask", 3);
         }
         new MediaHasBrowser(genericEvents, "hsmtask", 4);
         if (ServiceManager.configManagerDiag.isFeatureFlagSet(48)) {
             new MediaCoverBrowser(genericEvents, "hsmtask", 1);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(83)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(84)) {
             new MediaRecorder(genericEvents, "hsmtask");
             new MediaRecorderBrowser(genericEvents, "hsmtask", 7);
         }
@@ -174,7 +174,7 @@ implements DSIServiceStateListener {
         dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBase == null ? (class$org$dsi$ifc$media$DSIMediaBase = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBase")) : class$org$dsi$ifc$media$DSIMediaBase, this);
         dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaPlayer == null ? (class$org$dsi$ifc$media$DSIMediaPlayer = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaPlayer")) : class$org$dsi$ifc$media$DSIMediaPlayer, this);
         dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBrowser == null ? (class$org$dsi$ifc$media$DSIMediaBrowser = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBrowser")) : class$org$dsi$ifc$media$DSIMediaBrowser, 0, this);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(386)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(387)) {
             dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBrowser == null ? (class$org$dsi$ifc$media$DSIMediaBrowser = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBrowser")) : class$org$dsi$ifc$media$DSIMediaBrowser, 3, this);
         }
         dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBrowser == null ? (class$org$dsi$ifc$media$DSIMediaBrowser = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBrowser")) : class$org$dsi$ifc$media$DSIMediaBrowser, 4, this);
@@ -182,7 +182,7 @@ implements DSIServiceStateListener {
         if (ServiceManager.configManagerDiag.isFeatureFlagSet(48)) {
             dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBrowser == null ? (class$org$dsi$ifc$media$DSIMediaBrowser = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBrowser")) : class$org$dsi$ifc$media$DSIMediaBrowser, 1, this);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(83)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(84)) {
             dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaBrowser == null ? (class$org$dsi$ifc$media$DSIMediaBrowser = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaBrowser")) : class$org$dsi$ifc$media$DSIMediaBrowser, 7, this);
             dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMediaRecorder == null ? (class$org$dsi$ifc$media$DSIMediaRecorder = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMediaRecorder")) : class$org$dsi$ifc$media$DSIMediaRecorder, this);
             dSIServiceLocator.addServiceStateListener(class$org$dsi$ifc$media$DSIMetadataService == null ? (class$org$dsi$ifc$media$DSIMetadataService = TargetMediaStartup.class$("org.dsi.ifc.media.DSIMetadataService")) : class$org$dsi$ifc$media$DSIMetadataService, this);

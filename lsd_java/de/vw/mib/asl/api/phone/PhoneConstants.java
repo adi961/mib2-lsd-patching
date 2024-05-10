@@ -25,20 +25,20 @@ public final class PhoneConstants {
     }
 
     public static boolean isFeatureFlagsDsiDataXXX() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(184) || ServiceManager.configManagerDiag.isFeatureFlagSet(378);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(185) || ServiceManager.configManagerDiag.isFeatureFlagSet(379);
     }
 
     public static boolean isFeatureFlagsDsiWLAN() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(479);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(481);
     }
 
     public static boolean isFeatureFlagsDsiMessagingXXX() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(97) || ServiceManager.configManagerDiag.isFeatureFlagSet(94);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(98) || ServiceManager.configManagerDiag.isFeatureFlagSet(95);
     }
 
     private static void fillDomainRunLevel() {
         int n = 0x1E0E00;
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(97) || ServiceManager.configManagerDiag.isFeatureFlagSet(94)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(98) || ServiceManager.configManagerDiag.isFeatureFlagSet(95)) {
             n |= 0x100;
         }
         DOMAIN_RUN_LEVEL = n;

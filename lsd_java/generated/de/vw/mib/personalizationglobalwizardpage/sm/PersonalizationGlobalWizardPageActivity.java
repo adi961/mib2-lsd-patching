@@ -42,13 +42,13 @@ extends StatemachineActivityBase {
         switch (n - this.IT_OFFSET) {
             case 1: {
                 if (this.getInteger(14951) > 0) {
-                    this.setString(1226309888, this.getI18nStrings(223)[this.getInteger(14951)]);
+                    this.setString(1310195968, this.getI18nStrings(223)[this.getInteger(14951)]);
                 }
                 if (this.getInteger(14951) == 0) {
-                    this.setString(1226309888, this.getString(18518));
+                    this.setString(1310195968, this.getString(18518));
                 }
                 ModelApiDownEvent modelApiDownEvent = this.createModelApiDownEvent(24);
-                modelApiDownEvent.setString(0, this.getString(1226309888));
+                modelApiDownEvent.setString(0, this.getString(1310195968));
                 this.fireModelApiDownEvent(modelApiDownEvent);
                 break;
             }

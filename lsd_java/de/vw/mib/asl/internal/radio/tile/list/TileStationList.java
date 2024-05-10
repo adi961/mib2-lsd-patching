@@ -1234,7 +1234,7 @@ public final class TileStationList {
             } else {
                 String string2 = RadioServiceManager.getServiceManager().getCorrectFmStationName(amFmStation);
                 if (string2 != null && string2.length() > 1) {
-                    if (null != ServiceManager.configManagerDiag && (ServiceManager.configManagerDiag.isFeatureFlagSet(423) || bl && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
+                    if (null != ServiceManager.configManagerDiag && (ServiceManager.configManagerDiag.isFeatureFlagSet(424) || bl && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive())) {
                         string = string2;
                     } else if (AmfmRDSOption.get()) {
                         string = string2;

@@ -130,8 +130,8 @@ public final class DynamicPoiCategoryHandler {
     private static int getDynamicPoiCategoryByOnboardUid(int n) {
         int n2;
         DynamicPoiCategoryHandler.getLogger().makeTrace().append("getDynamicPoiCategoryByOnboardUid(").append(n).append(")").log();
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
-        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
+        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
         if (ServiceManager.configManagerDiag.isFeatureFlagSet(26) ? n != 102 : !ServiceManager.configManagerDiag.isFeatureFlagSet(59) && !bl) {
             return 4;
         }

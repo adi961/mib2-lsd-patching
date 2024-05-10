@@ -41,30 +41,30 @@ extends StatemachineActivityBase {
         switch (n - this.IT_OFFSET) {
             case 0: {
                 if (this.getInteger(23421) == 1) {
-                    this.setBoolean(280494080, true);
+                    this.setBoolean(314048512, true);
                 }
                 if (this.getInteger(23421) == 1) {
-                    this.setBoolean(-538509312, true);
+                    this.setBoolean(-471400448, true);
                 }
                 if (this.getInteger(23421) == 1) {
-                    this.setBoolean(-2068643840, true);
+                    this.setBoolean(-2035089408, true);
                 }
                 if (this.getInteger(23421) == 1) {
-                    this.setBoolean(-402063104, true);
+                    this.setBoolean(-334954240, true);
                 }
                 if (this.getInteger(23421) == 3) {
-                    this.setBoolean(-1311834112, true);
+                    this.setBoolean(-1278279680, true);
                 }
                 if (this.getInteger(23421) == 4) {
-                    this.setBoolean(-141623296, true);
+                    this.setBoolean(-124846080, true);
                 }
                 if (this.getInteger(23421) == 6) {
                     this.setBoolean(15234, true);
                 }
                 if (this.getInteger(23421) == 5) {
-                    this.setBoolean(772342016, true);
+                    this.setBoolean(839450880, true);
                 }
-                SpaceGestureIndicatorActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 90672457);
+                SpaceGestureIndicatorActivity.fireHMIEvent(this.fromMe(), this.meSelf(), 73895241);
                 if (this.getInteger(23421) == 1) {
                     this.setBoolean(17656, true);
                 }
@@ -73,14 +73,14 @@ extends StatemachineActivityBase {
                 break;
             }
             case 1: {
-                this.setBoolean(280494080, false);
-                this.setBoolean(-2068643840, false);
-                this.setBoolean(-538509312, false);
-                this.setBoolean(-402063104, false);
+                this.setBoolean(314048512, false);
+                this.setBoolean(-2035089408, false);
+                this.setBoolean(-471400448, false);
+                this.setBoolean(-334954240, false);
                 this.setBoolean(15234, false);
-                this.setBoolean(772342016, false);
-                this.setBoolean(-141623296, false);
-                this.setBoolean(-1311834112, false);
+                this.setBoolean(839450880, false);
+                this.setBoolean(-124846080, false);
+                this.setBoolean(-1278279680, false);
                 break;
             }
         }

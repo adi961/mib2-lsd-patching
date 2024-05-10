@@ -51,7 +51,7 @@ ServiceListener {
     private AppDiagManager appDiagManager;
     private AppFrameworkCioFactory appFrameworkCioFactory;
     private final ArrayList appFrameworkDiagListeners = new ArrayList();
-    private boolean appLifecycleManagerRegistered;
+    private volatile boolean appLifecycleManagerRegistered;
     private AppUIGateFactory appUIGateFactory;
     private ASLClientAPIRegistry aslClientApiRegistry;
     private BundleContext bundleContext;
@@ -138,58 +138,9 @@ ServiceListener {
 
     private void createAndRegisterAppLifecycleManagerIfNeeded() {
         Object object;
-        if (this.appLifecycleManagerRegistered) {
+        if (!this.checkRequiredServices()) {
             return;
         }
-        if (this.appDefinitionDataProvider == null) {
-            return;
-        }
-        if (this.appFrameworkCioFactory == null) {
-            return;
-        }
-        if (this.appUIGateFactory == null) {
-            return;
-        }
-        if (this.aslClientApiRegistry == null) {
-            return;
-        }
-        if (this.cioDictionary == null) {
-            return;
-        }
-        if (this.cioDispatcher == null) {
-            return;
-        }
-        if (this.cioFactory == null) {
-            return;
-        }
-        if (this.contentProcessor == null) {
-            return;
-        }
-        if (this.desktopManager == null) {
-            return;
-        }
-        if (this.esamDefinitionDataService == null) {
-            return;
-        }
-        if (this.modelApiProxyFactory == null) {
-            return;
-        }
-        if (this.frameworkEventDispatcher == null) {
-            return;
-        }
-        if (this.startupEventDispatcher == null) {
-            return;
-        }
-        if (this.statemachineEventDispatcher == null) {
-            return;
-        }
-        if (this.threadSwitchingTarget == null) {
-            return;
-        }
-        if (this.viewEventDispatcher == null) {
-            return;
-        }
-        this.appLifecycleManagerRegistered = true;
         Services$CioFrameworkServices services$CioFrameworkServices = new Services$CioFrameworkServices(this.appFrameworkCioFactory, this.cioDictionary, this.cioDispatcher, this.cioFactory);
         Services$EventDispatcherServices services$EventDispatcherServices = new Services$EventDispatcherServices(this.frameworkEventDispatcher, this.startupEventDispatcher, this.statemachineEventDispatcher, this.viewEventDispatcher, this.threadSwitchingTarget);
         Services$CommonFrameworkServices services$CommonFrameworkServices = new Services$CommonFrameworkServices(this.bundleContext, this.loggerFactory, this.aslClientApiRegistry, this.hmiListDataFactory, this.hmiListRegistry);
@@ -221,6 +172,68 @@ ServiceListener {
         }
         this.bundleContext.registerService((class$de$vw$mib$event$consumer$AppStartupManagerEventConsumer == null ? (class$de$vw$mib$event$consumer$AppStartupManagerEventConsumer = Activator.class$("de.vw.mib.event.consumer.AppStartupManagerEventConsumer")) : class$de$vw$mib$event$consumer$AppStartupManagerEventConsumer).getName(), (Object)services$AppFrameworkManagerServices.getAppLifecycleManager(), null);
         this.logger.info(8, "app framework initialized!");
+    }
+
+    private synchronized boolean checkRequiredServices() {
+        if (this.appLifecycleManagerRegistered) {
+            return false;
+        }
+        if (this.appDefinitionDataProvider == null) {
+            return false;
+        }
+        if (this.appFrameworkCioFactory == null) {
+            return false;
+        }
+        if (this.appUIGateFactory == null) {
+            return false;
+        }
+        if (this.aslClientApiRegistry == null) {
+            return false;
+        }
+        if (this.cioDictionary == null) {
+            return false;
+        }
+        if (this.cioDispatcher == null) {
+            return false;
+        }
+        if (this.cioFactory == null) {
+            return false;
+        }
+        if (this.contentProcessor == null) {
+            return false;
+        }
+        if (this.desktopManager == null) {
+            return false;
+        }
+        if (this.esamDefinitionDataService == null) {
+            return false;
+        }
+        if (this.modelApiProxyFactory == null) {
+            return false;
+        }
+        if (this.frameworkEventDispatcher == null) {
+            return false;
+        }
+        if (this.startupEventDispatcher == null) {
+            return false;
+        }
+        if (this.statemachineEventDispatcher == null) {
+            return false;
+        }
+        if (this.threadSwitchingTarget == null) {
+            return false;
+        }
+        if (this.viewEventDispatcher == null) {
+            return false;
+        }
+        if (this.hmiListDataFactory == null) {
+            return false;
+        }
+        if (this.hmiListRegistry == null) {
+            return false;
+        }
+        this.appLifecycleManagerRegistered = true;
+        return true;
     }
 
     private void handleServiceRegistered(String string, Object object, ServiceReference serviceReference) {

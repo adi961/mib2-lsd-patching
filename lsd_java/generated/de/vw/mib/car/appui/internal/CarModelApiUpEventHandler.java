@@ -23,11 +23,11 @@ implements ModelApiUpEventHandler {
         int n = modelApiUpEvent.getActionId();
         switch (n) {
             case 0: {
-                this.modelDatapool.setString(2026569728, modelApiUpEvent.getString(0));
+                this.modelDatapool.setString(2060124160, modelApiUpEvent.getString(0));
                 break;
             }
             case 1: {
-                this.modelDatapool.setInteger(2011496448, modelApiUpEvent.getInt(0));
+                this.modelDatapool.setInteger(2078605312, modelApiUpEvent.getInt(0));
                 break;
             }
             default: {

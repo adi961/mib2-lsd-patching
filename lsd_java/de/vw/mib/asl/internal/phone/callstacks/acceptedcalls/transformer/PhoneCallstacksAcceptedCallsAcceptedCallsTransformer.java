@@ -27,7 +27,7 @@ extends AbstractPhoneCallstacksAcceptedCallsAcceptedCallsTransformer {
                 return callStackEntry.adbEntryID != 0L;
             }
             case 16: {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(376) && ASLSystemFactory.getSystemApi().isTimeDateValid()) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(377) && ASLSystemFactory.getSystemApi().isTimeDateValid()) {
                     ClockDate clockDate = ASLSystemFactory.getSystemApi().getCurrentDate();
                     byte by = clockDate.getDay();
                     byte by2 = clockDate.getMonth();

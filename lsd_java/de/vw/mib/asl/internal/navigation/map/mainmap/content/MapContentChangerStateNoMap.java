@@ -76,7 +76,7 @@ extends AbstractHsmState {
 
     private void handleStart() {
         this.logger.trace("handleStart()");
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139) && this.target.datapool.isMapLocatedInKombi()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140) && this.target.datapool.isMapLocatedInKombi()) {
             this.logger.trace("Ignore viewSetInvisible as Map is currently located at FPK.");
             return;
         }

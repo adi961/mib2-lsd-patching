@@ -279,7 +279,7 @@ extends AbstractHsmState {
     }
 
     public void dsiSoundUpdatePresetPositionList(int n, int n2) {
-        if (Util.isBitSet(1, n) && Util.isBitSet(2, n) && (ServiceManager.configManagerDiag.isFeatureFlagSet(353) || Util.isBitSet(4, n))) {
+        if (Util.isBitSet(1, n) && Util.isBitSet(2, n) && (ServiceManager.configManagerDiag.isFeatureFlagSet(354) || Util.isBitSet(4, n))) {
             AbstractASLHsmTarget.writeBooleanToDatapool(1512, true);
         } else {
             AbstractASLHsmTarget.writeBooleanToDatapool(1512, false);

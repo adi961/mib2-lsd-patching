@@ -186,7 +186,7 @@ implements ILocationFormatterConstants {
                 break;
             }
             case 0: {
-                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(9)) break;
+                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(10)) break;
                 ServiceManager.aslPropertyManager.valueChangedInteger(-1376776192, 0);
                 break;
             }
@@ -242,7 +242,7 @@ implements ILocationFormatterConstants {
                 break;
             }
             case 0: {
-                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(9)) {
+                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(10)) {
                     navigationMemoryDestinationDetailsCollector.navigation_memory_destinations_type = 2;
                     break;
                 }

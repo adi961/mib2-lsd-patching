@@ -466,7 +466,7 @@ public class AmFmSettingsPersistable {
         if (amFmStation == null || !amFmStation.isValidFmStation()) {
             amFmStation = new AmFmStation(1, AmFmDefaultSettings.getFmDefaultFrequency());
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(423)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(424)) {
             amFmStation.setName(RadioServiceManager.getServiceManager().getCorrectFmStationName(amFmStation));
         }
         object = RadioServiceManager.getServiceManager().getAdapterAslPersistence().createAmFmStationPersistence(amFmStation);
@@ -506,7 +506,7 @@ public class AmFmSettingsPersistable {
         if (amFmStation == null || !amFmStation.isValidAmStation()) {
             amFmStation = new AmFmStation(3, AmFmDefaultSettings.getAmDefaultFrequency());
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList()) && (string = ((StationNameFreqList)object).getStationName(amFmStation.getFrequency())).length() > 0) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList()) && (string = ((StationNameFreqList)object).getStationName(amFmStation.getFrequency())).length() > 0) {
             amFmStation.setName(string);
         }
         object = RadioServiceManager.getServiceManager().getAdapterAslPersistence().createAmFmStationPersistence(amFmStation);

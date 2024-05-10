@@ -222,7 +222,7 @@ implements ASLNavigationServiceMainMap {
             ASLNavigationServiceMainMapEvents.sendEventServiceError(this.clientTarget, 6);
             return;
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139) && this.datapool.isMapLocatedInKombi()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140) && this.datapool.isMapLocatedInKombi()) {
             this.datapool.setSwitchDoneAtLockMapViewer(true);
             ASLNavigationMapFactory.getNavigationMapApi().sendMapViewMapTriggerSwitch();
             this.datapool.setRestoreZoom();
@@ -493,7 +493,7 @@ implements ASLNavigationServiceMainMap {
             this.datapool.getMapConfig().setAutozoom(bl2);
             this.queuedActions.add(new Integer(7));
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(408) && ((n5 = aSLNavigationMapConfiguration.getMapLayerVisible()) != this.datapool.getMapLayerVisible() || bl)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(409) && ((n5 = aSLNavigationMapConfiguration.getMapLayerVisible()) != this.datapool.getMapLayerVisible() || bl)) {
             this.datapool.getMapConfig().setMapLayerVisible(n5);
             this.queuedActions.add(new Integer(3));
         }
@@ -820,7 +820,7 @@ implements ASLNavigationServiceMainMap {
             this.LOGGER.makeTrace().append("releaseView() - fire EV_REINIT_MAPVIEW").log();
         }
         this.sendHMIEvent(200282112);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(139) && this.datapool.isSwitchDoneAtLockMapViewer()) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(140) && this.datapool.isSwitchDoneAtLockMapViewer()) {
             this.datapool.setSwitchDoneAtLockMapViewer(false);
             ASLNavigationMapFactory.getNavigationMapApi().sendMapViewMapTriggerSwitch();
             this.notifierDSI.viewFreeze();

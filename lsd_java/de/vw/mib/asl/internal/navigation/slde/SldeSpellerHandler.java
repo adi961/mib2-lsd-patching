@@ -19,7 +19,7 @@ import org.dsi.ifc.global.NavLocation;
 
 public class SldeSpellerHandler
 extends AbstractNavGatewayTarget {
-    final boolean initXt9 = ServiceManager.configManagerDiag.isFeatureFlagSet(168) || ServiceManager.configManagerDiag.isFeatureFlagSet(111) || ServiceManager.configManagerDiag.isFeatureFlagSet(125);
+    final boolean initXt9 = ServiceManager.configManagerDiag.isFeatureFlagSet(169) || ServiceManager.configManagerDiag.isFeatureFlagSet(112) || ServiceManager.configManagerDiag.isFeatureFlagSet(126);
     private int[] spellerEvents = new int[]{1237913664, 583602240, 600379456, 902369344, 919146560, 1221136448};
     private Vector spellerDataChangedListener = new Vector();
     private Vector spellerTextChangedListener = new Vector();

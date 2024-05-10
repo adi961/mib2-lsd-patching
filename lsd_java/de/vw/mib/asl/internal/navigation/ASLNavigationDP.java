@@ -286,14 +286,14 @@ implements INavigationDP {
 
     private void setDefaultLocation() {
         if (this.defaultLocation == null) {
-            boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(0);
-            int n = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(2);
-            int n2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(3);
-            int n3 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(5);
-            boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(4);
-            int n4 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(1);
-            int n5 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(0);
-            int n6 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(4);
+            boolean bl = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
+            int n = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(1);
+            int n2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(4);
+            int n3 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(0);
+            boolean bl2 = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(0);
+            int n4 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(5);
+            int n5 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(2);
+            int n6 = ServiceManager.configManagerDiag.getNaviLocationOptionDefault(3);
             int n7 = NaviHelper.getInstance().degMinSecToDsi(new double[]{n, n2, n3}, bl);
             int n8 = NaviHelper.getInstance().degMinSecToDsi(new double[]{n4, n5, n6}, bl2);
             this.defaultLocation = ASLNavigationUtilFactory.getNavigationUtilApi().getLocationWrapper(n7, n8).getLocation();

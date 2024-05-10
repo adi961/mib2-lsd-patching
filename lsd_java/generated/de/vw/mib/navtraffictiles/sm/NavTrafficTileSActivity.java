@@ -17,7 +17,7 @@ extends StatemachineActivityBase {
         switch (n - this.S_OFFSET) {
             case 5: {
                 this.triggerObserver(-2134743232);
-                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2023387831);
+                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2040165047);
                 this.showView("Nt", bl, this.getIncludeDdpGroupId());
                 break;
             }
@@ -29,7 +29,7 @@ extends StatemachineActivityBase {
         switch (n - this.S_OFFSET) {
             case 5: {
                 this.hideView("Nt");
-                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2006610615);
+                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2023387831);
                 break;
             }
         }
@@ -44,7 +44,7 @@ extends StatemachineActivityBase {
         switch (n - this.IT_OFFSET) {
             case 1: {
                 this.triggerObserver(-2134743232);
-                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2023387831);
+                NavTrafficTileSActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -2040165047);
                 break;
             }
         }

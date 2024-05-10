@@ -24,11 +24,11 @@ extends StatemachineActivityBase {
                 this.performStateEntryAction_SubHapticSwdlCustomerDownloadDynState(n, bl);
                 break;
             }
-            case 657: {
+            case 656: {
                 this.performStateEntryAction_SubIGenericDomainErrorBridge(n, bl);
                 break;
             }
-            case 658: {
+            case 657: {
                 this.performStateEntryAction_SubIGenericDomainNotAvailableBridge(n, bl);
                 break;
             }
@@ -45,11 +45,11 @@ extends StatemachineActivityBase {
                 this.performStateExitAction_SubHapticSwdlCustomerDownloadDynState(n);
                 break;
             }
-            case 657: {
+            case 656: {
                 this.performStateExitAction_SubIGenericDomainErrorBridge(n);
                 break;
             }
-            case 658: {
+            case 657: {
                 this.performStateExitAction_SubIGenericDomainNotAvailableBridge(n);
                 break;
             }
@@ -137,39 +137,39 @@ extends StatemachineActivityBase {
     private void performStateEntryAction_SubHapticSwdlCustomerDownloadDynState(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 0: {
-                this.setInteger(1527709952, 2);
+                this.setInteger(1594818816, 2);
                 break;
             }
             case 8: {
                 this.setInteger(26545, SkinDataPool.getInteger(190));
-                this.setInteger(0x820000, 21);
-                this.setInteger(1527709952, 3);
+                this.setInteger(25296896, 21);
+                this.setInteger(1594818816, 3);
                 break;
             }
             case 11: {
-                this.setBoolean(-351993600, true);
+                this.setBoolean(-284884736, true);
                 break;
             }
             case 18: {
-                this.setInteger(84869376, 3);
+                this.setInteger(151978240, 3);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 this.showView("Scdanp", bl, this.getIncludeDdpGroupId());
                 break;
             }
             case 19: {
-                this.setInteger(84869376, 2);
+                this.setInteger(151978240, 2);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 this.showView("Scdnanp", bl, this.getIncludeDdpGroupId());
                 break;
             }
             case 20: {
-                this.setInteger(84869376, 4);
+                this.setInteger(151978240, 4);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 break;
             }
@@ -186,9 +186,9 @@ extends StatemachineActivityBase {
                 break;
             }
             case 26: {
-                this.setInteger(84869376, 1);
+                this.setInteger(151978240, 1);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 this.showView("Scdnap", bl, this.getIncludeDdpGroupId());
                 break;
@@ -198,19 +198,19 @@ extends StatemachineActivityBase {
                 break;
             }
             case 31: {
-                this.setInteger(0x100A0100, 5);
-                this.setInteger(1150418944, 7);
+                this.setInteger(336199936, 5);
+                this.setInteger(1167196160, 7);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(1150418944));
+                eventGeneric.setInt(0, this.getInteger(1167196160));
                 this.triggerObserver(0x50050040, eventGeneric);
                 break;
             }
             case 34: {
-                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1264684361);
+                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1247907145);
                 break;
             }
             case 35: {
-                this.setInteger(1527709952, 2);
+                this.setInteger(1594818816, 2);
                 break;
             }
         }
@@ -219,38 +219,38 @@ extends StatemachineActivityBase {
     private void performStateExitAction_SubHapticSwdlCustomerDownloadDynState(int n) {
         switch (n - this.S_OFFSET) {
             case 0: {
-                this.setInteger(1527709952, 0);
+                this.setInteger(1594818816, 0);
                 break;
             }
             case 8: {
                 this.setInteger(26545, SkinDataPool.getInteger(180));
-                this.setInteger(0x820000, 0);
+                this.setInteger(25296896, 0);
                 break;
             }
             case 11: {
-                this.setBoolean(-351993600, false);
+                this.setBoolean(-284884736, false);
                 break;
             }
             case 18: {
                 this.hideView("Scdanp");
-                this.setInteger(84869376, 0);
+                this.setInteger(151978240, 0);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 break;
             }
             case 19: {
                 this.hideView("Scdnanp");
-                this.setInteger(84869376, 0);
+                this.setInteger(151978240, 0);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 break;
             }
             case 20: {
-                this.setInteger(84869376, 0);
+                this.setInteger(151978240, 0);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 break;
             }
@@ -268,9 +268,9 @@ extends StatemachineActivityBase {
             }
             case 26: {
                 this.hideView("Scdnap");
-                this.setInteger(84869376, 0);
+                this.setInteger(151978240, 0);
                 EventGeneric eventGeneric = SwdlCustomerDownloadActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(84869376));
+                eventGeneric.setInt(0, this.getInteger(151978240));
                 this.triggerObserver(1460142144, eventGeneric);
                 break;
             }
@@ -284,7 +284,7 @@ extends StatemachineActivityBase {
     private boolean evalInternalTransitionGuard_SubHapticSwdlCustomerDownloadDynState(int n) {
         switch (n - this.IT_OFFSET) {
             case 0: {
-                return this.getBoolean(-1347092480);
+                return this.getBoolean(-1313538048);
             }
         }
         return true;
@@ -297,7 +297,7 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction_SubHapticSwdlCustomerDownloadDynState0(int n) {
         switch (n - this.IT_OFFSET) {
             case 0: {
-                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1231064393);
+                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1214287177);
                 break;
             }
             case 1: {
@@ -309,19 +309,19 @@ extends StatemachineActivityBase {
                 break;
             }
             case 3: {
-                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1264684361);
+                SwdlCustomerDownloadActivity.fireHMIEvent(ANY, BROADCAST, 1247907145);
                 break;
             }
             case 4: {
                 this.triggerObserver(1476919360);
                 this.triggerObserver(1493696576);
-                SwdlCustomerDownloadActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1150841527);
+                SwdlCustomerDownloadActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1167618743);
                 break;
             }
             case 5: {
                 this.triggerObserver(1476919360);
                 this.triggerObserver(1493696576);
-                SwdlCustomerDownloadActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1150841527);
+                SwdlCustomerDownloadActivity.fireHMIEvent(this.fromMe(), this.meSelf(), -1167618743);
                 break;
             }
         }
@@ -343,22 +343,22 @@ extends StatemachineActivityBase {
     private boolean evalUntriggeredTransitionGuard_SubHapticSwdlCustomerDownloadDynState(int n) {
         switch (n - this.UT_OFFSET) {
             case 6: {
-                return this.getInteger(-561905664) == 0;
+                return this.getInteger(-545128448) == 0;
             }
             case 7: {
-                return this.getInteger(-561905664) == 1;
+                return this.getInteger(-545128448) == 1;
             }
             case 10: {
-                return this.getBoolean(-1028980736) && this.getBoolean(-1347092480);
+                return this.getBoolean(-995426304) && this.getBoolean(-1313538048);
             }
             case 11: {
-                return !this.getBoolean(-1028980736);
+                return !this.getBoolean(-995426304);
             }
             case 14: {
-                return !this.getBoolean(-1347092480);
+                return !this.getBoolean(-1313538048);
             }
             case 17: {
-                return !this.getBoolean(-2066743296);
+                return !this.getBoolean(-2033188864);
             }
         }
         return true;

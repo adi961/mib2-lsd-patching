@@ -368,7 +368,7 @@ TargetForResetNavigation {
 
     private void resetAllSettings() {
         this.myTarget.trace("RESETING all navi setup settings back to factory defaults.");
-        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
+        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
         this.setTimeDisplay(n);
         this.setDemoMode(false);
         this.setBorderCrossingHint(true);

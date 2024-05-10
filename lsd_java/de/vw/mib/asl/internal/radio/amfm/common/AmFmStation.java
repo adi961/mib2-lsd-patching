@@ -226,7 +226,7 @@ Loggable {
         StationNameFreqList stationNameFreqList;
         this.mStation.name = persistenceInputStream.readString();
         this.setFrequency(persistenceInputStream.readInt());
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != this.mStation.name && this.mStation.name.length() > 0 && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != this.mStation.name && this.mStation.name.length() > 0 && null != (stationNameFreqList = RadioData.getAmfmDatabase().getStationNameFreqList())) {
             stationNameFreqList.addCurrentStation((int)this.mStation.frequency, this.mStation.name);
         }
         this.setPI(persistenceInputStream.readInt());

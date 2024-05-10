@@ -45,7 +45,7 @@ extends StatemachineActivityBase {
     public boolean evalInternalTransitionGuard(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                return this.getBoolean(-1642725120);
+                return this.getBoolean(-1558839040);
             }
             case 2: {
                 return MediaTileSActivity.evPointGestureParam1() > 0;
@@ -65,23 +65,23 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                if (this.getInteger(-994836480) == 6 || this.getInteger(-994836480) == 7 || this.getInteger(-994836480) == 1) {
-                    this.setInteger(-1294860288, 2);
+                if (this.getInteger(-961282048) == 6 || this.getInteger(-961282048) == 7 || this.getInteger(-961282048) == 1) {
+                    this.setInteger(-1261305856, 2);
                 }
-                if (this.getInteger(-994836480) != 6 && this.getInteger(-994836480) != 7 && this.getInteger(-994836480) != 1) {
-                    this.setInteger(-1294860288, 1);
+                if (this.getInteger(-961282048) != 6 && this.getInteger(-961282048) != 7 && this.getInteger(-961282048) != 1) {
+                    this.setInteger(-1261305856, 1);
                 }
                 EventGeneric eventGeneric = MediaTileSActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(-1294860288));
+                eventGeneric.setInt(0, this.getInteger(-1261305856));
                 this.triggerObserver(0x11000040, eventGeneric);
                 break;
             }
             case 2: {
-                MediaTileSActivity.fireHMIEvent(ANY, BROADCAST, -1889825463);
+                MediaTileSActivity.fireHMIEvent(ANY, BROADCAST, -1906602679);
                 break;
             }
             case 3: {
-                MediaTileSActivity.fireHMIEvent(ANY, BROADCAST, -1956934327);
+                MediaTileSActivity.fireHMIEvent(ANY, BROADCAST, -1973711543);
                 break;
             }
             case 4: {

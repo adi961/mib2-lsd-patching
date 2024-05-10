@@ -50,7 +50,7 @@ extends StatemachineActivityBase {
         switch (n - this.IT_OFFSET) {
             case 0: {
                 this.setInteger(29840, 23);
-                this.setBoolean(32339, true);
+                this.setBoolean(32340, true);
                 this.fireModelApiDownEvent(this.createModelApiDownEvent(22));
                 break;
             }
@@ -61,7 +61,7 @@ extends StatemachineActivityBase {
     public boolean evalUntriggeredTransitionGuard(int n) {
         switch (n - this.UT_OFFSET) {
             case 0: {
-                return !(this.getInteger(20401) != 1 && this.getInteger(20401) != 0 || !this.getBoolean(-234422016) && this.getInteger(-471465984) != 2);
+                return !(this.getInteger(20401) != 1 && this.getInteger(20401) != 0 || !this.getBoolean(-167313152) && this.getInteger(-404357120) != 2);
             }
         }
         return true;

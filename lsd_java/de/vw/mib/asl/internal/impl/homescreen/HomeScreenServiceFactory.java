@@ -26,7 +26,7 @@ class HomeScreenServiceFactory {
         arrayList.add(new Tile("BigTile", 0, 0));
         arrayList.add(new Tile("SmallTile", 0, 1));
         arrayList.add(new Tile("SmallTile", 1, 2));
-        if (configurationManagerDiag.isFeatureFlagSet(69)) {
+        if (configurationManagerDiag.isFeatureFlagSet(70)) {
             arrayList.add(new Tile("SmallTile", 2, 3));
             arrayList.add(new Tile("SmallTile", 3, 4));
         }

@@ -87,7 +87,7 @@ extends AbstractTarget {
         new HomeAddressBootstrap(resultHandler).initialize();
         new ContactsBootstrap(this, resultHandler).initialize();
         new OnboardPOIsBootstrap(this, resultHandler).initialize();
-        if (SpeechNavigationStartTarget.getASLServices().getConfigurationManagerDiag().isFeatureFlagSet(125)) {
+        if (SpeechNavigationStartTarget.getASLServices().getConfigurationManagerDiag().isFeatureFlagSet(126)) {
             new DestinationInputJpnBootstrap(this, resultHandler).initialize();
         } else {
             new DestinationInputBootstrap(this, resultHandler).initialize();

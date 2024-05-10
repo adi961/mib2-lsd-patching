@@ -205,7 +205,7 @@ ASLNavigationContainer {
         this.targetProfileChange = new HsmTargetProfileChange(genericEvents, -833940480, string);
         this.targetProfileChange.triggerMe(106);
         this.targetProfileChange.triggerMe(-1987444480);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             ASLNavigationStartupFactory.getNavigationStartupApi().addTarget(0, new MapRegionalUpdateTargetHSM(genericEvents, -766831616, string));
         }
     }

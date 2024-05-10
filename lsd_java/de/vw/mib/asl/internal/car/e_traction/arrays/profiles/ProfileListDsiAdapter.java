@@ -108,7 +108,7 @@ implements ProfileListDsiListener {
 
     @Override
     public void dsiCarHybridResponseProfileListRA6(BatteryControlProfilesAH batteryControlProfilesAH, BatteryControlProfileRA6[] batteryControlProfileRA6Array) {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(101) && batteryControlProfilesAH.asgID == 0) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(102) && batteryControlProfilesAH.asgID == 0) {
             batteryControlProfilesAH.asgID = 1;
         }
         BAPStatusArray bAPStatusArray = this.convertToStatusArrayHeader(batteryControlProfilesAH);

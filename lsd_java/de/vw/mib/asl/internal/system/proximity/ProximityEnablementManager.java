@@ -60,8 +60,8 @@ extends AbstractSystemTarget {
         boolean bl;
         boolean bl2 = this.systemCommon.isProximityEnabled();
         boolean bl3 = bl = this.abtFeatureService.getProximitySensor() != 0;
-        if (this.configurationManager.isFeatureFlagSet(390)) {
-            bl = this.configurationManager.isFeatureFlagSet(389);
+        if (this.configurationManager.isFeatureFlagSet(391)) {
+            bl = this.configurationManager.isFeatureFlagSet(390);
         }
         boolean bl4 = bl2 && bl;
         this.enablementFilter.enableProximity(bl4);

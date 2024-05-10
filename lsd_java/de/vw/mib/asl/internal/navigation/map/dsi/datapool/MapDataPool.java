@@ -30,7 +30,7 @@ public class MapDataPool {
     private boolean[] ehCategoryVisibilityCategoryVisibility;
     private long ensureTMCVisibilityMessageId;
     private ArrayList favoritesList;
-    private final boolean feature3DLandmarksEnabled = ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(5);
+    private final boolean feature3DLandmarksEnabled = ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(7);
     private final boolean featureShowEnhancedCityModelAllViewtypes = ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(3);
     private boolean generalPOIVisibility;
     private long gotToTMCMessageId;

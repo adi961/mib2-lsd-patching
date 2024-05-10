@@ -13,7 +13,7 @@ extends AbstractSharedPersistable {
     private static final short VERSION;
     private static final short[] SUPPORTED_VERSIONS;
     private boolean externalAppsUserSettingEnabled = true;
-    private int rseUserSetting = ServiceManager.configManagerDiag.isFeatureFlagSet(353) ? 2 : 1;
+    private int rseUserSetting = ServiceManager.configManagerDiag.isFeatureFlagSet(354) ? 2 : 1;
 
     public ExlapPersistence() {
         super(5025, 0);
@@ -48,7 +48,7 @@ extends AbstractSharedPersistable {
     @Override
     public void clear() {
         this.setExternalAppsUserSettingEnabled(true);
-        this.setRseUserSetting(ServiceManager.configManagerDiag.isFeatureFlagSet(353) ? 2 : 1);
+        this.setRseUserSetting(ServiceManager.configManagerDiag.isFeatureFlagSet(354) ? 2 : 1);
     }
 
     public int getRseUserSetting() {

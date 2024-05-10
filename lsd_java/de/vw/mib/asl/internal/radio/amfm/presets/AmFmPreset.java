@@ -434,7 +434,7 @@ extends Preset {
                         object2 = object;
                     }
                 }
-                if ((null == object2 || ((String)object2).length() < 1) && this.mPresetStation.getName().length() < 1 && ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+                if ((null == object2 || ((String)object2).length() < 1) && this.mPresetStation.getName().length() < 1 && ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                     object2 = ((StationNameFreqList)object).getStationName(this.mPresetStation.getFrequency());
                     if (ServiceManager.logger.isTraceEnabled(128)) {
                         ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM).append("AmFmPreset - setStationName() - ").append("Name from NAV database: ").append((String)object2).log();
@@ -522,7 +522,7 @@ extends Preset {
         if (!this.isEmpty() && this.mWaveband == 0) {
             aMPresetListInfoCollector.frequency = this.mPresetStation.getFrequency();
             aMPresetListInfoCollector.hdStationNumber = -1;
-            aMPresetListInfoCollector.name = ServiceManager.configManagerDiag.isFeatureFlagSet(423) ? this.mPresetStation.getName() : "";
+            aMPresetListInfoCollector.name = ServiceManager.configManagerDiag.isFeatureFlagSet(424) ? this.mPresetStation.getName() : "";
             if (this.mPresetStation != null && this.mPresetStation.isHD() && AmFmHDOptionRequester.getAm()) {
                 aMPresetListInfoCollector.hdStationNumber = 0;
             }
@@ -551,7 +551,7 @@ extends Preset {
             AmFmStationListFM amFmStationListFM;
             fMPresetListInfoCollector.frequency = this.mPresetStation.getFrequency();
             String string = this.mPresetStation.getStationName();
-            fMPresetListInfoCollector.name = string != null ? (ServiceManager.configManagerDiag.isFeatureFlagSet(2) || ServiceManager.configManagerDiag.isFeatureFlagSet(418) || ServiceManager.configManagerDiag.isFeatureFlagSet(423) || RadioDataSessionManager.getInstance().countryList.isDatabaseNameActivatedForPresets() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive() ? string : (null != RadioCodingAdapter.mAmFmCodingData && (!RadioCodingAdapter.isPiActivated() || !AmfmRDSOption.get() && RadioCodingAdapter.isPiActivated()) ? "" : string)) : "";
+            fMPresetListInfoCollector.name = string != null ? (ServiceManager.configManagerDiag.isFeatureFlagSet(2) || ServiceManager.configManagerDiag.isFeatureFlagSet(419) || ServiceManager.configManagerDiag.isFeatureFlagSet(424) || RadioDataSessionManager.getInstance().countryList.isDatabaseNameActivatedForPresets() && RadioData.getAmfmDatabase().getSettingsPersistable().isAutoStoreLogoActive() ? string : (null != RadioCodingAdapter.mAmFmCodingData && (!RadioCodingAdapter.isPiActivated() || !AmfmRDSOption.get() && RadioCodingAdapter.isPiActivated()) ? "" : string)) : "";
             fMPresetListInfoCollector.pi = this.mPresetStation.getPi();
             AmFmStation amFmStation = null;
             if (null != RadioData.getAmfmDatabase() && null != (amFmStationListFM = RadioData.getAmfmDatabase().getAslStationListFM())) {

@@ -38,7 +38,7 @@ public class ContentProcessorManagerFactory {
         contentProcessorManagerImpl.registerContentProcessor(new StaticContentProcessor(logger, "ScreenAreaStatus", "HMI_STATUS_BAR"));
         contentProcessorManagerImpl.registerContentProcessor(new StaticContentProcessor(logger, "ScreenAreaMenu", "HMI_GRIDMENU"));
         contentProcessorManagerImpl.registerContentProcessor(new StaticContentProcessor(logger, "ScreenAreaSpaceGesture", "HMI_SPACEGESTUREINDICATOR"));
-        if (configurationManagerDiag.isFeatureFlagSet(383)) {
+        if (configurationManagerDiag.isFeatureFlagSet(384)) {
             contentProcessorManagerImpl.registerContentProcessor(new StaticContentProcessor(logger, "ScreenAreaParticleBackground", "HMI_BACKGROUND"));
         }
         SpeechContentProcessor speechContentProcessor = new SpeechContentProcessor(logger);

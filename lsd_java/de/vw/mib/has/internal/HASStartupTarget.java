@@ -273,7 +273,7 @@ implements Target {
 
     static {
         CLIENT_NAMES = new String[]{"EXLAP", "OnlineServices"};
-        FEATURE_FLAGS = new int[]{64, 184};
+        FEATURE_FLAGS = new int[]{64, 185};
         CLIENT_DEFAULTS = new boolean[]{true, false};
     }
 }

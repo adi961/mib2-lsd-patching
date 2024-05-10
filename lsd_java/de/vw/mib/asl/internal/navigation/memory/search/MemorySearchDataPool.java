@@ -202,7 +202,7 @@ final class MemorySearchDataPool {
     }
 
     static {
-        SWITCH_TO_LIST_RESULT_LIMIT = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(0);
+        SWITCH_TO_LIST_RESULT_LIMIT = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(3);
     }
 }
 

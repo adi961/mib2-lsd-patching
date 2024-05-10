@@ -48,7 +48,7 @@ TaskListener {
         this.runState = n;
         this.isLanguageSupported = true;
         this.isLanguageChanging = false;
-        this.isSwapActive = this.configurationManager.isFeatureFlagSet(582);
+        this.isSwapActive = this.configurationManager.isFeatureFlagSet(584);
         this.activityManager.addObserver(this, ActivityType.STARTUP);
         this.activityManager.addObserver(this, ActivityType.RESTART_ASR);
         this.activityManager.addObserver(this, ActivityType.RESTART_TTS);
@@ -161,7 +161,7 @@ TaskListener {
     }
 
     void onRtMethodValueChangedInASLThread() {
-        this.isSwapActive = this.configurationManager.isFeatureFlagSet(582);
+        this.isSwapActive = this.configurationManager.isFeatureFlagSet(584);
         this.updateApplicationState();
     }
 

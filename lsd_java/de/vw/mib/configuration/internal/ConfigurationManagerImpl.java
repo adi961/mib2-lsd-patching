@@ -13,6 +13,7 @@ import de.vw.mib.configuration.internal.PropertiesReader;
 import de.vw.mib.configuration.internal.ServiceManager;
 import de.vw.mib.configuration.internal.generated.ConfigurationManagerImplGenerated;
 import de.vw.mib.dynamicresourcedata.DynamicResourceDataDescription;
+import de.vw.mib.log4mib.internal.MainLogger;
 import de.vw.mib.lsctng.LanguageChanger;
 import de.vw.mib.lsctng.SkinChanger;
 import de.vw.mib.lsctng.SkinmodeChanger;
@@ -146,6 +147,9 @@ ConfigurationManagerAsyncValueSetterService {
             ServiceManager.logManager.addHeartbeatInformation("hmisoftware.base.version", this.getHmiSoftwareBaseVersion());
             ServiceManager.logManager.addHeartbeatInformation("skin.short.version", this.getSkinShortVersion());
             ServiceManager.logManager.addHeartbeatInformation("vehicle.id", this.getEncodedVehicleType());
+            if (this.isFeatureFlagSet(66)) {
+                MainLogger.initLogger().disableLogging();
+            }
         }
     }
 
@@ -160,7 +164,7 @@ ConfigurationManagerAsyncValueSetterService {
 
     @Override
     public boolean isTestModeAvailable() {
-        return this.isFeatureFlagSet(400);
+        return this.isFeatureFlagSet(401);
     }
 
     @Override
@@ -529,7 +533,7 @@ ConfigurationManagerAsyncValueSetterService {
 
     @Override
     public int[] getNaviCommonOptionDefaultVisiblePoiCategories() {
-        if (this.isFeatureFlagSet(26) && this.isFeatureFlagSet(369)) {
+        if (this.isFeatureFlagSet(26) && this.isFeatureFlagSet(370)) {
             int[] nArray = new int[]{-202702848, 101, 1575682048};
             return nArray;
         }

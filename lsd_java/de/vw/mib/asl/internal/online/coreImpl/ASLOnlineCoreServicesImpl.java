@@ -94,6 +94,11 @@ implements ASLOnlineCoreServices {
     }
 
     @Override
+    public boolean isServiceInUsableState(String string) {
+        return CoreServiceImplFactory.getCoreServiceController().isServiceInUsableState(string);
+    }
+
+    @Override
     public ResourceLocator getOnlineImage(int n, String string, int n2, String string2, String string3, ASLOnlineServiceCallback1 aSLOnlineServiceCallback1) {
         ResourceLocator resourceLocator = CoreServiceImplFactory.getLogoHandler().checkIfImageExists(string2, string3, n2);
         if (resourceLocator != null) {

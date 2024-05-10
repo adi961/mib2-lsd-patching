@@ -209,7 +209,7 @@ implements IPersistenceDefaults {
     }
 
     public static int getLastModeDestinationInputDefault() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(125);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(126);
         return bl ? 1 : 0;
     }
 

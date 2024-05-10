@@ -393,7 +393,7 @@ public final class RadioDataSessionManager {
         if (ServiceManager.logger.isTraceEnabled(128)) {
             ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM).append("RadioDataSessionManager - getDbIdForDabService() - START").log();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(348) && RadioDataApi.isSouthSideStationLogoDbActive() && null != (radioStationDataArray = this.stationLogoBuffer.getDabRadioStationData(serviceInfo)) && radioStationDataArray.length == 1 && null != radioStationDataArray[0]) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(349) && RadioDataApi.isSouthSideStationLogoDbActive() && null != (radioStationDataArray = this.stationLogoBuffer.getDabRadioStationData(serviceInfo)) && radioStationDataArray.length == 1 && null != radioStationDataArray[0]) {
             return radioStationDataArray[0].stationId;
         }
         if (ServiceManager.logger.isTraceEnabled(128)) {

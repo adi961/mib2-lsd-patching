@@ -17,16 +17,16 @@ extends StatemachineActivityBase {
     public void performStateEntryAction(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 5: {
-                this.setInteger(724173056, this.getInteger(-657391616));
+                this.setInteger(808059136, this.getInteger(-623837184));
                 break;
             }
             case 7: {
-                this.setInteger(724173056, this.getInteger(-657391616));
-                if (!this.getBoolean(1016659968)) {
-                    this.setInteger(740950272, 0);
+                this.setInteger(808059136, this.getInteger(-623837184));
+                if (!this.getBoolean(1033437184)) {
+                    this.setInteger(824836352, 0);
                 }
-                if (this.getBoolean(1016659968)) {
-                    this.setInteger(740950272, 1);
+                if (this.getBoolean(1033437184)) {
+                    this.setInteger(824836352, 1);
                 }
                 this.showView("Hocv_08DA85708EEB9B2F_CA54", bl, this.getIncludeDdpGroupId());
                 break;
@@ -48,10 +48,10 @@ extends StatemachineActivityBase {
     public boolean evalInternalTransitionGuard(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                return this.getInteger(-325517312) == 6;
+                return this.getInteger(-308740096) == 6;
             }
             case 2: {
-                return this.getInteger(-325517312) == 4;
+                return this.getInteger(-308740096) == 4;
             }
         }
         return true;
@@ -65,24 +65,24 @@ extends StatemachineActivityBase {
     private void performInternalTransitionAction0(int n) {
         switch (n - this.IT_OFFSET) {
             case 1: {
-                this.setInteger(-519372544, 4);
+                this.setInteger(-452263680, 4);
                 EventGeneric eventGeneric = HmioffClockDisplayOffActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(-519372544));
+                eventGeneric.setInt(0, this.getInteger(-452263680));
                 this.triggerObserver(1191510080, eventGeneric);
                 break;
             }
             case 2: {
-                this.setInteger(-519372544, 6);
+                this.setInteger(-452263680, 6);
                 EventGeneric eventGeneric = HmioffClockDisplayOffActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(-519372544));
+                eventGeneric.setInt(0, this.getInteger(-452263680));
                 this.triggerObserver(1191510080, eventGeneric);
                 break;
             }
             case 3: {
-                this.setInteger(724173056, HmioffClockDisplayOffActivity.evIntegerValueValue());
-                this.setInteger(757727488, this.getInteger(724173056));
+                this.setInteger(808059136, HmioffClockDisplayOffActivity.evIntegerValueValue());
+                this.setInteger(841613568, this.getInteger(808059136));
                 EventGeneric eventGeneric = HmioffClockDisplayOffActivity.newEvent();
-                eventGeneric.setInt(0, this.getInteger(757727488));
+                eventGeneric.setInt(0, this.getInteger(841613568));
                 this.triggerObserver(1612800064, eventGeneric);
                 break;
             }

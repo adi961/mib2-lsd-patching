@@ -373,7 +373,7 @@ ASLOnlineServiceListener {
 
     private void requestPersistedDynamicProviderLogo(int n) {
         boolean bl = DATAPOOL.isDynamicProviderLogoAvailable(n);
-        if (!bl && ServiceManager.configManagerDiag.isFeatureFlagSet(186)) {
+        if (!bl && ServiceManager.configManagerDiag.isFeatureFlagSet(187)) {
             IPersistedPoiSetup iPersistedPoiSetup = PersistedPoiSetup.getInstance();
             String string = iPersistedPoiSetup.getOnlineSearchProviderDynamicUrl(n);
             String string2 = iPersistedPoiSetup.getOnlineSearchProviderDynamicChecksum(n);

@@ -16,6 +16,7 @@ import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.data.OnlineUpdateSt
 import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.enums.OnlineUpdateListState;
 import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.enums.OperationResult;
 import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.enums.OperationType;
+import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.enums.UpdateState;
 import de.vw.mib.asl.internal.ocu.common.api.onlineupdatev10.mapping.OnlineUpdateMapping;
 import de.vw.mib.asl.internal.ocu.eni.api.EniApiServices;
 import de.vw.mib.asl.internal.ocu.eni.api.online.ChallengeDataServiceListener;
@@ -244,6 +245,9 @@ ChallengeDataServiceListener {
         OnlineUpdateServiceResponseListener onlineUpdateServiceResponseListener = this.getLastResponseListener();
         if (onlineUpdateServiceResponseListener != null) {
             this.clearLastResponseListener();
+            if (n == 12 && n2 == 6) {
+                this.onlineUpdateState = new OnlineUpdateState(this.onlineUpdateState.getUpdateId(), UpdateState.ENUM_SPIN_FAILED, this.onlineUpdateState.getProgress(), this.onlineUpdateState.getStartTime().toString());
+            }
             onlineUpdateServiceResponseListener.operationResult(this, OnlineUpdateMapping.mapEniOperationType(n), OnlineUpdateMapping.mapEniOperationResult(n2));
         }
     }

@@ -86,7 +86,7 @@ public class SpeechGeneralActivator {
         this.resultControllerRouter.register(new RecognitionConsumer(this.systemEventDispatcher, 435892224), 81014848);
         this.resultControllerRouter.register(new RecognitionConsumer(this.systemEventDispatcher, 452669440), 97792064);
         this.resultControllerRouter.register(new RecognitionConsumer(this.systemEventDispatcher, 452669440), 114569280);
-        if (this.configManager.isFeatureFlagSet(484)) {
+        if (this.configManager.isFeatureFlagSet(486)) {
             this.resultControllerRouter.register(new RecognitionConsumer(this.systemEventDispatcher, 469446656), 131346496);
         } else {
             this.resultControllerRouter.register(new RecognitionConsumer(this.systemEventDispatcher, 620441600), 131346496);

@@ -50,9 +50,9 @@ implements DSIServiceStateListener {
     private DSINavigationListener dsiNavigationListener;
     private DSIAsiaInput dsiAsiaInput;
     private DSIListener dsiAsiaInputListener;
-    private boolean isHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
-    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
-    private boolean isJapan = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
+    private boolean isHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
+    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
+    private boolean isJapan = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
     private boolean isDsiAsiaInputAvaliable = this.isJapan && this.isHigh;
     private TargetShield shieldTarget;
     private ArrayList asianLanguages = new ShieldDsiHandler$1(this);
@@ -111,9 +111,9 @@ implements DSIServiceStateListener {
     }
 
     private String getOem() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(360);
-        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(353);
-        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(432);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(361);
+        boolean bl2 = ServiceManager.configManagerDiag.isFeatureFlagSet(354);
+        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(433);
         String string = "VW";
         if (bl) {
             ShieldDsiHandler.printTrace(new StringBuffer("getOem: SK"));

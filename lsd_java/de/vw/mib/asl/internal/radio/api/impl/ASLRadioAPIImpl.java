@@ -72,7 +72,7 @@ implements ASLRadioAPI {
                     return 3 == SatDb.getInstance().getPool().getInt(4) && SatDb.getInstance().getPool().getBoolean(5);
                 }
                 case 4: {
-                    return ServiceManager.configManagerDiag.isFeatureFlagSet(424);
+                    return ServiceManager.configManagerDiag.isFeatureFlagSet(425);
                 }
                 case 1: {
                     return RadioData.amFmTunerIsInitialized;

@@ -169,7 +169,7 @@ DSIServiceStateListener {
                 break;
             }
             case 4300046: {
-                boolean bl = this.configManagerDiag.isFeatureFlagSet(69);
+                boolean bl = this.configManagerDiag.isFeatureFlagSet(70);
                 boolean bl2 = this.retrieveShowDisplayablesProperty();
                 if (!bl2 || !bl) {
                     this.systemLogger.info("Received SET_HMI_READY, Call DSIPowerManagement.setHMIReady");
@@ -736,7 +736,7 @@ DSIServiceStateListener {
 
     private void propagateBacklightState(boolean bl) {
         boolean bl2;
-        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(360);
+        boolean bl3 = ServiceManager.configManagerDiag.isFeatureFlagSet(361);
         boolean bl4 = bl2 = bl3 && this.displayOffClockManager.isClockOn();
         if (bl2) {
             this.triggerObserver(bl ? 1033715968 : 1016938752, null);
@@ -880,7 +880,7 @@ DSIServiceStateListener {
             }
             case 0: 
             case 6: {
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(395) && this.lastKnownPowerManagementState == 8) break;
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(396) && this.lastKnownPowerManagementState == 8) break;
                 n = 0;
                 n2 = 0;
                 bl = false;

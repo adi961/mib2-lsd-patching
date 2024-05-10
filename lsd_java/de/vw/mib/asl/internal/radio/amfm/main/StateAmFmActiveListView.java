@@ -309,7 +309,7 @@ extends AbstractHsmState {
                         bl2 = true;
                     }
                 }
-                if (!bl2 && ServiceManager.configManagerDiag.isFeatureFlagSet(423) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
+                if (!bl2 && ServiceManager.configManagerDiag.isFeatureFlagSet(424) && null != (object = RadioData.getAmfmDatabase().getStationNameFreqList())) {
                     String string = ((StationNameFreqList)object).getStationName((int)station.frequency);
                     if (ServiceManager.logger.isTraceEnabled(128)) {
                         ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM).append("StateAmFmActiveListView - dsiAMFMTunerUpdateSelectedStation() - ").append("Name from NAV database: ").append(string).log();

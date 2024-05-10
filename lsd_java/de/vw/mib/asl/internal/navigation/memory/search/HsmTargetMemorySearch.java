@@ -47,7 +47,7 @@ implements ASLListElementFetcher {
     }
 
     private void enableHWRModeIfRequired() {
-        if (NavigationConfiguration.LOCATIONINPUT_CHN_FEATURES_AVAILABLE || ServiceManager.configManagerDiag.isFeatureFlagSet(75)) {
+        if (NavigationConfiguration.LOCATIONINPUT_CHN_FEATURES_AVAILABLE || ServiceManager.configManagerDiag.isFeatureFlagSet(76)) {
             Properties properties = new Properties();
             int n = 200;
             properties.put("FilterId", String.valueOf(n));

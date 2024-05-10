@@ -65,7 +65,7 @@ implements AmfmController {
             AmFmAlternativeFrequencySwitch.set(RadioCodingAdapter.isAfActivated());
             AmFmAlternativeFrequencySwitch.setAFOnBeforeRDSOff(RadioCodingAdapter.isAfActivated());
             AmFmAlternativeFrequencySwitch.notifyDSI(RadioCodingAdapter.isAfActivated());
-            if (null != ServiceManager.configManagerDiag && (ServiceManager.configManagerDiag.isFeatureFlagSet(418) || ServiceManager.configManagerDiag.isFeatureFlagSet(423) || this.noRadioTextForChina())) {
+            if (null != ServiceManager.configManagerDiag && (ServiceManager.configManagerDiag.isFeatureFlagSet(419) || ServiceManager.configManagerDiag.isFeatureFlagSet(424) || this.noRadioTextForChina())) {
                 AmfmRadioTextOption.set(false);
                 AmfmRadioTextOption.setRadioTextOnBeforeRDSOff(false);
             } else {

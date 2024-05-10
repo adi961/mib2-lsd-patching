@@ -24,7 +24,7 @@ public final class RadioFactory {
                 ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("RadioFactory - createAslAmfmDatabase - NAR").log();
             }
             amfmControllerBase = new AmfmControllerNar();
-        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(418) || ServiceManager.configManagerDiag.isFeatureFlagSet(423)) {
+        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(419) || ServiceManager.configManagerDiag.isFeatureFlagSet(424)) {
             if (ServiceManager.logger.isTraceEnabled(128)) {
                 ServiceManager.logger.trace(128).append(RadioUtil.LOG_PREFIX_AMFM_MAIN).append("RadioFactory - createAslAmfmDatabase - JP").log();
             }

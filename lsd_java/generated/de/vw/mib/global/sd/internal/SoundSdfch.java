@@ -102,7 +102,7 @@ extends SdFeatureCollectionHandlerBase {
         switch (n) {
             case 0: {
                 GenericTargetFeature genericTargetFeature = this.createGenericFeature(201);
-                genericTargetFeature.setEvent(2003, this.createEvent(40340809));
+                genericTargetFeature.setEvent(2003, this.createEvent(23563593));
                 return genericTargetFeature;
             }
         }
@@ -130,7 +130,7 @@ extends SdFeatureCollectionHandlerBase {
     private boolean evaluateCondition_SCSPPVCS_01(int n) {
         switch (n) {
             case 0: {
-                return this.getBoolean(0x7A00000) && this.getBoolean(10059);
+                return this.getBoolean(0x9A00000) && this.getBoolean(10059);
             }
         }
         throw new IllegalArgumentException(new StringBuffer().append("Illegal condition index: ").append(n).toString());

@@ -61,7 +61,7 @@ AdaptationService {
 
     @Override
     public boolean isNavigationMapSwitchSupported() {
-        return this.getDataPool().getBoolean(-1695543296, false) || ASLFrameworkFactory.getASLFrameworkAPI().getServices().getConfigurationManagerDiag().isFeatureFlagSet(139);
+        return this.getDataPool().getBoolean(-1695543296, false) || ASLFrameworkFactory.getASLFrameworkAPI().getServices().getConfigurationManagerDiag().isFeatureFlagSet(140);
     }
 
     static /* synthetic */ Class class$(String string) {

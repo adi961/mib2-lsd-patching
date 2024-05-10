@@ -85,7 +85,7 @@ public interface IMediaConstants {
 
     static {
         MEDIALIAST_START_UP_TIMER = Integer.getInteger("de.vw.mib.asl.media.startupListTimer", 5000);
-        ESO = ServiceManager.configManagerDiag.isFeatureFlagSet(378);
+        ESO = ServiceManager.configManagerDiag.isFeatureFlagSet(379);
     }
 }
 

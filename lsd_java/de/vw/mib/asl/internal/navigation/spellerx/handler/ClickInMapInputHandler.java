@@ -12,9 +12,9 @@ import org.dsi.ifc.global.NavLocation;
 
 public class ClickInMapInputHandler
 implements SpellerHandler {
-    private boolean isHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
-    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
-    private boolean isJpInput = ServiceManager.configManagerDiag.isFeatureFlagSet(75);
+    private boolean isHigh = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
+    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
+    private boolean isJpInput = ServiceManager.configManagerDiag.isFeatureFlagSet(76);
     private String className = super.getClass().getName();
     private HandlerLogUtil logUtil = new HandlerLogUtil();
 

@@ -31,15 +31,15 @@ extends StatemachineActivityBase {
     @Override
     public void performStateExitAction(int n) {
         switch (this.subStatemachineId) {
-            case 433: {
+            case 432: {
                 this.performStateExitAction_SubPopupPoInfoSwapFeatureUnlockErrorDynState(n);
                 break;
             }
-            case 434: {
+            case 433: {
                 this.performStateExitAction_SubPopupPoInfoSwapFeatureUnlockDynState(n);
                 break;
             }
-            case 435: {
+            case 434: {
                 this.performStateExitAction_SubPopupPoInfoSwapGeneratedSuccessDynState(n);
                 break;
             }
@@ -148,19 +148,19 @@ extends StatemachineActivityBase {
     private void performStateEntryAction_SubHapticSwapDynState(int n, boolean bl) {
         switch (n - this.S_OFFSET) {
             case 0: {
-                this.setInteger(453116160, 2);
+                this.setInteger(520225024, 2);
                 break;
             }
             case 8: {
-                this.setInteger(453116160, 3);
+                this.setInteger(520225024, 3);
                 break;
             }
             case 12: {
-                this.setInteger(453116160, 2);
+                this.setInteger(520225024, 2);
                 break;
             }
             case 13: {
-                SwaPActivity.fireHMIEvent(ANY, BROADCAST, 1281461577);
+                SwaPActivity.fireHMIEvent(ANY, BROADCAST, 1264684361);
                 break;
             }
         }
@@ -169,7 +169,7 @@ extends StatemachineActivityBase {
     private void performStateExitAction_SubHapticSwapDynState(int n) {
         switch (n - this.S_OFFSET) {
             case 0: {
-                this.setInteger(453116160, 0);
+                this.setInteger(520225024, 0);
                 break;
             }
             case 8: {

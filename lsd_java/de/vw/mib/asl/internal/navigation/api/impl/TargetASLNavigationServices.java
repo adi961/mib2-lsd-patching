@@ -122,7 +122,7 @@ NavStartupStatusListener {
     }
 
     private static boolean isOnlineDestinationFeatureAvailable() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(649);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(651);
     }
 
     private void setEventContext(GenericEvents genericEvents) {

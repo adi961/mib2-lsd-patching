@@ -109,10 +109,9 @@ implements SystemServices {
     private final TimerManager timerManager;
     private final PropagatingPowerStateService powerStateService;
     private final DSIProxyAdapterFactory dsiProxyAdapterFactory;
-    private final BundleContext bundleContext;
     private final ASLStartupv7rAPI aslStartupv7rAPI;
     private final PersonalizationService personalizationService;
-    private final AsyncServiceFactory asyncServiceFactory;
+    private AsyncServiceFactory asyncServiceFactory;
     private final ASLCarVehicleAPI aslCarVehicleApi;
     private final SystemCommonPersistenceService systemCommonPersistenceService;
     private final KeyLockManager keyLockManager;
@@ -169,11 +168,10 @@ implements SystemServices {
         this.persistableEarlyData = ASLStartupv7rFactory.getStartupv7rApi().getPersistableEarlyData();
         this.timerManager = services.getTimerManager();
         this.powerStateService = new PowerStateServiceImpl();
-        this.bundleContext = services.getBundleContext();
         this.aslStartupv7rAPI = ASLStartupv7rFactory.getStartupv7rApi();
         this.genericEvents = services.getGenericEvents();
         this.personalizationService = ASLCarFactory.getCarApi().getCarPersonalizationService();
-        this.asyncServiceFactory = this.retrieveAsyncFactory(this.bundleContext, this.asl1Logger);
+        this.asyncServiceFactory = null;
         this.aslCarVehicleApi = ASLCarFactory.getCarApi().getCarVehicleAPI();
         this.valetParkingTestmodeService = ASLTestmodeFactory.getTestmodeApi().getTestmodeValetParkingService();
         this.systemEarlyPersistenceService = SystemEarlyPersistenceServiceImpl.getInstance();
@@ -259,7 +257,7 @@ implements SystemServices {
 
     @Override
     public BundleContext getBundleContext() {
-        return this.bundleContext;
+        return ASLFrameworkFactory.getASLFrameworkAPI().getServices().getBundleContext();
     }
 
     @Override
@@ -279,6 +277,9 @@ implements SystemServices {
 
     @Override
     public AsyncServiceFactory getAsyncServiceFactory() {
+        if (this.asyncServiceFactory == null) {
+            this.asyncServiceFactory = this.retrieveAsyncFactory(this.getBundleContext(), this.asl1Logger);
+        }
         return this.asyncServiceFactory;
     }
 
@@ -336,7 +337,7 @@ implements SystemServices {
     @Override
     public CioDispatcher getCioDispatcher() {
         if (this.cioDispatcher == null) {
-            this.cioDispatcher = (CioDispatcher)this.getOsgiService(this.bundleContext, class$de$vw$mib$cio$CioDispatcher == null ? (class$de$vw$mib$cio$CioDispatcher = SystemServicesImpl.class$("de.vw.mib.cio.CioDispatcher")) : class$de$vw$mib$cio$CioDispatcher);
+            this.cioDispatcher = (CioDispatcher)this.getOsgiService(this.getBundleContext(), class$de$vw$mib$cio$CioDispatcher == null ? (class$de$vw$mib$cio$CioDispatcher = SystemServicesImpl.class$("de.vw.mib.cio.CioDispatcher")) : class$de$vw$mib$cio$CioDispatcher);
         }
         return this.cioDispatcher;
     }
@@ -344,7 +345,7 @@ implements SystemServices {
     @Override
     public CioDictionary getCioDictionary() {
         if (this.cioDictionary == null) {
-            this.cioDictionary = (CioDictionary)this.getOsgiService(this.bundleContext, class$de$vw$mib$cio$CioDictionary == null ? (class$de$vw$mib$cio$CioDictionary = SystemServicesImpl.class$("de.vw.mib.cio.CioDictionary")) : class$de$vw$mib$cio$CioDictionary);
+            this.cioDictionary = (CioDictionary)this.getOsgiService(this.getBundleContext(), class$de$vw$mib$cio$CioDictionary == null ? (class$de$vw$mib$cio$CioDictionary = SystemServicesImpl.class$("de.vw.mib.cio.CioDictionary")) : class$de$vw$mib$cio$CioDictionary);
         }
         return this.cioDictionary;
     }
@@ -401,7 +402,7 @@ implements SystemServices {
     @Override
     public CioFactory getCioFactory() {
         if (this.cioFactory == null) {
-            this.cioFactory = (CioFactory)this.getOsgiService(this.bundleContext, class$de$vw$mib$cio$CioFactory == null ? (class$de$vw$mib$cio$CioFactory = SystemServicesImpl.class$("de.vw.mib.cio.CioFactory")) : class$de$vw$mib$cio$CioFactory);
+            this.cioFactory = (CioFactory)this.getOsgiService(this.getBundleContext(), class$de$vw$mib$cio$CioFactory == null ? (class$de$vw$mib$cio$CioFactory = SystemServicesImpl.class$("de.vw.mib.cio.CioFactory")) : class$de$vw$mib$cio$CioFactory);
         }
         return this.cioFactory;
     }
@@ -466,7 +467,7 @@ implements SystemServices {
     @Override
     public ConfigurationManagerAsyncValueSetterService getConfigurationManagerAsyncValueSetterService() {
         if (this.asyncValueSetterService == null) {
-            this.asyncValueSetterService = (ConfigurationManagerAsyncValueSetterService)this.getOsgiService(this.bundleContext, class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService == null ? (class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService = SystemServicesImpl.class$("de.vw.mib.configuration.ConfigurationManagerAsyncValueSetterService")) : class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService);
+            this.asyncValueSetterService = (ConfigurationManagerAsyncValueSetterService)this.getOsgiService(this.getBundleContext(), class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService == null ? (class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService = SystemServicesImpl.class$("de.vw.mib.configuration.ConfigurationManagerAsyncValueSetterService")) : class$de$vw$mib$configuration$ConfigurationManagerAsyncValueSetterService);
         }
         return this.asyncValueSetterService;
     }

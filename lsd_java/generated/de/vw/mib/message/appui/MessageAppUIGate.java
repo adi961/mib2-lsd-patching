@@ -89,8 +89,8 @@ extends AbstractHmiAppUIGate {
 
     static {
         VIEWNAME_2_SCREENAREAS_MAP = new HashMap();
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{570, 616};
-        DYNAMIC_STATEMACHINES_OF_LAYER_POPUP = new int[]{86, 165, 166, 167, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 374, 481};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{569, 615};
+        DYNAMIC_STATEMACHINES_OF_LAYER_POPUP = new int[]{86, 164, 165, 166, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 373, 480};
     }
 }
 

@@ -22,7 +22,7 @@ implements RtMethodListener {
         if (!"ASL.Configuration.isIntPhoneAvailable".equals(string)) {
             return;
         }
-        boolean bl = this.val$configManagerDiag.isFeatureFlagSet(73);
+        boolean bl = this.val$configManagerDiag.isFeatureFlagSet(74);
         this.this$0.updateInternalPhoneAvailablility(bl);
     }
 }

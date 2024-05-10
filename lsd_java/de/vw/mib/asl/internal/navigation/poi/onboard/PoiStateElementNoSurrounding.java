@@ -103,22 +103,23 @@ extends PoiAbstractElementCommon {
             case 3400031: {
                 this.myTarget.myTrace(this, "ASL_NAVI_POI_ONBOARD_DUALLIST_RESULTS_ENTER_EXIT");
                 PoiAbstractElementCommon.isOnboardDualListViewActive = eventGeneric.getBoolean(0);
-                if (!PoiAbstractElementCommon.isOnboardDualListViewActive) {
-                    CmdLiGetState cmdLiGetState = new CmdLiGetState(this);
-                    cmdLiGetState.setBlindArgument("DetailedPoi_SkipSaveState", new Object());
-                    cmdLiGetState.execute();
+                if (!PoiAbstractElementCommon.isOnboardDualListViewActive && PoiAbstractElementCommon.lastUsedPoiIndex > 0) {
                     this.setRequestRunning(true);
                     this.setStopRequestingValueList(true);
                     this.cutOffResultList(PoiAbstractElementCommon.lastUsedPoiIndex);
+                    CmdLiGetState cmdLiGetState = new CmdLiGetState(this);
+                    cmdLiGetState.setBlindArgument("DetailedPoi_SkipSaveState", new Object());
+                    cmdLiGetState.execute();
                     if (!eventGeneric.getBoolean(1)) break;
                     PoiAbstractElementCommon.searchIsRunning = false;
                     new CmdCancelSpeller(this).execute();
                     break;
                 }
-                if (!PoiAbstractElementCommon.searchIsRunning || PoiAbstractElementCommon.lastUsedPoiIndex <= 0) break;
-                this.updateCuttedResultListAtHmi(PoiAbstractElementCommon.lastUsedPoiIndex);
+                if (!PoiAbstractElementCommon.isOnboardDualListViewActive || !PoiAbstractElementCommon.searchIsRunning || PoiAbstractElementCommon.lastUsedPoiIndex <= 0) break;
                 this.setRequestRunning(false);
                 this.setStopRequestingValueList(false);
+                this.dualListViewHandler.setForceRedraw();
+                this.updateCuttedResultListAtHmi(PoiAbstractElementCommon.lastUsedPoiIndex);
                 CmdRestoreState cmdRestoreState = new CmdRestoreState(this, PoiAbstractElementCommon.savedSpellerState);
                 cmdRestoreState.setBlindArgument("DetailedPoi", new Object());
                 cmdRestoreState.execute();
@@ -191,6 +192,9 @@ extends PoiAbstractElementCommon {
             case 32783: {
                 PoiAbstractElementCommon.searchIsRunning = true;
                 NavLocation navLocation = PoiDatapool.getInstance().getAreaLocation().getLocation();
+                if (!navLocation.positionValid) {
+                    navLocation = PoiDatapool.getInstance().getCcp().getLocationCopy();
+                }
                 this.myTarget.getDsiNavigation().poiSetContext(NaviHelper.getInstance().cloneNavLocation(navLocation, false));
                 if (PoiDatapool.getInstance().getFilterName().length() != 0 || PoiDatapool.getInstance().getFilterCategoryUid() != -1) {
                     this.setIgnoreResultList(true);

@@ -70,7 +70,7 @@ public class MemoryFormatter {
                 break;
             }
             case 0: {
-                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(9)) {
+                if (ServiceManager.configManagerDiag.getNaviCommonOptionDefaultBoolean(10)) {
                     navigationMemoryDestinationDetailsCollector.navigation_memory_destinations_type = 2;
                     break;
                 }

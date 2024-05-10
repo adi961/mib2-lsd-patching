@@ -67,7 +67,7 @@ extends AbstractHsmState {
         this.target.notifierDSI.setZoomLevel(4234310);
         this.target.moveMap(mapConfiguration);
         this.target.configureDetailMapFlag(mapConfiguration);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(408)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(409)) {
             this.target.notifierDSI.resetLayers();
         }
         this.target.notifierDSI.viewFreeze(false);

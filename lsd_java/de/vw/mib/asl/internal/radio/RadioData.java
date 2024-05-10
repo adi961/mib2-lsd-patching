@@ -76,7 +76,7 @@ public final class RadioData {
         } else {
             AmFmFactory.getInstanceEUStationListViewWalker().setFmStationListSortOrder(1);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(418)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(419)) {
             RadioData.getAmfmDatabase().getSettingsPersistable().setTiJapanFrequency(0);
         }
         RadioData.getAmfmDatabase().getSettingsPersistable().setUserSelectedHomeCountry(-1);

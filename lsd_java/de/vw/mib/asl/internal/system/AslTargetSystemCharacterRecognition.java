@@ -132,7 +132,7 @@ implements HWRManager {
     }
 
     private boolean isHwrEnabled() {
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(72);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(73);
         this.info(new StringBuffer().append("[AslTargetSystemCharacterRecognition] HWR FeatureFlag is ").append(bl).toString());
         return bl;
     }

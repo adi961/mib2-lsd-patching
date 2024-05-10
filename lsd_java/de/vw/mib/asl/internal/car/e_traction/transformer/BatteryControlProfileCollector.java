@@ -37,7 +37,7 @@ public class BatteryControlProfileCollector {
     public int leadTime;
     public int holdingTimePlug;
     public int holdingTimeBattery;
-    private static final boolean IS_MLB = ServiceManager.configManagerDiag.isFeatureFlagSet(101);
+    private static final boolean IS_MLB = ServiceManager.configManagerDiag.isFeatureFlagSet(102);
     private static final int INVALID_POWER_PROVIDER_ID;
     public static final int MIDRANGE_VALUE_DEFAULT;
     public static final int TARGET_CHARGE_DURATION_VALUE_DEFAULT;

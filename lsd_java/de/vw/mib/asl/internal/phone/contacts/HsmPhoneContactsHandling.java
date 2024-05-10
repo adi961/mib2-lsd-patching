@@ -83,7 +83,7 @@ extends AbstractASLHsmPhoneTarget {
             dSIProxy.addResponseListener(this, class$org$dsi$ifc$organizer$DSIAdbUserProfileListener == null ? (class$org$dsi$ifc$organizer$DSIAdbUserProfileListener = HsmPhoneContactsHandling.class$("org.dsi.ifc.organizer.DSIAdbUserProfileListener")) : class$org$dsi$ifc$organizer$DSIAdbUserProfileListener, this.dsiAdbUserProfileListener);
             AbstractASLHsmTarget.writeIntegerToDatapool(1179, ASLPhoneData.MAX_PROFILE_CONTACTS);
             AbstractASLHsmTarget.writeIntegerToDatapool(-1293808384, ASLPhoneData.MAX_PROFILE_CONTACTS);
-            int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+            int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
             this.trace("HsmPhoneContactsHandling.init(): Set FixFormatter naming rule variant offset to ", n);
             ServiceManager.aslPropertyManager.valueChangedInteger(-377285376, n);
         }

@@ -20,7 +20,7 @@ import org.dsi.ifc.map.MapFlag;
 import org.dsi.ifc.map.Point;
 
 public class MapSetupDatapool {
-    public static final boolean MAPINMAP_AVAILABLE = ServiceManager.configManagerDiag.isFeatureFlagSet(163);
+    public static final boolean MAPINMAP_AVAILABLE = ServiceManager.configManagerDiag.isFeatureFlagSet(164);
     private boolean adbEntryChanged = true;
     private long[] configuredFlagHandles;
     private final MapDataPool dataPoolMainMap;

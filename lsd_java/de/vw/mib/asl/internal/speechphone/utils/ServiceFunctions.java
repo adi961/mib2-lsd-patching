@@ -35,19 +35,19 @@ public class ServiceFunctions {
     }
 
     public boolean isFeatEmergency() {
-        return this.parameters.configurationManager().isFeatureFlagSet(554);
+        return this.parameters.configurationManager().isFeatureFlagSet(556);
     }
 
     public boolean isFeatService() {
-        return this.parameters.configurationManager().isFeatureFlagSet(557);
+        return this.parameters.configurationManager().isFeatureFlagSet(559);
     }
 
     public boolean isFeatInfo() {
-        return this.parameters.configurationManager().isFeatureFlagSet(555);
+        return this.parameters.configurationManager().isFeatureFlagSet(557);
     }
 
     public boolean isFeatMailbox() {
-        return this.parameters.configurationManager().isFeatureFlagSet(559);
+        return this.parameters.configurationManager().isFeatureFlagSet(561);
     }
 
     public void writeStringToDatapool(int n, String string) {

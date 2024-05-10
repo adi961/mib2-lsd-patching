@@ -347,7 +347,7 @@ extends TripleMobileEquipment {
         if (this.lockState == null || this.activationStatePhone == null) {
             return;
         }
-        if (this.activationStateNad != null && ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (this.activationStateNad != null && ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             int n = ASLPhoneData.getInstance().nadEnabledPhone = this.activationStateNad.telPhoneModuleState == 2 ? 1 : 0;
             if (this.activationStateNad.telMode == 4 || this.activationStateNad.telMode == 3) {
                 HsmPhonePhoneAvailability.writeIntegerToDatapool(1081, 0);
@@ -659,7 +659,7 @@ extends TripleMobileEquipment {
         if (this.isTraceEnabled()) {
             this.trace().append("HsmPhonePhoneAvailability.checkTogglePhoneAutomatically() activation states primary: ").append(this.activationStatePhone.getTelActivationState()).append(", associated: ").append(this.activationStatePhoneAssociated.getTelActivationState()).append(", phone module: ").append(this.activationStateNad.getTelPhoneModuleState()).append(", isConnectRequested: ").append(ASLPhoneData.getInstance().isConnectRequested).log();
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73) && this.activationStatePhone.getTelActivationState() == 4 && HsmPhonePhoneAvailability.isOn(this.activationStatePhoneAssociated) && this.activationStateNad.getTelPhoneModuleState() == 3) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74) && this.activationStatePhone.getTelActivationState() == 4 && HsmPhonePhoneAvailability.isOn(this.activationStatePhoneAssociated) && this.activationStateNad.getTelPhoneModuleState() == 3) {
             if (this.isTraceEnabled()) {
                 this.trace("Triggering automatic toggle directly due to not connected primary phone and switched off phone module!");
             }
@@ -671,7 +671,7 @@ extends TripleMobileEquipment {
                 if (this.isTraceEnabled()) {
                     this.trace("Triggering automatic toggle in 30s due to not connected primary phone and inserted SIM and clamp S on!");
                 }
-            } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(378) && !ASLPhoneData.getInstance().isConnectRequested) {
+            } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(379) && !ASLPhoneData.getInstance().isConnectRequested) {
                 this.startTimer(-1585053440, (long)0, false);
                 if (this.isTraceEnabled()) {
                     this.trace("Triggering automatic toggle in 1s due to not connected primary phone, no SIM involved, no connection request and clamp S on!");
@@ -728,7 +728,7 @@ extends TripleMobileEquipment {
 
     @Override
     protected int[] getMobileEquipmentNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return new int[]{4, 20};
         }
         return new int[]{4};
@@ -741,7 +741,7 @@ extends TripleMobileEquipment {
 
     @Override
     protected int[] getMobileEquipmentHfpOnlyNotification() {
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             return ASLPhoneData.EMPTY_NOTIFICATION;
         }
         return new int[]{20};

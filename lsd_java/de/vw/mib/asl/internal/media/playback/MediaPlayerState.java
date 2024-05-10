@@ -322,7 +322,7 @@ public class MediaPlayerState {
     public boolean isJoggerMode() {
         if (this.getActiveMedia() != null && (this.getActiveMedia().isIPod() || this.getActiveMedia().isBT()) && this.getPlaybackPath() != null && this.getPlaybackPath().length == 2) {
             ListEntry listEntry = this.getPlaybackPath()[1];
-            return listEntry.getEntryID() == 0 || listEntry.getFilename().equals("filterCriteria.nowPlaying");
+            return listEntry.getEntryID() == 0x1000001FFFFL || listEntry.getFilename().equals("filterCriteria.nowPlaying");
         }
         return false;
     }

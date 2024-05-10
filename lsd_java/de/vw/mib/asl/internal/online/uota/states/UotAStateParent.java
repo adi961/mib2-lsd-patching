@@ -78,7 +78,8 @@ implements ASLOnlineServiceListener {
                                     }
                                 }
                             } else {
-                                if (this._target.getPropertyManager().isNaviDestinationsSetForLater() && UotAFactory.getNavigationGuidanceService(this._target).isRgActive() && !this._target.getPropertyManager().isNaviDestinationsTillNextRevision()) {
+                                boolean bl = ASLOnlineFactory.getOnlineCoreServices().isServiceInUsableState(ASLOnlineFactory.getOnlineCoreServices().getServiceIDWithNumericServiceID(19));
+                                if (bl && this._target.getPropertyManager().isNaviDestinationsSetForLater() && UotAFactory.getNavigationGuidanceService(this._target).isRgActive() && !this._target.getPropertyManager().isNaviDestinationsTillNextRevision()) {
                                     this.getPacketController().requestForCurrentDestinationPackets();
                                     this.getTarget().getPropertyManager().setNaviDestinationsForLater(false);
                                 } else if (this.getTarget().getPropertyManager().isDownloadForLater() && !this.getTarget().getPropertyManager().isDownloadTillNextRevision()) {
@@ -222,7 +223,8 @@ implements ASLOnlineServiceListener {
                     if (this.getTarget().getPropertyManager().getDownloadState() == 4 || this.getTarget().getPropertyManager().getDownloadState() == 1) {
                         this.trans(this.getTarget().getStateActiveDownload());
                     } else {
-                        if (this._target.getPropertyManager().isNaviDestinationsSetForLater() && UotAFactory.getNavigationGuidanceService(this._target).isRgActive() && !this._target.getPropertyManager().isNaviDestinationsTillNextRevision()) {
+                        boolean bl2 = ASLOnlineFactory.getOnlineCoreServices().isServiceInUsableState(ASLOnlineFactory.getOnlineCoreServices().getServiceIDWithNumericServiceID(19));
+                        if (bl2 && this._target.getPropertyManager().isNaviDestinationsSetForLater() && UotAFactory.getNavigationGuidanceService(this._target).isRgActive() && !this._target.getPropertyManager().isNaviDestinationsTillNextRevision()) {
                             this.getPacketController().requestForCurrentDestinationPackets();
                             this.getTarget().getPropertyManager().setNaviDestinationsForLater(false);
                         } else if (this.getTarget().getPropertyManager().isDownloadForLater() && !this.getTarget().getPropertyManager().isDownloadTillNextRevision()) {

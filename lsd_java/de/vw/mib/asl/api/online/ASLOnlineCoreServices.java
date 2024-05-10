@@ -64,6 +64,9 @@ public interface ASLOnlineCoreServices {
     default public boolean isServiceAvailable(String string) {
     }
 
+    default public boolean isServiceInUsableState(String string) {
+    }
+
     default public int getApplicationState(int n) {
     }
 

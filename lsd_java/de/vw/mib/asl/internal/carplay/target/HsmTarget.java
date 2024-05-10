@@ -201,11 +201,11 @@ implements DSIServiceStateListener {
         serviceReferenceArray = ServiceManager.bundleContext.getServiceReferences((class$de$vw$mib$threads$AsyncServiceFactory == null ? (class$de$vw$mib$threads$AsyncServiceFactory = HsmTarget.class$("de.vw.mib.threads.AsyncServiceFactory")) : class$de$vw$mib$threads$AsyncServiceFactory).getName(), "(MIBThreadId=3)");
         AsyncServiceFactory asyncServiceFactory = (AsyncServiceFactory)ServiceManager.bundleContext.getService(serviceReferenceArray[0]);
         ServiceManager.bundleContext.registerService((class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = HsmTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler).getName(), asyncServiceFactory.create(this.popuphandler, new Class[]{class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = HsmTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler}), null);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(432)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(433)) {
             this.properties.setOemIconTitle("Volkswagen");
-        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(353)) {
+        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(354)) {
             this.properties.setOemIconTitle("SEAT");
-        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(360)) {
+        } else if (ServiceManager.configManagerDiag.isFeatureFlagSet(361)) {
             this.properties.setOemIconTitle("SKODA");
         } else {
             this.properties.setOemIconTitle("HMI");

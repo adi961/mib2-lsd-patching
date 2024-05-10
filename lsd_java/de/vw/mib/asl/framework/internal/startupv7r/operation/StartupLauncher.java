@@ -58,7 +58,7 @@ public class StartupLauncher {
         LastUserModeMapping lastUserModeMapping = new LastUserModeMapping(configurationManagerDiag, logger, abstractWorkUnitArray);
         new LastUserModePrioritizer(this.startupServices, workUnitQueue, lastUserModeMapping).run();
         new ContentChangePrioritizer(this.startupServices, workUnitQueue, lastUserModeMapping).run();
-        if (configurationManagerDiag.isFeatureFlagSet(381)) {
+        if (configurationManagerDiag.isFeatureFlagSet(382)) {
             new StartupAnimationSendLumReadyOperation(this.startupServices, workUnitStarter);
         } else {
             new SendLumReadyOperation(this.startupServices, lastUserModeMapping, workUnitStarter);

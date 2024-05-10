@@ -103,7 +103,7 @@ implements GuiControllerCommon {
 
     public void updateNavigationCodingInformation() {
         try {
-            boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(652);
+            boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(654);
             if (bl) {
                 if (ServiceManager.logger2.isTraceEnabled(2)) {
                     ServiceManager.logger2.trace(2).append("GuiControllerMain - updateNavigationCodingInformation() - Navigation coding available!").log();

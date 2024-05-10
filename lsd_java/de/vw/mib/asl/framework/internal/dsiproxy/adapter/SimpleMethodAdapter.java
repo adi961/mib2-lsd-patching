@@ -34,6 +34,7 @@ extends AbstractMethodAdapter {
      */
     @Override
     public Object invoke(Object object, Method method, int n, Object[] objectArray) {
+
         try {
             int n2;
             String string = SimpleMethodAdapter.buildKey(this.consumerClassName, method);

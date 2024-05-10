@@ -23,7 +23,7 @@ implements ModelApiUpEventHandler {
         int n = modelApiUpEvent.getActionId();
         switch (n) {
             case 0: {
-                this.modelDatapool.setInteger(-1445265408, modelApiUpEvent.getInt(0));
+                this.modelDatapool.setInteger(-1378156544, modelApiUpEvent.getInt(0));
                 break;
             }
             case 1: {
@@ -31,7 +31,7 @@ implements ModelApiUpEventHandler {
                 break;
             }
             case 2: {
-                this.modelDatapool.setInteger(1578303744, modelApiUpEvent.getInt(0));
+                this.modelDatapool.setInteger(1645412608, modelApiUpEvent.getInt(0));
                 break;
             }
             case 3: {
@@ -43,7 +43,7 @@ implements ModelApiUpEventHandler {
                 break;
             }
             case 5: {
-                this.modelDatapool.setInteger(185401600, modelApiUpEvent.getInt(0));
+                this.modelDatapool.setInteger(252510464, modelApiUpEvent.getInt(0));
                 break;
             }
             case 6: {
@@ -56,20 +56,20 @@ implements ModelApiUpEventHandler {
             }
             case 8: {
                 this.modelDatapool.setInteger(27598, modelApiUpEvent.getInt(0));
-                this.modelDatapool.setInteger(986972160, modelApiUpEvent.getInt(1));
-                this.modelDatapool.setInteger(2112094208, modelApiUpEvent.getInt(2));
-                this.modelDatapool.setInteger(-886898432, modelApiUpEvent.getInt(3));
-                this.modelDatapool.setInteger(-2053898240, modelApiUpEvent.getInt(4));
+                this.modelDatapool.setInteger(1020526592, modelApiUpEvent.getInt(1));
+                this.modelDatapool.setInteger(-2115764224, modelApiUpEvent.getInt(2));
+                this.modelDatapool.setInteger(-803012352, modelApiUpEvent.getInt(3));
+                this.modelDatapool.setInteger(-2037121024, modelApiUpEvent.getInt(4));
                 this.modelDatapool.setInteger(27696, modelApiUpEvent.getInt(5));
-                this.modelDatapool.setInteger(939720960, modelApiUpEvent.getInt(6));
-                this.modelDatapool.setInteger(-1073348352, modelApiUpEvent.getInt(7));
-                this.modelDatapool.setInteger(-1174273792, modelApiUpEvent.getInt(8));
+                this.modelDatapool.setInteger(1006829824, modelApiUpEvent.getInt(6));
+                this.modelDatapool.setInteger(-1006239488, modelApiUpEvent.getInt(7));
+                this.modelDatapool.setInteger(-1107164928, modelApiUpEvent.getInt(8));
                 this.modelDatapool.setInteger(27135, modelApiUpEvent.getInt(9));
-                this.modelDatapool.setInteger(-1802567680, modelApiUpEvent.getInt(10));
-                this.modelDatapool.setInteger(1854603264, modelApiUpEvent.getInt(11));
+                this.modelDatapool.setInteger(-1785790464, modelApiUpEvent.getInt(10));
+                this.modelDatapool.setInteger(1871380480, modelApiUpEvent.getInt(11));
                 this.modelDatapool.setInteger(20090, modelApiUpEvent.getInt(12));
                 this.modelDatapool.setInteger(16270, modelApiUpEvent.getInt(13));
-                this.modelDatapool.setInteger(247529472, modelApiUpEvent.getInt(14));
+                this.modelDatapool.setInteger(0x10C10000, modelApiUpEvent.getInt(14));
                 this.modelDatapool.setInteger(18045, modelApiUpEvent.getInt(15));
                 this.modelDatapool.setInteger(15045, modelApiUpEvent.getInt(16));
                 this.modelDatapool.setInteger(29290, modelApiUpEvent.getInt(17));

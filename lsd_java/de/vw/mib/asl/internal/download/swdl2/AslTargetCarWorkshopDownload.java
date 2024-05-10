@@ -1672,9 +1672,9 @@ extends AbstractASLTarget {
             } else if (n == 587320322 && l == 0) {
                 this.addCustomerVersion(n, byArray, "Radio database version");
             } else if (n == 604097538 && l == 0) {
-                if (this.configManagerDiag.isFeatureFlagSet(353)) {
+                if (this.configManagerDiag.isFeatureFlagSet(354)) {
                     this.addCustomerVersion(n, byArray, "Full Link");
-                } else if (this.configManagerDiag.isFeatureFlagSet(360)) {
+                } else if (this.configManagerDiag.isFeatureFlagSet(361)) {
                     this.addCustomerVersion(n, byArray, "SmartLink");
                 } else {
                     this.addCustomerVersion(n, byArray, "App-Connect");

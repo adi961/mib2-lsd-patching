@@ -73,7 +73,7 @@ TargetForFullFactoryReset {
     private boolean sldeViewActive = false;
     Vector pendingResolveSearchResultRequests = new Vector();
     boolean discardTryMatchLocations = false;
-    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(1);
+    private boolean isChnEnabled = ServiceManager.configManagerDiag.getNaviLocationOptionDefaultBoolean(3);
     private FactoryResetParticipantWithCallback navigationResetParticipant;
     private FactoryResetParticipantWithCallback fullFactoryResetParticipant;
     private boolean acceptIncomingSearchResults;
@@ -485,7 +485,7 @@ TargetForFullFactoryReset {
 
     private void searchResultSelected(ShieldCollector shieldCollector) {
         Command command;
-        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(70);
+        boolean bl = ServiceManager.configManagerDiag.isFeatureFlagSet(71);
         if (bl && shieldCollector.getSourceOfEntry() == 4) {
             this.waitingForSearchResultsToBeResolved = true;
             SearchResult searchResult = shieldCollector.getSearchResult();

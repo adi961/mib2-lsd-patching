@@ -98,8 +98,8 @@ extends AbstractHmiAppUIGate {
         VIEWNAME_2_SCREENAREAS_MAP.put("Sgths", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Sgtvb", new String[]{"ScreenAreaHeadline"});
         VIEWNAME_2_SCREENAREAS_MAP.put("Sgubt", new String[]{"ScreenAreaHeadline"});
-        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{594, 621, 622};
-        DYNAMIC_STATEMACHINES_OF_LAYER_POPUP = new int[]{487, 488, 489, 490};
+        ENTRY_POINTS_OF_LAYER_MAIN = new int[]{593, 620, 621};
+        DYNAMIC_STATEMACHINES_OF_LAYER_POPUP = new int[]{486, 487, 488, 489};
     }
 }
 

@@ -46,7 +46,7 @@ public class DeveloperTestmodeActivatedSetter {
     }
 
     private boolean retrieveFeatureFlagTestmodeActivated() {
-        return this.configurationManagerDiag.isFeatureFlagSet(400);
+        return this.configurationManagerDiag.isFeatureFlagSet(401);
     }
 
     private void installHMITestmodeAvailability() {

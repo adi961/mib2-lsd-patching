@@ -3,6 +3,7 @@
  */
 package de.vw.mib.asl.internal.radio.dab.main;
 
+import de.vw.mib.asl.amfm.persistence.DabPersistence;
 import de.vw.mib.asl.api.radio.ASLRadioTargetIds;
 import de.vw.mib.asl.framework.api.diagnosis.config.Coding;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxy;
@@ -69,6 +70,8 @@ extends AbstractASLHsmTarget {
     public boolean dabActive = false;
     public boolean userProfileChangeRequested = false;
     public boolean factoryReset = false;
+    boolean isDabTargetReady = false;
+    boolean initDabFromPersistenceAfterStartUp = false;
     private final HsmState stateDabTop = new StateDabTop(this, this.hsm, "stateDabTop", this.getWorkStateParent());
     final HsmState stateDabNotLoaded = new StateDabNotLoaded(this, this.hsm, "stateDabNotLoaded", this.stateDabTop);
     final HsmState stateDabLoad = new StateDabLoad(this, this.hsm, "stateDabLoad", this.stateDabTop);
@@ -92,6 +95,7 @@ extends AbstractASLHsmTarget {
 
     public HsmTarget(GenericEvents genericEvents, String string) {
         super(genericEvents, string);
+        ServiceManager.logger.info(256).append("DabTarget Constructed").log();
         RadioServiceManager.getServiceManager().setRadioDabTarget(this);
         this.hsm.verbose = false;
         DabDatabase.mDabMainTarget = this;
@@ -127,7 +131,30 @@ extends AbstractASLHsmTarget {
         return 256;
     }
 
-    public void initFromPersistence() {
+    public void initFromPersistenceAfterStartUp() {
+        if (this.isInitDabFromPersistenceAfterStartUp()) {
+            return;
+        }
+        if (RadioServiceManager.getServiceManager().getAdapterAslPersistence().isProfileChangeStarted()) {
+            return;
+        }
+        if (this.initFromPersistence()) {
+            this.notifyDabTargetReady();
+            this.setInitDabFromPersistenceAfterStartUp(true);
+        }
+    }
+
+    public boolean initFromPersistence() {
+        boolean bl = false;
+        DabPersistence dabPersistence = RadioServiceManager.getServiceManager().getAdapterAslPersistence().getDabPersistence();
+        if (null == dabPersistence) {
+            ServiceManager.logger.info(256, "DABTarget-initFromPersistence()-dabPersistence is null");
+            return bl;
+        }
+        if (!this.isDabTargetReady()) {
+            ServiceManager.logger.info(256, "DABTarget-initFromPersistence()-DAB target is not ready!");
+            return bl;
+        }
         ServiceManager.logger.info(256, "DAB - Loading Persistence Start");
         RadioData.getDabDatabase().mPersistable.mPresets = new DabPreset[RadioData.getAmfmDatabase().getSettingsPersistable().getDabNoOfPresets()];
         RadioData.getDabDatabase().mPersistable.setWriteAccessBlocked(true);
@@ -150,6 +177,13 @@ extends AbstractASLHsmTarget {
         if (DabPresetApi.isDeletePresetsLogoRequested()) {
             RadioData.getDabDatabase().dabPresetList.deleteAllPresetLogos();
         }
+        bl = true;
+        return bl;
+    }
+
+    public void notifyDabTargetReady() {
+        this.send(ServiceManager.mGenericEventFactory.newEvent(this.getTargetId(), ASLRadioTargetIds.ASL_RADIO_MANAGER, -1836646144));
+        RadioData.getDabDatabase().setDabTunerIsInitialized(true);
     }
 
     public void updateCurrentStationInfo(FrequencyInfo frequencyInfo, EnsembleInfo ensembleInfo, ServiceInfo serviceInfo, ComponentInfo componentInfo) {
@@ -795,6 +829,22 @@ extends AbstractASLHsmTarget {
 
     HsmState getStateDabTop() {
         return this.stateDabTop;
+    }
+
+    public boolean isDabTargetReady() {
+        return this.isDabTargetReady;
+    }
+
+    public void setDabTargetReady(boolean bl) {
+        this.isDabTargetReady = bl;
+    }
+
+    public boolean isInitDabFromPersistenceAfterStartUp() {
+        return this.initDabFromPersistenceAfterStartUp;
+    }
+
+    public void setInitDabFromPersistenceAfterStartUp(boolean bl) {
+        this.initDabFromPersistenceAfterStartUp = bl;
     }
 
     static /* synthetic */ Class class$(String string) {

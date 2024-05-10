@@ -80,11 +80,11 @@ public class PersistenceDefaults {
     }
 
     public static boolean getIsSystemClimateMenuIconVisible() {
-        return PersistenceDefaults.getConfigurationManager().isFeatureFlagSet(374);
+        return PersistenceDefaults.getConfigurationManager().isFeatureFlagSet(375);
     }
 
     public static int getDefaultProximitySensor() {
-        boolean bl = PersistenceDefaults.getConfigurationManager().isFeatureFlagSet(389);
+        boolean bl = PersistenceDefaults.getConfigurationManager().isFeatureFlagSet(390);
         if (bl) {
             return 1;
         }

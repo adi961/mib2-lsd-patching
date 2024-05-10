@@ -156,7 +156,7 @@ implements AdaptionResponse {
         EarlyInitASLTarget.writeIntegerToDatapool(10277, 0);
         this.info().append("EARLY INIT: BC is coded? ").append(this.configManPersCarFuncAdapImpl.getBoolean(240)).log();
         this.info().append("CAR: diagnostic ... Done! ").log();
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(394)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(395)) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(10359, true);
         } else if (ASLSystemFactory.getSystemApi().getFeatureFlagValuePHEV()) {
             ServiceManager.aslPropertyManager.valueChangedBoolean(10359, true);

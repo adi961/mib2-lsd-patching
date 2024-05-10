@@ -254,7 +254,7 @@ extends AbstractTarget {
                 if (ServiceManager.configManagerDiag.isFeatureFlagSet(2)) {
                     TaggingApi.notifyAMFMStationChanged();
                 }
-                if (ServiceManager.configManagerDiag.isFeatureFlagSet(418)) {
+                if (ServiceManager.configManagerDiag.isFeatureFlagSet(419)) {
                     EventGeneric eventGeneric4 = ServiceManager.mGenericEventFactory.newEvent(this.getTargetId(), ASLRadioTargetIds.ASL_RADIO_HSMTARGET_AMFM, 1686256384);
                     this.send(eventGeneric4);
                 }

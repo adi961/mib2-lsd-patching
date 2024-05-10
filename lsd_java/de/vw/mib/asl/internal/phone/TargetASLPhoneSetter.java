@@ -240,7 +240,7 @@ extends TripleMobileEquipment {
         AbstractASLHsmTarget.writeBooleanToDatapool(-276622080, bl);
         AbstractASLHsmTarget.writeBooleanToDatapool(-194877952, bl);
         AbstractASLHsmTarget.writeBooleanToDatapool(-159181568, bl);
-        if (bl && ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (bl && ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             if (ASLPhoneData.getInstance().internalSIMConnected) {
                 ASLPhoneData.persistence.setConnectedSimDataOnlyStateDifferentThanAdaptationDefault(ASLPhoneData.getInstance().defaultSimCardModeVoice);
             }
@@ -257,7 +257,7 @@ extends TripleMobileEquipment {
         AbstractASLHsmTarget.writeBooleanToDatapool(-276622080, bl);
         AbstractASLHsmTarget.writeBooleanToDatapool(-194877952, bl);
         AbstractASLHsmTarget.writeBooleanToDatapool(-175958784, bl);
-        if (bl && ServiceManager.configManagerDiag.isFeatureFlagSet(73)) {
+        if (bl && ServiceManager.configManagerDiag.isFeatureFlagSet(74)) {
             ASLPhoneData.persistence.setConnectedSimDataOnlyStateDifferentThanAdaptationDefault(ASLPhoneData.getInstance().defaultSimCardModeVoice);
             if (ASLPhoneData.getInstance().nadMode != 2 && ASLPhoneData.getInstance().internalSIMConnected) {
                 this.sendHMIEvent(-461171456);

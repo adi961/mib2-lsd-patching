@@ -100,32 +100,32 @@ public final class EventFactory {
     private final EventPool proximityEventPool;
 
     public EventFactory(ConfigurationManager configurationManager) {
-        this.booleanValueEventPool = new EventFactory$2(this, configurationManager.getEventPoolSize(8));
-        this.contextChangeEventPool = new EventFactory$3(this, configurationManager.getEventPoolSize(18));
-        this.datapoolUpdateEventPool = new EventFactory$4(this, configurationManager.getEventPoolSize(0));
-        this.dynamicStateEventPool = new EventFactory$5(this, configurationManager.getEventPoolSize(22));
-        this.hmiEventPool = new EventFactory$6(this, configurationManager.getEventPoolSize(17));
-        this.integerValueEventPool = new EventFactory$7(this, configurationManager.getEventPoolSize(14));
-        this.invocationEventPool = new EventFactory$8(this, configurationManager.getEventPoolSize(5));
-        this.listItemControlUpdateEventPool = new EventFactory$9(this, configurationManager.getEventPoolSize(2));
-        this.listItemEventPool = new EventFactory$10(this, configurationManager.getEventPoolSize(2));
-        this.listReadoutEventPool = new EventFactory$11(this, configurationManager.getEventPoolSize(7));
-        this.pointEventPool = new EventFactory$12(this, configurationManager.getEventPoolSize(13));
-        this.popupStackChangeEventPool = new EventFactory$13(this, configurationManager.getEventPoolSize(16));
-        this.popupViewEventPool = new EventFactory$14(this, configurationManager.getEventPoolSize(12));
-        this.readoutListSelectionEventPool = new EventFactory$15(this, configurationManager.getEventPoolSize(9));
+        this.booleanValueEventPool = new EventFactory$2(this, configurationManager.getEventPoolSize(3));
+        this.contextChangeEventPool = new EventFactory$3(this, configurationManager.getEventPoolSize(9));
+        this.datapoolUpdateEventPool = new EventFactory$4(this, configurationManager.getEventPoolSize(16));
+        this.dynamicStateEventPool = new EventFactory$5(this, configurationManager.getEventPoolSize(21));
+        this.hmiEventPool = new EventFactory$6(this, configurationManager.getEventPoolSize(8));
+        this.integerValueEventPool = new EventFactory$7(this, configurationManager.getEventPoolSize(10));
+        this.invocationEventPool = new EventFactory$8(this, configurationManager.getEventPoolSize(1));
+        this.listItemControlUpdateEventPool = new EventFactory$9(this, configurationManager.getEventPoolSize(24));
+        this.listItemEventPool = new EventFactory$10(this, configurationManager.getEventPoolSize(24));
+        this.listReadoutEventPool = new EventFactory$11(this, configurationManager.getEventPoolSize(18));
+        this.pointEventPool = new EventFactory$12(this, configurationManager.getEventPoolSize(12));
+        this.popupStackChangeEventPool = new EventFactory$13(this, configurationManager.getEventPoolSize(13));
+        this.popupViewEventPool = new EventFactory$14(this, configurationManager.getEventPoolSize(11));
+        this.readoutListSelectionEventPool = new EventFactory$15(this, configurationManager.getEventPoolSize(17));
         this.repaintEventPool = new EventFactory$16(this, configurationManager.getEventPoolSize(25));
         this.restoreFactorySettingsEventPool = new EventFactory$17(this, 10);
-        this.rotationEventPool = new EventFactory$18(this, configurationManager.getEventPoolSize(24));
-        this.speechCommandEventPool = new EventFactory$19(this, configurationManager.getEventPoolSize(10));
-        this.speechEventPool = new EventFactory$20(this, configurationManager.getEventPoolSize(25));
+        this.rotationEventPool = new EventFactory$18(this, configurationManager.getEventPoolSize(14));
+        this.speechCommandEventPool = new EventFactory$19(this, configurationManager.getEventPoolSize(7));
+        this.speechEventPool = new EventFactory$20(this, configurationManager.getEventPoolSize(22));
         this.speechStateEventPool = new EventFactory$21(this, 10);
         this.spellerValueEventPool = new EventFactory$22(this, configurationManager.getEventPoolSize(23));
-        this.stringValueEventPool = new EventFactory$23(this, configurationManager.getEventPoolSize(14));
-        this.systemEventPool = new EventFactory$24(this, configurationManager.getEventPoolSize(1));
-        this.touchEventPool = new EventFactory$25(this, configurationManager.getEventPoolSize(4));
-        this.viewAnimationEventPool = new EventFactory$26(this, configurationManager.getEventPoolSize(3));
-        this.viewChangeEventPool = new EventFactory$27(this, configurationManager.getEventPoolSize(3));
+        this.stringValueEventPool = new EventFactory$23(this, configurationManager.getEventPoolSize(10));
+        this.systemEventPool = new EventFactory$24(this, configurationManager.getEventPoolSize(15));
+        this.touchEventPool = new EventFactory$25(this, configurationManager.getEventPoolSize(2));
+        this.viewAnimationEventPool = new EventFactory$26(this, configurationManager.getEventPoolSize(0));
+        this.viewChangeEventPool = new EventFactory$27(this, configurationManager.getEventPoolSize(0));
         this.proximityEventPool = new EventFactory$28(this, configurationManager.getEventPoolSize(25));
     }
 

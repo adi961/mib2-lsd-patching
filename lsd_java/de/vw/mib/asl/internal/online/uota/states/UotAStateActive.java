@@ -3,6 +3,8 @@
  */
 package de.vw.mib.asl.internal.online.uota.states;
 
+import de.vw.mib.asl.api.online.ASLOnlineCoreServices;
+import de.vw.mib.asl.api.online.ASLOnlineFactory;
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.internal.online.uota.UotAFactory;
 import de.vw.mib.asl.internal.online.uota.common.UotAConstants;
@@ -174,10 +176,12 @@ extends AbstractHsmState {
                 break;
             }
             case 100001: {
+                ASLOnlineCoreServices aSLOnlineCoreServices;
+                boolean bl;
                 if (this.getTarget().isTraceEnabled()) {
                     this.getTarget().trace().append(this._classname).append(".handle(UotAConstants.EV_UOTA_GUIDANCE_STARTED)").log();
                 }
-                if (!this.getTarget().getPropertyManager().isUotAServiceReady() || this.getTarget().getPropertyManager().isPPOIConfigurationOnly()) break;
+                if (!(bl = (aSLOnlineCoreServices = ASLOnlineFactory.getOnlineCoreServices()).isServiceInUsableState(aSLOnlineCoreServices.getServiceIDWithNumericServiceID(19))) || !this.getTarget().getPropertyManager().isUotAServiceReady() || this.getTarget().getPropertyManager().isPPOIConfigurationOnly()) break;
                 this.getPacketController().handleSequence(903, 2);
                 this.getPacketController().requestForCurrentDestinationPackets();
                 this.getTarget().getPropertyManager().setNaviDestinationsForLater(false);

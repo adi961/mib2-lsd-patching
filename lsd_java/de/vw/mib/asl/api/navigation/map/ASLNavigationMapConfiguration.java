@@ -278,7 +278,7 @@ public class ASLNavigationMapConfiguration {
         CAR_POSITION_DEFAULT_NORTHUP_FPK_ENTRY = new Point(505, 188);
         CAR_POSITION_DEFAULT_HEADINGUP_FPK_ENTRY = new Point(505, 249);
         HOT_POINT_2D_NORTH_FPK_ENTRY = new Point(505, 188);
-        HOT_POINT_2D_3D_HEADING_FPK_ENTRY = new Point(505, 265);
+        HOT_POINT_2D_3D_HEADING_FPK_ENTRY = new Point(505, 249);
         HOTPOINT_DEFAULT = new Point(0, 0);
         HOT_POINT_3D_AND_2D_HEADING = new Point(400, 353);
         HOT_POINT_OTHERS = new Point(400, 248);

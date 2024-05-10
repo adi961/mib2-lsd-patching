@@ -38,7 +38,7 @@ public class FPKMapScaleUtils$ZoomLevelThreshold {
     }
 
     private static void setupZoomStep(int n, int n2, int n3, String string, int n4, String string2, int n5, String string3, int n6) {
-        boolean bl = ServiceManager.configurationManager.isFeatureFlagSet(155);
+        boolean bl = ServiceManager.configurationManager.isFeatureFlagSet(156);
         FPKMapScaleUtils$ZoomLevelThreshold.setupZoomStep(n, n2, n3, string, n4, bl ? string2 : string3, bl ? n5 : n6);
     }
 

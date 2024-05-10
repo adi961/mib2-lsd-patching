@@ -50,7 +50,7 @@ extends AbstractHsmState {
             }
             case 1073744564: {
                 int n = eventGeneric.getInt(0);
-                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(70)) break;
+                if (!ServiceManager.configManagerDiag.isFeatureFlagSet(71)) break;
                 switch (n) {
                     case -128: {
                         this.target.datapool.setAutozoomActive(false);

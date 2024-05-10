@@ -279,7 +279,7 @@ public class VZAHandling {
     }
 
     private boolean isSpeedCameraWarningViaVZA() {
-        return ServiceManager.configManagerDiag.isFeatureFlagSet(159);
+        return ServiceManager.configManagerDiag.isFeatureFlagSet(160);
     }
 
     public void stopDisplayWarningIcon() {

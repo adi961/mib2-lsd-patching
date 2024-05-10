@@ -308,7 +308,7 @@ implements ViewCompositor {
             this.g3d.setPerformanceMetricsEnabled(true);
         }
         int n2 = n = ServiceManager.performanceIndicatorService != null ? ServiceManager.performanceIndicatorService.getPerformanceIndicatorCount() : 0;
-        if (n > 0 && this.systemPerformanceOverlay == null && ServiceManager.configurationManager.isFeatureFlagSet(400)) {
+        if (n > 0 && this.systemPerformanceOverlay == null && ServiceManager.configurationManager.isFeatureFlagSet(401)) {
             this.systemPerformanceOverlay = new SystemPerformanceOverlay(LOGGER, this.g3d, this.displaySize);
         } else if (n == 0 && this.systemPerformanceOverlay != null) {
             this.systemPerformanceOverlay.dispose();
@@ -501,7 +501,7 @@ implements ViewCompositor {
             this.debugOverlay.update(this.viewNames);
             this.debugOverlay.draw();
         }
-        if (this.systemPerformanceOverlay != null && ServiceManager.configurationManager.isFeatureFlagSet(400)) {
+        if (this.systemPerformanceOverlay != null && ServiceManager.configurationManager.isFeatureFlagSet(401)) {
             this.systemPerformanceOverlay.draw();
         }
     }

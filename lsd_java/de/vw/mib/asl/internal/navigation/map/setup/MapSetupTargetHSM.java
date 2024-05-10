@@ -388,12 +388,12 @@ DayNightListener {
         this.notifierDSI.dsiMapViewerMainSetMode(this.datapool.getMainMapMapMode());
         this.notifierDSI.dsiMapViewerMainSetZoomLevel(this.datapool.getMainMapZoomLevel(), -1);
         this.notifierDSI.dsiMapViewerMainSetRouteColoringPolicy(0);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(408)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(409)) {
             int n2 = ASLSystemFactory.getSystemApi().getTemperatureUnit();
             int n3 = this.convertTempUnitSystem2DSI(n2);
             this.notifierDSI.dsiMapViewerMainSetTemperatureScale(n3);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
             this.notifierDSI.setSpeedAndFlowRoadClass(this.datapool.getSpeedAndFlowRoadClassDSI());
         }
         this.notifierDSI.dsiMapViewerMainViewSetVisible(false);
@@ -445,12 +445,12 @@ DayNightListener {
         this.notifierDSI.dsiMapViewerMainSetMode(1);
         this.notifierDSI.dsiMapViewerMainSetZoomLevel(this.datapool.getMainMapZoomLevel(), -1);
         this.notifierDSI.dsiMapViewerMainSetRouteColoringPolicy(0);
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(408)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(409)) {
             int n2 = ASLSystemFactory.getSystemApi().getTemperatureUnit();
             int n3 = this.convertTempUnitSystem2DSI(n2);
             this.notifierDSI.dsiMapViewerMainSetTemperatureScale(n3);
         }
-        if (ServiceManager.configManagerDiag.isFeatureFlagSet(472)) {
+        if (ServiceManager.configManagerDiag.isFeatureFlagSet(474)) {
             this.notifierDSI.setSpeedAndFlowRoadClass(this.datapool.getSpeedAndFlowRoadClassDSI());
         }
         this.notifierDSI.dsiMapViewerMainViewSetVisible(false);

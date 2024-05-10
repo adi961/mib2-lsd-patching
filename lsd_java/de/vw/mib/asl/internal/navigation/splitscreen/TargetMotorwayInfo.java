@@ -347,13 +347,21 @@ DSIServiceStateListener {
 
     public void dsiNavigationUpdateRgInfoForNextDestination(RgInfoForNextDestination rgInfoForNextDestination, int n) {
         if (n == 1) {
-            if (this.isDestinationIndexValid(rgInfoForNextDestination.destinationIndex)) {
-                this.destinationInfo = rgInfoForNextDestination;
-            }
+            this.destinationInfo = rgInfoForNextDestination;
             this.updateMotorwayInfoElements();
             this.updateTmcMessageElements();
             this.updateSpeedAndFlowElements();
             this.updateModel();
+            if (this.motorwayInfoList != null && this.motorwayInfoList.size() > 0) {
+                EventGeneric eventGeneric = ServiceManager.mGenericEventFactory.newEvent(-1068821504, -1085598720, 75956480);
+                eventGeneric.setInt(0, 1);
+                try {
+                    this.send(eventGeneric);
+                }
+                catch (GenericEventException genericEventException) {
+                    this.error(genericEventException);
+                }
+            }
         }
     }
 

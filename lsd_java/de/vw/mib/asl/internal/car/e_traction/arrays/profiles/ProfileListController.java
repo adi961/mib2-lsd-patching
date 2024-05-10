@@ -490,7 +490,7 @@ ArraySliderDelegate {
         int n2 = this.getIndexOfProfile(batteryControlProfileCollector.posId);
         if (n2 != INDEX_NOT_FOUND) {
             ProfileListArrayElementAdapter profileListArrayElementAdapter = (ProfileListArrayElementAdapter)batteryControlProfileCollector;
-            if (!ServiceManager.configManagerDiag.isFeatureFlagSet(101) && !profileListArrayElementAdapter.isNightRate()) {
+            if (!ServiceManager.configManagerDiag.isFeatureFlagSet(102) && !profileListArrayElementAdapter.isNightRate()) {
                 profileListArrayElementAdapter.setNewPowerProviderId(UNKNOWN_PROVIDER_ID);
             }
             this.getProfileListArrayList().modifyArrayElement(profileListArrayElementAdapter, n);

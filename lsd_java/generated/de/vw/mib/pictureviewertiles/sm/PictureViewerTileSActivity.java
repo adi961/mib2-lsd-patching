@@ -62,7 +62,7 @@ extends StatemachineActivityBase {
     public boolean evalUntriggeredTransitionGuard(int n) {
         switch (n - this.UT_OFFSET) {
             case 1: {
-                return this.getInteger(183304192) == 1;
+                return this.getInteger(0xEED0000) == 1;
             }
         }
         return true;

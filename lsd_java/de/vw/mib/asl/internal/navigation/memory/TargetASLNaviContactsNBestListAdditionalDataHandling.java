@@ -50,7 +50,7 @@ extends AbstractASLTarget {
                     AddressData[] addressDataArray = ASLPhoneFactory.getPhoneApi().ripADBAddressData(adbEntryArray[i2].getAddressData());
                     String string = "";
                     if (addressDataArray != null && addressDataArray.length > 0) {
-                        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(1);
+                        int n = ServiceManager.configManagerDiag.getNaviCommonOptionDefault(2);
                         string = ServiceManager.fixFormat4Asl.fmtRulesetBasedString(10 + n, ASLNavigationUtilFactory.getNavigationUtilApi().getLocationFormatter().prepareFixFormatterFieldData(addressDataArray[0], null, null));
                     }
                     stringArray[1] = string != null ? string : "";

@@ -10,6 +10,8 @@ import de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties;
 import de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget;
 import de.vw.mib.asl.internal.androidauto.target.StartupHandler;
 
+import java.util.Arrays;
+
 public class NavigationListener
 extends AbstractASLNavigationServicesListener {
     private AndroidAutoTarget target;
@@ -19,6 +21,21 @@ extends AbstractASLNavigationServicesListener {
     private boolean stopGuidancePending = false;
 
     public NavigationListener(AndroidAutoTarget androidAutoTarget, AndroidAutoGlobalProperties androidAutoGlobalProperties, StartupHandler startupHandler) {
+        System.out.println("AADEBUG target ids: getClassifier(): " + androidAutoTarget.getClassifier() + " getSubClassifier(): " + androidAutoTarget.getSubClassifier()+ " getDefaultTargetId(): " + androidAutoTarget.getDefaultTargetId() + " targetId: " +androidAutoTarget.getTargetId());
+        System.out.println("AADEBUG: target: " + androidAutoTarget.toString());
+        System.out.println("AADEBUG: hashCode: " + androidAutoTarget.hashCode());
+
+        System.out.println("AADEBUG: OBSERVED_EVENTS:");
+        for (int i2 = 0; i2 < androidAutoTarget.OBSERVED_EVENTS.length; ++i2) {
+            System.out.println("  " + androidAutoTarget.OBSERVED_EVENTS[i2]);
+        }
+
+        System.out.println("AADEBUG: DSI_ANDROIDAUTO2_ATTR:");
+        for (int i2 = 0; i2 < androidAutoTarget.DSI_ANDROIDAUTO2_ATTR.length; ++i2) {
+            System.out.println("  " + androidAutoTarget.DSI_ANDROIDAUTO2_ATTR[i2]);
+        }
+
+
         this.target = androidAutoTarget;
         this.properties = androidAutoGlobalProperties;
         this.startupHandler = startupHandler;

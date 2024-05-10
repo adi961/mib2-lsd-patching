@@ -10,6 +10,7 @@ import de.vw.mib.asl.api.navigation.ASLNavigationFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationServices;
 import de.vw.mib.asl.framework.api.displaymanagement.ASLDisplaymanagementFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.displayable.DisplayableService;
+import de.vw.mib.asl.framework.api.dsiproxy.DSIProxy;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxyFactory;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIServiceStateListener;
 import de.vw.mib.asl.framework.internal.framework.AbstractASLTarget;
@@ -44,9 +45,11 @@ import org.dsi.ifc.base.DSIListener;
 import org.dsi.ifc.global.ResourceLocator;
 import org.osgi.framework.ServiceReference;
 
+import java.util.Arrays;
+
 public class AndroidAutoTarget
-extends AbstractASLTarget
-implements DSIServiceStateListener {
+        extends AbstractASLTarget
+        implements DSIServiceStateListener {
     private TimerHandler timerHandler;
     private ASLHandler aslHandler;
     private ASLEventHandler aslEventHandler;
@@ -67,10 +70,22 @@ implements DSIServiceStateListener {
     private DSIListener dsiAndroidAuto2Listener;
     private boolean targetStarted = false;
     boolean dsiSmartPhoneIntegrationAvailable = false;
-    private /*final*/ String _classname;
+    private /*final*/ String _classname = "AndroidAutoTarget";
     private ASLAndroidAutoExBoxServiceImpl apiImpl;
-    /*final*/ int[] OBSERVED_EVENTS = new int[]{622091520, 638868736, 806640896, 823418112, 957635840, 755580160, 252263680, 403258624, 352926976, 118045952, 110969088};
-    /*final*/ int[] DSI_ANDROIDAUTO2_ATTR = new int[]{1, 6, 2};
+    /*final*/ int[] OBSERVED_EVENTS = new int[]{
+            6100005,
+            6100006,
+            6100016,
+            6100017,
+            6100025,
+            4000045,
+            4000015,
+            4000024,
+            4000021,
+            4000007,
+            4300038,
+    };
+    /*final*/ int[] DSI_ANDROIDAUTO2_ATTR = new int[]{ 1, 6, 2 , 3, 4 , 5 , 7 , 8};
     static /* synthetic */ Class class$org$dsi$ifc$androidauto2$DSIAndroidAuto2;
     static /* synthetic */ Class class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener;
     static /* synthetic */ Class class$de$vw$mib$threads$AsyncServiceFactory;
@@ -78,7 +93,8 @@ implements DSIServiceStateListener {
 
     public AndroidAutoTarget(GenericEvents genericEvents, int n, String string) {
         super(genericEvents, n, string);
-        this._classname = "AndroidAutoTarget";
+        System.out.println("AADEBUG: Target AndroidAuto - Initialising Target AndroidAuto (1)! ");
+
         if (this.isTraceEnabled()) {
             this.trace("Target AndroidAuto - Initialising Target AndroidAuto (1)!");
         }
@@ -87,7 +103,8 @@ implements DSIServiceStateListener {
 
     public AndroidAutoTarget(GenericEvents genericEvents, String string) {
         super(genericEvents, string);
-        this._classname = "AndroidAutoTarget";
+        System.out.println("AADEBUG: Target AndroidAuto - Initialising Target AndroidAuto (2)! ");
+
         if (this.isTraceEnabled()) {
             this.trace("Target AndroidAuto - Initialising Target AndroidAuto (2)!");
         }
@@ -96,7 +113,9 @@ implements DSIServiceStateListener {
 
     public AndroidAutoTarget(GenericEvents genericEvents, int n) {
         super(genericEvents, n);
-        this._classname = "AndroidAutoTarget";
+        System.out.println("AADEBUG: Target AndroidAuto - Initialising Target AndroidAuto (3)! ");
+
+
         if (this.isTraceEnabled()) {
             this.trace("Target AndroidAuto - Initialising Target AndroidAuto (3)!");
         }
@@ -104,6 +123,7 @@ implements DSIServiceStateListener {
     }
 
     private void initHandler() {
+
         if (this.isTraceEnabled()) {
             this.trace("AndroidAutoTarget::initHandler()");
         }
@@ -128,10 +148,14 @@ implements DSIServiceStateListener {
         this.requestHandler.initTimerHandler(this.timerHandler);
         this.aslHandler.initTimerHandler(this.timerHandler);
         this.requestHandler.initExBoxNavServices(this.exboxGuidanceListenerImpl);
+        System.out.println("AADEBUG: initHandler targetId: " + this.getTargetId() + " default: " + this.getDefaultTargetId() + "classifier: " + this.getClassifier() + " subClassifier: " + this.getSubClassifier());
     }
 
-   // @Override
+
+    // @Override
     public void gotEvent(EventGeneric eventGeneric) {
+        System.out.println("AADEBUG: Target AndroidAuto - gotEvent() " + eventGeneric.toString());
+        System.out.println("AADEBUG: eventId: " + eventGeneric.getReceiverEventId());
         if (this.aslEventHandler == null) {
             if (this.isTraceEnabled()) {
                 this.warn("Target AndroidAuto - got an event! target is not fully startet yet - event will be ignored");
@@ -145,13 +169,13 @@ implements DSIServiceStateListener {
     }
 
     public void initializeDSI() {
-        Object object;
+        System.out.println("AADEBUG: initializeDSI()");
+
         if (this.isTraceEnabled()) {
-            object = this.trace();
-            object.append("AndroidAutoTarget").append(".initializeDSI()").log();
+            this.trace().append("AndroidAutoTarget").append(".initializeDSI()").log();
         }
-        object = DSIProxyFactory.getDSIProxyAPI().getDSIProxy();
-        this.dsiAndroidAuto2 = (DSIAndroidAuto2)object.getService(this, class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 == null ? (class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 = AndroidAutoTarget.class$("org.dsi.ifc.androidauto2.DSIAndroidAuto2")) : class$org$dsi$ifc$androidauto2$DSIAndroidAuto2);
+        DSIProxy object = DSIProxyFactory.getDSIProxyAPI().getDSIProxy();
+        this.dsiAndroidAuto2 = (DSIAndroidAuto2) object.getService(this, class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 == null ? (class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 = AndroidAutoTarget.class$("org.dsi.ifc.androidauto2.DSIAndroidAuto2")) : class$org$dsi$ifc$androidauto2$DSIAndroidAuto2);
         if (this.isTraceEnabled()) {
             this.trace("Target AndroidAuto - createDSIListenerMethodAdapter! ");
         }
@@ -167,6 +191,15 @@ implements DSIServiceStateListener {
             this.trace("Target AndroidAuto - service set, now set notification!");
         }
         this.dsiAndroidAuto2.setNotification(this.DSI_ANDROIDAUTO2_ATTR, this.dsiAndroidAuto2Listener);
+
+        boolean c1 = class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener != null;
+        boolean c2 = class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener != null;
+        System.out.println("AADEBUG: class$org$dsi$ifc$androidauto2$DSIAndroidAuto2: " + c1 + " class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener: " + c2);
+
+        boolean c3 = class$de$vw$mib$threads$AsyncServiceFactory != null;
+        boolean c4 = class$de$vw$mib$popup$PopupInformationHandler != null;
+        System.out.println("AADEBUG: class$de$vw$mib$threads$AsyncServiceFactory: " + c3 + " class$de$vw$mib$popup$PopupInformationHandler: " + c4);
+
     }
 
     private void deInitializeDSI() {
@@ -184,16 +217,15 @@ implements DSIServiceStateListener {
     }
 
     public void startup() {
-        ServiceReference[] serviceReferenceArray;
+        System.out.println("AADEBUG: startup()");
         if (this.isTraceEnabled()) {
-            serviceReferenceArray = this.trace();
-            serviceReferenceArray.append("AndroidAutoTarget").append(".startup()").log();
+            this.trace().append("AndroidAutoTarget").append(".startup()").log();
         }
         DSIProxyFactory.getDSIProxyAPI().getDSIProxy().addServiceStateListener(class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 == null ? (class$org$dsi$ifc$androidauto2$DSIAndroidAuto2 = AndroidAutoTarget.class$("org.dsi.ifc.androidauto2.DSIAndroidAuto2")) : class$org$dsi$ifc$androidauto2$DSIAndroidAuto2, this);
         this.addObservers(this.OBSERVED_EVENTS);
         this.targetStarted = true;
-        serviceReferenceArray = ServiceManager.bundleContext.getServiceReferences((class$de$vw$mib$threads$AsyncServiceFactory == null ? (class$de$vw$mib$threads$AsyncServiceFactory = AndroidAutoTarget.class$("de.vw.mib.threads.AsyncServiceFactory")) : class$de$vw$mib$threads$AsyncServiceFactory).getName(), "(MIBThreadId=3)");
-        AsyncServiceFactory asyncServiceFactory = (AsyncServiceFactory)ServiceManager.bundleContext.getService(serviceReferenceArray[0]);
+        ServiceReference[] serviceReferenceArray = ServiceManager.bundleContext.getServiceReferences((class$de$vw$mib$threads$AsyncServiceFactory == null ? (class$de$vw$mib$threads$AsyncServiceFactory = AndroidAutoTarget.class$("de.vw.mib.threads.AsyncServiceFactory")) : class$de$vw$mib$threads$AsyncServiceFactory).getName(), "(MIBThreadId=3)");
+        AsyncServiceFactory asyncServiceFactory = (AsyncServiceFactory) ServiceManager.bundleContext.getService(serviceReferenceArray[0]);
         ServiceManager.bundleContext.registerService((class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = AndroidAutoTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler).getName(), asyncServiceFactory.create(this.popupHandler, new Class[]{class$de$vw$mib$popup$PopupInformationHandler == null ? (class$de$vw$mib$popup$PopupInformationHandler = AndroidAutoTarget.class$("de.vw.mib.popup.PopupInformationHandler")) : class$de$vw$mib$popup$PopupInformationHandler}), null);
         if (this.exboxGuidanceListenerImpl != null) {
             this.exboxGuidanceListenerImpl.startup();
@@ -201,6 +233,8 @@ implements DSIServiceStateListener {
     }
 
     public void shutdown() {
+        System.out.println("AADEBUG: shutdown()");
+
         if (this.isTraceEnabled()) {
             this.trace().append("AndroidAutoTarget").append(".shutdown()").log();
         }
@@ -215,35 +249,37 @@ implements DSIServiceStateListener {
         }
     }
 
-   // @Override
+    // @Override
     public int getClassifier() {
-        return 1174437888;
+        return 8388678;
     }
 
-   // @Override
+    // @Override
     public int getSubClassifier() {
         return 1;
     }
 
-   // @Override
+    // @Override
     public int getDefaultTargetId() {
-        return -230549504;
+        return 1590002;
     }
 
-   // @Override
+
+    // @Override
     public void registered(String string, int n) {
+        System.out.println("AADEBUG: registered() trace: " + this.isTraceEnabled());
         String string2 = string.intern();
         if (this.isTraceEnabled()) {
             LogMessage logMessage = this.trace();
             logMessage.append("AndroidAutoTarget").append(".registered(").append(Util.isNullOrEmpty(string2) ? "<null>" : string).append(", ").append(n).append(")").log();
         }
-        if (string2 == RuntimeGeneratedConstants.SERVICE_TS_NS[2]) {
+        if (string2.equals(RuntimeGeneratedConstants.SERVICE_TS_NS[2])) {
             this.initializeDSI();
             this.audioHandler.registerTargetToEntertainmentManager();
             this.startupHandler.setDSI2Registered(true);
             this.navServices = ASLNavigationFactory.getNavigationApi().getASLNavigationServices(this.navigationListener);
             this.navigationListener.initNavServices(this.navServices);
-            this.apiImpl = (ASLAndroidAutoExBoxServiceImpl)ASLAndroidAutoFactory.getAndroidAutoApi().getExBoxService();
+            this.apiImpl = (ASLAndroidAutoExBoxServiceImpl) ASLAndroidAutoFactory.getAndroidAutoApi().getExBoxService();
             this.apiImpl.setTarget(this);
         }
         if (this.isTraceEnabled()) {
@@ -258,14 +294,14 @@ implements DSIServiceStateListener {
         }
     }
 
-   // @Override
+    // @Override
     public void unregistered(String string, int n) {
         String string2 = string.intern();
         if (this.isTraceEnabled()) {
             LogMessage logMessage = this.trace();
             logMessage.append("AndroidAutoTarget").append(".unregistered(").append(Util.isNullOrEmpty(string2) ? "<null>" : string).append(", ").append(n).append(")").log();
         }
-        if (string2 == RuntimeGeneratedConstants.SERVICE_TS_NS[2]) {
+        if (string2.equals(RuntimeGeneratedConstants.SERVICE_TS_NS[2])) {
             this.deInitializeDSI();
             this.startupHandler.setDSI2Registered(false);
         }
@@ -280,6 +316,7 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2VideoFocusRequestNotification(int n, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2VideoFocusRequestNotification()" + " n:" + n + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#videoFocusRequestNotification called");
         }
@@ -287,6 +324,7 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2VideoAvailable(boolean bl, int n) {
+        System.out.println("AADEBUG: dsiAndroidAuto2VideoAvailable()" + " n:" + n + " bl: " + bl);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#videoAvailable called");
         }
@@ -294,6 +332,7 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2AudioFocusRequestNotification(int n, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2AudioFocusRequestNotification()" + " n:" + n + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#audioFocusRequestNotification called");
         }
@@ -301,13 +340,16 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2AudioAvailable(int n, boolean bl, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2AudioAvailable()" + " n:" + n + " bl: " + bl + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#audioAvailable called");
         }
+        System.out.println("AADEBUG dsiAndroidAuto2AudioAvailable n: " + n + " n2: " + n2 + " bl: " + bl);
         this.dsihandler.handleDsiAndroidAuto2AudioAvailable(n, bl, n2);
     }
 
     public void dsiAndroidAuto2VoiceSessionNotification(int n, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2VoiceSessionNotification()" + " n:" + n + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#voiceSessionNotification called");
         }
@@ -315,6 +357,7 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2MicrophoneRequestNotification(int n, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2MicrophoneRequestNotification()" + " n:" + n + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#microphoneRequestNotification called");
         }
@@ -322,6 +365,7 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2NavFocusRequestNotification(int n, int n2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2NavFocusRequestNotification()" + " n:" + n + " n2: "+ n2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#navFocusRequestNotification called");
         }
@@ -329,60 +373,72 @@ implements DSIServiceStateListener {
     }
 
     public void dsiAndroidAuto2UpdateCallState(CallState[] callStateArray, int n) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCallState()" + " n:" + n + " callStateArray.length: " + callStateArray.length);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateCallState called");
         }
     }
 
     public void dsiAndroidAuto2UpdateTelephonyState(TelephonyState telephonyState, int n) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateTelephonyState()" + " n:" + n + " telephonyState: " + telephonyState);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateTelephonyState called");
         }
     }
 
-    public void dsiAndroidAuto2UpdateNowPlayingData(TrackData trackData, int n) {
+    public void dsiAndroidAuto2UpdateNowPlayingData(TrackData trackData, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateNowPlayingData()" + " trackData: " + trackData + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateNowPlayingData called");
         }
     }
 
-    public void dsiAndroidAuto2UpdatePlaybackState(PlaybackInfo playbackInfo, int n) {
+    public void dsiAndroidAuto2UpdatePlaybackState(PlaybackInfo playbackInfo, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlaybackState()" + " playbackInfo: " + playbackInfo + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updatePlaybackState called");
         }
     }
 
-    public void dsiAndroidAuto2UpdatePlayposition(int n, int n2) {
+    public void dsiAndroidAuto2UpdatePlayposition(int timePosition, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlayposition()" + " timePosition:" + timePosition + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateServiceStatus called");
         }
     }
 
     public void dsiAndroidAuto2UpdateCoverArtUrl(ResourceLocator resourceLocator, int n) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl()" + " resourceLocator: " + resourceLocator + " n: " + n);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateCoverArtUrl called");
         }
+        System.out.println("AADEBUG dsiAndroidAuto2UpdateCoverArtUrl " + resourceLocator.url);
+
     }
 
-    public void dsiAndroidAuto2UpdateNavigationNextTurnEvent(String string, int n, int n2, int n3, int n4, int n5) {
+    public void dsiAndroidAuto2UpdateNavigationNextTurnEvent(String road, int turnSide, int event, int turnAngle, int turnNumber, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateNavigationNextTurnEvent()" + " road: " + road + " turnSide: " + turnSide + " event: " + event + " turnAngle: " + turnAngle + " turnNumber: " + turnNumber + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateNavigationNextTurnEvent called");
         }
     }
 
-    public void dsiAndroidAuto2UpdateNavigationNextTurnDistance(int n, int n2, int n3) {
+    public void dsiAndroidAuto2UpdateNavigationNextTurnDistance(int distanceMeters, int timeSeconds, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateNavigationNextTurnDistance()" + " distanceMeters: " + distanceMeters + " timeSeconds: " + timeSeconds + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateNavigationNextTurnDistance called");
         }
     }
 
     public void dsiAndroidAuto2SetExternalDestination(double d2, double d3, String string, String string2) {
+        System.out.println("AADEBUG: dsiAndroidAuto2SetExternalDestination()" + " d2: " + d2 + " d3: " + d3 + " string: " + string + " string2: " + string2);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#setExternalDestination called");
         }
     }
 
     public void dsiAndroidAuto2BluetoothPairingRequest(String string, int n) {
+        System.out.println("AADEBUG: dsiAndroidAuto2BluetoothPairingRequest()" + " string: " + string + " n: " + n);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#bluetoothPairingRequest called");
         }
@@ -391,9 +447,12 @@ implements DSIServiceStateListener {
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            try {
+                throw new NoClassDefFoundError().initCause(classNotFoundException);
+            } catch (Throwable e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

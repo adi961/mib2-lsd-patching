@@ -142,8 +142,20 @@ public /* final */ class DistanceToNextManeuver
 
     private void setDistanceToNextManeuverStatusData(DistanceToNextManeuver_Status distanceToNextManeuver_Status) {
         NavigationService navigationService = this.getNavigationService();
+        NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService.getDistanceToNextManeuver();
+        boolean bl = navigationService.getRouteGuidanceState() == 1 || this.getAndroidAutoService().isAndroidAutoRouteGuidanceActive();
+        boolean bl2 = navigationService.getDistanceToNextManeuver().getDistanceToNextManeuverDistance() > 0 && bl;
+        distanceToNextManeuver_Status.bargraphInfo.bargraphOnOff = this.verifiedBapBargraphSetting();
+        this.computeDistanceAndDistanceUnit(distanceToNextManeuver_Status, bl);
+        distanceToNextManeuver_Status.bargraphInfo.bargraph = navigationDistanceToNextManeuver.getDistanceToNextManeuverBargraph();
+        distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = distanceToNextManeuver_Status.distanceToNextManeuver.unit != 0 && distanceToNextManeuver_Status.distanceToNextManeuver.unit != 3 ? (distanceToNextManeuver_Status.distanceToNextManeuver.unit == 4 ? bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 125 : bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 200) : bl2;
+        if (distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid) {
+            distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = this.showDistanceToNextManeuver();
+        }
+       /* NavigationService navigationService = this.getNavigationService();
         NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService
                 .getDistanceToNextManeuver();
+        System.out.println("AADEBUG: NavigationDistanceToNextManeuver: " + navigationDistanceToNextManeuver.getDistanceToNextManeuverDistance() + " unit: " + navigationDistanceToNextManeuver.getDistanceToNextManeuverDistanceUnit() + " bargraph: " + navigationDistanceToNextManeuver.getDistanceToNextManeuverBargraph() + " bargraphOnOff: " + navigationDistanceToNextManeuver.getDistanceToNextManeuverBargraphOnOff());
         boolean bl = navigationService.getRouteGuidanceState() == 1;
         if (!bl && RGStatus.AndroidAutoRouteGuidanceActive) {
             // if native route guidance is not active but Android Auto route guidance is
@@ -234,7 +246,7 @@ public /* final */ class DistanceToNextManeuver
                 distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = this
                         .showDistanceToNextManeuver();
             }
-        }
+        }*/
     }
 
     private void sendDistanceToNextManeuverStatus(DistanceToNextManeuver_Status distanceToNextManeuver_Status) {

@@ -338,6 +338,9 @@ public class CurrentStationInfo
     private void setStationInfoForMirrorLink(CurrentStationInfo_Status currentStationInfo_Status) {
         int n;
         String string;
+
+        this.getExboxService().getExboxCurrentStationInfo().
+
         switch (this.getSmartphoneIntegrationService().getSmarphoneIntegrationActiveConnectionType()) {
             case 1: {
                 string = "MirrorLink\u2122";
@@ -350,7 +353,7 @@ public class CurrentStationInfo
                 break;
             }
             case 3: {
-                string = "Android Auto";
+                string = "Android Autooooo";
                 n = 72;
                 break;
             }

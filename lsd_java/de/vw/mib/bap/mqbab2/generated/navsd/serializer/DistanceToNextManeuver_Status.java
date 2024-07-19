@@ -35,7 +35,7 @@ implements StatusProperty {
         this.distanceToNextManeuver.reset();
         this.bargraphInfo.reset();
         this.validityInformation.reset();
-    }
+    }DistanceToNextManeuver_Status
 
     @Override
     public boolean equalTo(BAPEntity bAPEntity) {

@@ -191,8 +191,10 @@ public class RequestHandler {
         if (this.target.isTraceEnabled()) {
             this.target.trace(new StringBuffer().append("RequestHandler::performNavFocusRequestNotification - navFocusType = ").append(n).toString());
         }
+
         switch (n) {
             case 1: {
+                this.properties.setAndroidAutoNavigationActive(false);
                 // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
                 // this.properties.setAndroidAutoNavigationActive(false);
                 // if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {

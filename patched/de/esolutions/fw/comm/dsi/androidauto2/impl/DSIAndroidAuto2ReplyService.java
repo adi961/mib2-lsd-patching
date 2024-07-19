@@ -9,17 +9,9 @@ import de.esolutions.fw.comm.core.IProxyFrontend;
 import de.esolutions.fw.comm.core.ServiceInstanceID;
 import de.esolutions.fw.comm.core.method.MethodException;
 import de.esolutions.fw.comm.dsi.androidauto2.DSIAndroidAuto2Reply;
-import de.esolutions.fw.comm.dsi.androidauto2.impl.PlaybackInfoSerializer;
-import de.esolutions.fw.comm.dsi.androidauto2.impl.TelephonyStateSerializer;
-import de.esolutions.fw.comm.dsi.androidauto2.impl.TrackDataSerializer;
+
 import de.esolutions.fw.comm.dsi.global.impl.ResourceLocatorSerializer;
 import de.esolutions.fw.util.serializer.IDeserializer;
-import de.esolutions.fw.util.serializer.exception.SerializerException;
-import de.vw.mib.bap.mqbab2.audiosd.functions.CurrentStationInfo;
-import de.vw.mib.bap.mqbab2.navsd.functions.DistanceToNextManeuver;
-import de.vw.mib.bap.mqbab2.navsd.functions.ManeuverDescriptor;
-import de.vw.mib.bap.mqbab2.navsd.functions.RGStatus;
-import de.vw.mib.bap.mqbab2.navsd.functions.TurnToInfo;
 import de.vw.mib.util.StringBuilder;
 
 import java.io.File;
@@ -797,6 +789,7 @@ public class DSIAndroidAuto2ReplyService
                         if (event instanceof TracesSDScanner.NavigationNextTurnEvent) {
                             TracesSDScanner.NavigationNextTurnEvent newNextTurn = (TracesSDScanner.NavigationNextTurnEvent) event;
                             if (nextTurn == null || !newNextTurn.toString().equals(nextTurn.toString())) {
+                                System.out.println("AADEBUG: NAVEVENT: type: " + type + " event: " + event.toString());
                                 nextTurn = newNextTurn;
                                 navChanged = true;
                             }
@@ -804,6 +797,7 @@ public class DSIAndroidAuto2ReplyService
                             TracesSDScanner.NavigationNextTurnDistance newNextTurnDistance = (TracesSDScanner.NavigationNextTurnDistance) event;
                             if (nextTurnDistance == null
                                     || !newNextTurnDistance.toString().equals(nextTurnDistance.toString())) {
+                                System.out.println("AADEBUG: NAVEVENT: type: " + type + " event: " + event.toString());
                                 nextTurnDistance = newNextTurnDistance;
                                 navChanged = true;
                             }
@@ -820,7 +814,7 @@ public class DSIAndroidAuto2ReplyService
                     }
 
                     public void runFinished() {
-                        if (nowPlayingChanged) {
+                      /*  if (nowPlayingChanged) {
                             if (!CurrentStationInfo.AndroidAutoTitle.equals(nowPlaying.title)
                                     || !CurrentStationInfo.AndroidAutoArtist.equals(nowPlaying.artist)
                                     || !CurrentStationInfo.AndroidAutoAlbum.equals(nowPlaying.album)) {
@@ -988,7 +982,7 @@ public class DSIAndroidAuto2ReplyService
                             }
 
                             navChanged = false;
-                        }
+                        }*/
 
                     }
                 };

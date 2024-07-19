@@ -181,6 +181,7 @@ public /* final */ class ManeuverDescriptor
         iterator = navigationService.getManeuverDescriptor();
         if (n > 0) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            System.out.println("AADEBUG: n > 0: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -194,6 +195,7 @@ public /* final */ class ManeuverDescriptor
         }
         if (n > 1) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            System.out.println("AADEBUG: n > 1: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -207,6 +209,7 @@ public /* final */ class ManeuverDescriptor
         }
         if (n > 2) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            System.out.println("AADEBUG: n > 2: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -266,7 +269,13 @@ public /* final */ class ManeuverDescriptor
     }
 
     private ManeuverDescriptor_Status computeManeuverDescriptorStatus() {
+        System.out.println("AADEBUG: computeManeuverDescriptorStatus, getRouteGuidanceState()" + this.getNavigationService().getRouteGuidanceState());
         ManeuverDescriptor_Status maneuverDescriptor_Status = this.dequeueBAPEntity();
+        if (this.getNavigationService().getRouteGuidanceState() != 0 || this.getAndroidAutoService().isAndroidAutoRouteGuidanceActive()) {
+            this.fillManeuverDescriptor(maneuverDescriptor_Status);
+        }
+        return maneuverDescriptor_Status;
+       /* ManeuverDescriptor_Status maneuverDescriptor_Status = this.dequeueBAPEntity();
         if (this.getNavigationService().getRouteGuidanceState() != 0) {
             this.fillManeuverDescriptor(maneuverDescriptor_Status);
         } else if (RGStatus.AndroidAutoRouteGuidanceActive) {
@@ -280,7 +289,7 @@ public /* final */ class ManeuverDescriptor
             maneuverDescriptor_Status.maneuver_1.sidestreets.setEmptyString();
             maneuverDescriptor_Status.maneuver_1.zLevelGuidance = 0;
         }
-        return maneuverDescriptor_Status;
+        return maneuverDescriptor_Status;*/
     }
 
     // @Override

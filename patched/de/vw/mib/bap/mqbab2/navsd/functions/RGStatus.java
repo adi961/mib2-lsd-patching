@@ -7,6 +7,7 @@ import de.vw.mib.bap.datatypes.BAPEntity;
 import de.vw.mib.bap.functions.BAPFunctionListener;
 import de.vw.mib.bap.functions.Property;
 import de.vw.mib.bap.functions.PropertyListener;
+import de.vw.mib.bap.mqbab2.common.api.androidauto.AndroidAutoService;
 import de.vw.mib.bap.mqbab2.common.api.navigation.NavigationService;
 import de.vw.mib.bap.mqbab2.common.api.navigation.NavigationServiceListener;
 import de.vw.mib.bap.mqbab2.common.api.stages.BAPStage;
@@ -26,6 +27,12 @@ public /* final */ class RGStatus
     public static RGStatus instance;
     public static boolean AndroidAutoRouteGuidanceActive = false;
 
+    public RGStatus() {
+        super();
+        System.out.println("AADEBUG: new RGStatus");
+        new Exception().printStackTrace();
+    }
+
     public static void refresh() {
         if (instance != null) {
             instance.process(-1);
@@ -34,6 +41,9 @@ public /* final */ class RGStatus
 
     // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
+        System.out.println("AADEBUG: RGStatus::init");
+        new Exception().printStackTrace();
+
         instance = this;
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         return this.computeRGStatusStatus();
@@ -63,7 +73,20 @@ public /* final */ class RGStatus
     }
 
     private void setRouteGuidanceStatus(RG_Status_Status rG_Status_Status) {
-        if (AndroidAutoRouteGuidanceActive) {
+        AndroidAutoService androidAutoService = this.getAndroidAutoService();
+        System.out.println("AADEBUG: isAndroidAutoRouteGuidanceActive: " + androidAutoService.isAndroidAutoRouteGuidanceActive());
+        if (androidAutoService.isAndroidAutoRouteGuidanceActive()) {
+            rG_Status_Status.rg_Status = 1;
+            return;
+        }
+
+        NavigationService navigationService = this.getNavigationService();
+        rG_Status_Status.rg_Status = navigationService.getNavigationStatus() != 0 ? 0
+                : (this.instrumentClusterActionStatus != null ? (this.instrumentClusterActionStatus
+                .booleanValue() != false ? 1 : 0)
+                : (navigationService.getRouteGuidanceState() == 0 ? 0 : 1));
+
+ /*       if (AndroidAutoRouteGuidanceActive) {
             // if Android Auto route guidance is active we force status to 1
             // note that we "prefer" Android Auto route guidance status here
             // over the native navigation service status, just for status
@@ -76,7 +99,7 @@ public /* final */ class RGStatus
                     : (this.instrumentClusterActionStatus != null ? (this.instrumentClusterActionStatus
                             .booleanValue() != false ? 1 : 0)
                             : (navigationService.getRouteGuidanceState() == 0 ? 0 : 1));
-        }
+        }*/
     }
 
     private void sendRouteGuidanceStatus(RG_Status_Status rG_Status_Status) {

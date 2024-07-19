@@ -198,4 +198,3 @@ implements de.vw.mib.asl.api.navigation.ASLNavigationServices {
         return 1;
     }
 }
-

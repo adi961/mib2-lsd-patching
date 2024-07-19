@@ -182,7 +182,7 @@ NavigationServiceListener {
     public void indicationError(int n, BAPFunctionListener bAPFunctionListener) {
     }
 
-    @Override
+    @Ovdeqerride
     public void setGetProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }

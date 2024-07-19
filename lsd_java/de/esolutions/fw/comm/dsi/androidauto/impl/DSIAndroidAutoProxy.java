@@ -29,7 +29,7 @@ DSIAndroidAutoC {
     private Proxy proxy;
 
     public DSIAndroidAutoProxy(int n, DSIAndroidAutoReply dSIAndroidAutoReply) {
-        ServiceInstanceID serviceInstanceID = new ServiceInstanceID("56c4920d-793f-525f-85a8-8f22d26bea9c", n, "c1be70e5-c44d-508b-a79a-90d0b4d8659a", "dsi.androidauto.DSIAndroidAuto");
+        ServiceInstanceID serviceInstanceID = new ServiceInstanceID("56c4920d-793f-525f-85a8-8f22d26bea9c", n, "c1be70e5-c44d-508b-a79a-90d0b4d8659a", "P");
         DSIAndroidAutoReplyService dSIAndroidAutoReplyService = new DSIAndroidAutoReplyService(dSIAndroidAutoReply);
         this.proxy = new Proxy(serviceInstanceID, dSIAndroidAutoReplyService, context);
     }

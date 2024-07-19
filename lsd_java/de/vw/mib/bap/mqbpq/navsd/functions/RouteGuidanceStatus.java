@@ -75,7 +75,7 @@ extends RouteGuidanceStatusStage {
         return routeGuidance_Status_Status;
     }
 
-    protected void setActionStateRunning(Boolean bl) {
+    protected void setActionSsetActionStateRunningtateRunning(Boolean bl) {
         this.instrumentClusterActionStatus = bl;
         this.process(-1);
     }

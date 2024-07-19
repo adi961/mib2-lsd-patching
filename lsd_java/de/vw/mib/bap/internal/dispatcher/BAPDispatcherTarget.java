@@ -400,7 +400,7 @@ DSIServiceStateListener {
             BAPLogicalControlUnit bAPLogicalControlUnit = (BAPLogicalControlUnit)arrayList.get(i2);
             int n2 = bAPLogicalControlUnit.getLogicalControlUnitID();
             this.registeredBAPControlUnits.put(n2, bAPLogicalControlUnit);
-            bAPLogicalControlUnit.initialize();
+            bAPLogicalControlUnit.ŵ();
             this.trace(new StringBuffer().append("Register logical control unit: ").append(bAPLogicalControlUnit.getLogicalControlUnitName()).toString());
         }
     }

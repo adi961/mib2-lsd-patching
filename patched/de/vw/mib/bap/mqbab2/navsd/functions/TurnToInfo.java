@@ -108,7 +108,10 @@ public class TurnToInfo
     }
 
     protected void setTurnToInfoStatusData(TurnToInfo_Status turnToInfo_Status) {
-        NavigationService navigationService = this.getNavigationService();
+        NavigationTurnToInfo navigationTurnToInfo = this.getNavigationService().getTurnToInfo();
+        turnToInfo_Status.turnToInfo.setContent(navigationTurnToInfo.getTurnToInfoStreet());
+        turnToInfo_Status.signPost.setContent(navigationTurnToInfo.getTurnToInfoSignPost());
+        /*NavigationService navigationService = this.getNavigationService();
         boolean isNastiveRouteGuidanceActive = navigationService.getRouteGuidanceState() == 1;
         if (!isNastiveRouteGuidanceActive && RGStatus.AndroidAutoRouteGuidanceActive && !AndroidAutoRoad.equals("")) {
             turnToInfo_Status.turnToInfo.setContent(AndroidAutoRoad);
@@ -118,7 +121,7 @@ public class TurnToInfo
             NavigationTurnToInfo navigationTurnToInfo = navigationService.getTurnToInfo();
             turnToInfo_Status.turnToInfo.setContent(navigationTurnToInfo.getTurnToInfoStreet());
             turnToInfo_Status.signPost.setContent(navigationTurnToInfo.getTurnToInfoSignPost());
-        }
+        }*/
     }
 
     // @Override

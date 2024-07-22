@@ -181,7 +181,7 @@ public /* final */ class ManeuverDescriptor
         iterator = navigationService.getManeuverDescriptor();
         if (n > 0) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
-            System.out.println("AADEBUG: n > 0: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
+            System.out.println("AADEBUG: MANEUVER_ZERO: " + elementToString(navigationManeuverDescriptorElement));
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -195,7 +195,7 @@ public /* final */ class ManeuverDescriptor
         }
         if (n > 1) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
-            System.out.println("AADEBUG: n > 1: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
+            System.out.println("AADEBUG: MANEUVER_ONE: " + elementToString(navigationManeuverDescriptorElement));
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -209,7 +209,7 @@ public /* final */ class ManeuverDescriptor
         }
         if (n > 2) {
             navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
-            System.out.println("AADEBUG: n > 2: " + n + " element: " + navigationManeuverDescriptorElement.getMainelement());
+            System.out.println("AADEBUG: MANEUVER_TWO: " + elementToString(navigationManeuverDescriptorElement));
             maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
                     navigationManeuverDescriptorElement.getDirection(),
                     navigationManeuverDescriptorElement.getMainelement(),
@@ -221,6 +221,14 @@ public /* final */ class ManeuverDescriptor
                     .setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
             maneuverDescriptor_Status.maneuver_3.zLevelGuidance = maneuverDescriptor_Status$Maneuver_1.zLevelGuidance;
         }
+    }
+
+    private String elementToString(NavigationManeuverDescriptorElement element) {
+        return new StringBuffer()
+                .append("direction: ").append(element.getDirection())
+                .append(" mainElement: ").append(element.getMainelement())
+                .append(" sidestreets: ").append(element.getSideStreets())
+                .append(" zLevelGuidance: ").append(element.getZLevelGuidance()).toString();
     }
 
     private void sendManeuverDescriptor(ManeuverDescriptor_Status maneuverDescriptor_Status) {

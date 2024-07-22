@@ -28,8 +28,8 @@ public interface Constants {
     public static /*final*/ int MICROPHONEMODE_CLOSE = 0;
     public static /*final*/ int VOICESESSION_START = 0;
     public static /*final*/ int VOICESESSION_END = 0;
-    public static /*final*/ int NAVFOCUS_NATIVE = 0;
-    public static /*final*/ int NAVFOCUS_PROJECTED = 0;
+    public static /*final*/ int NAVFOCUS_NATIVE = 1;
+    public static /*final*/ int NAVFOCUS_PROJECTED = 2;
     public static /*final*/ int BUTTON_UNKNOWN = 0;
     public static /*final*/ int BUTTON_SOFT_LEFT = 0;
     public static /*final*/ int BUTTON_SOFT_RIGHT = 0;

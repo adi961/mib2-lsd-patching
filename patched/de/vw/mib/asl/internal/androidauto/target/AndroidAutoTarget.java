@@ -5,6 +5,7 @@ package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.api.androidauto.ASLAndroidAutoFactory;
 import de.vw.mib.asl.api.exboxm.ASLExboxmFactory;
+import de.vw.mib.asl.api.exboxm.audioinformation.ExboxAudioInformationService;
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceManager;
 import de.vw.mib.asl.api.media.ASLMediaFactory;
 import de.vw.mib.asl.api.navbap.ASLNavBAPAPI;
@@ -38,6 +39,8 @@ import de.vw.mib.asl.internal.androidauto.target.RequestHandler;
 import de.vw.mib.asl.internal.androidauto.target.SpeechHandler;
 import de.vw.mib.asl.internal.androidauto.target.StartupHandler;
 import de.vw.mib.asl.internal.androidauto.target.TimerHandler;
+import de.vw.mib.asl.internal.exboxm.api.impl.ASLExboxmAPIImpl;
+import de.vw.mib.asl.internal.exboxm.api.impl.audioinformation.ExboxAudioInformationServiceImpl;
 import de.vw.mib.asl.internal.list.impl.GenericASLList;
 import de.vw.mib.asl.internal.navigation.bap.HsmTargetBap;
 import de.vw.mib.asl.internal.navigation.bap.api.impl.INavLaneGuidanceDataNavBapImpl;
@@ -94,6 +97,8 @@ public class AndroidAutoTarget
     boolean dsiSmartPhoneIntegrationAvailable = false;
     private /*final*/ String _classname = "AndroidAutoTarget";
     private ASLAndroidAutoExBoxServiceImpl apiImpl;
+    private NavigationHandler navigationHandler;
+
     /*final*/ int[] OBSERVED_EVENTS = new int[]{
             6100005,
             6100006,
@@ -107,7 +112,7 @@ public class AndroidAutoTarget
             4000007,
             4300038,
     };
-    /*final*/ int[] DSI_ANDROIDAUTO2_ATTR = new int[]{ 1, 6, 2 , 3, 4 , 5 , 7 , 8};
+    /*final*/ int[] DSI_ANDROIDAUTO2_ATTR = new int[]{ 1, 6, 2 , 3, 4 , 5 , 7 , 8 };
     static /* synthetic */ Class class$org$dsi$ifc$androidauto2$DSIAndroidAuto2;
     static /* synthetic */ Class class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener;
     static /* synthetic */ Class class$de$vw$mib$threads$AsyncServiceFactory;
@@ -163,12 +168,14 @@ public class AndroidAutoTarget
         this.timerHandler = new TimerHandler(this, this.audioHandler, this.requestHandler);
         ExboxGuidanceManager exboxGuidanceManager = ASLExboxmFactory.getExboxmApi().getExboxGuidanceManager();
         this.exboxGuidanceListenerImpl = new ExboxGuidanceListenerImpl(this.navigationListener, exboxGuidanceManager);
+        this.navigationHandler = new NavigationHandler();
         this.requestHandler.initNavigationListener(this.navigationListener);
         this.aslHandler.initNavigationListener(this.navigationListener);
         this.audioHandler.initTimerHandler(this.timerHandler);
         this.requestHandler.initTimerHandler(this.timerHandler);
         this.aslHandler.initTimerHandler(this.timerHandler);
         this.requestHandler.initExBoxNavServices(this.exboxGuidanceListenerImpl);
+
         System.out.println("AADEBUG: initHandler targetId: " + this.getTargetId() + " default: " + this.getDefaultTargetId() + "classifier: " + this.getClassifier() + " subClassifier: " + this.getSubClassifier());
     }
 
@@ -385,15 +392,16 @@ public class AndroidAutoTarget
         this.dsihandler.handleDsiAndroidAuto2MicrophoneRequestNotification(n, n2);
     }
 
-    public void dsiAndroidAuto2NavFocusRequestNotification(int n, int n2) {
-        System.out.println("AADEBUG: dsiAndroidAuto2NavFocusRequestNotification()" + " n:" + n + " n2: "+ n2);
+    public void dsiAndroidAuto2NavFocusRequestNotification(int focus, int valid) {
+        System.out.println("AADEBUG: dsiAndroidAuto2NavFocusRequestNotification()" + " focus:" + focus + " n2: "+ valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#navFocusRequestNotification called");
         }
-        this.dsihandler.handleDsiAndroidAuto2NavFocusRequestNotification(n, n2);
-        NavigationASLDataAdapter adapter = (NavigationASLDataAdapter) APIFactory.getAPIFactory().getNavigationService();
-        adapter.datapoolValueChanged(733);
+        this.dsihandler.handleDsiAndroidAuto2NavFocusRequestNotification(focus, valid);
 
+        if (valid == 1) {
+            this.navigationHandler.navigationFocus(focus);
+        }
     }
 
     public void dsiAndroidAuto2UpdateCallState(CallState[] callStateArray, int n) {
@@ -416,6 +424,11 @@ public class AndroidAutoTarget
             this.trace("TargetAndroidAuto2DSI#updateNowPlayingData called");
         }
 
+        //DsiAudioInformationListener listener = new DsiAudioInformationListener()
+
+        /*ASLExboxmAPIImpl exboxmAPI = new ASLExboxmAPIImpl();
+        ExboxAudioInformationServiceImpl impl = (ExboxAudioInformationServiceImpl) exboxmAPI.getAudioInformationService().getCurrentStationInfo();
+        impl.*/
     }
 
     public void dsiAndroidAuto2UpdatePlaybackState(PlaybackInfo playbackInfo, int valid) {
@@ -447,185 +460,9 @@ public class AndroidAutoTarget
             this.trace("TargetAndroidAuto2DSI#updateNavigationNextTurnEvent called");
         }
 
-        ASLNavBAPFactory.getNavBAPApi().updateBapTurnToInfo(road, "");
-
-
-/*        TmcMessage message = new TmcMessage();
-        message.eventText = new String[]{"Ayoooo"};
-        ASLNavBAPFactory.getNavBAPApi().updateBapTMCInfo(message);*/
-
-       // NavGateway.getInstance().updateBapManeuverDescriptor();
-
-      /*  NavLaneGuidanceData data = new NavLaneGuidanceData();
-        INavLaneGuidanceDataNavBap[] iNavLaneGuidanceDataNavBapArray = new INavLaneGuidanceDataNavBap[1];;
-        iNavLaneGuidanceDataNavBapArray[0] = new INavLaneGuidanceDataNavBapImpl(data);
-        ASLNavBAPFactory.getNavBAPApi().updateBapLaneGuidance(iNavLaneGuidanceDataNavBapArray, true);*/
-
-        if (event == Constants.NAVIGATIONTURNEVENT_UNKNOWN) {
-            return;
+        if (valid == 1) {
+            this.navigationHandler.handleNextTurnEvent(road, turnSide, event, turnAngle, turnNumber);
         }
-
-        BapManeuverDescriptor maneuverDescriptor  = new BapManeuverDescriptor();
-        maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_NO_SYMBOL;
-
-            // if event is estimated is more than 3 minutes into future and we are further
-            // than 1km - we are just following along
-            // to not distract with turns just yet.
-            // - on highways 3 minutes will still be quite far away
-            // - in city areas with potentially heavy traffic we also check for distance as
-            // 1km might in jam might take longer than estimated
-            // 3 minutes, but we should probably be getting ready to get on proper lane etc
-            /*if (nextTurnDistance != null && nextTurnDistance.timeSeconds > 180
-                    && nextTurnDistance.distanceMeters > 2500) {
-                maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_FOLLOW_STREET;
-                maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-            } else*/ if (event == Constants.NAVIGATIONTURNEVENT_TURN) {
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_SLIGHT_TURN ) {
-                // maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT_SLIGHT;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT_SLIGHT;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_SHARP_TURN) {
-                // maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT_SHARP;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT_SHARP;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_ON_RAMP
-                    || event == Constants.NAVIGATIONTURNEVENT_OFF_RAMP || event == Constants.NAVIGATIONTURNEVENT_MERGE) {
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_CHANGE_LANE;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_CHANGE_LANE;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                } else {
-                    // this is for UNSPECIFIED turnSide - I get "MERGE" events with no turnSide
-                    // using TURN with straight direction because it does show road name in gauge
-                    // (FOLLOW_STREET shows "current streetname" to follow)
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_STRAIGHT || event == Constants.NAVIGATIONTURNEVENT_NAME_CHANGE
-                    || event == Constants.NAVIGATIONTURNEVENT_DEPART) {
-                maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
-                maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-          /*      if (event == Constants.NAVIGATIONTURNEVENT_DEPART) {
-                    nextDistance = -1;
-                }*/
-            } else if (event == Constants.NAVIGATIONTURNEVENT_FORK) {
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_2;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_2;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                } else {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_3;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_U_TURN) {
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_UTURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_UTURN;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                }
-            } else if (event == Constants.NAVIGATIONTURNEVENT_ROUNDABOUT_ENTER) {
-                maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_PREPARE_ROUNDABOUT;
-                maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-            } else if (event == Constants.NAVIGATIONTURNEVENT_ROUNDABOUT_EXIT) {
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_EXIT_ROUNDABOUT_TRS_LEFT;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else {
-                    maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_EXIT_ROUNDABOUT_TRS_RIGHT;
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                }
-
-            } else if (event == Constants.NAVIGATIONTURNEVENT_ROUNDABOUT_ENTER_AND_EXIT) {
-                maneuverDescriptor.mainElement = turnSide == Constants.NAVIGATIONTURNSIDE_LEFT
-                        ? ManeuverDescriptor.MAIN_ELEMENT_ROUNDABOUT_TRS_LEFT
-                        : ManeuverDescriptor.MAIN_ELEMENT_ROUNDABOUT_TRS_RIGHT;
-                // Android "right" through roundabout is 90 maps to VW 192
-                // Android "straight" through roundabout is 180 maps to VW 0
-                // Android "left" through roundabout is 270 maps to VW 64
-                // Android "uturn" through roundabout is 360 maps to VW 128
-
-                // Android range from 0-360, VW range from 0-256
-                // Seems like VW supports increments of 16 (0, 16, 32, 48, 64, and so on)
-                // possibly more, but that's detailed enough.
-
-                maneuverDescriptor.direction = ((((180 + (360 / (16 * 2)) + turnAngle) % 360) * 16) / 360)
-                        * 16;
-            } else if (event == Constants.NAVIGATIONTURNEVENT_DESTINATION) {
-                maneuverDescriptor.mainElement = ManeuverDescriptor.MAIN_ELEMENT_NEAR_DESTINATION;
-                maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_STRAIGHT;
-                if (turnSide == Constants.NAVIGATIONTURNSIDE_LEFT) {
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_LEFT;
-                } else if (turnSide == Constants.NAVIGATIONTURNSIDE_RIGHT) {
-                    maneuverDescriptor.direction = ManeuverDescriptor.DIRECTION_RIGHT;
-                }
-            }
-
-        updateManeuverDescriptor(new BapManeuverDescriptor[]{maneuverDescriptor});
-        NavigationASLDataAdapter adapter = (NavigationASLDataAdapter) APIFactory.getAPIFactory().getNavigationService();
-        adapter.navServiceStateChanged();
-    }
-
-
-    private void updateManeuverDescriptor(BapManeuverDescriptor[] bapManeuverDescriptorArray) {
-        BapManeuverDescriptor[] bapManeuverDescriptorArray2 = bapManeuverDescriptorArray;
-        if (bapManeuverDescriptorArray2 == null || bapManeuverDescriptorArray2.length == 0) {
-            bapManeuverDescriptorArray2 = new BapManeuverDescriptor[]{new BapManeuverDescriptor(0, 0, 0, new byte[0])};
-        }
-
-        Vector object = new Vector();
-        GenericCollector[] genericCollectorArray = new GenericCollector[bapManeuverDescriptorArray2.length];
-        for (int i3 = 0; i3 < bapManeuverDescriptorArray2.length; ++i3) {
-            GenericCollector genericCollector = new GenericCollector();
-            genericCollector.setIntItem(0, bapManeuverDescriptorArray2[i3].getMainElement());
-            genericCollector.setIntItem(1, bapManeuverDescriptorArray2[i3].getDirection());
-            genericCollector.setIntItem(2, bapManeuverDescriptorArray2[i3].getZLevelGuidance());
-            String string = "";
-            byte[] byArray = bapManeuverDescriptorArray2[i3].getSideStreets();
-            if (byArray != null) {
-                string = new String(AndroidAutoTarget.bytesToCharacters(byArray));
-            }
-            genericCollector.setStringItem(3, string);
-            ((Vector)object).add(genericCollector);
-            genericCollectorArray[i3] = genericCollector;
-        }
-        this.updateMultiLineList(ListManager.getGenericASLList(751), genericCollectorArray);
-        this.updateMultiLineList(ListManager.getGenericASLList(838), genericCollectorArray);
-    }
-
-    private static char[] bytesToCharacters(byte[] byArray) {
-        int n = byArray.length;
-        char[] cArray = new char[n];
-        for (int i2 = 0; i2 < n; ++i2) {
-            cArray[i2] = (char)(byArray[i2] & 0xFF);
-        }
-        return cArray;
-    }
-
-    private void updateMultiLineList(GenericASLList genericASLList, GenericCollector[] genericCollectorArray) {
-        genericASLList.updateList(genericCollectorArray);
     }
 
     public void dsiAndroidAuto2UpdateNavigationNextTurnDistance(int distanceMeters, int timeSeconds, int valid) {
@@ -634,76 +471,9 @@ public class AndroidAutoTarget
             this.trace("TargetAndroidAuto2DSI#updateNavigationNextTurnDistance called");
         }
 
-        int distance = 0;
-        int unit = 255;
-        int bargraph = 0;
-        boolean bargraphOnOff = false;
-
-        int bargraphShowThreshold = 200;
-
-
-        // @TODO: this.getSystemService().getCurrentDistanceUnit() == 1 probably means
-        // miles/imperial units (see computeDistanceAndDistanceUnit method in this class
-        // - however for some reason I can't find implementation of
-        // getFixFormatter().cnv2Distance2withMinDistanceMile method used there so
-        // can't deduce units from that and some trial and error likely is needed). I'm
-        // not used to those units so some switch here should be implemented, ideally by
-        // someone who is used to those. distanceToNextManeuver.unit values need to be
-        // figured out for values used there. Possibly order of constants in
-        // DistanceToNextManeuver_Status$DistanceToNextManeuver could also indicated
-        // values for those units (meter = 0, kilometer = 1, yard = 2, feet = 3, mile =
-        // 4, quarter mile = 5)
-
-        // if (this.getSystemService().getCurrentDistanceUnit() != 1) {
-        // for metric units (kilometers and meters):
-        // AndroidAuto gives quite detailed distances in meters and displayed distances
-        // changing very often especially far away from the next maneuver is somewhat
-        // distracting so we round the distance to present somewhat accurate distance
-        // which gets more and more detailed closer we get to next maneuver
-        // this tries to recreate the way Google Maps seems to round distance to next
-        // maneuver:
-        int roundedDistance = distanceMeters;
-        if (roundedDistance >= 10000) {
-            // above 10km round to nearest 1km
-            // (this is just a guess at this point, as I didn't been on a trip with long
-            // enough distance to next manuever to see when Google Maps rounds to nearest
-            // 1km, but random screenshots seem to indicate that it does round to 1km at
-            // certain threshold)
-            roundedDistance = ((roundedDistance + 500) / 1000) * 1000;
-        } else if (roundedDistance >= 1000) {
-            // above 1km round to nearest 0.1 kilometers
-            roundedDistance = ((roundedDistance + 50) / 100) * 100;
-        } else if (roundedDistance >= 300) {
-            // above 300m round to nearest 50 meters
-            roundedDistance = ((roundedDistance + 25) / 50) * 50;
-        } else {
-            // below 300m round to nearest 10 meters
-            roundedDistance = ((roundedDistance + 5) / 10) * 10;
+        if (valid == 1) {
+            this.navigationHandler.handleUpdateNextTurnDistanceEvent(distanceMeters, timeSeconds);
         }
-
-        if (roundedDistance < 1000) {
-            distance = roundedDistance * 10;
-            unit = 0;
-        } else {
-            distance = roundedDistance / 100;
-            unit = 1;
-        }
-        // }
-
-        // TBD if bargraph logic/threshold should be different for metric/imperial units
-        if (distanceMeters <= bargraphShowThreshold) {
-            bargraphOnOff = false;
-            // bargraph seems to start with 100 (fully filled) and go down to 0 (empty)
-            // so we just scale distance based on threshold
-            bargraph = (distanceMeters * 100)
-                    / bargraphShowThreshold;
-        } else {
-            bargraphOnOff = false;
-            bargraph = 0;
-        }
-
-
-        ASLNavBAPFactory.getNavBAPApi().updateBapDistanceToNextManeuver(distance, unit, bargraphOnOff, bargraph);
     }
 
     public void dsiAndroidAuto2SetExternalDestination(double d2, double d3, String string, String string2) {

@@ -209,7 +209,7 @@ public class RequestHandler {
                     if (this.target.isTraceEnabled()) {
                         this.target.trace("RequestHandler::performNavFocusRequestNotification ==> sending stopGuidance() to native navigation...");
                     }
-                    // this.navigationHandler.stopGuidance();
+                    this.navigationHandler.stopGuidance();
                 }
                 // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
                 this.properties.setAndroidAutoNavigationActive(true);

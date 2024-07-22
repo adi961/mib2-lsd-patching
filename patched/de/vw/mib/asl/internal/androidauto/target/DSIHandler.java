@@ -85,12 +85,10 @@ class DSIHandler {
             this.target.trace(new StringBuffer().append("DSIHandler::handleDsiAndroidAuto2NavFocusRequestNotification - validFlag    = ").append(n2).toString());
             this.target.trace(new StringBuffer().append("DSIHandler::handleDsiAndroidAuto2NavFocusRequestNotification - navFocusType = ").append(n).toString());
         }
-        // System.out.println("** Ignore performNavFocusRequestNotification");
         if (n2 == 1) {
             // Required to allow aa nav to actually start
             this.requestHandler.performNavFocusRequestNotification(n);
         }
-        ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
     }
 }
 

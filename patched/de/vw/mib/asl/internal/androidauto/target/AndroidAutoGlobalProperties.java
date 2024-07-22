@@ -3,6 +3,7 @@
  */
 package de.vw.mib.asl.internal.androidauto.target;
 
+
 final class AndroidAutoGlobalProperties {
     private int entertainmentState = 0;
     private int audioState_CL_ANN_AMP_GAL_ANNOUNCEMENT = 0;

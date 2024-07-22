@@ -4,14 +4,20 @@ set -e
 
 FILES="\
 de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
+de/vw/mib/asl/internal/androidauto/target/NavigationHandler.java \
+de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptor.java \
+
 de/vw/mib/bap/mqbab2/navsd/functions/RGStatus.java \
 de/vw/mib/bap/mqbab2/navsd/functions/ManeuverDescriptor.java \
 de/vw/mib/bap/mqbab2/navsd/functions/DistanceToNextManeuver.java \
+
 de/vw/mib/asl/internal/navigation/bap/api/impl/ASLNavigationBapAPIImpl.java \
-de/vw/mib/asl/internal/navigation/gateway/AbstractResettableNavGatewayTarget.java \
-de/esolutions/fw/comm/dsi/androidauto2/impl/DSIAndroidAuto2ReplyService.java \
+
+org/dsi/ifc/androidauto2/Constants.java \
 "
 
+#de/vw/mib/asl/internal/navigation/gateway/AbstractResettableNavGatewayTarget.java \
+#de/esolutions/fw/comm/dsi/androidauto2/impl/DSIAndroidAuto2ReplyService.java \
 #de/vw/mib/asl/internal/androidauto/target/RequestHandler.java \
 #de/vw/mib/asl/internal/androidauto/target/NavigationListener.java \
 #de/vw/mib/asl/internal/androidauto/target/NavigationListener.java \
@@ -51,3 +57,4 @@ ssh mib sh -l /root/.profile
 #scp LoggingPatcher.jar mibw:/mnt/app/eso/hmi/lsd/jars/
 scp -O NavActiveIgnore.jar mib:/mnt/app/eso/hmi/lsd/jars/
 
+date

@@ -339,7 +339,6 @@ public class CurrentStationInfo
         int n;
         String string;
 
-        this.getExboxService().getExboxCurrentStationInfo().
 
         switch (this.getSmartphoneIntegrationService().getSmarphoneIntegrationActiveConnectionType()) {
             case 1: {
@@ -370,27 +369,6 @@ public class CurrentStationInfo
         currentStationInfo_Status.primaryInformation.setContent(string);
         currentStationInfo_Status.pi_Type = n;
 
-        if (!AndroidAutoTitle.equals("")) {
-            currentStationInfo_Status.primaryInformation.setContent(AndroidAutoTitle);
-            currentStationInfo_Status.pi_Type = 72;
-            currentStationInfo_Status.pi_Id = 0;
-        }
-
-        if (!AndroidAutoArtist.equals("")) {
-            currentStationInfo_Status.secondaryInformation.setContent(AndroidAutoArtist);
-            currentStationInfo_Status.si_Type = 73;
-        } else {
-            currentStationInfo_Status.secondaryInformation.setNullString();
-            currentStationInfo_Status.si_Type = 73;
-        }
-
-        if (!AndroidAutoAlbum.equals("")) {
-            currentStationInfo_Status.tertiaryInformation.setContent(AndroidAutoAlbum);
-            currentStationInfo_Status.ti_Type = 74;
-        } else {
-            currentStationInfo_Status.tertiaryInformation.setNullString();
-            currentStationInfo_Status.ti_Type = 74;
-        }
     }
 
     private void setStationInfoForExbox(CurrentStationInfo_Status currentStationInfo_Status) {
@@ -652,7 +630,8 @@ public class CurrentStationInfo
                     break;
                 }
                 case 6: {
-                    this.setStationInfoForMirrorLink(currentStationInfo_Status);
+                    //this.setStationInfoForMirrorLink(currentStationInfo_Status);
+                    this.setStationInfoForMedia(currentStationInfo_Status);
                     break;
                 }
                 case 4: {

@@ -5,13 +5,6 @@ package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl;
-import de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties;
-import de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget;
-import de.vw.mib.asl.internal.androidauto.target.AudioHandler;
-import de.vw.mib.asl.internal.androidauto.target.NavigationListener;
-import de.vw.mib.asl.internal.androidauto.target.SpeechHandler;
-import de.vw.mib.asl.internal.androidauto.target.StartupHandler;
-import de.vw.mib.asl.internal.androidauto.target.TimerHandler;
 import de.vw.mib.genericevents.EventGeneric;
 
 public class RequestHandler {

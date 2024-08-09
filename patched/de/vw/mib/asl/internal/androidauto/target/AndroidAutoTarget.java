@@ -4,73 +4,43 @@
 package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.api.androidauto.ASLAndroidAutoFactory;
+import de.vw.mib.asl.api.bapcommon.ASLBAPCommonFactory;
+import de.vw.mib.asl.api.car.ASLCarFactory;
 import de.vw.mib.asl.api.exboxm.ASLExboxmFactory;
-import de.vw.mib.asl.api.exboxm.audioinformation.ExboxAudioInformationService;
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceManager;
 import de.vw.mib.asl.api.media.ASLMediaFactory;
-import de.vw.mib.asl.api.navbap.ASLNavBAPAPI;
-import de.vw.mib.asl.api.navbap.ASLNavBAPFactory;
-import de.vw.mib.asl.api.navbap.INavLaneGuidanceDataNavBap;
+import de.vw.mib.asl.api.messages.ASLMessagesFactory;
+import de.vw.mib.asl.api.mostkombi.ASLMOSTKombiFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationServices;
-import de.vw.mib.asl.api.navigation.util.ASLNavigationUtilFactory;
+import de.vw.mib.asl.api.navigation.bap.ASLNavigationBapFactory;
+import de.vw.mib.asl.api.radio.ASLRadioFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.ASLDisplaymanagementFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.displayable.DisplayableService;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxy;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxyFactory;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIServiceStateListener;
-import de.vw.mib.asl.framework.api.framework.ASLFrameworkFactory;
+import de.vw.mib.asl.framework.api.entertainmentmanager.ASLEntertainmentmanagerFactory;
 import de.vw.mib.asl.framework.internal.framework.AbstractASLTarget;
-import de.vw.mib.asl.framework.internal.framework.GenericCollector;
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.framework.internal.framework.dsi.util.RuntimeGeneratedConstants;
 import de.vw.mib.asl.internal.androidauto.api.impl.ASLAndroidAutoExBoxServiceImpl;
 import de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl;
-import de.vw.mib.asl.internal.androidauto.target.ASLEventHandler;
-import de.vw.mib.asl.internal.androidauto.target.ASLHandler;
-import de.vw.mib.asl.internal.androidauto.target.AndroidAutoGlobalProperties;
-import de.vw.mib.asl.internal.androidauto.target.AudioHandler;
-import de.vw.mib.asl.internal.androidauto.target.DSIHandler;
-import de.vw.mib.asl.internal.androidauto.target.DisplayableListener;
-import de.vw.mib.asl.internal.androidauto.target.KeyHandler;
-import de.vw.mib.asl.internal.androidauto.target.NavigationListener;
-import de.vw.mib.asl.internal.androidauto.target.PopupHandler;
-import de.vw.mib.asl.internal.androidauto.target.RequestHandler;
-import de.vw.mib.asl.internal.androidauto.target.SpeechHandler;
-import de.vw.mib.asl.internal.androidauto.target.StartupHandler;
-import de.vw.mib.asl.internal.androidauto.target.TimerHandler;
-import de.vw.mib.asl.internal.exboxm.api.impl.ASLExboxmAPIImpl;
-import de.vw.mib.asl.internal.exboxm.api.impl.audioinformation.ExboxAudioInformationServiceImpl;
-import de.vw.mib.asl.internal.list.impl.GenericASLList;
-import de.vw.mib.asl.internal.navigation.bap.HsmTargetBap;
-import de.vw.mib.asl.internal.navigation.bap.api.impl.INavLaneGuidanceDataNavBapImpl;
-import de.vw.mib.asl.internal.navigation.gateway.NavGateway;
-import de.vw.mib.bap.mqbab2.common.api.APIFactory;
-import de.vw.mib.bap.mqbab2.common.api.navigation.NavigationASLDataAdapter;
-import de.vw.mib.bap.mqbab2.common.api.navigation.datatypes.NavigationDistanceToNextManeuver;
-import de.vw.mib.bap.mqbab2.common.api.navigation.datatypes.iterator.elements.NavigationManeuverDescriptorElement;
-import de.vw.mib.bap.mqbab2.navsd.controller.NavSdTarget;
-import de.vw.mib.bap.mqbpq.navsd.functions.NavSDBindingFactoryAll;
-import de.vw.mib.bap.mqbab2.navsd.functions.RGStatus;
-import de.vw.mib.bap.mqbpq.navsd.functions.DistanceToNextManeuver;
-import de.vw.mib.bap.mqbpq.navsd.functions.RouteGuidanceStatus;
+import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServices;
+import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServicesProvider;
+import de.vw.mib.asl.internal.mostkombi.api.impl.ASLMOSTKombiAPIImpl;
 import de.vw.mib.genericevents.EventGeneric;
 import de.vw.mib.genericevents.GenericEvents;
 import de.vw.mib.log4mib.LogMessage;
 import de.vw.mib.threads.AsyncServiceFactory;
 import de.vw.mib.util.Util;
 import generated.de.vw.mib.asl.internal.ListManager;
+import generated.de.vw.mib.asl.internal.avdc.audio.transformer.AVDCAudioCurrentTrackInfoCollector;
+import generated.de.vw.mib.asl.internal.system.kombi.ASLSystemKombiDeviceImpl;
 import org.dsi.ifc.androidauto2.*;
 import org.dsi.ifc.base.DSIListener;
 import org.dsi.ifc.global.ResourceLocator;
-import org.dsi.ifc.navigation.BapManeuverDescriptor;
-import org.dsi.ifc.navigation.NavLaneGuidanceData;
-import org.dsi.ifc.tmc.TmcMessage;
 import org.osgi.framework.ServiceReference;
-
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Vector;
 
 public class AndroidAutoTarget
         extends AbstractASLTarget
@@ -98,6 +68,7 @@ public class AndroidAutoTarget
     private /*final*/ String _classname = "AndroidAutoTarget";
     private ASLAndroidAutoExBoxServiceImpl apiImpl;
     private NavigationHandler navigationHandler;
+    private AVDCAudioCurrentTrackInfoCollector avdcAudioCurrentTrackInfoCollector = new AVDCAudioCurrentTrackInfoCollector();
 
     /*final*/ int[] OBSERVED_EVENTS = new int[]{
             6100005,
@@ -182,8 +153,6 @@ public class AndroidAutoTarget
 
     // @Override
     public void gotEvent(EventGeneric eventGeneric) {
-        //System.out.println("AADEBUG: Target AndroidAuto - gotEvent() " + eventGeneric.toString());
-        //System.out.println("AADEBUG: eventId: " + eventGeneric.getReceiverEventId());
         if (this.aslEventHandler == null) {
             if (this.isTraceEnabled()) {
                 this.warn("Target AndroidAuto - got an event! target is not fully startet yet - event will be ignored");
@@ -372,7 +341,6 @@ public class AndroidAutoTarget
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#audioAvailable called");
         }
-        System.out.println("AADEBUG dsiAndroidAuto2AudioAvailable n: " + n + " n2: " + n2 + " bl: " + bl);
         this.dsihandler.handleDsiAndroidAuto2AudioAvailable(n, bl, n2);
     }
 
@@ -419,39 +387,51 @@ public class AndroidAutoTarget
     }
 
     public void dsiAndroidAuto2UpdateNowPlayingData(TrackData trackData, int valid) {
-        System.out.println("AADEBUG: dsiAndroidAuto2UpdateNowPlayingData()" + " trackData: " + trackData + " valid: " + valid);
+        //System.out.println("AADEBUG: dsiAndroidAuto2UpdateNowPlayingData()" + " trackData: " + trackData + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateNowPlayingData called");
         }
 
-        //DsiAudioInformationListener listener = new DsiAudioInformationListener()
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__title= trackData.title;
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__album = trackData.album;
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__artist = trackData.artist;
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__total_time = trackData.duration;
 
-        /*ASLExboxmAPIImpl exboxmAPI = new ASLExboxmAPIImpl();
-        ExboxAudioInformationServiceImpl impl = (ExboxAudioInformationServiceImpl) exboxmAPI.getAudioInformationService().getCurrentStationInfo();
-        impl.*/
+        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
     }
 
     public void dsiAndroidAuto2UpdatePlaybackState(PlaybackInfo playbackInfo, int valid) {
-        System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlaybackState()" + " playbackInfo: " + playbackInfo + " valid: " + valid);
+        //System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlaybackState()" + " playbackInfo: " + playbackInfo + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updatePlaybackState called");
         }
+
     }
 
     public void dsiAndroidAuto2UpdatePlayposition(int timePosition, int valid) {
-        System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlayposition()" + " timePosition:" + timePosition + " valid: " + valid);
+        //System.out.println("AADEBUG: dsiAndroidAuto2UpdatePlayposition()" + " timePosition:" + timePosition + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateServiceStatus called");
         }
     }
 
     public void dsiAndroidAuto2UpdateCoverArtUrl(ResourceLocator resourceLocator, int n) {
-        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl()" + " resourceLocator: " + resourceLocator + " n: " + n);
+        //System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl()" + " resourceLocator: " + resourceLocator + " n: " + n);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateCoverArtUrl called");
         }
         System.out.println("AADEBUG dsiAndroidAuto2UpdateCoverArtUrl " + resourceLocator.url);
 
+        KombiPictureServerServices kombiPictureServerServicesProvider = KombiPictureServerServicesProvider.getKombiPictureServerServices();
+
+
+        ServiceManager.aslPropertyManager.valueChangedBoolean(2781, true);
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__cover = resourceLocator;
+
+        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
+        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__is_cover_available = true;
+        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
+        //ASLCarFactory.getFpaApi().
     }
 
     public void dsiAndroidAuto2UpdateNavigationNextTurnEvent(String road, int turnSide, int event, int turnAngle, int turnNumber, int valid) {

@@ -3,15 +3,18 @@ set -e
 . ../process.sh
 
 FILES="\
+de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
+
 de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
 de/vw/mib/asl/internal/androidauto/target/NavigationHandler.java \
-de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptor.java \
+de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorMainElement.java \
+de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorDirection.java \
+de/vw/mib/asl/internal/androidauto/target/NavTurn.java \
+
 
 de/vw/mib/bap/mqbab2/navsd/functions/RGStatus.java \
 de/vw/mib/bap/mqbab2/navsd/functions/ManeuverDescriptor.java \
 de/vw/mib/bap/mqbab2/navsd/functions/DistanceToNextManeuver.java \
-
-de/vw/mib/asl/internal/navigation/bap/api/impl/ASLNavigationBapAPIImpl.java \
 
 org/dsi/ifc/androidauto2/Constants.java \
 "
@@ -27,7 +30,6 @@ org/dsi/ifc/androidauto2/Constants.java \
 #de/vw/mib/asl/internal/exboxm/api/impl/guidance/ExboxGuidanceManagerImpl.java \
 #de/esolutions/fw/dsi/androidauto/DSIAndroidAutoDispatcher.java \
 #de/esolutions/fw/dsi/androidauto2/DSIAndroidAuto2Dispatcher.java \
-#de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
 #de/vw/mib/bap/mqbab2/navsd/functions/TurnToInfo.java \
 #de/vw/mib/log4mib/internal/LoggingProperties.java \
 

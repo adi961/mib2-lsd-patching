@@ -7,6 +7,7 @@ de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
 
 de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
 de/vw/mib/asl/internal/androidauto/target/NavigationHandler.java \
+de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorSender.java \
 de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorMainElement.java \
 de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorDirection.java \
 de/vw/mib/asl/internal/androidauto/target/NavTurn.java \

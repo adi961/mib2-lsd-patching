@@ -424,7 +424,6 @@ public class AndroidAutoTarget
 
         KombiPictureServerServices kombiPictureServerServicesProvider = KombiPictureServerServicesProvider.getKombiPictureServerServices();
 
-
         ServiceManager.aslPropertyManager.valueChangedBoolean(2781, true);
         this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__cover = resourceLocator;
 

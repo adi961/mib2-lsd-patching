@@ -1,6 +1,7 @@
 package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.api.navbap.ASLNavBAPFactory;
+import de.vw.mib.asl.api.navigation.util.ASLNavigationUtilFactory;
 import de.vw.mib.bap.mqbab2.common.api.APIFactory;
 import de.vw.mib.bap.mqbab2.common.api.navigation.NavigationASLDataAdapter;
 import org.dsi.ifc.androidauto2.Constants;
@@ -9,7 +10,6 @@ import org.dsi.ifc.navigation.BapManeuverDescriptor;
 
 public class NavigationHandler {
     private final ManeuverDescriptorSender maneuverDescriptorSender;
-    private static final int bargraphShowThreshold = 200;
 
     private NavTurn nextTurn;
 
@@ -45,32 +45,41 @@ public class NavigationHandler {
     public void handleNextTurnEvent(String road, int turnSide, int event, int turnAngle, int turnNumber) {
         ASLNavBAPFactory.getNavBAPApi().updateBapTurnToInfo(road, "");
 
-        if (event == Constants.NAVIGATIONTURNEVENT_UNKNOWN) {
-            return;
-        }
-
         nextTurn = new NavTurn(turnSide, event, turnAngle, turnNumber);
     }
 
     public void handleUpdateNextTurnDistanceEvent(int distanceMeters, int timeSeconds) {
         System.out.println("AADEBUG: distanceMeters: " + distanceMeters + " timeSeconds: " + timeSeconds);
-        sendManeuver(distanceMeters, timeSeconds);
 
         int unit = distanceMeters < 1000 ? 0 : 1;
         int bargraph = 0;
         boolean bargraphOn = false;
 
-        if (distanceMeters <= bargraphShowThreshold) {
+        int bargraphThresholdMeters = getBaragraphThresholdMeters();
+        if (distanceMeters <= bargraphThresholdMeters) {
             bargraphOn = true;
             // set bargraph between 0 and 100
-            bargraph = (distanceMeters * 100) / bargraphShowThreshold;
+            bargraph = (distanceMeters * 100) / bargraphThresholdMeters;
         }
 
+        //System.out.println("AADEBUG: speed: " + ASLNavigationUtilFactory.getNavigationUtilApi().getPosPosition());
+
+        sendManeuver(distanceMeters, timeSeconds);
         ASLNavBAPFactory.getNavBAPApi().updateBapDistanceToNextManeuver(distanceMeters, unit, bargraphOn, bargraph);
     }
 
+
+    private int getBaragraphThresholdMeters() {
+        // When NAVIGATIONTURNEVENT_OFF_RAMP we assume a highway. Start showing the Bargraph from 2km onwards
+        if (nextTurn != null && nextTurn.getEvent() == Constants.NAVIGATIONTURNEVENT_OFF_RAMP) {
+            return 2000;
+        }
+
+        return 200;
+    }
+
     private void sendManeuver(int distanceMeters, int timeSeconds) {
-        if (nextTurn != null && nextTurn.getEvent() == Constants.NAVIGATIONTURNEVENT_OFF_RAMP && timeSeconds <= 180) {
+        if (nextTurn != null && nextTurn.getEvent() == Constants.NAVIGATIONTURNEVENT_OFF_RAMP && distanceMeters <= 2000) {
             sendNextManeuverDescriptor();
             return;
         }

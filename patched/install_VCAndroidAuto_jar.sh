@@ -11,7 +11,7 @@ mount -uw /mnt/app
 JAR_TARGET=/mnt/app/eso/hmi/lsd/jars/
 mkdir -p ${JAR_TARGET}
 
-cp -v ${SCRIPTDIR}/NavActiveIgnore.jar ${JAR_TARGET}
+cp -v ${SCRIPTDIR}/VCAndroidAuto.jar ${JAR_TARGET}
 
 LSD=/mnt/app/eso/hmi/lsd/lsd.sh
 BU=/mnt/app/eso/hmi/lsd/lsd.sh.bu
@@ -20,13 +20,13 @@ if [ -e $BU ]; then
 mv $BU $LSD
 fi
 
-if ! grep -q NavActiveIgnore.jar ${LSD}; then
+if ! grep -q VCAndroidAuto.jar ${LSD}; then
 if [ ! -e $BU ]; then
   echo "Backup lsd.sh"
   cp -v $LSD $BU
 fi
-echo "Patching lsd.sh to run NavActiveIgnore.jar"
-sed -ir 's,^$J9,BOOTCLASSPATH="$BOOTCLASSPATH -Xbootclasspath/p:$BASE_DIR/lsd/jars/NavActiveIgnore.jar"\n$J9,g' $LSD
+echo "Patching lsd.sh to run VCAndroidAuto.jar"
+sed -ir 's,^$J9,BOOTCLASSPATH="$BOOTCLASSPATH -Xbootclasspath/p:$BASE_DIR/lsd/jars/VCAndroidAuto.jar"\n$J9,g' $LSD
 fi
 
 mount -ur /mnt/app

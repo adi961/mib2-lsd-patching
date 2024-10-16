@@ -28,19 +28,32 @@ import de.vw.mib.asl.internal.androidauto.api.impl.ASLAndroidAutoExBoxServiceImp
 import de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl;
 import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServices;
 import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServicesProvider;
+import de.vw.mib.asl.internal.media.clients.has.HASPlayerUpdater;
+import de.vw.mib.asl.internal.media.clients.player.TrackInfo;
 import de.vw.mib.asl.internal.mostkombi.api.impl.ASLMOSTKombiAPIImpl;
+import de.vw.mib.bap.mqbab2.audiosd.functions.CurrentStationHandle;
+import de.vw.mib.bap.mqbab2.common.api.APIFactory;
+import de.vw.mib.bap.mqbab2.common.api.media.MediaASLDataAdapter;
 import de.vw.mib.genericevents.EventGeneric;
 import de.vw.mib.genericevents.GenericEvents;
 import de.vw.mib.log4mib.LogMessage;
 import de.vw.mib.threads.AsyncServiceFactory;
 import de.vw.mib.util.Util;
 import generated.de.vw.mib.asl.internal.ListManager;
+import generated.de.vw.mib.asl.internal.avdc.audio.bap.mediabrowser.transformer.AVDCAudioBapMediaBrowserActiveTrackInfoCollector;
+import generated.de.vw.mib.asl.internal.avdc.audio.bap.mediabrowser.transformer.AVDCAudioBapMediaBrowserActiveTrackInfoTransformer;
 import generated.de.vw.mib.asl.internal.avdc.audio.transformer.AVDCAudioCurrentTrackInfoCollector;
 import generated.de.vw.mib.asl.internal.system.kombi.ASLSystemKombiDeviceImpl;
 import org.dsi.ifc.androidauto2.*;
 import org.dsi.ifc.base.DSIListener;
 import org.dsi.ifc.global.ResourceLocator;
 import org.osgi.framework.ServiceReference;
+import de.vw.mib.util.StringBuilder;
+
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class AndroidAutoTarget
         extends AbstractASLTarget
@@ -386,18 +399,19 @@ public class AndroidAutoTarget
         }
     }
 
+    int pos = 1;
     public void dsiAndroidAuto2UpdateNowPlayingData(TrackData trackData, int valid) {
         //System.out.println("AADEBUG: dsiAndroidAuto2UpdateNowPlayingData()" + " trackData: " + trackData + " valid: " + valid);
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateNowPlayingData called");
         }
 
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__title= trackData.title;
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__album = trackData.album;
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__artist = trackData.artist;
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__total_time = trackData.duration;
 
-        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__title= trackData.title;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__album = trackData.album;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__artist = trackData.artist;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__total_time = trackData.duration;
+        TrackInfo.CURRENT_TRACK_INFO.updateList(TrackInfo.mMetaInfos);
     }
 
     public void dsiAndroidAuto2UpdatePlaybackState(PlaybackInfo playbackInfo, int valid) {
@@ -405,7 +419,6 @@ public class AndroidAutoTarget
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updatePlaybackState called");
         }
-
     }
 
     public void dsiAndroidAuto2UpdatePlayposition(int timePosition, int valid) {
@@ -420,17 +433,72 @@ public class AndroidAutoTarget
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateCoverArtUrl called");
         }
-        System.out.println("AADEBUG dsiAndroidAuto2UpdateCoverArtUrl " + resourceLocator.url);
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl " + resourceLocator.url);
+        ResourceLocator copy = copy(resourceLocator);
+        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl copy: " + copy.url);
 
-        KombiPictureServerServices kombiPictureServerServicesProvider = KombiPictureServerServicesProvider.getKombiPictureServerServices();
+        AVDCAudioBapMediaBrowserActiveTrackInfoCollector[] mActiveTrackInfo = (AVDCAudioBapMediaBrowserActiveTrackInfoCollector[])ListManager.getGenericASLList(810015).getDSIObjects();
+        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_entry_id = pos;
+        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_content_type = 1;
+        pos++;
+        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_abs_pos = pos;
+        ListManager.getGenericASLList(810015).updateList(mActiveTrackInfo);
 
-        ServiceManager.aslPropertyManager.valueChangedBoolean(2781, true);
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__cover = resourceLocator;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__cover = copy;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__is_cover_available = true;
+        TrackInfo.CURRENT_TRACK_INFO.updateList(TrackInfo.mMetaInfos);
 
-        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
-        this.avdcAudioCurrentTrackInfoCollector.avdc_audio_current_track_info__is_cover_available = true;
-        ListManager.getASLList(58).updateList(new AVDCAudioCurrentTrackInfoCollector[]{this.avdcAudioCurrentTrackInfoCollector});
-        //ASLCarFactory.getFpaApi().
+        MediaASLDataAdapter adapter =  (MediaASLDataAdapter)APIFactory.getAPIFactory().getMediaService();
+        adapter.datapoolValueChanged(810015);
+    }
+
+    int count = 0;
+
+    private ResourceLocator copy(ResourceLocator input) {
+        FileInputStream fis = null;
+        FileOutputStream fos = null;
+
+        count++;
+
+        ResourceLocator out = new ResourceLocator("/var/app/icab/tmp/0_0000.png");
+
+        try {
+            fis = new FileInputStream(input.url);
+            fos = new FileOutputStream(out.url);
+
+            // Buffer to hold file content temporarily
+            byte[] buffer = new byte[1024];
+            int length;
+
+            // Read data from the source file and write it to the destination
+            while ((length = fis.read(buffer)) > 0) {
+                fos.write(buffer, 0, length);
+            }
+
+            System.out.println("AADEBUG: File copied successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                // Close streams to prevent resource leaks
+                if (fis != null) fis.close();
+                if (fos != null) fos.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return out;
+    }
+
+    private static String padHexString(String hex, int length) {
+        StringBuilder sb = new StringBuilder();
+        // Prepend zeros until the string reaches the desired length
+        for (int i = hex.length(); i < length; i++) {
+            sb.append('0');
+        }
+        sb.append(hex);
+        return sb.toString();
     }
 
     public void dsiAndroidAuto2UpdateNavigationNextTurnEvent(String road, int turnSide, int event, int turnAngle, int turnNumber, int valid) {

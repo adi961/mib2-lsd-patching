@@ -188,11 +188,11 @@ public class RequestHandler {
         switch (n) {
             case 1: {
                 this.properties.setAndroidAutoNavigationActive(false);
-                // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
+                ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
                 // this.properties.setAndroidAutoNavigationActive(false);
-                // if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
-                //     this.target.getDSIAndroidAuto2().navFocusNotification(1, false);
-                // }
+                 if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
+                     this.target.getDSIAndroidAuto2().navFocusNotification(1, false);
+                }
                 // if (this.exboxGuidanceListenerImpl == null) break;
                 // this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
                 // break;
@@ -204,7 +204,7 @@ public class RequestHandler {
                     }
                     this.navigationHandler.stopGuidance();
                 }
-                // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
+                ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
                 this.properties.setAndroidAutoNavigationActive(true);
                 if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
                     this.target.getDSIAndroidAuto2().navFocusNotification(2, false);

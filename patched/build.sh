@@ -3,8 +3,6 @@ set -e
 . ../process.sh
 
 FILES="\
-de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
-
 de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
 de/vw/mib/asl/internal/androidauto/target/NavigationHandler.java \
 de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorSender.java \
@@ -12,6 +10,7 @@ de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorMainElement.java \
 de/vw/mib/asl/internal/androidauto/target/ManeuverDescriptorDirection.java \
 de/vw/mib/asl/internal/androidauto/target/NavTurn.java \
 
+org/dsi/ifc/androidauto2/Constants.java \
 
 de/vw/mib/bap/mqbab2/navsd/functions/RGStatus.java \
 de/vw/mib/bap/mqbab2/navsd/functions/ManeuverDescriptor.java \
@@ -20,16 +19,10 @@ de/vw/mib/bap/mqbab2/navsd/functions/ActiveRgType.java \
 de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.java \
 
 de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationHandle.java
+de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
 
 de/vw/mib/asl/internal/kombipictureserver/usecaces/CoverArt.java
-generated/de/vw/mib/asl/internal/ASLListColumns.java
-
-org/dsi/ifc/androidauto2/Constants.java \
 "
-#de/vw/mib/asl/internal/mostkombi/streamsink/states/RunningState.java
-#de/vw/mib/asl/internal/androidauto/target/RequestHandler.java \
-#de/vw/mib/bap/mqbab2/common/api/configuration/ConfigurationAdapter.java
-#de/vw/mib/bap/mqbab2/common/api/navigation/NavigationASLDataAdapter.java
 
 find . -name "*.class" -type f -delete
 for j in $FILES; do

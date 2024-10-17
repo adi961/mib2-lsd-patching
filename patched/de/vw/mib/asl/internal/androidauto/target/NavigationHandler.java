@@ -1,12 +1,12 @@
 package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.api.navbap.ASLNavBAPFactory;
-import de.vw.mib.asl.internal.kombipictureserver.usecaces.CoverArt;
 import de.vw.mib.asl.internal.navigation.api.impl.ext.map.instrumentcluster.ICMapServiceImpl;
 import de.vw.mib.bap.mqbab2.common.api.APIFactory;
 import de.vw.mib.bap.mqbab2.common.api.navigation.NavigationASLDataAdapter;
 import org.dsi.ifc.androidauto2.Constants;
 import org.dsi.ifc.navigation.BapManeuverDescriptor;
+
 
 
 public class NavigationHandler {

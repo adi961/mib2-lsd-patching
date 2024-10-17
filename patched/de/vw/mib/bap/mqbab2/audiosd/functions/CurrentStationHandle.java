@@ -8,8 +8,6 @@ import de.vw.mib.bap.functions.BAPFunctionListener;
 import de.vw.mib.bap.functions.Property;
 import de.vw.mib.bap.functions.PropertyListener;
 import de.vw.mib.bap.mqbab2.audiosd.api.ASLAudioSDConstants;
-import de.vw.mib.bap.mqbab2.audiosd.functions.AudioSDCommon;
-import de.vw.mib.bap.mqbab2.audiosd.functions.MediaBrowser;
 import de.vw.mib.bap.mqbab2.common.api.media.MediaService;
 import de.vw.mib.bap.mqbab2.common.api.media.MediaServiceListener;
 import de.vw.mib.bap.mqbab2.common.api.radio.RadioService;
@@ -476,7 +474,7 @@ TvTunerServiceListener {
     }
 
     static {
-        MEDIA_LISTENER_IDS = new int[]{492571648, 810015};
+        MEDIA_LISTENER_IDS = new int[]{810013, 810015};
         RADIO_LISTENER_IDS = new int[]{1324, 2486, 1412};
         TV_TUNER_LISTENER_IDS = new int[]{2662};
         SOUND_LISTENER_IDS = new int[]{1470};

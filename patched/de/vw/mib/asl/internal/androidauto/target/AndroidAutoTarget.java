@@ -4,36 +4,21 @@
 package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.api.androidauto.ASLAndroidAutoFactory;
-import de.vw.mib.asl.api.bapcommon.ASLBAPCommonFactory;
-import de.vw.mib.asl.api.car.ASLCarFactory;
 import de.vw.mib.asl.api.exboxm.ASLExboxmFactory;
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceManager;
-import de.vw.mib.asl.api.media.ASLMediaFactory;
-import de.vw.mib.asl.api.messages.ASLMessagesFactory;
-import de.vw.mib.asl.api.mostkombi.ASLMOSTKombiFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationFactory;
 import de.vw.mib.asl.api.navigation.ASLNavigationServices;
-import de.vw.mib.asl.api.navigation.bap.ASLNavigationBapFactory;
-import de.vw.mib.asl.api.radio.ASLRadioFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.ASLDisplaymanagementFactory;
 import de.vw.mib.asl.framework.api.displaymanagement.displayable.DisplayableService;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxy;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIProxyFactory;
 import de.vw.mib.asl.framework.api.dsiproxy.DSIServiceStateListener;
-import de.vw.mib.asl.framework.api.entertainmentmanager.ASLEntertainmentmanagerFactory;
 import de.vw.mib.asl.framework.internal.framework.AbstractASLTarget;
 import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 import de.vw.mib.asl.framework.internal.framework.dsi.util.RuntimeGeneratedConstants;
 import de.vw.mib.asl.internal.androidauto.api.impl.ASLAndroidAutoExBoxServiceImpl;
 import de.vw.mib.asl.internal.androidauto.api.impl.ExboxGuidanceListenerImpl;
-import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServices;
-import de.vw.mib.asl.internal.kombipictureserver.common.services.KombiPictureServerServicesProvider;
-import de.vw.mib.asl.internal.media.clients.has.HASPlayerUpdater;
 import de.vw.mib.asl.internal.media.clients.player.TrackInfo;
-import de.vw.mib.asl.internal.mostkombi.api.impl.ASLMOSTKombiAPIImpl;
-import de.vw.mib.bap.mqbab2.audiosd.functions.CurrentStationHandle;
-import de.vw.mib.bap.mqbab2.common.api.APIFactory;
-import de.vw.mib.bap.mqbab2.common.api.media.MediaASLDataAdapter;
 import de.vw.mib.genericevents.EventGeneric;
 import de.vw.mib.genericevents.GenericEvents;
 import de.vw.mib.log4mib.LogMessage;
@@ -41,14 +26,11 @@ import de.vw.mib.threads.AsyncServiceFactory;
 import de.vw.mib.util.Util;
 import generated.de.vw.mib.asl.internal.ListManager;
 import generated.de.vw.mib.asl.internal.avdc.audio.bap.mediabrowser.transformer.AVDCAudioBapMediaBrowserActiveTrackInfoCollector;
-import generated.de.vw.mib.asl.internal.avdc.audio.bap.mediabrowser.transformer.AVDCAudioBapMediaBrowserActiveTrackInfoTransformer;
 import generated.de.vw.mib.asl.internal.avdc.audio.transformer.AVDCAudioCurrentTrackInfoCollector;
-import generated.de.vw.mib.asl.internal.system.kombi.ASLSystemKombiDeviceImpl;
 import org.dsi.ifc.androidauto2.*;
 import org.dsi.ifc.base.DSIListener;
 import org.dsi.ifc.global.ResourceLocator;
 import org.osgi.framework.ServiceReference;
-import de.vw.mib.util.StringBuilder;
 
 
 import java.io.FileInputStream;
@@ -101,6 +83,8 @@ public class AndroidAutoTarget
     static /* synthetic */ Class class$org$dsi$ifc$androidauto2$DSIAndroidAuto2Listener;
     static /* synthetic */ Class class$de$vw$mib$threads$AsyncServiceFactory;
     static /* synthetic */ Class class$de$vw$mib$popup$PopupInformationHandler;
+
+    private int albumCounter = 0;
 
     public AndroidAutoTarget(GenericEvents genericEvents, int n, String string) {
         super(genericEvents, n, string);
@@ -433,34 +417,27 @@ public class AndroidAutoTarget
         if (this.isTraceEnabled()) {
             this.trace("TargetAndroidAuto2DSI#updateCoverArtUrl called");
         }
+
+        if(n != 1) return;
         System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl " + resourceLocator.url);
-        ResourceLocator copy = copy(resourceLocator);
-        System.out.println("AADEBUG: dsiAndroidAuto2UpdateCoverArtUrl copy: " + copy.url);
 
-        AVDCAudioBapMediaBrowserActiveTrackInfoCollector[] mActiveTrackInfo = (AVDCAudioBapMediaBrowserActiveTrackInfoCollector[])ListManager.getGenericASLList(810015).getDSIObjects();
-        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_entry_id = pos;
-        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_content_type = 1;
-        pos++;
-        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_abs_pos = pos;
-        ListManager.getGenericASLList(810015).updateList(mActiveTrackInfo);
+        albumCounter++;
 
-        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__cover = copy;
+        TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__cover = copyToIcab(resourceLocator);
         TrackInfo.mMetaInfos[0].avdc_audio_current_track_info__is_cover_available = true;
         TrackInfo.CURRENT_TRACK_INFO.updateList(TrackInfo.mMetaInfos);
 
-        MediaASLDataAdapter adapter =  (MediaASLDataAdapter)APIFactory.getAPIFactory().getMediaService();
-        adapter.datapoolValueChanged(810015);
+        AVDCAudioBapMediaBrowserActiveTrackInfoCollector[] mActiveTrackInfo = (AVDCAudioBapMediaBrowserActiveTrackInfoCollector[])ListManager.getGenericASLList(810015).getDSIObjects();
+        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_entry_id = albumCounter;
+        mActiveTrackInfo[0].avdc_audio_bap_mediabrowser_abs_pos = albumCounter;
+        ListManager.getGenericASLList(810015).updateList(mActiveTrackInfo);
     }
 
-    int count = 0;
-
-    private ResourceLocator copy(ResourceLocator input) {
+    private ResourceLocator copyToIcab(ResourceLocator input) {
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
-        count++;
-
-        ResourceLocator out = new ResourceLocator("/var/app/icab/tmp/0_0000.png");
+        ResourceLocator out = new ResourceLocator("/var/app/icab/tmp/0_gal.png");
 
         try {
             fis = new FileInputStream(input.url);
@@ -491,15 +468,6 @@ public class AndroidAutoTarget
         return out;
     }
 
-    private static String padHexString(String hex, int length) {
-        StringBuilder sb = new StringBuilder();
-        // Prepend zeros until the string reaches the desired length
-        for (int i = hex.length(); i < length; i++) {
-            sb.append('0');
-        }
-        sb.append(hex);
-        return sb.toString();
-    }
 
     public void dsiAndroidAuto2UpdateNavigationNextTurnEvent(String road, int turnSide, int event, int turnAngle, int turnNumber, int valid) {
         System.out.println("AADEBUG: dsiAndroidAuto2UpdateNavigationNextTurnEvent()" + " road: " + road + " turnSide: " + turnSide + " event: " + event + " turnAngle: " + turnAngle + " turnNumber: " + turnNumber + " valid: " + valid);

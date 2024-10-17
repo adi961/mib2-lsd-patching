@@ -19,8 +19,9 @@ de/vw/mib/bap/mqbab2/navsd/functions/DistanceToNextManeuver.java \
 de/vw/mib/bap/mqbab2/navsd/functions/ActiveRgType.java \
 de/vw/mib/bap/mqbab2/navsd/functions/InfoStates.java \
 
-de/vw/mib/asl/internal/kombipictureserver/usecaces/CoverArt.java
 de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationHandle.java
+
+de/vw/mib/asl/internal/kombipictureserver/usecaces/CoverArt.java
 generated/de/vw/mib/asl/internal/ASLListColumns.java
 
 org/dsi/ifc/androidauto2/Constants.java \
